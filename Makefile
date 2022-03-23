@@ -14,15 +14,17 @@ EXTENSION	=	.c
 SRC_FILES	=	events/events	\
 				events/key_pressed	\
 				events/key_released	\
+				interface/utils_sprites	\
+				interface/init_main_map	\
+				interface/init_spritesheets	\
 				events/mouse	\
 				clean_window	\
 				draw_simple	\
 				init_all	\
 				lib_sound	\
 				main	\
-				myrpg	\
-				utils_sprites	\
 				utils	\
+				myrpg	\
 
 SRC	=	$(addprefix $(SRC_DIR), $(addsuffix $(EXTENSION), $(SRC_FILES)))
 
