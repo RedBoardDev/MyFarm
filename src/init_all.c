@@ -9,7 +9,9 @@
 
 void init_all(rpg_t *rpg)
 {
+    rpg->spritesheet = malloc(sizeof(spritesheet_t) * NBR_SPRITE);
     init_csfml(&rpg->begin);
+    init_spritesheets(rpg->spritesheet, &rpg->begin);
 }
 
 events_t init_all_events(void)

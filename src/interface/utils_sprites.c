@@ -5,12 +5,12 @@
 ** utils_sprites.c
 */
 
-#include "../include/rpg.h"
+#include "../../include/rpg.h"
 
 void set_one_sprite(char *filename, spritesheet_t *spritesheet,
 beginning_t *begin, init_sprite_t init_sprite)
 {
-    spritesheet->active = false;
+    spritesheet->active = init_sprite.active;
     spritesheet->clickable = init_sprite.clickable;
     spritesheet->pos = init_sprite.pos;
     spritesheet->rect = init_sprite.rect;

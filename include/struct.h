@@ -25,6 +25,7 @@ typedef struct {
     sfVector2f scale;
     sfIntRect rect;
     bool clickable;
+    bool active;
 } init_sprite_t;
 
 typedef struct {
@@ -94,6 +95,7 @@ typedef struct {
 typedef struct {
     beginning_t begin;
     events_t all_events;
+    spritesheet_t *spritesheet;
 } rpg_t;
 
 #endif
