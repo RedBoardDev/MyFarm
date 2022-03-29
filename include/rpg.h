@@ -20,7 +20,8 @@ enum size_window {
 };
 
 enum sprites {
-    BACKGROUND_MAIN_MAP,
+    S_BACKGROUND_MAIN_MAP,
+    S_PLAYER,
     NBR_SPRITE
 };
 

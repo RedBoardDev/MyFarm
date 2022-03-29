@@ -45,6 +45,7 @@ typedef struct {
     sfUint8 *framebuffer;
     sfTexture *texture;
     sfSprite *sprite;
+    sfView *view;
     fps_t fps;
 } beginning_t;
 
