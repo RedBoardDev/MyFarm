@@ -21,8 +21,20 @@ enum size_window {
 
 enum sprites {
     S_BACKGROUND_MAIN_MAP,
+    S_BACKGROUND_MENU,
     S_PLAYER,
+    B_PLAY,
+    B_QUIT,
+    B_CUSTOM,
     NBR_SPRITE
 };
+
+enum screens {
+    MENU,
+    GAME,
+    CUSTOM_PLAYER,
+    NBR_SCREENS
+};
+
 
 #endif

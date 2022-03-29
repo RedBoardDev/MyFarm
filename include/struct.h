@@ -91,6 +91,12 @@ typedef struct {
 
 typedef struct {
     bool active;
+    float view_zoom;
+    sfVector2f view_pos;
+} screen_t;
+
+typedef struct {
+    bool active;
     bool clickable;
     sfVector2f pos;
     sfIntRect rect;
@@ -102,6 +108,7 @@ typedef struct {
     beginning_t begin;
     events_t all_events;
     spritesheet_t *spritesheet;
+    screen_t *screen;
 } rpg_t;
 
 #endif

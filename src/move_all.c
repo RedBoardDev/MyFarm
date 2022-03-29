@@ -42,7 +42,6 @@ void move_player_and_view(rpg_t *rpg)
         rpg->spritesheet[S_PLAYER].pos.y += 2;
     }
     set_limits_player(rpg);
-    set_view(rpg);
 }
 
 void move_all_fps_independant(rpg_t *rpg)

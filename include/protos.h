@@ -22,6 +22,7 @@
     #include "struct.h"
 
 void myrpg(void);
+void manage_menu(rpg_t *rpg);
 
 // events
 void my_events(beginning_t *begin, events_t *all_events);
@@ -37,6 +38,7 @@ void events_mouse_moved(sfEvent event, events_t *all_events);
 
 // init
 void init_all(rpg_t *rpg);
+void init_menu(spritesheet_t *spritesheet, beginning_t *begin);
 
 // draw simple
 void my_draw_circle(sfUint8 *framebuffer, sfVector2i center, int radius,
@@ -68,7 +70,7 @@ void destroy_sound(sfSound *sound);
 sfSound *create_sound(char *filepath);
 
 //view
-void set_view(rpg_t *rpg);
+void set_view(rpg_t *rpg, sfVector2f view_pos);
 
 //move_object
 void move_player(rpg_t *rpg);

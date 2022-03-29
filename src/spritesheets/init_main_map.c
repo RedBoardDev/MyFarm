@@ -12,5 +12,5 @@ void init_background_main_map(spritesheet_t *spritesheet, beginning_t *begin)
     set_one_sprite("assets/img/main_map.png",
     &spritesheet[S_BACKGROUND_MAIN_MAP],
     begin, (init_sprite_t){{WIDTH / 2, HEIGHT / 2}, {1, 1}, {0, 0, 1920, 1920},
-    false, true});
+    false, false});
 }
