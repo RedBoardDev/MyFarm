@@ -9,7 +9,11 @@
 
 void init_all(rpg_t *rpg)
 {
+    rpg->spritesheet = malloc(sizeof(spritesheet_t) * NBR_SPRITE + 1);
+    rpg->begin.view = sfView_createFromRect((sfFloatRect){0, 0, 1920, 1080});
+    sfView_zoom(rpg->begin.view , 0.4);
     init_csfml(&rpg->begin);
+    init_spritesheets(rpg->spritesheet, &rpg->begin);
 }
 
 events_t init_all_events(void)

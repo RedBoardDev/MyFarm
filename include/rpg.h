@@ -10,6 +10,7 @@
 
     #include "my.h"
     #include "protos.h"
+    #include "spritesheet.h"
     #include "struct.h"
     #define RADIAN(x) x * 3.14159265359 / 180
 
@@ -19,7 +20,9 @@ enum size_window {
 };
 
 enum sprites {
-    NBR_SPRITE,
+    S_BACKGROUND_MAIN_MAP,
+    S_PLAYER,
+    NBR_SPRITE
 };
 
 #endif

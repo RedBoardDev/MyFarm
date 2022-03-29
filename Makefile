@@ -25,6 +25,7 @@ SRC_FILES	=	events/events	\
 				main	\
 				utils	\
 				myrpg	\
+				view	\
 
 SRC	=	$(addprefix $(SRC_DIR), $(addsuffix $(EXTENSION), $(SRC_FILES)))
 
