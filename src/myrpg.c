@@ -22,7 +22,6 @@ void draw_all(rpg_t *rpg)
     rpg->begin.framebuffer, WIDTH, HEIGHT, 0, 0);
     sfRenderWindow_drawSprite(rpg->begin.window,
     rpg->begin.sprite, NULL);
-    set_view(rpg);
     draw_spritesheets(&rpg->begin, rpg->spritesheet);
     sfRenderWindow_display(rpg->begin.window);
 }
@@ -30,6 +29,7 @@ void draw_all(rpg_t *rpg)
 void big_loop(rpg_t *rpg)
 {
     my_events(&rpg->begin, &rpg->all_events);
+    move_all_fps_independant(rpg);
     // move_player(rpg);
     draw_all(rpg);
 }

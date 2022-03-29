@@ -41,11 +41,16 @@ typedef struct {
 } fps_t;
 
 typedef struct {
+    sfView *view;
+    sfVector2f center;
+} view_t;
+
+typedef struct {
     sfRenderWindow *window;
     sfUint8 *framebuffer;
     sfTexture *texture;
     sfSprite *sprite;
-    sfView *view;
+    view_t view;
     fps_t fps;
 } beginning_t;
 

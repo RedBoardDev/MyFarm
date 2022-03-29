@@ -72,5 +72,6 @@ void set_view(rpg_t *rpg);
 
 //move_object
 void move_player(rpg_t *rpg);
+void move_all_fps_independant(rpg_t *rpg);
 
 #endif
