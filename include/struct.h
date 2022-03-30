@@ -98,6 +98,7 @@ typedef struct {
 typedef struct {
     bool active;
     bool clickable;
+    int *a_screen;
     sfVector2f pos;
     sfIntRect rect;
     sfSprite *sprite;

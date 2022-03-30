@@ -14,6 +14,8 @@ EXTENSION	=	.c
 SRC_FILES	=	events/events	\
 				events/key_pressed	\
 				events/key_released	\
+				interface/check_click_buttons	\
+				interface/button_menu	\
 				spritesheets/utils_sprites	\
 				spritesheets/init_main_map	\
 				spritesheets/init_sprites_menu	\

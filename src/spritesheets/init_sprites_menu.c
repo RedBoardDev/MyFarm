@@ -11,7 +11,6 @@ void init_button_menu(spritesheet_t *spritesheet, beginning_t *begin)
 {
     set_one_sprite("assets/img/menu/button_play.png",
     &spritesheet[B_PLAY],
-    
     begin, (init_sprite_t){{WIDTH / 2, HEIGHT / 2.28}, {1, 1}, {0, 0, 156, 94},
     .clickable = true, .active = true});
     set_one_sprite("assets/img/menu/button_custom.png",

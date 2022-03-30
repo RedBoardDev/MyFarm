@@ -13,6 +13,8 @@
     #include "spritesheet.h"
     #include "struct.h"
     #define RADIAN(x) x * 3.14159265359 / 180
+    #define FUNCTIONS_BUTTONS {nothing, nothing, nothing, launch_game,  \
+    nothing, nothing, nothing}
 
 enum size_window {
     WIDTH = 1920,
@@ -35,6 +37,5 @@ enum screens {
     CUSTOM_PLAYER,
     NBR_SCREENS
 };
-
 
 #endif

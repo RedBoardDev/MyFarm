@@ -16,7 +16,6 @@ beginning_t *begin, init_sprite_t init_sprite)
     spritesheet->rect = init_sprite.rect;
     spritesheet->sprite = sfSprite_create();
     spritesheet->texture = sfTexture_createFromFile(filename, NULL);
-
     sfSprite_setScale(spritesheet->sprite, init_sprite.scale);
     sfSprite_setTexture(spritesheet->sprite, spritesheet->texture, sfFalse);
     sfSprite_setTextureRect(spritesheet->sprite, spritesheet->rect);

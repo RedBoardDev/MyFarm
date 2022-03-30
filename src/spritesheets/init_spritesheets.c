@@ -7,6 +7,9 @@
 
 #include "../../include/rpg.h"
 
+const int screen_menu[] = {S_BACKGROUND_MENU, B_PLAY, B_QUIT, B_CUSTOM, -1};
+const int screen_game[] = {S_BACKGROUND_MAIN_MAP, S_PLAYER, -1};
+
 void init_player(spritesheet_t *spritesheet, beginning_t *begin)
 {
     set_one_sprite("assets/img/player.png", &spritesheet[S_PLAYER],
@@ -19,4 +22,18 @@ void init_spritesheets(spritesheet_t *spritesheet, beginning_t *begin)
     init_background_main_map(spritesheet, begin);
     init_player(spritesheet, begin);
     init_menu(spritesheet, begin);
+}
+
+void active_spritesheet_scene(bool status, int *screen_i,
+spritesheet_t *spritesheet)
+{
+    int i = 0;
+
+    do {
+        if (status)
+            spritesheet[screen_i[i]].active = true;
+        else
+            spritesheet[screen_i[i]].active = false;
+        printf("%d\n", screen_i[i]);
+    } while (screen_i[++i] != -1);
 }

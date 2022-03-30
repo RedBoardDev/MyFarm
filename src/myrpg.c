@@ -34,6 +34,7 @@ void big_loop(rpg_t *rpg)
         set_view(rpg, rpg->screen[MENU].view_pos);
         manage_menu(rpg);
     }
+    check_click_buttons(rpg);
     draw_all(rpg);
 }
 
