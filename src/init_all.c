@@ -20,6 +20,7 @@ events_t init_all_events(void)
 
 void init_all(rpg_t *rpg)
 {
+    rpg->begin.fps.timer = 0;
     rpg->begin.fps.clock = sfClock_create();
     rpg->all_events = init_all_events();
     rpg->spritesheet = malloc(sizeof(spritesheet_t) * NBR_SPRITE);

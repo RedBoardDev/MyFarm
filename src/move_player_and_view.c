@@ -25,7 +25,7 @@ void move_player_and_view_horizontal(rpg_t *rpg)
 
     if (rpg->all_events.right) {
         color = get_color_from_player(rpg->map_colors, (sfVector2f){rpg->
-        spritesheet[S_PLAYER].pos.x + 1, rpg->spritesheet[S_PLAYER].pos.y});
+        spritesheet[S_PLAYER].pos.x + 2, rpg->spritesheet[S_PLAYER].pos.y});
         if (rpg->spritesheet[S_PLAYER].pos.x > 385 &&
         rpg->begin.view.center.x < 1535 && color.r != 255)
             rpg->begin.view.center.x += 2;
@@ -34,7 +34,7 @@ void move_player_and_view_horizontal(rpg_t *rpg)
     }
     if (rpg->all_events.left) {
         color = get_color_from_player(rpg->map_colors, (sfVector2f){rpg->
-        spritesheet[S_PLAYER].pos.x - 1, rpg->spritesheet[S_PLAYER].pos.y});
+        spritesheet[S_PLAYER].pos.x - 2, rpg->spritesheet[S_PLAYER].pos.y});
         if (rpg->spritesheet[S_PLAYER].pos.x < 1535 &&
         rpg->begin.view.center.x > 385 && color.r != 255)
             rpg->begin.view.center.x -= 2;
@@ -49,7 +49,7 @@ void move_player_and_view_vertical(rpg_t *rpg)
 
     if (rpg->all_events.up) {
         color = get_color_from_player(rpg->map_colors, (sfVector2f){rpg->
-        spritesheet[S_PLAYER].pos.x, rpg->spritesheet[S_PLAYER].pos.y - 1});
+        spritesheet[S_PLAYER].pos.x, rpg->spritesheet[S_PLAYER].pos.y - 2});
         if (rpg->spritesheet[S_PLAYER].pos.y < 1282 &&
         rpg->begin.view.center.y > -203 && color.r != 255)
             rpg->begin.view.center.y -= 2;
@@ -58,7 +58,7 @@ void move_player_and_view_vertical(rpg_t *rpg)
     }
     if (rpg->all_events.down) {
         color = get_color_from_player(rpg->map_colors, (sfVector2f){rpg->
-        spritesheet[S_PLAYER].pos.x, rpg->spritesheet[S_PLAYER].pos.y + 1});
+        spritesheet[S_PLAYER].pos.x, rpg->spritesheet[S_PLAYER].pos.y + 2});
         if (rpg->spritesheet[S_PLAYER].pos.y > -203 &&
         rpg->begin.view.center.y < 1282 && color.r != 255)
             rpg->begin.view.center.y += 2;

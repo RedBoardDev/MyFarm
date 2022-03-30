@@ -18,6 +18,7 @@ SRC_FILES	=	events/events	\
 				interface/init_main_map	\
 				interface/init_spritesheets	\
 				events/mouse	\
+				animate_player	\
 				clean_window	\
 				draw_simple	\
 				init_all	\

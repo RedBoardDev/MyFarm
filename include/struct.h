@@ -96,6 +96,7 @@ typedef struct {
     sfIntRect rect;
     sfSprite *sprite;
     sfTexture *texture;
+    sfClock *clock;
 } spritesheet_t;
 
 typedef struct {

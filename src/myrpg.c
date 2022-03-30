@@ -17,7 +17,7 @@ void draw_spritesheets(beginning_t *begin, spritesheet_t *spritesheet)
 
 sfColor get_color_from_player(sfImage *image, sfVector2f pos)
 {
-    return (sfImage_getPixel(image, pos.x, pos.y + 420));
+    return (sfImage_getPixel(image, pos.x, pos.y + 420 + 15));
 }
 
 void draw_all(rpg_t *rpg)
@@ -35,6 +35,7 @@ void big_loop(rpg_t *rpg)
 {
     my_events(&rpg->begin, &rpg->all_events);
     move_all_fps_independant(rpg);
+    animate_player(rpg);
     // move_player(rpg);
     draw_all(rpg);
 }
