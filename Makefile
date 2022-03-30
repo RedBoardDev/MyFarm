@@ -20,6 +20,7 @@ SRC_FILES	=	events/events	\
 				spritesheets/init_main_map	\
 				spritesheets/init_sprites_menu	\
 				spritesheets/init_spritesheets	\
+				spritesheets/init_sprite_house	\
 				events/mouse	\
 				animate_player	\
 				clean_window	\

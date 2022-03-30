@@ -9,6 +9,8 @@
 
 const int screen_menu[] = {S_BACKGROUND_MENU, B_PLAY, B_QUIT, B_CUSTOM, -1};
 const int screen_game[] = {S_BACKGROUND_MAIN_MAP, S_PLAYER, -1};
+const int screen_base[] = {S_BACKGROUND_BASE, S_PLAYER, -1};
+const int screen_jail[] = {S_BACKGROUND_JAIL, S_PLAYER, -1};
 
 void init_player(spritesheet_t *spritesheet, beginning_t *begin)
 {
@@ -20,6 +22,7 @@ void init_player(spritesheet_t *spritesheet, beginning_t *begin)
 void init_spritesheets(spritesheet_t *spritesheet, beginning_t *begin)
 {
     init_background_main_map(spritesheet, begin);
+    init_spritesheet_house(spritesheet, begin);
     init_player(spritesheet, begin);
     init_menu(spritesheet, begin);
 }
@@ -29,12 +32,10 @@ spritesheet_t *spritesheet)
 {
     int i = 0;
 
-    while (screen_i[i] != -1) {
+    do {
         if (status)
             spritesheet[screen_i[i]].active = true;
         else
             spritesheet[screen_i[i]].active = false;
-        printf("%d\n", screen_i[i]);
-        ++i;
-    }
+    } while (screen_i[++i] != -1);
 }

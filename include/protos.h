@@ -68,6 +68,7 @@ void draw_one_sprite(beginning_t *begin, sfSprite *sprite, sfIntRect rect,
 sfVector2f pos);
 void active_spritesheet_scene(bool status, int *screen_i,
 spritesheet_t *spritesheet);
+void init_spritesheet_house(spritesheet_t *spritesheet, beginning_t *begin);
 
 // lib sound
 void stop_sound(sfSound *sound);

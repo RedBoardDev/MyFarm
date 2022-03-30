@@ -13,8 +13,8 @@
     #include "spritesheet.h"
     #include "struct.h"
     #define RADIAN(x) x * 3.14159265359 / 180
-    #define FUNCTIONS_BUTTONS {nothing, nothing, nothing, launch_game,  \
-    nothing, nothing, nothing}
+    #define FUNCTIONS_BUTTONS {nothing, nothing, nothing,   \
+    nothing, nothing, launch_game, nothing, nothing, nothing}
 
 enum size_window {
     WIDTH = 1920,
@@ -24,6 +24,8 @@ enum size_window {
 enum sprites {
     S_BACKGROUND_MAIN_MAP,
     S_BACKGROUND_MENU,
+    S_BACKGROUND_BASE,
+    S_BACKGROUND_JAIL,
     S_PLAYER,
     B_PLAY,
     B_QUIT,
@@ -34,16 +36,18 @@ enum sprites {
 enum screens {
     MENU,
     GAME,
-    CUSTOM_PLAYER,
+    // CUSTOM_PLAYER,
+    // BASE,
+    // JAIL,
     NBR_SCREENS
 };
 
 enum maisons {
     M_BASE = 100,
-    M_PRISON,
-    M_TENTE,
-    M_GROTTE,
-    M_TAVERNE
+    M_JAIL,
+    // M_TENTE,
+    // M_GROTTE,
+    // M_TAVERNE
 };
 
 #endif
