@@ -14,9 +14,12 @@ EXTENSION	=	.c
 SRC_FILES	=	events/events	\
 				events/key_pressed	\
 				events/key_released	\
-				interface/utils_sprites	\
-				interface/init_main_map	\
-				interface/init_spritesheets	\
+				interface/check_click_buttons	\
+				interface/button_menu	\
+				spritesheets/utils_sprites	\
+				spritesheets/init_main_map	\
+				spritesheets/init_sprites_menu	\
+				spritesheets/init_spritesheets	\
 				events/mouse	\
 				animate_player	\
 				clean_window	\
@@ -24,6 +27,7 @@ SRC_FILES	=	events/events	\
 				init_all	\
 				lib_sound	\
 				main	\
+				menu	\
 				move_all	\
 				move_player_and_view	\
 				utils	\

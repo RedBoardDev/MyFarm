@@ -37,6 +37,11 @@ void big_loop(rpg_t *rpg)
     move_all_fps_independant(rpg);
     animate_player(rpg);
     // move_player(rpg);
+    if (rpg->screen[MENU].active) {
+        set_view(rpg, rpg->screen[MENU].view_pos);
+        manage_menu(rpg);
+    }
+    check_click_buttons(rpg);
     draw_all(rpg);
 }
 

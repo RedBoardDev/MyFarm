@@ -14,7 +14,7 @@ void init_player(spritesheet_t *spritesheet, beginning_t *begin)
 {
     set_one_sprite("assets/img/player.png", &spritesheet[S_PLAYER],
     begin, (init_sprite_t){{1119 - 50, 635 + 10}, {0.7, 0.7},
-    {0, 0, 48, 62}, false, true});
+    {0, 0, 48, 62}, false, false});
 }
 
 void init_spritesheets(spritesheet_t *spritesheet, beginning_t *begin)
@@ -29,11 +29,12 @@ spritesheet_t *spritesheet)
 {
     int i = 0;
 
-    do {
+    while (screen_i[i] != -1) {
         if (status)
             spritesheet[screen_i[i]].active = true;
         else
             spritesheet[screen_i[i]].active = false;
         printf("%d\n", screen_i[i]);
-    } while (screen_i[++i] != -1);
+        ++i;
+    }
 }
