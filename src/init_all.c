@@ -25,12 +25,6 @@ void init_screen(rpg_t *rpg)
     .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0};
     rpg->screen[GAME] = (screen_t){.active = false,
     .view_pos = {1090, 613}, .view_zoom = 0.4};
-    // rpg->screen[CUSTOM_PLAYER] = (screen_t){.active = false,
-    // .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0};
-    // sfView_zoom(rpg->begin.view.view, 1);
-    // rpg->screen[BASE] = (screen_t){.active = false,
-    // .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0};
-    // sfView_zoom(rpg->begin.view.view, 1);
 }
 
 void init_all(rpg_t *rpg)
