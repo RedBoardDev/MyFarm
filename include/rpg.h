@@ -38,4 +38,12 @@ enum screens {
     NBR_SCREENS
 };
 
+enum maisons {
+    M_BASE = 100,
+    M_PRISON,
+    M_TENTE,
+    M_GROTTE,
+    M_TAVERNE,
+}
+
 #endif
