@@ -17,3 +17,8 @@ void launch_game(rpg_t *rpg)
     active_spritesheet_scene(false, screen_menu, rpg->spritesheet);
     active_spritesheet_scene(true, screen_game, rpg->spritesheet);
 }
+
+void quit_game(rpg_t *rpg)
+{
+    sfRenderWindow_close(rpg->begin.window);
+}
