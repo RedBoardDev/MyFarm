@@ -13,8 +13,8 @@
     #include "spritesheet.h"
     #include "struct.h"
     #define RADIAN(x) x * 3.14159265359 / 180
-    #define FUNCTIONS_BUTTONS {nothing, nothing, nothing,   \
-    nothing, nothing, launch_game, nothing, nothing, nothing}
+    #define FUNCTIONS_BUTTONS {nothing, nothing, nothing, nothing,  \
+    launch_game, quit_game, nothing, nothing}
 
 enum size_window {
     WIDTH = 1920,
