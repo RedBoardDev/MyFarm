@@ -13,6 +13,7 @@ void launch_game(rpg_t *rpg)
 {
     rpg->screen[MENU].active = false;
     rpg->screen[GAME].active = true;
+    sfView_zoom(rpg->begin.view.view , rpg->screen[GAME].view_zoom);
     active_spritesheet_scene(false, screen_menu, rpg->spritesheet);
     active_spritesheet_scene(true, screen_game, rpg->spritesheet);
 }

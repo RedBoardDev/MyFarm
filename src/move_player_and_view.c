@@ -72,5 +72,5 @@ void move_player_and_view(rpg_t *rpg)
     move_player_and_view_horizontal(rpg);
     move_player_and_view_vertical(rpg);
     set_limits_player(rpg);
-    set_view(rpg);
+    set_view(rpg, rpg->begin.view.center);
 }
