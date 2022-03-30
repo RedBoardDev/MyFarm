@@ -15,6 +15,11 @@ void draw_spritesheets(beginning_t *begin, spritesheet_t *spritesheet)
             spritesheet[i].pos);
 }
 
+sfColor get_color_from_player(sfImage *image, sfVector2f pos)
+{
+    return (sfImage_getPixel(image, pos.x, pos.y + 420));
+}
+
 void draw_all(rpg_t *rpg)
 {
     sfSprite_setTexture(rpg->begin.sprite, rpg->begin.texture, sfFalse);
@@ -37,6 +42,7 @@ void big_loop(rpg_t *rpg)
 void myrpg(void)
 {
     rpg_t rpg;
+    rpg.map_colors = sfImage_createFromFile("assets/img/main_map_colors.png");
 
     init_all(&rpg);
     if (!rpg.begin.window || !rpg.begin.framebuffer)

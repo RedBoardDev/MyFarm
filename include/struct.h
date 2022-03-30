@@ -102,6 +102,7 @@ typedef struct {
     beginning_t begin;
     events_t all_events;
     spritesheet_t *spritesheet;
+    sfImage *map_colors;
 } rpg_t;
 
 #endif

@@ -72,6 +72,8 @@ void set_view(rpg_t *rpg);
 
 //move_object
 void move_player(rpg_t *rpg);
+void move_player_and_view(rpg_t *rpg);
 void move_all_fps_independant(rpg_t *rpg);
+sfColor get_color_from_player(sfImage *image, sfVector2f pos);
 
 #endif

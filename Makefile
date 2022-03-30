@@ -24,6 +24,7 @@ SRC_FILES	=	events/events	\
 				lib_sound	\
 				main	\
 				move_all	\
+				move_player_and_view	\
 				utils	\
 				myrpg	\
 				view	\
