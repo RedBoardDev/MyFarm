@@ -107,11 +107,24 @@ typedef struct {
 } spritesheet_t;
 
 typedef struct {
+    sfSound *sound;
+    sfSoundBuffer *sound_buffer;
+} sound_list_t;
+
+typedef struct {
+    sound_list_t *sound_list;
+    float volume;
+    float volume_backup;
+} sound_t;
+
+typedef struct {
     beginning_t begin;
     events_t all_events;
     spritesheet_t *spritesheet;
     sfImage *map_colors;
     screen_t *screen;
+    sound_t sound;
 } rpg_t;
+
 
 #endif

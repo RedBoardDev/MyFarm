@@ -7,21 +7,18 @@
 
 #include "../include/rpg.h"
 
-sfSound *create_sound(char *filepath)
+void create_sound(char *filepath, sound_list_t *sound_list)
 {
-    sfSound *sound;
-    sfSoundBuffer *sound_buffer;
-
-    sound_buffer = sfSoundBuffer_createFromFile(filepath);
-    sound = sfSound_create();
-    sfSound_setBuffer(sound, sound_buffer);
-    sfSound_setVolume(sound, 0);
-    return (sound);
+    sound_list->sound_buffer = sfSoundBuffer_createFromFile(filepath);
+    sound_list->sound = sfSound_create();
+    sfSound_setBuffer(sound_list->sound, sound_list->sound_buffer);
+    sfSound_setVolume(sound_list->sound, 0);
 }
 
-void destroy_sound(sfSound *sound)
+void destroy_sound(sfSound *sound, sfSoundBuffer *sound_buffer)
 {
     sfSound_destroy(sound);
+    sfSoundBuffer_destroy(sound_buffer);
 }
 
 void play_sound(sfSound *sound, float volume)

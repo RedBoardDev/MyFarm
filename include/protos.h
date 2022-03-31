@@ -75,8 +75,8 @@ void init_spritesheet_house(spritesheet_t *spritesheet, beginning_t *begin);
 // lib sound
 void stop_sound(sfSound *sound);
 void play_sound(sfSound *sound, float volume);
-void destroy_sound(sfSound *sound);
-sfSound *create_sound(char *filepath);
+void create_sound(char *filepath, sound_list_t *sound_list);
+void destroy_sound(sfSound *sound, sfSoundBuffer *sound_buffer);
 
 //view
 void set_view(rpg_t *rpg, sfVector2f view_pos);

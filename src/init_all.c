@@ -27,6 +27,14 @@ void init_screen(rpg_t *rpg)
     .view_pos = {1090, 613}, .view_zoom = 0.4};
 }
 
+void init_sound(rpg_t *rpg)
+{
+    rpg->sound.sound_list = malloc(sizeof(sound_list_t) * NBR_SOUND);
+    // create_sound("assets/sounds/main.ogg", &rpg->sound.sound_list[SOUND_MAIN]);
+    create_sound("assets/sounds/walk.ogg", &rpg->sound.sound_list[SOUND_WALK]);
+    create_sound("assets/sounds/door.ogg", &rpg->sound.sound_list[SOUND_DOOR]);
+}
+
 void init_all(rpg_t *rpg)
 {
     rpg->begin.fps.timer = 0;
@@ -42,4 +50,5 @@ void init_all(rpg_t *rpg)
     init_csfml(&rpg->begin);
     init_spritesheets(rpg->spritesheet, &rpg->begin);
     init_screen(rpg);
+    init_sound(rpg);
 }

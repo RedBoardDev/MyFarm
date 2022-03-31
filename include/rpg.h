@@ -50,4 +50,11 @@ enum maisons {
     // M_TAVERNE
 };
 
+enum sounds {
+    // SOUND_MAIN,
+    SOUND_WALK,
+    SOUND_DOOR,
+    NBR_SOUND,
+};
+
 #endif
