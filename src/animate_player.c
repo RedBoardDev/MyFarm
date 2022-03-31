@@ -11,7 +11,8 @@ void animate_player(rpg_t *rpg)
 {
     sfColor color = get_color_from_player(rpg->map_colors,
     rpg->spritesheet[S_PLAYER].pos);
-    float time_player = sfClock_getElapsedTime(rpg->spritesheet[S_PLAYER].clock).microseconds;
+    float time_player =
+    sfClock_getElapsedTime(rpg->spritesheet[S_PLAYER].clock).microseconds;
 
     if (!rpg->all_events.down && !rpg->all_events.up && !rpg->all_events.left
     && !rpg->all_events.right)
