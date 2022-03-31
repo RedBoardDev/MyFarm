@@ -7,15 +7,15 @@
 
 #include "../../include/rpg.h"
 
-const int screen_menu[] = {S_BACKGROUND_MENU, B_PLAY, B_QUIT, B_CUSTOM, -1};
-const int screen_game[] = {S_BACKGROUND_MAIN_MAP, S_PLAYER, -1};
-const int screen_base[] = {S_BACKGROUND_BASE, S_PLAYER, -1};
-const int screen_jail[] = {S_BACKGROUND_JAIL, S_PLAYER, -1};
+const int screen_menu[] = {SP_BACKGROUND_SC_MENU, SP_PLAY, SP_QUIT, SP_CUSTOM, -1};
+const int screen_game[] = {SP_BACKGROUND_SC_MAIN_MAP, SP_PLAYER, -1};
+const int screen_base[] = {SP_BACKGROUND_SC_BASE, SP_PLAYER, -1};
+const int screen_jail[] = {SP_BACKGROUND_JAIL, SP_PLAYER, -1};
 
 void init_player(spritesheet_t *spritesheet, beginning_t *begin)
 {
-    set_one_sprite("assets/img/player.png", &spritesheet[S_PLAYER],
-    begin, (init_sprite_t){{1119 - 124, 635 + 10}, {0.7, 0.7},
+    set_one_sprite("assets/img/player.png", &spritesheet[SP_PLAYER],
+    begin, (init_sprite_t){{SPAWN_X, SPAWN_Y}, {0.7, 0.7},
     {0, 0, 48, 62}, false, false});
 }
 

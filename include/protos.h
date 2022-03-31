@@ -23,7 +23,7 @@
 
 void myrpg(void);
 void manage_menu(rpg_t *rpg);
-void teleport_player_scene(rpg_t *rpg);
+void teleport_player_scene(rpg_t *rpg, sfImage *image, sfVector2f pos_player);
 
 // events
 void my_events(beginning_t *begin, events_t *all_events);
@@ -87,5 +87,6 @@ void move_player_and_view(rpg_t *rpg);
 void move_all_fps_independant(rpg_t *rpg);
 sfColor get_color_from_player(sfImage *image, sfVector2f pos);
 void animate_player(rpg_t *rpg);
+void draw_sfImage(sfRenderWindow *window, sfImage *image, sfVector2f pos, sfIntRect rect);
 
 #endif

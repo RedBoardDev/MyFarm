@@ -15,6 +15,8 @@
     #define RADIAN(x) x * 3.14159265359 / 180
     #define FUNCTIONS_BUTTONS {nothing, nothing, nothing, nothing, nothing,  \
     launch_game, quit_game, nothing, nothing}
+    #define SPAWN_X WIDTH / 2
+    #define SPAWN_Y WIDTH / 2 + 80
 
 enum size_window {
     WIDTH = 1920,
@@ -22,32 +24,32 @@ enum size_window {
 };
 
 enum sprites {
-    S_BACKGROUND_MAIN_MAP,
-    S_BACKGROUND_MENU,
-    S_BACKGROUND_BASE,
-    S_BACKGROUND_JAIL,
-    S_PLAYER,
-    B_PLAY,
-    B_QUIT,
-    B_CUSTOM,
-    NBR_SPRITE
+    SP_BACKGROUND_SC_MAIN_MAP,
+    SP_BACKGROUND_SC_MENU,
+    SP_BACKGROUND_SC_BASE,
+    SP_BACKGROUND_JAIL,
+    SP_PLAYER,
+    SP_PLAY,
+    SP_QUIT,
+    SP_CUSTOM,
+    NBR_SP
 };
 
 enum screens {
-    MENU,
-    GAME,
-    BASE,
-    // CUSTOM_PLAYER,
-    // JAIL,
+    SC_MENU,
+    SC_MAIN_MAP,
+    SC_BASE,
+    // SC_CUSTOM_PLAYER,
+    // SC_JAIL,
     NBR_SCREENS
 };
 
-enum maisons {
-    M_BASE = 100,
-    M_JAIL,
-    // M_TENTE,
-    // M_GROTTE,
-    // M_TAVERNE
+enum bleu_maisons {
+    B_BASE = 100,
+    B_JAIL,
+    B_TENTE,
+    B_GROTTE,
+    B_TAVERNE
 };
 
 #endif

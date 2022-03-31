@@ -13,14 +13,18 @@ extern int screen_jail[];
 
 void teleport_base(rpg_t *rpg)
 {
-    if (rpg->screen[GAME].active) {
-        rpg->screen[GAME].active = false;
-        // rpg->spritesheet[S_PLAYER].pos.y - 100;
+    if (rpg->screen[SC_MAIN_MAP].active) {
+        rpg->screen[SC_MAIN_MAP].active = false;
+        rpg->screen[SC_BASE].active = true;
+        // rpg->spritesheet[SP_PLAYER].pos.y - 100;
         active_spritesheet_scene(false, screen_game, rpg->spritesheet);
         active_spritesheet_scene(true, screen_base, rpg->spritesheet);
     } else {
-        rpg->screen[GAME].active = true;
-        // rpg->spritesheet[S_PLAYER].pos.y + 10;
+        rpg->screen[SC_MAIN_MAP].active = true;
+        rpg->screen[SC_BASE].active = false;
+        rpg->spritesheet[SP_PLAYER].pos = (sfVector2f){SPAWN_X + 35, SPAWN_Y};
+        rpg->begin.view.center = (sfVector2f){SPAWN_X, SPAWN_Y};
+        // rpg->spritesheet[SP_PLAYER].pos.y + 10;
         active_spritesheet_scene(false, screen_base, rpg->spritesheet);
         active_spritesheet_scene(true, screen_game, rpg->spritesheet);
     }
@@ -28,30 +32,31 @@ void teleport_base(rpg_t *rpg)
 
 void teleport_jail(rpg_t *rpg)
 {
-    if (rpg->screen[GAME].active) {
-        rpg->screen[GAME].active = false;
-        // rpg->spritesheet[S_PLAYER].pos.y - 10;
+    if (rpg->screen[SC_MAIN_MAP].active) {
+        rpg->screen[SC_MAIN_MAP].active = false;
+        rpg->screen[SC_BASE].active = true;
+        // rpg->spritesheet[SP_PLAYER].pos.y - 10;
         active_spritesheet_scene(false, screen_game, rpg->spritesheet);
         active_spritesheet_scene(true, screen_base, rpg->spritesheet);
     } else {
-        rpg->screen[GAME].active = true;
-        // rpg->spritesheet[S_PLAYER].pos.y + 10;
+        rpg->screen[SC_MAIN_MAP].active = true;
+        rpg->screen[SC_BASE].active = false;
+        // rpg->spritesheet[SP_PLAYER].pos.y + 10;
         active_spritesheet_scene(false, screen_base, rpg->spritesheet);
         active_spritesheet_scene(true, screen_game, rpg->spritesheet);
     }
 }
 
-void teleport_player_scene(rpg_t *rpg)
+void teleport_player_scene(rpg_t *rpg, sfImage *image, sfVector2f pos_player)
 {
     sfColor color;
 
-    color = get_color_from_player(rpg->map_colors, (sfVector2f){rpg->
-    spritesheet[S_PLAYER].pos.x, rpg->spritesheet[S_PLAYER].pos.y});
+    color = get_color_from_player(image, pos_player);
     switch (color.b) {
-    case M_BASE:
+    case B_BASE:
         teleport_base(rpg);
         break;
-    case M_JAIL:
+    case B_JAIL:
         teleport_jail(rpg);
         break;
     default:

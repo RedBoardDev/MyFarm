@@ -32,7 +32,7 @@ void check_click_buttons(rpg_t *rpg)
 {
     if (!rpg->all_events.mouse.left_released)
         return;
-    for (int i = 0; i < NBR_SPRITE; ++i)
+    for (int i = 0; i < NBR_SP; ++i)
         if (check_click_one_button(rpg, i))
             return;
 }
