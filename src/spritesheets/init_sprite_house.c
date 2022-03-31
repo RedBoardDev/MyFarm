@@ -10,11 +10,11 @@
 void init_spritesheet_house(spritesheet_t *spritesheet, beginning_t *begin)
 {
     set_one_sprite("assets/img/house/background_base.png",
-    &spritesheet[S_BACKGROUND_BASE],
-    begin, (init_sprite_t){{WIDTH / 1.76, HEIGHT / 1.93}, {1, 1},
-    {0, 0, 640, 360}, .clickable = false, .active = false});
+    &spritesheet[SP_BACKGROUND_SC_BASE],
+    begin, (init_sprite_t){{650 + 700 / 2, 810 + 394 / 2}, {1, 1},
+    {0, 0, 700, 394}, .clickable = false, .active = false});
     set_one_sprite("assets/img/house/background_jail.png",
-    &spritesheet[S_BACKGROUND_JAIL],
+    &spritesheet[SP_BACKGROUND_JAIL],
     begin, (init_sprite_t){{WIDTH / 2, HEIGHT / 2}, {1, 1}, {0, 0, 640, 360},
     .clickable = false, .active = false});
 }

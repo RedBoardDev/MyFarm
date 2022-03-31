@@ -7,9 +7,20 @@
 
 #include "../include/rpg.h"
 
+void draw_sfImage(sfRenderWindow *window, sfImage *image, sfVector2f pos, sfIntRect rect)
+{
+    sfTexture *texture = sfTexture_createFromImage(image, NULL);
+    sfSprite *sprite = sfSprite_create();
+    sfImage_createMaskFromColor(image, (sfColor){0, 0, 0, 100}, 100);
+    sfSprite_setPosition(sprite, pos);
+    sfSprite_setTexture(sprite, texture, sfFalse);
+    sfSprite_setTextureRect(sprite, rect);
+    sfRenderWindow_drawSprite(window, sprite, NULL);
+}
+
 void draw_spritesheets(beginning_t *begin, spritesheet_t *spritesheet)
 {
-    for (int i = 0; i < NBR_SPRITE; ++i)
+    for (int i = 0; i < NBR_SP; ++i)
         if (spritesheet[i].active)
             draw_one_sprite(begin, spritesheet[i].sprite, spritesheet[i].rect,
             spritesheet[i].pos);
@@ -17,7 +28,7 @@ void draw_spritesheets(beginning_t *begin, spritesheet_t *spritesheet)
 
 sfColor get_color_from_player(sfImage *image, sfVector2f pos)
 {
-    return (sfImage_getPixel(image, pos.x, pos.y + 420 + 15));
+    return (sfImage_getPixel(image, pos.x, pos.y + 15));
 }
 
 void draw_all(rpg_t *rpg)
@@ -28,6 +39,7 @@ void draw_all(rpg_t *rpg)
     sfRenderWindow_drawSprite(rpg->begin.window,
     rpg->begin.sprite, NULL);
     draw_spritesheets(&rpg->begin, rpg->spritesheet);
+    // draw_sfImage(rpg->begin.window, rpg->imgs_colors.main_house, (sfVector2f){650, 810}, (sfIntRect){0, 0, 700, 394});
     sfRenderWindow_display(rpg->begin.window);
 }
 
@@ -36,10 +48,13 @@ void big_loop(rpg_t *rpg)
     my_events(&rpg->begin, &rpg->all_events);
     move_all_fps_independant(rpg);
     animate_player(rpg);
-    if (rpg->screen[MENU].active) {
-        set_view(rpg, rpg->screen[MENU].view_pos);
+    printf("%d %d\n", rpg->all_events.mouse.pos.x, rpg->all_events.mouse.pos.x);
+    if (rpg->screen[SC_MENU].active) {
+        set_view(rpg, rpg->screen[SC_MENU].view_pos);
         manage_menu(rpg);
     }
+    // sfFloatRect rect = sfSprite_getGlobalBounds(rpg->spritesheet[SP_BACKGROUND_SC_MAIN_MAP].sprite);
+    // printf("%0.0f %0.0f\n", rect.top, rect.left);
     check_click_buttons(rpg);
     draw_all(rpg);
 }
@@ -47,7 +62,8 @@ void big_loop(rpg_t *rpg)
 void myrpg(void)
 {
     rpg_t rpg;
-    rpg.map_colors = sfImage_createFromFile("assets/img/main_map_colors.png");
+    rpg.imgs_colors.main_map = sfImage_createFromFile("assets/img/main_map_colors.png");
+    rpg.imgs_colors.main_house = sfImage_createFromFile("assets/img/house/background_base_colors.png");
 
     init_all(&rpg);
     if (!rpg.begin.window || !rpg.begin.framebuffer)

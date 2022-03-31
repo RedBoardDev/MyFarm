@@ -121,7 +121,7 @@ typedef struct {
     beginning_t begin;
     events_t all_events;
     spritesheet_t *spritesheet;
-    sfImage *map_colors;
+    images_t imgs_colors;
     screen_t *screen;
     sound_t sound;
 } rpg_t;
