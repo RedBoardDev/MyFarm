@@ -33,6 +33,7 @@ SRC_FILES	=	events/events	\
 				move_player_and_view	\
 				utils	\
 				myrpg	\
+				teleport	\
 				view	\
 
 SRC	=	$(addprefix $(SRC_DIR), $(addsuffix $(EXTENSION), $(SRC_FILES)))

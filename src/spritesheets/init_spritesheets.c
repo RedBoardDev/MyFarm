@@ -15,7 +15,7 @@ const int screen_jail[] = {S_BACKGROUND_JAIL, S_PLAYER, -1};
 void init_player(spritesheet_t *spritesheet, beginning_t *begin)
 {
     set_one_sprite("assets/img/player.png", &spritesheet[S_PLAYER],
-    begin, (init_sprite_t){{1119 - 50, 635 + 10}, {0.7, 0.7},
+    begin, (init_sprite_t){{1119 - 124, 635 + 10}, {0.7, 0.7},
     {0, 0, 48, 62}, false, false});
 }
 

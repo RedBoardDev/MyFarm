@@ -23,6 +23,7 @@
 
 void myrpg(void);
 void manage_menu(rpg_t *rpg);
+void teleport_player_scene(rpg_t *rpg);
 
 // events
 void my_events(beginning_t *begin, events_t *all_events);

@@ -36,8 +36,8 @@ enum sprites {
 enum screens {
     MENU,
     GAME,
+    BASE,
     // CUSTOM_PLAYER,
-    // BASE,
     // JAIL,
     NBR_SCREENS
 };
