@@ -30,12 +30,6 @@ void init_spritesheets(spritesheet_t *spritesheet, beginning_t *begin)
 void active_spritesheet_scene(bool status, int *screen_i,
 spritesheet_t *spritesheet)
 {
-    int i = 0;
-
-    do {
-        if (status)
-            spritesheet[screen_i[i]].active = true;
-        else
-            spritesheet[screen_i[i]].active = false;
-    } while (screen_i[++i] != -1);
+    for (int i = 0; screen_i[i] != -1; ++i)
+        spritesheet[screen_i[i]].active = status;
 }
