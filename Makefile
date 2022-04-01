@@ -28,7 +28,9 @@ SRC_FILES	=	events/events	\
 				init/init_spritesheets_rooms	\
 				init/init_spritesheets	\
 				init/init_view	\
-				interface/button_menu	\
+				interface/functions_pointers/button_menu	\
+				interface/functions_pointers/choose_skin1	\
+				interface/functions_pointers/choose_skin2	\
 				interface/check_click_buttons	\
 				interface/menu	\
 				spritesheets/utils_sprites	\

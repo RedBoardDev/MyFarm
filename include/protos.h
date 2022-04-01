@@ -41,6 +41,15 @@ void events_mouse_moved(sfEvent event, events_t *all_events);
 void check_click_buttons(rpg_t *rpg);
 void launch_game(rpg_t *rpg);
 void quit_game(rpg_t *rpg);
+void skin_blue(rpg_t *rpg);
+void skin_brown(rpg_t *rpg);
+void skin_cyan(rpg_t *rpg);
+void skin_green(rpg_t *rpg);
+void skin_grey(rpg_t *rpg);
+void skin_pink(rpg_t *rpg);
+void skin_red(rpg_t *rpg);
+void skin_yellow(rpg_t *rpg);
+void display_custom_skins(rpg_t *rpg);
 
 // init
 void init_all(rpg_t *rpg);
@@ -75,7 +84,7 @@ beginning_t *begin, init_sprite_t init_sprite);
 void write_text(beginning_t *begin, init_text_t struct_text);
 void draw_one_sprite(beginning_t *begin, sfSprite *sprite, sfIntRect rect,
 sfVector2f pos);
-void toggle_spritesheet_scene(bool status, int *screen_i,
+void toggle_spritesheet_scene(rpg_t *rpg, bool status, int *screen_i,
 spritesheet_t *spritesheet);
 
 // lib sound

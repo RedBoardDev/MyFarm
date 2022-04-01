@@ -48,9 +48,12 @@ sfVector2f pos)
     sfRenderWindow_drawSprite(begin->window, sprite, NULL);
 }
 
-void toggle_spritesheet_scene(bool status, int *screen_i,
+void toggle_spritesheet_scene(rpg_t *rpg, bool status, int *screen_i,
 spritesheet_t *spritesheet)
 {
     for (int i = 0; screen_i[i] != -1; ++i)
-        spritesheet[screen_i[i]].active = status;
+        if (screen_i[i] == -2)
+            spritesheet[rpg->skin].active = status;
+        else
+            spritesheet[screen_i[i]].active = status;
 }

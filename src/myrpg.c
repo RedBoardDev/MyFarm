@@ -48,7 +48,7 @@ void big_loop(rpg_t *rpg)
     my_events(&rpg->begin, &rpg->all_events);
     move_all_fps_independant(rpg);
     animate_player(rpg);
-    if (rpg->screen[SC_MENU].active) {
+    if (rpg->screen[SC_MENU].active || rpg->screen[SC_CUSTOM_SKINS].active) {
         set_view(rpg, rpg->screen[SC_MENU].view_pos);
         manage_menu(rpg);
     }

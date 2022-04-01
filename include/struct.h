@@ -131,6 +131,7 @@ typedef struct {
     images_t imgs_colors;
     screen_t *screen;
     sound_t sound;
+    int skin;
 } rpg_t;
 
 #endif
