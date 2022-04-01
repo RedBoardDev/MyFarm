@@ -31,6 +31,18 @@ sfColor get_color_from_player(sfImage *image, sfVector2f pos)
     return (sfImage_getPixel(image, pos.x, pos.y + 15));
 }
 
+void animate_selected_skin(rpg_t *rpg)
+{
+    float time_player =
+    sfClock_getElapsedTime(rpg->spritesheet[rpg->skin].clock).microseconds;
+    if (time_player >= 200000) {
+        rpg->spritesheet[rpg->skin].rect.left += 48;
+        sfClock_restart(rpg->spritesheet[rpg->skin].clock);
+    }
+    if (rpg->spritesheet[rpg->skin].rect.left >= 192)
+        rpg->spritesheet[rpg->skin].rect.left = 0;
+}
+
 void draw_all(rpg_t *rpg)
 {
     sfSprite_setTexture(rpg->begin.sprite, rpg->begin.texture, sfFalse);
@@ -46,7 +58,10 @@ void big_loop(rpg_t *rpg)
 {
     my_events(&rpg->begin, &rpg->all_events);
     move_all_fps_independant(rpg);
-    animate_player(rpg);
+    if (!rpg->screen[SC_CUSTOM_SKINS].active)
+        animate_player(rpg);
+    if (rpg->screen[SC_CUSTOM_SKINS].active)
+        animate_selected_skin(rpg);
     if (rpg->screen[SC_MENU].active || rpg->screen[SC_CUSTOM_SKINS].active) {
         set_view(rpg, rpg->screen[SC_MENU].view_pos);
         manage_menu(rpg);
