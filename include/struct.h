@@ -107,6 +107,7 @@ typedef struct {
 } spritesheet_t;
 
 typedef struct {
+    bool loop;
     sfSound *sound;
     sfSoundBuffer *sound_buffer;
 } sound_list_t;

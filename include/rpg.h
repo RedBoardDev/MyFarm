@@ -52,7 +52,7 @@ enum bleu_maisons {
 };
 
 enum sounds {
-    // SOUND_MAIN,
+    SOUND_MAIN,
     SOUND_WALK,
     SOUND_DOOR,
     NBR_SOUND,

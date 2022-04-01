@@ -39,7 +39,6 @@ void draw_all(rpg_t *rpg)
     sfRenderWindow_drawSprite(rpg->begin.window,
     rpg->begin.sprite, NULL);
     draw_spritesheets(&rpg->begin, rpg->spritesheet);
-    // draw_sfImage(rpg->begin.window, rpg->imgs_colors.main_house, (sfVector2f){650, 810}, (sfIntRect){0, 0, 700, 394});
     sfRenderWindow_display(rpg->begin.window);
 }
 
@@ -65,6 +64,7 @@ void myrpg(void)
         return;
     sfWindow_setFramerateLimit((sfWindow *)rpg.begin.window, 120);
     rpg.begin.fps.clock = sfClock_create();
+    play_sound(rpg.sound.sound_list[SOUND_MAIN].sound, rpg.sound.volume);
     while (sfRenderWindow_isOpen(rpg.begin.window)) {
         clean_window(&rpg.begin, sfBlack);
         big_loop(&rpg);

@@ -7,11 +7,12 @@
 
 #include "../include/rpg.h"
 
-void create_sound(char *filepath, sound_list_t *sound_list)
+void create_sound(char *filepath, bool loop, sound_list_t *sound_list)
 {
     sound_list->sound_buffer = sfSoundBuffer_createFromFile(filepath);
     sound_list->sound = sfSound_create();
     sfSound_setBuffer(sound_list->sound, sound_list->sound_buffer);
+    sfSound_setLoop(sound_list->sound, loop);
     sfSound_setVolume(sound_list->sound, 0);
 }
 

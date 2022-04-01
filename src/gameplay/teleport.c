@@ -53,9 +53,11 @@ void teleport_player_scene(rpg_t *rpg, sfImage *image, sfVector2f pos_player)
     color = get_color_from_player(image, pos_player);
     switch (color.b) {
     case B_BASE:
+        play_sound(rpg->sound.sound_list[SOUND_DOOR].sound, rpg->sound.volume);
         teleport_base(rpg);
         break;
     case B_JAIL:
+        play_sound(rpg->sound.sound_list[SOUND_DOOR].sound, rpg->sound.volume);
         teleport_jail(rpg);
         break;
     default:

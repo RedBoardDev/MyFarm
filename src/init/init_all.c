@@ -23,6 +23,7 @@ void init_all(rpg_t *rpg)
     rpg->begin.fps.clock = sfClock_create();
     rpg->begin.fps.timer = 0;
     rpg->all_events = init_all_events();
+    rpg->sound.volume = 0; //SET SOUND AT THE FINAL PUSH
     init_imgs(rpg);
     init_screens(rpg);
     rpg->spritesheet = malloc(sizeof(spritesheet_t) * NBR_SP);

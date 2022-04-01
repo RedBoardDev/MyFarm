@@ -81,7 +81,7 @@ spritesheet_t *spritesheet);
 // lib sound
 void stop_sound(sfSound *sound);
 void play_sound(sfSound *sound, float volume);
-void create_sound(char *filepath, sound_list_t *sound_list);
+void create_sound(char *filepath, bool loop, sound_list_t *sound_list);
 void destroy_sound(sfSound *sound, sfSoundBuffer *sound_buffer);
 
 //view
