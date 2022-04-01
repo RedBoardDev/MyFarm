@@ -15,6 +15,9 @@ void move_all_fps_independant(rpg_t *rpg)
     rpg->begin.fps.timer += delta;
     while (rpg->begin.fps.timer >= 8) {
         move_player_and_view(rpg);
+        // if (rpg->screen[SC_MAIN_MAP].active) {
+        //     Particle
+        // }
         rpg->begin.fps.timer -= 8;
     }
     sfClock_restart(rpg->begin.fps.clock);
