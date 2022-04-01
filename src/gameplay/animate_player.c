@@ -30,6 +30,7 @@ void animate_player(rpg_t *rpg)
         if (rpg->spritesheet[SP_PLAYER].rect.left >= 192)
             rpg->spritesheet[SP_PLAYER].rect.left = 0;
         sfClock_restart(rpg->spritesheet[SP_PLAYER].clock);
+        play_sound(rpg->sound.sound_list[SOUND_WALK].sound, rpg->sound.volume);
     }
 
     if (!rpg->screen[SC_MAIN_MAP].active)
