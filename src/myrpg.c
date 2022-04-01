@@ -48,7 +48,6 @@ void big_loop(rpg_t *rpg)
     my_events(&rpg->begin, &rpg->all_events);
     move_all_fps_independant(rpg);
     animate_player(rpg);
-    printf("%d %d\n", rpg->all_events.mouse.pos.x, rpg->all_events.mouse.pos.x);
     if (rpg->screen[SC_MENU].active) {
         set_view(rpg, rpg->screen[SC_MENU].view_pos);
         manage_menu(rpg);
@@ -63,6 +62,7 @@ void myrpg(void)
 {
     rpg_t rpg;
     rpg.imgs_colors.main_map = sfImage_createFromFile("assets/img/main_map_colors.png");
+    rpg.imgs_colors.backgrounds = sfImage_createFromFile("assets/img/house/all_backgrounds_colors.png");
     rpg.imgs_colors.main_house = sfImage_createFromFile("assets/img/house/background_base_colors.png");
 
     init_all(&rpg);

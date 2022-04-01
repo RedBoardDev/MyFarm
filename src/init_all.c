@@ -24,9 +24,9 @@ void init_screen(rpg_t *rpg)
     rpg->screen[SC_MENU] = (screen_t){.active = true,
     .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0};
     rpg->screen[SC_MAIN_MAP] = (screen_t){.active = false,
-    .view_pos = {1090, 613}, .view_zoom = 0.4};
+    .view_pos = {SPAWN_X, SPAWN_Y}, .view_zoom = 0.4};
     rpg->screen[SC_BASE] = (screen_t){.active = false,
-    .view_pos = {1090, 613}, .view_zoom = 0.4};
+    .view_pos = {SPAWN_X - 30, SPAWN_Y - 170}, .view_zoom = 0.4};
 }
 
 void init_sound(rpg_t *rpg)
@@ -39,18 +39,18 @@ void init_sound(rpg_t *rpg)
 
 void init_all(rpg_t *rpg)
 {
+    init_screen(rpg);
     rpg->begin.fps.timer = 0;
     rpg->begin.fps.clock = sfClock_create();
     rpg->all_events = init_all_events();
     rpg->spritesheet = malloc(sizeof(spritesheet_t) * NBR_SP);
     rpg->begin.view.view = sfView_createFromRect((sfFloatRect)
     {0, 0, 1920, 1080});
-    rpg->begin.view.center = (sfVector2f){SPAWN_X, SPAWN_Y};
+    rpg->begin.view.center = rpg->screen[SC_MAIN_MAP].view_pos;
     sfView_zoom(rpg->begin.view.view , 0.4);
     rpg->begin.view.view =
     sfView_createFromRect((sfFloatRect){0, 0, 1920, 1080});
     init_csfml(&rpg->begin);
     init_spritesheets(rpg->spritesheet, &rpg->begin);
-    init_screen(rpg);
     init_sound(rpg);
 }

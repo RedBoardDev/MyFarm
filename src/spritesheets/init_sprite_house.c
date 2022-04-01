@@ -11,7 +11,7 @@ void init_spritesheet_house(spritesheet_t *spritesheet, beginning_t *begin)
 {
     set_one_sprite("assets/img/house/background_base.png",
     &spritesheet[SP_BACKGROUND_SC_BASE],
-    begin, (init_sprite_t){{650 + 700 / 2, 810 + 394 / 2}, {1, 1},
+    begin, (init_sprite_t){{577 + 700 / 2, 671 + 394 / 2}, {1, 1},
     {0, 0, 700, 394}, .clickable = false, .active = false});
     set_one_sprite("assets/img/house/background_jail.png",
     &spritesheet[SP_BACKGROUND_JAIL],

@@ -16,15 +16,14 @@ void teleport_base(rpg_t *rpg)
     if (rpg->screen[SC_MAIN_MAP].active) {
         rpg->screen[SC_MAIN_MAP].active = false;
         rpg->screen[SC_BASE].active = true;
-        // rpg->spritesheet[SP_PLAYER].pos.y - 100;
+        rpg->begin.view.center = rpg->screen[SC_BASE].view_pos;
         active_spritesheet_scene(false, screen_game, rpg->spritesheet);
         active_spritesheet_scene(true, screen_base, rpg->spritesheet);
     } else {
         rpg->screen[SC_MAIN_MAP].active = true;
         rpg->screen[SC_BASE].active = false;
-        rpg->spritesheet[SP_PLAYER].pos = (sfVector2f){SPAWN_X + 35, SPAWN_Y};
-        rpg->begin.view.center = (sfVector2f){SPAWN_X, SPAWN_Y};
-        // rpg->spritesheet[SP_PLAYER].pos.y + 10;
+        rpg->spritesheet[SP_PLAYER].pos = rpg->screen[SC_MAIN_MAP].view_pos;
+        rpg->begin.view.center = rpg->screen[SC_MAIN_MAP].view_pos;
         active_spritesheet_scene(false, screen_base, rpg->spritesheet);
         active_spritesheet_scene(true, screen_game, rpg->spritesheet);
     }

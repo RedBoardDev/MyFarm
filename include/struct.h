@@ -118,6 +118,13 @@ typedef struct {
 } sound_t;
 
 typedef struct {
+    sfImage *main_map;
+    sfImage *backgrounds;
+    sfImage *main_house;
+    sfImage *jail;
+} images_t;
+
+typedef struct {
     beginning_t begin;
     events_t all_events;
     spritesheet_t *spritesheet;
@@ -125,6 +132,5 @@ typedef struct {
     screen_t *screen;
     sound_t sound;
 } rpg_t;
-
 
 #endif
