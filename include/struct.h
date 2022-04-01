@@ -125,6 +125,16 @@ typedef struct {
     sfImage *jail;
 } images_t;
 
+// typedef struct {
+//     int monay;
+//     float life;
+//     float mana;
+//     int speed:
+//     int damage;
+//     int knowledge;
+
+// } player_stats_t;
+
 typedef struct {
     beginning_t begin;
     events_t all_events;
@@ -132,6 +142,7 @@ typedef struct {
     images_t imgs_colors;
     screen_t *screen;
     sound_t sound;
+    // player_stats_t player_stats;
 } rpg_t;
 
 #endif
