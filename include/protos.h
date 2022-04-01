@@ -75,7 +75,7 @@ beginning_t *begin, init_sprite_t init_sprite);
 void write_text(beginning_t *begin, init_text_t struct_text);
 void draw_one_sprite(beginning_t *begin, sfSprite *sprite, sfIntRect rect,
 sfVector2f pos);
-void active_spritesheet_scene(bool status, int *screen_i,
+void toggle_spritesheet_scene(bool status, int *screen_i,
 spritesheet_t *spritesheet);
 
 // lib sound

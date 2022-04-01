@@ -48,7 +48,7 @@ sfVector2f pos)
     sfRenderWindow_drawSprite(begin->window, sprite, NULL);
 }
 
-void active_spritesheet_scene(bool status, int *screen_i,
+void toggle_spritesheet_scene(bool status, int *screen_i,
 spritesheet_t *spritesheet)
 {
     for (int i = 0; screen_i[i] != -1; ++i)
