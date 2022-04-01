@@ -14,26 +14,30 @@ EXTENSION	=	.c
 SRC_FILES	=	events/events	\
 				events/key_pressed	\
 				events/key_released	\
-				interface/check_click_buttons	\
-				interface/button_menu	\
-				spritesheets/utils_sprites	\
-				spritesheets/init_main_map	\
-				spritesheets/init_sprites_menu	\
-				spritesheets/init_spritesheets	\
-				spritesheets/init_sprite_house	\
 				events/mouse	\
-				animate_player	\
+				gameplay/animate_player	\
+				gameplay/move_all	\
+				gameplay/move_player_and_view	\
+				gameplay/teleport	\
+				init/init_all	\
+				init/init_imgs	\
+				init/init_main_map	\
+				init/init_screens	\
+				init/init_sounds	\
+				init/init_spritesheets_menu	\
+				init/init_spritesheets_rooms	\
+				init/init_spritesheets	\
+				init/init_view	\
+				interface/button_menu	\
+				interface/check_click_buttons	\
+				interface/menu	\
+				spritesheets/utils_sprites	\
 				clean_window	\
 				draw_simple	\
-				init_all	\
 				lib_sound	\
 				main	\
-				menu	\
-				move_all	\
-				move_player_and_view	\
-				utils	\
 				myrpg	\
-				teleport	\
+				utils	\
 				view	\
 
 SRC	=	$(addprefix $(SRC_DIR), $(addsuffix $(EXTENSION), $(SRC_FILES)))

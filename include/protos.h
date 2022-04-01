@@ -44,7 +44,14 @@ void quit_game(rpg_t *rpg);
 
 // init
 void init_all(rpg_t *rpg);
+void init_imgs(rpg_t *rpg);
+void init_main_map(spritesheet_t *spritesheet, beginning_t *begin);
+void init_screens(rpg_t *rpg);
+void init_sounds(rpg_t *rpg);
 void init_menu(spritesheet_t *spritesheet, beginning_t *begin);
+void init_spritesheets_rooms(spritesheet_t *spritesheet, beginning_t *begin);
+void init_spritesheets(spritesheet_t *spritesheet, beginning_t *begin);
+void init_view(rpg_t *rpg);
 
 // draw simple
 void my_draw_circle(sfUint8 *framebuffer, sfVector2i center, int radius,
@@ -70,7 +77,6 @@ void draw_one_sprite(beginning_t *begin, sfSprite *sprite, sfIntRect rect,
 sfVector2f pos);
 void active_spritesheet_scene(bool status, int *screen_i,
 spritesheet_t *spritesheet);
-void init_spritesheet_house(spritesheet_t *spritesheet, beginning_t *begin);
 
 // lib sound
 void stop_sound(sfSound *sound);

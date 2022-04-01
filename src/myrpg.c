@@ -52,8 +52,6 @@ void big_loop(rpg_t *rpg)
         set_view(rpg, rpg->screen[SC_MENU].view_pos);
         manage_menu(rpg);
     }
-    // sfFloatRect rect = sfSprite_getGlobalBounds(rpg->spritesheet[SP_BACKGROUND_SC_MAIN_MAP].sprite);
-    // printf("%0.0f %0.0f\n", rect.top, rect.left);
     check_click_buttons(rpg);
     draw_all(rpg);
 }
@@ -61,9 +59,6 @@ void big_loop(rpg_t *rpg)
 void myrpg(void)
 {
     rpg_t rpg;
-    rpg.imgs_colors.main_map = sfImage_createFromFile("assets/img/main_map_colors.png");
-    rpg.imgs_colors.backgrounds = sfImage_createFromFile("assets/img/house/all_backgrounds_colors.png");
-    rpg.imgs_colors.main_house = sfImage_createFromFile("assets/img/house/background_base_colors.png");
 
     init_all(&rpg);
     if (!rpg.begin.window || !rpg.begin.framebuffer)

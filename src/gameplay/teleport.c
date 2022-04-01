@@ -5,7 +5,7 @@
 ** teleport.c
 */
 
-#include "../include/rpg.h"
+#include "../../include/rpg.h"
 
 extern int screen_game[];
 extern int screen_base[];

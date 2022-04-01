@@ -32,7 +32,7 @@ void destroy_all(beginning_t *begin)
 
 int my_rand(int min, int max)
 {
-    return (min + rand() % (max - min));
+    return (min + rand() % ((max + 1) - min));
 }
 
 bool check_mouse_on_one_button(sfVector2i pos, sfFloatRect collision)

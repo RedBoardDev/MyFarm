@@ -10,7 +10,6 @@
 
     #include "my.h"
     #include "protos.h"
-    #include "spritesheet.h"
     #include "struct.h"
     #define RADIAN(x) x * 3.14159265359 / 180
     #define FUNCTIONS_BUTTONS {nothing, nothing, nothing, nothing, nothing,  \

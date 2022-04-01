@@ -7,7 +7,7 @@
 
 #include "../../include/rpg.h"
 
-void init_spritesheet_house(spritesheet_t *spritesheet, beginning_t *begin)
+void init_spritesheets_rooms(spritesheet_t *spritesheet, beginning_t *begin)
 {
     set_one_sprite("assets/img/house/background_base.png",
     &spritesheet[SP_BACKGROUND_SC_BASE],

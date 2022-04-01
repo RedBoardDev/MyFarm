@@ -5,7 +5,7 @@
 ** move_player_and_view.c
 */
 
-#include "../include/rpg.h"
+#include "../../include/rpg.h"
 
 void set_limits_player(rpg_t *rpg)
 {

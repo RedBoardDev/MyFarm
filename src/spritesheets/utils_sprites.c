@@ -47,3 +47,10 @@ sfVector2f pos)
     sfSprite_setPosition(sprite, pos);
     sfRenderWindow_drawSprite(begin->window, sprite, NULL);
 }
+
+void active_spritesheet_scene(bool status, int *screen_i,
+spritesheet_t *spritesheet)
+{
+    for (int i = 0; screen_i[i] != -1; ++i)
+        spritesheet[screen_i[i]].active = status;
+}

@@ -7,7 +7,7 @@
 
 #include "../../include/rpg.h"
 
-void init_button_menu(spritesheet_t *spritesheet, beginning_t *begin)
+void init_buttons_menu(spritesheet_t *spritesheet, beginning_t *begin)
 {
     set_one_sprite("assets/img/menu/button_play.png",
     &spritesheet[SP_PLAY],
@@ -29,5 +29,5 @@ void init_menu(spritesheet_t *spritesheet, beginning_t *begin)
     &spritesheet[SP_BACKGROUND_SC_MENU],
     begin, (init_sprite_t){{WIDTH / 2, HEIGHT / 2}, {1, 1}, {0, 0, 1920, 1080},
     .clickable = false, .active = true});
-    init_button_menu(spritesheet, begin);
+    init_buttons_menu(spritesheet, begin);
 }

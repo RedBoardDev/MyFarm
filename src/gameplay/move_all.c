@@ -5,7 +5,7 @@
 ** move_all.c
 */
 
-#include "../include/rpg.h"
+#include "../../include/rpg.h"
 
 void move_all_fps_independant(rpg_t *rpg)
 {

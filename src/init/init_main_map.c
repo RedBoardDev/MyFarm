@@ -7,7 +7,7 @@
 
 #include "../../include/rpg.h"
 
-void init_background_main_map(spritesheet_t *spritesheet, beginning_t *begin)
+void init_main_map(spritesheet_t *spritesheet, beginning_t *begin)
 {
     set_one_sprite("assets/img/main_map.png",
     &spritesheet[SP_BACKGROUND_SC_MAIN_MAP],

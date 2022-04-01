@@ -5,7 +5,7 @@
 ** animate_player.c
 */
 
-#include "../include/rpg.h"
+#include "../../include/rpg.h"
 
 void animate_player(rpg_t *rpg)
 {

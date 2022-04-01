@@ -5,7 +5,7 @@
 ** menu.c
 */
 
-#include "../include/rpg.h"
+#include "../../include/rpg.h"
 
 void manage_menu(rpg_t *rpg)
 {
