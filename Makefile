@@ -24,9 +24,9 @@ SRC_FILES	=	events/events	\
 				init/init_main_map	\
 				init/init_screens	\
 				init/init_sounds	\
-				init/init_spritesheets_menu	\
-				init/init_spritesheets_rooms	\
-				init/init_spritesheets	\
+				spritesheets/init_spritesheets_menu	\
+				spritesheets/init_spritesheets_rooms	\
+				spritesheets/init_spritesheets	\
 				init/init_view	\
 				interface/functions_pointers/button_menu	\
 				interface/functions_pointers/choose_skin1	\
@@ -38,6 +38,7 @@ SRC_FILES	=	events/events	\
 				draw_simple	\
 				lib_sound	\
 				main	\
+				my_exit	\
 				myrpg	\
 				utils	\
 				view	\

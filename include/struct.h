@@ -125,15 +125,15 @@ typedef struct {
     sfImage *jail;
 } images_t;
 
-// typedef struct {
-//     int monay;
-//     float life;
-//     float mana;
-//     int speed:
-//     int damage;
-//     int knowledge;
+typedef struct {
+    int money;
+    float speed;
+    float life;
+    float mana;
+    int damage;
+    int knowledge;
 
-// } player_stats_t;
+} player_stats_t;
 
 typedef struct {
     beginning_t begin;
@@ -143,7 +143,7 @@ typedef struct {
     screen_t *screen;
     sound_t sound;
     int skin;
-    // player_stats_t player_stats;
+    player_stats_t player_stats;
 } rpg_t;
 
 #endif

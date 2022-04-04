@@ -56,7 +56,7 @@ void draw_all(rpg_t *rpg)
 
 void big_loop(rpg_t *rpg)
 {
-    my_events(&rpg->begin, &rpg->all_events);
+    my_events(rpg);
     move_all_fps_independant(rpg);
     if (!rpg->screen[SC_CUSTOM_SKINS].active)
         animate_player(rpg);

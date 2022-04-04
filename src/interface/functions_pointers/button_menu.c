@@ -12,7 +12,8 @@ extern int screen_custom[];
 
 void set_player(rpg_t *rpg)
 {
-    sfSprite_setScale(rpg->spritesheet[rpg->skin].sprite, (sfVector2f){0.7, 0.7});
+    sfSprite_setScale(rpg->spritesheet[rpg->skin].sprite,
+    (sfVector2f){0.7, 0.7});
 }
 
 void launch_game(rpg_t *rpg)
@@ -30,13 +31,15 @@ void launch_game(rpg_t *rpg)
 
 void quit_game(rpg_t *rpg)
 {
-    sfRenderWindow_close(rpg->begin.window);
+    my_exit(rpg);
 }
 
 void display_custom_skins(rpg_t *rpg)
 {
     rpg->screen[SC_MENU].active = false;
     rpg->screen[SC_CUSTOM_SKINS].active = true;
+    sfSprite_setColor(rpg->spritesheet[SP_BACKGROUND_SC_MENU].sprite,
+    (sfColor){255, 255, 255, 180});
     toggle_spritesheet_scene(rpg, false, screen_menu, rpg->spritesheet);
     toggle_spritesheet_scene(rpg, true, screen_custom, rpg->spritesheet);
 }
