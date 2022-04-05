@@ -105,4 +105,8 @@ sfColor get_color_from_player(sfImage *image, sfVector2f pos);
 void animate_player(rpg_t *rpg);
 void draw_sfImage(sfRenderWindow *window, sfImage *image, sfVector2f pos, sfIntRect rect);
 
+//cursor
+void hide_cursor(sfRenderWindow *window);
+void show_cursor(sfRenderWindow *window);
+
 #endif

@@ -40,6 +40,7 @@ SRC_FILES	=	events/events	\
 				main	\
 				my_exit	\
 				myrpg	\
+				set_cursor	\
 				utils	\
 				view	\
 
