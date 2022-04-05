@@ -18,6 +18,17 @@ events_t init_all_events(void)
     .click = false}});
 }
 
+void init_player_stats(player_stats_t *player_stats)
+{
+    player_stats->money = 0;
+    player_stats->speed = 1.0;
+    player_stats->life = 10.0;
+    player_stats->mana = 0.0;
+    player_stats->damage = 1;
+    player_stats->knowledge = 1;
+
+}
+
 void init_all(rpg_t *rpg)
 {
     rpg->begin.fps.clock = sfClock_create();
@@ -32,4 +43,5 @@ void init_all(rpg_t *rpg)
     init_spritesheets(rpg->spritesheet, &rpg->begin);
     init_sounds(rpg);
     init_csfml(&rpg->begin);
+    init_player_stats(&rpg->player_stats);
 }

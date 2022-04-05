@@ -45,7 +45,8 @@ void init_all_players(spritesheet_t *spritesheet, beginning_t *begin)
     begin, (init_sprite_t){{i, HEIGHT / 2 + 350}, {3, 3},
     {0, 0, 48, 62}, true, false});
     i += 200;
-    set_one_sprite("assets/img/skins/yellow.png", &spritesheet[SP_PLAYER_YELLOW],
+    set_one_sprite("assets/img/skins/yellow.png",
+    &spritesheet[SP_PLAYER_YELLOW],
     begin, (init_sprite_t){{i, HEIGHT / 2 + 350}, {3, 3},
     {0, 0, 48, 62}, true, false});
 }
@@ -57,4 +58,5 @@ void init_spritesheets(spritesheet_t *spritesheet, beginning_t *begin)
     init_player(spritesheet, begin);
     init_all_players(spritesheet, begin);
     init_menu(spritesheet, begin);
+    init_soundbox(spritesheet, begin);
 }

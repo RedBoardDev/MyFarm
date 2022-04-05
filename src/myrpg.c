@@ -56,12 +56,16 @@ void draw_all(rpg_t *rpg)
 
 void big_loop(rpg_t *rpg)
 {
-    my_events(&rpg->begin, &rpg->all_events);
+    my_events(rpg);
     move_all_fps_independant(rpg);
     if (!rpg->screen[SC_CUSTOM_SKINS].active)
         animate_player(rpg);
     if (rpg->screen[SC_CUSTOM_SKINS].active)
         animate_selected_skin(rpg);
+    if (rpg->screen[SC_MENU].active)
+        hide_cursor(rpg->begin.window);
+    else
+        show_cursor(rpg->begin.window);
     if (rpg->screen[SC_MENU].active || rpg->screen[SC_CUSTOM_SKINS].active) {
         set_view(rpg, rpg->screen[SC_MENU].view_pos);
         manage_menu(rpg);

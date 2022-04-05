@@ -22,13 +22,13 @@
     #include "struct.h"
 
 void myrpg(void);
+void my_exit(rpg_t *rpg);
 void manage_menu(rpg_t *rpg);
 void teleport_player_scene(rpg_t *rpg, sfImage *image, sfVector2f pos_player);
 
 // events
-void my_events(beginning_t *begin, events_t *all_events);
-void events_key_pressed(beginning_t *begin, sfEvent event,
-events_t *all_events);
+void my_events(rpg_t *rpg);
+void events_key_pressed(rpg_t *rpg, sfEvent event);
 void events_key_released(sfEvent event, events_t *all_events);
 void events_mouse_pressed(beginning_t *begin, sfEvent event,
 events_t *all_events);
@@ -57,6 +57,7 @@ void init_imgs(rpg_t *rpg);
 void init_main_map(spritesheet_t *spritesheet, beginning_t *begin);
 void init_screens(rpg_t *rpg);
 void init_sounds(rpg_t *rpg);
+void init_soundbox(spritesheet_t *spritesheet, beginning_t *begin);
 void init_menu(spritesheet_t *spritesheet, beginning_t *begin);
 void init_spritesheets_rooms(spritesheet_t *spritesheet, beginning_t *begin);
 void init_spritesheets(spritesheet_t *spritesheet, beginning_t *begin);
@@ -103,5 +104,9 @@ void move_all_fps_independant(rpg_t *rpg);
 sfColor get_color_from_player(sfImage *image, sfVector2f pos);
 void animate_player(rpg_t *rpg);
 void draw_sfImage(sfRenderWindow *window, sfImage *image, sfVector2f pos, sfIntRect rect);
+
+//cursor
+void hide_cursor(sfRenderWindow *window);
+void show_cursor(sfRenderWindow *window);
 
 #endif

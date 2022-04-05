@@ -7,14 +7,14 @@
 
 #include "../../include/rpg.h"
 
-void events_key_global(sfEvent event, beginning_t *begin, events_t *all_events)
+void events_key_global(sfEvent event, rpg_t *rpg)
 {
     switch (event.type) {
         case sfEvtKeyPressed:
-            events_key_pressed(begin, event, all_events);
+            events_key_pressed(rpg, event);
             break;
         case sfEvtKeyReleased:
-            events_key_released(event, all_events);
+            events_key_released(event, &rpg->all_events);
             break;
         case sfEvtTextEntered:
             break;
@@ -44,25 +44,26 @@ events_t *all_events)
     }
 }
 
-void my_events(beginning_t *begin, events_t *all_events)
+void my_events(rpg_t *rpg)
 {
     sfEvent event;
 
-    all_events->mouse_wheel.up = false;
-    all_events->mouse_wheel.down = false;
-    all_events->mouse.left_released = false;
-    all_events->mouse.move_x = 0;
-    all_events->mouse.move_y = 0;
-    while (sfRenderWindow_pollEvent(begin->window, &event)) {
+    rpg->all_events.mouse_wheel.up = false;
+    rpg->all_events.mouse_wheel.down = false;
+    rpg->all_events.mouse.left_released = false;
+    rpg->all_events.mouse.move_x = 0;
+    rpg->all_events.mouse.move_y = 0;
+    while (sfRenderWindow_pollEvent(rpg->begin.window, &event)) {
         if (event.type == sfEvtClosed)
-            sfRenderWindow_close(begin->window);
+            my_exit(rpg);
         if (event.type == sfEvtKeyPressed || event.type == sfEvtKeyReleased ||
         event.type == sfEvtTextEntered)
-            events_key_global(event, begin, all_events);
+            events_key_global(event, rpg);
         if (event.type == sfEvtMouseButtonPressed || event.type ==
         sfEvtMouseButtonReleased || event.type == sfEvtMouseWheelScrolled ||
         event.type == sfEvtMouseMoved)
-            events_mouse_global(event, begin, all_events);
+            events_mouse_global(event, &rpg->begin, &rpg->all_events);
     }
-    all_events->mouse.pos = sfMouse_getPositionRenderWindow(begin->window);
+    rpg->all_events.mouse.pos =
+    sfMouse_getPositionRenderWindow(rpg->begin.window);
 }
