@@ -15,6 +15,7 @@ const int screen_game[] = {SP_BACKGROUND_SC_MAIN_MAP, -2, -1};
 const int screen_base[] = {SP_BACKGROUND_SC_BASE, -2, -1};
 const int screen_jail[] = {SP_BACKGROUND_JAIL, -2, -1};
 const int screen_grotte[] = {SP_BACKGROUND_GROTTE, -2, -1};
+const int screen_inventory[] = {SP_INVENTORY, -1};
 
 void init_screens(rpg_t *rpg)
 {

@@ -37,6 +37,8 @@ events_t *all_events)
         all_events->q = true;
     if (sfKeyD == event.key.code)
         all_events->d = true;
+    if (sfKeyE == event.key.code)
+        all_events->e = true;
     if (sfKeySpace == event.key.code)
         all_events->space = true;
     if (sfKeySpace == event.key.code)

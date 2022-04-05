@@ -7,6 +7,8 @@
 
 #include "../include/rpg.h"
 
+extern int screen_inventory[];
+
 void draw_sfImage(sfRenderWindow *window, sfImage *image, sfVector2f pos, sfIntRect rect)
 {
     sfTexture *texture = sfTexture_createFromImage(image, NULL);
@@ -62,14 +64,15 @@ void big_loop(rpg_t *rpg)
         animate_player(rpg);
     if (rpg->screen[SC_CUSTOM_SKINS].active)
         animate_selected_skin(rpg);
-    if (rpg->screen[SC_MENU].active)
-        hide_cursor(rpg->begin.window);
-    else
-        show_cursor(rpg->begin.window);
+    if (rpg->screen[SC_MAIN_MAP].active)
+        if (rpg->all_events.e)
+            toggle_spritesheet_scene(rpg, true, screen_inventory, rpg->spritesheet);
     if (rpg->screen[SC_MENU].active || rpg->screen[SC_CUSTOM_SKINS].active) {
         set_view(rpg, rpg->screen[SC_MENU].view_pos);
+        show_cursor(rpg->begin.window);
         manage_menu(rpg);
-    }
+    } else
+        hide_cursor(rpg->begin.window);
     check_click_buttons(rpg);
     draw_all(rpg);
 }

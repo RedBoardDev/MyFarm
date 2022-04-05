@@ -80,6 +80,7 @@ typedef struct {
     bool q;
     bool s;
     bool d;
+    bool e;
     bool escape;
     bool space;
     bool ctrl;

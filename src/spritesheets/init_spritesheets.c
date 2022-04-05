@@ -59,4 +59,5 @@ void init_spritesheets(spritesheet_t *spritesheet, beginning_t *begin)
     init_all_players(spritesheet, begin);
     init_menu(spritesheet, begin);
     init_soundbox(spritesheet, begin);
+    init_inventory(spritesheet, begin);
 }

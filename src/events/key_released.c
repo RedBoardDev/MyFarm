@@ -33,6 +33,8 @@ void events_key_released_letters(sfEvent event, events_t *all_events)
         all_events->q = false;
     if (sfKeyD == event.key.code)
         all_events->d = false;
+    if (sfKeyE == event.key.code)
+        all_events->e = true;
 }
 
 void events_key_released(sfEvent event, events_t *all_events)
