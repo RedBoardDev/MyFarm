@@ -27,4 +27,6 @@ void init_screens(rpg_t *rpg)
     .view_pos = {SPAWN_X, SPAWN_Y}, .view_zoom = 0.4};
     rpg->screen[SC_BASE] = (screen_t){.active = false,
     .view_pos = {SPAWN_X - 30, SPAWN_Y - 170}, .view_zoom = 0.4};
+    rpg->screen[SC_GROTTE] = (screen_t){.active = false,
+    .view_pos = {SPAWN_X - 300, SPAWN_Y - 170}, .view_zoom = 0.4};
 }

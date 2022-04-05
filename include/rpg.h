@@ -53,6 +53,7 @@ enum screens {
     SC_CUSTOM_SKINS,
     SC_MAIN_MAP,
     SC_BASE,
+    SC_GROTTE,
     // SC_CUSTOM_PLAYER,
     // SC_JAIL,
     NBR_SCREENS
