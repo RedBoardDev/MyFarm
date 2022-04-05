@@ -9,10 +9,10 @@
 
 void hide_cursor(sfRenderWindow *window)
 {
-    sfRenderWindow_setMouseCursorVisible(window, true);
+    sfRenderWindow_setMouseCursorVisible(window, false);
 }
 
 void show_cursor(sfRenderWindow *window)
 {
-    sfRenderWindow_setMouseCursorVisible(window, false);
+    sfRenderWindow_setMouseCursorVisible(window, true);
 }

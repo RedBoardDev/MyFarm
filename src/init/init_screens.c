@@ -14,6 +14,7 @@ SP_PLAYER_PINK, SP_PLAYER_RED, SP_PLAYER_YELLOW, SP_PLAY, -1};
 const int screen_game[] = {SP_BACKGROUND_SC_MAIN_MAP, -2, -1};
 const int screen_base[] = {SP_BACKGROUND_SC_BASE, -2, -1};
 const int screen_jail[] = {SP_BACKGROUND_JAIL, -2, -1};
+const int screen_inventory[] = {SP_INVENTORY, -1};
 
 void init_screens(rpg_t *rpg)
 {

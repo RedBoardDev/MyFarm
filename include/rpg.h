@@ -44,6 +44,7 @@ enum sprites {
     SP_PLAY,
     SP_QUIT,
     SP_CUSTOM,
+    SP_INVENTORY,
     NBR_SP
 };
 
