@@ -65,26 +65,18 @@ void move_player_and_view_vertical(rpg_t *rpg, sfImage *image, sfVector2f pos_pl
 
 void move_player_jump(rpg_t *rpg, sfImage *image, sfVector2f pos_player)
 {
-    // float time_player =
-    // sfClock_getElapsedTime(rpg->spritesheet[rpg->skin].c_attack).microseconds;
-    // sfColor color_up = get_color_from_player(image, (sfVector2f){pos_player.x, pos_player.y - 2});
-    // sfColor color_down = get_color_from_player(image, (sfVector2f){pos_player.x, pos_player.y + 2});
+    int floor = 1330;
+    int max_jump = 1200;
 
-    // if (rpg->all_events.space && color_down.r == 255)
-    //     rpg->player_stats.incr_pos.y = -2;
-    // if (!rpg->all_events.space && color_down.r != 255)
-    //     rpg->player_stats.incr_pos.y = 2;
-    // if (color_up.r == 255)
-    //     rpg->player_stats.incr_pos.y = 2;
-
-    // if (color_up.r != 255 && rpg->all_events.space)
-    //     rpg->spritesheet[rpg->skin].pos.y -= 2;
-    // if (color_down.r != 255 && !rpg->all_events.space)
-    //     rpg->spritesheet[rpg->skin].pos.y += 2;
-    // if (rpg->all_events.up && color_down.r == 255)
-    //     rpg->spritesheet[rpg->skin].pos.y -= 2;
-    // if (!rpg->all_events.space && color_down.r != 255)
-    //     rpg->spritesheet[rpg->skin].pos.y += 2;
+    if (rpg->all_events.space && rpg->spritesheet[rpg->skin].pos.y >= floor)
+        rpg->player_stats.incr_pos.y = -2;
+    if (!rpg->all_events.space && rpg->spritesheet[rpg->skin].pos.y < floor)
+        rpg->player_stats.incr_pos.y = 2;
+    rpg->spritesheet[rpg->skin].pos.y += rpg->player_stats.incr_pos.y;
+    if (rpg->spritesheet[rpg->skin].pos.y <= max_jump)
+        rpg->player_stats.incr_pos.y = 2;
+    if (rpg->spritesheet[rpg->skin].pos.y >= floor)
+        rpg->player_stats.incr_pos.y = 0;
 }
 
 void move_player_and_view(rpg_t *rpg)
