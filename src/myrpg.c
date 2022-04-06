@@ -54,6 +54,12 @@ void draw_all(rpg_t *rpg)
     sfRenderWindow_display(rpg->begin.window);
 }
 
+void move_life_bar(rpg_t *rpg, int percentage)
+{
+    rpg->spritesheet[SP_LIFE_BAR].rect.width = percentage * 3.6;
+    sfSprite_setTextureRect(rpg->spritesheet[SP_LIFE_BAR].sprite, rpg->spritesheet[SP_LIFE_BAR].rect);
+}
+
 void big_loop(rpg_t *rpg)
 {
     my_events(rpg);
@@ -63,6 +69,16 @@ void big_loop(rpg_t *rpg)
     if (rpg->screen[SC_CUSTOM_SKINS].active)
         animate_selected_skin(rpg);
     toggle_inventory(rpg);
+    if (rpg->all_events.page_down && rpg->player_stats.life > 0) {
+        --rpg->player_stats.life;
+        rpg->all_events.page_down = false;
+        move_life_bar(rpg, rpg->player_stats.life * 5);
+    }
+    if (rpg->all_events.page_up && rpg->player_stats.life < 20) {
+        ++rpg->player_stats.life;
+        rpg->all_events.page_up = false;
+        move_life_bar(rpg, rpg->player_stats.life * 5);
+    }
     // if (rpg->screen[SC_MENU].active)
     //     show_cursor(rpg->begin.window);
     // else

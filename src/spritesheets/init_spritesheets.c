@@ -51,6 +51,16 @@ void init_all_players(spritesheet_t *spritesheet, beginning_t *begin)
     {0, 0, 48, 62}, true, false});
 }
 
+void init_life_bar(spritesheet_t *spritesheet, beginning_t *begin)
+{
+    set_one_sprite("assets/img/life_bar_box.png", &spritesheet[SP_LIFE_BAR_BOX],
+    begin, (init_sprite_t){{444 - 320, 1196 - 197}, {0.25, 0.25},
+    {0, 0, 451, 121}, false, false});
+    set_one_sprite("assets/img/life_bar.png", &spritesheet[SP_LIFE_BAR],
+    begin, (init_sprite_t){{444 - 320, 1196 - 197}, {0.25, 0.25},
+    {0, 0, 451, 121}, false, false});
+}
+
 void init_spritesheets(spritesheet_t *spritesheet, beginning_t *begin)
 {
     init_main_map(spritesheet, begin);
@@ -60,4 +70,5 @@ void init_spritesheets(spritesheet_t *spritesheet, beginning_t *begin)
     init_menu(spritesheet, begin);
     init_soundbox(spritesheet, begin);
     init_inventory(spritesheet, begin);
+    init_life_bar(spritesheet, begin);
 }

@@ -46,6 +46,8 @@ enum sprites {
     SP_QUIT,
     SP_CUSTOM,
     SP_INVENTORY,
+    SP_LIFE_BAR_BOX,
+    SP_LIFE_BAR,
     NBR_SP
 };
 

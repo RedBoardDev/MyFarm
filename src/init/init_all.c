@@ -24,7 +24,7 @@ void init_player_stats(player_stats_t *player_stats)
     player_stats->incr_pos.y = 0;
     player_stats->money = 0;
     player_stats->speed = 1.0;
-    player_stats->life = 10.0;
+    player_stats->life = 20.0;
     player_stats->mana = 0.0;
     player_stats->damage = 1;
     player_stats->knowledge = 1;
