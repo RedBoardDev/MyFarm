@@ -7,15 +7,38 @@
 
 #include "../../include/rpg.h"
 
-events_t init_all_events(void)
+void init_all_events_mouse(events_t *events)
 {
-    return ((events_t){.left = false, .right = false, .up = false,
-    .down = false, .page_up = false, .page_down = false, .z = false, .s = false,
-    .q = false, .d = false, .escape = false,
-    .space = false, .ctrl = false, .tab = false, .enter = false, .mouse =
-    {.left = false, .left_released = false, .right = false, .move_x = 0,
-    .move_y = 0, .pos = {0, 0}}, .mouse_wheel = {.up = false, .down = false,
-    .click = false}});
+    events->mouse.left = false;
+    events->mouse.left_released = false;
+    events->mouse.right = false;
+    events->mouse.move_x = 0;
+    events->mouse.move_y = 0;
+    events->mouse.pos = (sfVector2i){0, 0};
+    events->mouse_wheel.up = false;
+    events->mouse_wheel.down = false;
+    events->mouse_wheel.click = false;
+}
+
+void init_all_events(events_t *events)
+{
+    events->left = false;
+    events->right = false;
+    events->up = false;
+    events->down = false;
+    events->page_up = false;
+    events->page_down = false;
+    events->z = false;
+    events->q = false;
+    events->s = false;
+    events->d = false;
+    events->e = false;
+    events->escape = false;
+    events->space = false;
+    events->ctrl = false;
+    events->tab = false;
+    events->enter = false;
+    init_all_events_mouse(events);
 }
 
 void init_player_stats(player_stats_t *player_stats)
@@ -36,9 +59,9 @@ void init_all(rpg_t *rpg)
 {
     rpg->begin.fps.clock = sfClock_create();
     rpg->begin.fps.timer = 0;
-    rpg->all_events = init_all_events();
     rpg->skin = SP_PLAYER;
     rpg->sound.volume = 0; //SET SOUND AT THE FINAL PUSH
+    init_all_events(&rpg->all_events);
     init_imgs(rpg);
     init_screens(rpg);
     rpg->spritesheet = malloc(sizeof(spritesheet_t) * NBR_SP);

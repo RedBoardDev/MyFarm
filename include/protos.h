@@ -63,6 +63,7 @@ void init_spritesheets_rooms(spritesheet_t *spritesheet, beginning_t *begin);
 void init_spritesheets(spritesheet_t *spritesheet, beginning_t *begin);
 void init_view(rpg_t *rpg);
 void init_inventory(spritesheet_t *spritesheet, beginning_t *begin);
+void init_all_events(events_t *events);
 
 // draw simple
 void my_draw_circle(sfUint8 *framebuffer, sfVector2i center, int radius,

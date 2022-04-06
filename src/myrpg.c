@@ -61,6 +61,7 @@ void draw_all(rpg_t *rpg)
 
 void die(rpg_t *rpg)
 {
+    init_all_events(&rpg->all_events);
     rpg->player_stats.incr_pos.x = 0;
     rpg->player_stats.incr_pos.y = 0;
     rpg->player_stats.speed = 1.0;
