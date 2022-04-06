@@ -26,7 +26,7 @@ void help(void)
 
 int main(int ac, char **av)
 {
-if (ac == 2 && !my_strcmp("-h", av[1])) {
+    if (ac == 2 && !my_strcmp("-h", av[1])) {
         help();
         return (0);
     } else if (ac != 1)

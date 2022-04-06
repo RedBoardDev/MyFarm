@@ -20,6 +20,8 @@ events_t init_all_events(void)
 
 void init_player_stats(player_stats_t *player_stats)
 {
+    player_stats->incr_pos.x = 0;
+    player_stats->incr_pos.y = 0;
     player_stats->money = 0;
     player_stats->speed = 1.0;
     player_stats->life = 10.0;

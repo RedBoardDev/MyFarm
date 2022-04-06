@@ -63,9 +63,28 @@ void move_player_and_view_vertical(rpg_t *rpg, sfImage *image, sfVector2f pos_pl
     }
 }
 
-void move_player_jump(rpg_t *rpg)
+void move_player_jump(rpg_t *rpg, sfImage *image, sfVector2f pos_player)
 {
-    
+    // float time_player =
+    // sfClock_getElapsedTime(rpg->spritesheet[rpg->skin].c_attack).microseconds;
+    // sfColor color_up = get_color_from_player(image, (sfVector2f){pos_player.x, pos_player.y - 2});
+    // sfColor color_down = get_color_from_player(image, (sfVector2f){pos_player.x, pos_player.y + 2});
+
+    // if (rpg->all_events.space && color_down.r == 255)
+    //     rpg->player_stats.incr_pos.y = -2;
+    // if (!rpg->all_events.space && color_down.r != 255)
+    //     rpg->player_stats.incr_pos.y = 2;
+    // if (color_up.r == 255)
+    //     rpg->player_stats.incr_pos.y = 2;
+
+    // if (color_up.r != 255 && rpg->all_events.space)
+    //     rpg->spritesheet[rpg->skin].pos.y -= 2;
+    // if (color_down.r != 255 && !rpg->all_events.space)
+    //     rpg->spritesheet[rpg->skin].pos.y += 2;
+    // if (rpg->all_events.up && color_down.r == 255)
+    //     rpg->spritesheet[rpg->skin].pos.y -= 2;
+    // if (!rpg->all_events.space && color_down.r != 255)
+    //     rpg->spritesheet[rpg->skin].pos.y += 2;
 }
 
 void move_player_and_view(rpg_t *rpg)
@@ -82,6 +101,7 @@ void move_player_and_view(rpg_t *rpg)
         teleport_player_scene(rpg, rpg->imgs_colors.backgrounds, rpg->spritesheet[rpg->skin].pos);
     }
     if (rpg->screen[SC_GROTTE].active) {
+        move_player_jump(rpg, rpg->imgs_colors.backgrounds, rpg->spritesheet[rpg->skin].pos);
         move_player_and_view_horizontal(rpg, rpg->imgs_colors.backgrounds, rpg->spritesheet[rpg->skin].pos, false);
     }
     set_limits_player(rpg);

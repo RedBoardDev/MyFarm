@@ -12,7 +12,7 @@ void animate_player(rpg_t *rpg)
     sfColor color = get_color_from_player(rpg->imgs_colors.main_map,
     rpg->spritesheet[rpg->skin].pos);
     float time_player =
-    sfClock_getElapsedTime(rpg->spritesheet[rpg->skin].clock).microseconds;
+    sfClock_getElapsedTime(rpg->spritesheet[rpg->skin].c_anim).microseconds;
 
     if (!rpg->all_events.down && !rpg->all_events.up && !rpg->all_events.left
     && !rpg->all_events.right && !rpg->all_events.s && !rpg->all_events.z
@@ -30,7 +30,7 @@ void animate_player(rpg_t *rpg)
             rpg->spritesheet[rpg->skin].rect.top = 64 * 2;
         if (rpg->spritesheet[rpg->skin].rect.left >= 192)
             rpg->spritesheet[rpg->skin].rect.left = 0;
-        sfClock_restart(rpg->spritesheet[rpg->skin].clock);
+        sfClock_restart(rpg->spritesheet[rpg->skin].c_anim);
         play_sound(rpg->sound.sound_list[SOUND_WALK].sound, rpg->sound.volume);
     }
     if (!rpg->screen[SC_MAIN_MAP].active)

@@ -104,7 +104,8 @@ typedef struct {
     sfIntRect rect;
     sfSprite *sprite;
     sfTexture *texture;
-    sfClock *clock;
+    sfClock *c_anim;
+    sfClock *c_attack;
 } spritesheet_t;
 
 typedef struct {
@@ -127,6 +128,7 @@ typedef struct {
 } images_t;
 
 typedef struct {
+    sfVector2f incr_pos;
     int money;
     int inventory[10];
     float speed;
@@ -134,7 +136,6 @@ typedef struct {
     float mana;
     int damage;
     int knowledge;
-
 } player_stats_t;
 
 typedef struct {
