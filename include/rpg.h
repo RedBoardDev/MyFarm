@@ -12,7 +12,7 @@
     #include "protos.h"
     #include "struct.h"
     #define RADIAN(x) x * 3.14159265359 / 180
-    #define FUNCTIONS_BUTTONS {nothing, nothing, nothing, nothing, nothing, \
+    #define FUNCTIONS_BUTTONS {nothing, nothing, nothing, nothing, nothing, nothing, \
     skin_blue, skin_brown, skin_cyan, skin_green, skin_grey, skin_pink, \
     skin_red, skin_yellow, nothing, nothing, nothing, launch_game, quit_game, display_custom_skins,    \
     nothing}
@@ -29,6 +29,7 @@ enum sprites {
     SP_BACKGROUND_SC_MENU,
     SP_BACKGROUND_SC_BASE,
     SP_BACKGROUND_JAIL,
+    SP_BACKGROUND_GROTTE,
     SP_PLAYER,
     SP_PLAYER_BLUE,
     SP_PLAYER_BROWN,
@@ -53,6 +54,7 @@ enum screens {
     SC_CUSTOM_SKINS,
     SC_MAIN_MAP,
     SC_BASE,
+    SC_GROTTE,
     // SC_CUSTOM_PLAYER,
     // SC_JAIL,
     SC_INVENTORY,

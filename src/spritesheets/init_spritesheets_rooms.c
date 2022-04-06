@@ -17,4 +17,8 @@ void init_spritesheets_rooms(spritesheet_t *spritesheet, beginning_t *begin)
     &spritesheet[SP_BACKGROUND_JAIL],
     begin, (init_sprite_t){{WIDTH / 2, HEIGHT / 2}, {1, 1}, {0, 0, 640, 360},
     .clickable = false, .active = false});
+    set_one_sprite("assets/img/donjons/background_grotte.png",
+    &spritesheet[SP_BACKGROUND_GROTTE], begin,
+    (init_sprite_t){{444, 1196}, {1, 1}, {0, 0, 768, 432},
+    .clickable = false, .active = false});
 }
