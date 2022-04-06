@@ -7,6 +7,11 @@
 
 #include "../include/rpg.h"
 
+extern int screen_game[];
+extern int screen_base[];
+extern int screen_jail[];
+extern int screen_grotte[];
+
 void draw_sfImage(sfRenderWindow *window, sfImage *image, sfVector2f pos, sfIntRect rect)
 {
     sfTexture *texture = sfTexture_createFromImage(image, NULL);
@@ -54,10 +59,20 @@ void draw_all(rpg_t *rpg)
     sfRenderWindow_display(rpg->begin.window);
 }
 
-void move_life_bar(rpg_t *rpg, int percentage)
+void die(rpg_t *rpg)
 {
-    rpg->spritesheet[SP_LIFE_BAR].rect.width = percentage * 3.6;
-    sfSprite_setTextureRect(rpg->spritesheet[SP_LIFE_BAR].sprite, rpg->spritesheet[SP_LIFE_BAR].rect);
+    rpg->player_stats.incr_pos.x = 0;
+    rpg->player_stats.incr_pos.y = 0;
+    rpg->player_stats.speed = 1.0;
+    rpg->player_stats.life = 20.0;
+    move_life_bar(rpg, rpg->player_stats.life * 5);
+    rpg->begin.view.center = rpg->screen[SC_MAIN_MAP].view_pos;
+    rpg->screen[SC_GROTTE].active = false;
+    rpg->screen[SC_MAIN_MAP].active = true;
+    toggle_spritesheet_scene(rpg, false, screen_grotte, rpg->spritesheet);
+    toggle_spritesheet_scene(rpg, true, screen_game, rpg->spritesheet);
+    rpg->begin.view.center = (sfVector2f){SPAWN_X, SPAWN_Y};
+    rpg->spritesheet[rpg->skin].pos = (sfVector2f){SPAWN_X, SPAWN_Y};
 }
 
 void big_loop(rpg_t *rpg)
@@ -69,16 +84,18 @@ void big_loop(rpg_t *rpg)
     if (rpg->screen[SC_CUSTOM_SKINS].active)
         animate_selected_skin(rpg);
     toggle_inventory(rpg);
-    if (rpg->all_events.page_down && rpg->player_stats.life > 0) {
+    if (rpg->screen[SC_GROTTE].active && rpg->all_events.page_down && rpg->player_stats.life > 0) {
         --rpg->player_stats.life;
         rpg->all_events.page_down = false;
         move_life_bar(rpg, rpg->player_stats.life * 5);
     }
-    if (rpg->all_events.page_up && rpg->player_stats.life < 20) {
+    if (rpg->screen[SC_GROTTE].active && rpg->all_events.page_up && rpg->player_stats.life < 20) {
         ++rpg->player_stats.life;
         rpg->all_events.page_up = false;
         move_life_bar(rpg, rpg->player_stats.life * 5);
     }
+    if (rpg->screen[SC_GROTTE].active && rpg->player_stats.life == 0)
+        die(rpg);
     // if (rpg->screen[SC_MENU].active)
     //     show_cursor(rpg->begin.window);
     // else

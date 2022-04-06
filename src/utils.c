@@ -45,3 +45,9 @@ bool check_mouse_on_one_button(sfVector2i pos, sfFloatRect collision)
     else
         return (false);
 }
+
+void move_life_bar(rpg_t *rpg, int percentage)
+{
+    rpg->spritesheet[SP_LIFE_BAR].rect.width = percentage * 3.6;
+    sfSprite_setTextureRect(rpg->spritesheet[SP_LIFE_BAR].sprite, rpg->spritesheet[SP_LIFE_BAR].rect);
+}

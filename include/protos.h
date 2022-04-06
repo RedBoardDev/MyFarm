@@ -79,6 +79,7 @@ void init_csfml(beginning_t *beginning);
 void destroy_all(beginning_t *begin);
 int my_rand(int min, int max);
 bool check_mouse_on_one_button(sfVector2i pos, sfFloatRect collision);
+void move_life_bar(rpg_t *rpg, int percentage);
 
 // utils sprites
 void set_one_sprite(char *filename, spritesheet_t *spritesheet,
