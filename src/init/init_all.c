@@ -26,7 +26,8 @@ void init_player_stats(player_stats_t *player_stats)
     player_stats->mana = 0.0;
     player_stats->damage = 1;
     player_stats->knowledge = 1;
-
+    for (int i = 0; i < 10; ++i)
+        player_stats->inventory[i] = -1;
 }
 
 void init_all(rpg_t *rpg)

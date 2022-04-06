@@ -48,10 +48,10 @@ void init_soundbox(spritesheet_t *spritesheet, beginning_t *begin)
     .clickable = true, .active = false});
 }
 
-init_inventory(spritesheet_t *spritesheet, beginning_t *begin)
+void init_inventory(spritesheet_t *spritesheet, beginning_t *begin)
 {
     set_one_sprite("assets/img/menu/inventory.png",
     &spritesheet[SP_INVENTORY], begin,
-    (init_sprite_t){{WIDTH/2, HEIGHT/2}, {1, 1}, {0, 0, 1023, 536},
+    (init_sprite_t){{WIDTH/2, HEIGHT/2}, {1, 1}, {0, 0, 750, 314},
     .clickable = false, .active = false});
 }
