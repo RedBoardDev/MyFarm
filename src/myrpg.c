@@ -75,17 +75,17 @@ void big_loop(rpg_t *rpg)
 
 void myrpg(void)
 {
-    rpg_t rpg;
+    rpg_t *rpg = malloc(sizeof(rpg_t));
 
-    init_all(&rpg);
-    if (!rpg.begin.window || !rpg.begin.framebuffer)
+    init_all(rpg);
+    if (!rpg->begin.window || !rpg->begin.framebuffer)
         return;
-    sfWindow_setFramerateLimit((sfWindow *)rpg.begin.window, 120);
-    rpg.begin.fps.clock = sfClock_create();
-    play_sound(rpg.sound.sound_list[SOUND_MENU].sound, rpg.sound.volume);
-    while (sfRenderWindow_isOpen(rpg.begin.window)) {
-        clean_window(&rpg.begin, sfBlack);
-        big_loop(&rpg);
+    sfWindow_setFramerateLimit((sfWindow *)rpg->begin.window, 120);
+    rpg->begin.fps.clock = sfClock_create();
+    play_sound(rpg->sound.sound_list[SOUND_MENU].sound, rpg->sound.volume);
+    while (sfRenderWindow_isOpen(rpg->begin.window)) {
+        clean_window(&rpg->begin, sfBlack);
+        big_loop(rpg);
     }
-    destroy_all(&rpg.begin);
+    destroy_all(&rpg->begin);
 }
