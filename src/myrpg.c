@@ -73,6 +73,7 @@ void big_loop(rpg_t *rpg)
         manage_menu(rpg);
     } else
         hide_cursor(rpg->begin.window);
+    // printf("%0.0f %0.0f\n", rpg->spritesheet[rpg->skin].pos.x, rpg->spritesheet[rpg->skin].pos.y);
     check_click_buttons(rpg);
     draw_all(rpg);
 }

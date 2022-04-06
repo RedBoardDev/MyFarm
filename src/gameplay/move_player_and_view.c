@@ -71,11 +71,10 @@ void move_player_and_view(rpg_t *rpg)
         rpg->screen[SC_MAIN_MAP].view_pos = rpg->begin.view.center;
         teleport_player_scene(rpg, rpg->imgs_colors.main_map, rpg->spritesheet[rpg->skin].pos);
     }
-    if (rpg->screen[SC_BASE].active) {
+    if (rpg->screen[SC_BASE].active || rpg->screen[SC_GROTTE].active) {
         move_player_and_view_horizontal(rpg, rpg->imgs_colors.backgrounds, rpg->spritesheet[rpg->skin].pos, false);
         move_player_and_view_vertical(rpg, rpg->imgs_colors.backgrounds, rpg->spritesheet[rpg->skin].pos, false);
         teleport_player_scene(rpg, rpg->imgs_colors.backgrounds, rpg->spritesheet[rpg->skin].pos);
-
     }
     set_limits_player(rpg);
     set_view(rpg, rpg->begin.view.center);
