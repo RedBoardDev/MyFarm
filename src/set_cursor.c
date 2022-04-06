@@ -7,12 +7,7 @@
 
 #include "../include/rpg.h"
 
-void hide_cursor(sfRenderWindow *window)
+void toggle_cursor(sfRenderWindow *window, bool status)
 {
-    sfRenderWindow_setMouseCursorVisible(window, false);
-}
-
-void show_cursor(sfRenderWindow *window)
-{
-    sfRenderWindow_setMouseCursorVisible(window, true);
+    sfRenderWindow_setMouseCursorVisible(window, status);
 }

@@ -128,6 +128,7 @@ typedef struct {
 
 typedef struct {
     int money;
+    int inventory[10];
     float speed;
     float life;
     float mana;

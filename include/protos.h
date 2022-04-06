@@ -62,6 +62,7 @@ void init_menu(spritesheet_t *spritesheet, beginning_t *begin);
 void init_spritesheets_rooms(spritesheet_t *spritesheet, beginning_t *begin);
 void init_spritesheets(spritesheet_t *spritesheet, beginning_t *begin);
 void init_view(rpg_t *rpg);
+void init_inventory(spritesheet_t *spritesheet, beginning_t *begin);
 
 // draw simple
 void my_draw_circle(sfUint8 *framebuffer, sfVector2i center, int radius,
@@ -106,7 +107,9 @@ void animate_player(rpg_t *rpg);
 void draw_sfImage(sfRenderWindow *window, sfImage *image, sfVector2f pos, sfIntRect rect);
 
 //cursor
-void hide_cursor(sfRenderWindow *window);
-void show_cursor(sfRenderWindow *window);
+void toggle_cursor(sfRenderWindow *window, bool status);
+
+//inventory
+void toggle_inventory(rpg_t *rpg);
 
 #endif

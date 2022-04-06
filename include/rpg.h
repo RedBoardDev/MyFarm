@@ -57,6 +57,7 @@ enum screens {
     SC_GROTTE,
     // SC_CUSTOM_PLAYER,
     // SC_JAIL,
+    SC_INVENTORY,
     NBR_SCREENS
 };
 
@@ -73,6 +74,11 @@ enum sounds {
     SOUND_WALK,
     SOUND_DOOR,
     NBR_SOUND,
+};
+
+enum utilitaire {
+    SELECTED_PLAYER = -10,
+    CURSOR,
 };
 
 #endif
