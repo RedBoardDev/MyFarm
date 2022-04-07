@@ -22,44 +22,46 @@ void set_limits_player(rpg_t *rpg)
 void move_player_and_view_horizontal(rpg_t *rpg, sfImage *image, sfVector2f pos_player, bool move_view)
 {
     sfColor color;
+    float speed = 1.5;
 
     if (rpg->all_events.right || rpg->all_events.d) {
         color = get_color_from_player(image, (sfVector2f){pos_player.x + 2, pos_player.y});
         if (rpg->spritesheet[rpg->skin].pos.x > 385 &&
         rpg->begin.view.center.x < 1535 && color.r != 255 && move_view)
-            rpg->begin.view.center.x += 2;
+            rpg->begin.view.center.x += speed;
         if (color.r != 255)
-            rpg->spritesheet[rpg->skin].pos.x += 2;
+            rpg->spritesheet[rpg->skin].pos.x += speed;
     }
     if (rpg->all_events.left || rpg->all_events.q) {
         color = get_color_from_player(image, (sfVector2f){pos_player.x - 2, pos_player.y});
         if (rpg->spritesheet[rpg->skin].pos.x < 1535 &&
         rpg->begin.view.center.x > 385 && color.r != 255 && move_view)
-            rpg->begin.view.center.x -= 2;
+            rpg->begin.view.center.x -= speed;
         if (color.r != 255)
-            rpg->spritesheet[rpg->skin].pos.x -= 2;
+            rpg->spritesheet[rpg->skin].pos.x -= speed;
     }
 }
 
 void move_player_and_view_vertical(rpg_t *rpg, sfImage *image, sfVector2f pos_player, bool move_view)
 {
     sfColor color;
+    float speed = 1.5;
 
     if (rpg->all_events.up || rpg->all_events.z) {
         color = get_color_from_player(image, (sfVector2f){pos_player.x, pos_player.y - 2});
         if (rpg->spritesheet[rpg->skin].pos.y < 1920 - 217 &&
         rpg->begin.view.center.y > 216 && color.r != 255 && move_view)
-            rpg->begin.view.center.y -= 2;
+            rpg->begin.view.center.y -= speed;
         if (color.r != 255)
-            rpg->spritesheet[rpg->skin].pos.y -= 2;
+            rpg->spritesheet[rpg->skin].pos.y -= speed;
     }
     if (rpg->all_events.down || rpg->all_events.s) {
         color = get_color_from_player(image, (sfVector2f){pos_player.x, pos_player.y + 2});
         if (rpg->spritesheet[rpg->skin].pos.y > 216 &&
         rpg->begin.view.center.y < 1920 - 217 && color.r != 255 && move_view)
-            rpg->begin.view.center.y += 2;
+            rpg->begin.view.center.y += speed;
         if (color.r != 255)
-            rpg->spritesheet[rpg->skin].pos.y += 2;
+            rpg->spritesheet[rpg->skin].pos.y += speed;
     }
 }
 
@@ -81,7 +83,7 @@ void move_player_jump(rpg_t *rpg, sfImage *image, sfVector2f pos_player)
 
 void move_player_and_view(rpg_t *rpg)
 {
-    if (rpg->screen[SC_MAIN_MAP].active) {
+    if (rpg->screen[SC_MAIN_MAP].active && rpg->screen[SC_INVENTORY].active) {
         move_player_and_view_horizontal(rpg, rpg->imgs_colors.main_map, rpg->spritesheet[rpg->skin].pos, true);
         move_player_and_view_vertical(rpg, rpg->imgs_colors.main_map, rpg->spritesheet[rpg->skin].pos, true);
         rpg->screen[SC_MAIN_MAP].view_pos = rpg->begin.view.center;
