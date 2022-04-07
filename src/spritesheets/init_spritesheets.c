@@ -71,4 +71,5 @@ void init_spritesheets(spritesheet_t *spritesheet, beginning_t *begin)
     init_soundbox(spritesheet, begin);
     init_inventory(spritesheet, begin);
     init_life_bar(spritesheet, begin);
+    init_spritesheets_armed(spritesheet, begin);
 }

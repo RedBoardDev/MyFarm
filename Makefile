@@ -27,6 +27,7 @@ SRC_FILES	=	events/events	\
 				spritesheets/init_spritesheets_menu	\
 				spritesheets/init_spritesheets_rooms	\
 				spritesheets/init_spritesheets	\
+				spritesheets/init_spritesheets_item	\
 				init/init_view	\
 				interface/functions_pointers/button_menu	\
 				interface/functions_pointers/choose_skin1	\

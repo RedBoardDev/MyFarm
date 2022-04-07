@@ -48,6 +48,7 @@ enum sprites {
     SP_INVENTORY,
     SP_LIFE_BAR_BOX,
     SP_LIFE_BAR,
+    SP_ITEM_SHOVEL,
     NBR_SP
 };
 
