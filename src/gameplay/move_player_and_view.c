@@ -83,7 +83,7 @@ void move_player_jump(rpg_t *rpg, sfImage *image, sfVector2f pos_player)
 
 void move_player_and_view(rpg_t *rpg)
 {
-    if (rpg->screen[SC_MAIN_MAP].active && rpg->screen[SC_INVENTORY].active) {
+    if (rpg->screen[SC_MAIN_MAP].active && !rpg->screen[SC_INVENTORY].active) {
         move_player_and_view_horizontal(rpg, rpg->imgs_colors.main_map, rpg->spritesheet[rpg->skin].pos, true);
         move_player_and_view_vertical(rpg, rpg->imgs_colors.main_map, rpg->spritesheet[rpg->skin].pos, true);
         rpg->screen[SC_MAIN_MAP].view_pos = rpg->begin.view.center;
