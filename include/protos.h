@@ -77,7 +77,7 @@ void my_putpixel(int x, int y, sfUint8 *framebuffer, sfColor color);
 // utils
 void clean_window(beginning_t *begin, sfColor color);
 void init_csfml(beginning_t *beginning);
-void destroy_all(beginning_t *begin);
+void destroy_all(rpg_t *rpg);
 int my_rand(int min, int max);
 bool check_mouse_on_one_button(sfVector2i pos, sfFloatRect collision);
 void move_life_bar(rpg_t *rpg, int percentage);

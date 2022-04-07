@@ -13,6 +13,4 @@ void init_imgs(rpg_t *rpg)
     sfImage_createFromFile("assets/img/main_map_colors.png");
     rpg->imgs_colors.backgrounds =
     sfImage_createFromFile("assets/img/house/all_backgrounds_colors.png");
-    rpg->imgs_colors.main_house =
-    sfImage_createFromFile("assets/img/house/background_base_colors.png");
 }

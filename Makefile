@@ -35,10 +35,10 @@ SRC_FILES	=	events/events	\
 				interface/inventory	\
 				spritesheets/utils_sprites	\
 				clean_window	\
+				destroy_all	\
 				draw_simple	\
 				lib_sound	\
 				main	\
-				my_exit	\
 				myrpg	\
 				set_cursor	\
 				utils	\

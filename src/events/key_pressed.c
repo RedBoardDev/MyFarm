@@ -48,10 +48,9 @@ events_t *all_events)
 void events_key_pressed_not_letters(rpg_t *rpg, sfEvent event)
 {
     if (sfKeyEscape == event.key.code)
-        my_exit(rpg);
+        sfRenderWindow_close(rpg->begin.window);
     if (sfKeyLControl == event.key.code || sfKeyRControl == event.key.code)
         rpg->all_events.ctrl = true;
-    if (sfKeyBackspace == event.key.code); //martin bourrer
     if (sfKeyEnter == event.key.code)
         rpg->all_events.enter = true;
 }

@@ -99,7 +99,6 @@ typedef struct {
 typedef struct {
     bool active;
     bool clickable;
-    int *a_screen;
     sfVector2f pos;
     sfIntRect rect;
     sfSprite *sprite;
@@ -123,8 +122,6 @@ typedef struct {
 typedef struct {
     sfImage *main_map;
     sfImage *backgrounds;
-    sfImage *main_house;
-    sfImage *jail;
 } images_t;
 
 typedef struct {

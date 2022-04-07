@@ -121,5 +121,5 @@ void myrpg(void)
         clean_window(&rpg->begin, sfBlack);
         big_loop(rpg);
     }
-    destroy_all(&rpg->begin);
+    destroy_all(rpg);
 }

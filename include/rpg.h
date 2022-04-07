@@ -60,7 +60,7 @@ enum screens {
     // SC_CUSTOM_PLAYER,
     // SC_JAIL,
     SC_INVENTORY,
-    NBR_SCREENS
+    NBR_SC
 };
 
 enum bleu_maisons {
@@ -68,7 +68,8 @@ enum bleu_maisons {
     B_JAIL,
     B_TENTE,
     B_GROTTE,
-    B_TAVERNE
+    B_TAVERNE,
+    NBR_B
 };
 
 enum sounds {
