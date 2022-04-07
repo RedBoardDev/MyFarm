@@ -12,13 +12,14 @@ void init_spritesheets_rooms(spritesheet_t *spritesheet, beginning_t *begin)
     set_one_sprite("assets/img/house/background_base.png",
     &spritesheet[SP_BACKGROUND_SC_BASE],
     begin, (init_sprite_t){{577 + 700 / 2, 671 + 394 / 2}, {1, 1},
-    {0, 0, 700, 394}, .clickable = false, .active = false});
+    {0, 0, 700, 394}, .clickable = false, .active = false,
+    .change_sprite_on_mouse = false});
     set_one_sprite("assets/img/house/background_jail.png",
     &spritesheet[SP_BACKGROUND_JAIL],
     begin, (init_sprite_t){{WIDTH / 2, HEIGHT / 2}, {1, 1}, {0, 0, 640, 360},
-    .clickable = false, .active = false});
+    .clickable = false, .active = false, .change_sprite_on_mouse = false});
     set_one_sprite("assets/img/donjons/background_grotte.png",
     &spritesheet[SP_BACKGROUND_GROTTE], begin,
     (init_sprite_t){{444, 1196}, {1, 1}, {0, 0, 768, 432},
-    .clickable = false, .active = false});
+    .clickable = false, .active = false, .change_sprite_on_mouse = false});
 }

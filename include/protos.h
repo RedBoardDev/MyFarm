@@ -22,7 +22,6 @@
     #include "struct.h"
 
 void myrpg(void);
-void my_exit(rpg_t *rpg);
 void manage_menu(rpg_t *rpg);
 void teleport_player_scene(rpg_t *rpg, sfImage *image, sfVector2f pos_player);
 
@@ -39,6 +38,7 @@ void events_mouse_moved(sfEvent event, events_t *all_events);
 
 //interface
 void check_click_buttons(rpg_t *rpg);
+void check_mouse_on_all_buttons(rpg_t *rpg);
 void launch_game(rpg_t *rpg);
 void quit_game(rpg_t *rpg);
 void skin_blue(rpg_t *rpg);
@@ -78,7 +78,7 @@ void my_putpixel(int x, int y, sfUint8 *framebuffer, sfColor color);
 // utils
 void clean_window(beginning_t *begin, sfColor color);
 void init_csfml(beginning_t *beginning);
-void destroy_all(beginning_t *begin);
+void destroy_all(rpg_t *rpg);
 int my_rand(int min, int max);
 bool check_mouse_on_one_button(sfVector2i pos, sfFloatRect collision);
 void move_life_bar(rpg_t *rpg, int percentage);

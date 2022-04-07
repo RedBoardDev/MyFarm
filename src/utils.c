@@ -23,13 +23,6 @@ void init_csfml(beginning_t *begin)
     begin->sprite = sfSprite_create();
 }
 
-void destroy_all(beginning_t *begin)
-{
-    sfClock_destroy(begin->fps.clock);
-    free(begin->framebuffer);
-    sfRenderWindow_destroy(begin->window);
-}
-
 int my_rand(int min, int max)
 {
     return (min + rand() % ((max + 1) - min));

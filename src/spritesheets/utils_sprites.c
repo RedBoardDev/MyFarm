@@ -12,6 +12,7 @@ beginning_t *begin, init_sprite_t init_sprite)
 {
     spritesheet->active = init_sprite.active;
     spritesheet->clickable = init_sprite.clickable;
+    spritesheet->change_sprite_on_mouse = init_sprite.change_sprite_on_mouse;
     spritesheet->pos = init_sprite.pos;
     spritesheet->rect = init_sprite.rect;
     spritesheet->sprite = sfSprite_create();

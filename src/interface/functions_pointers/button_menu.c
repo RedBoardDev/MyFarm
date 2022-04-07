@@ -31,7 +31,7 @@ void launch_game(rpg_t *rpg)
 
 void quit_game(rpg_t *rpg)
 {
-    my_exit(rpg);
+    sfRenderWindow_close(rpg->begin.window);
 }
 
 void display_custom_skins(rpg_t *rpg)

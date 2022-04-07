@@ -20,7 +20,7 @@ const int screen_inventory[] = {SP_INVENTORY, CURSOR, -1};
 
 void init_screens(rpg_t *rpg)
 {
-    rpg->screen = malloc(sizeof(screen_t) * NBR_SCREENS);
+    rpg->screen = malloc(sizeof(screen_t) * NBR_SC);
     rpg->screen[SC_MENU] = (screen_t){.active = true,
     .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0};
     rpg->screen[SC_CUSTOM_SKINS] = (screen_t){.active = false,

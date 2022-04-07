@@ -26,6 +26,7 @@ typedef struct {
     sfIntRect rect;
     bool clickable;
     bool active;
+    bool change_sprite_on_mouse;
 } init_sprite_t;
 
 typedef struct {
@@ -99,7 +100,7 @@ typedef struct {
 typedef struct {
     bool active;
     bool clickable;
-    int *a_screen;
+    bool change_sprite_on_mouse;
     sfVector2f pos;
     sfIntRect rect;
     sfSprite *sprite;
@@ -123,8 +124,6 @@ typedef struct {
 typedef struct {
     sfImage *main_map;
     sfImage *backgrounds;
-    sfImage *main_house;
-    sfImage *jail;
 } images_t;
 
 typedef struct {
