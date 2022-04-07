@@ -55,7 +55,7 @@ void my_events(rpg_t *rpg)
     rpg->all_events.mouse.move_y = 0;
     while (sfRenderWindow_pollEvent(rpg->begin.window, &event)) {
         if (event.type == sfEvtClosed)
-            my_exit(rpg);
+            sfRenderWindow_close(rpg->begin.window);
         if (event.type == sfEvtKeyPressed || event.type == sfEvtKeyReleased ||
         event.type == sfEvtTextEntered)
             events_key_global(event, rpg);
