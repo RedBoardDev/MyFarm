@@ -104,6 +104,7 @@ void big_loop(rpg_t *rpg)
     if (rpg->screen[SC_MENU].active || rpg->screen[SC_CUSTOM_SKINS].active)
         set_view(rpg, rpg->screen[SC_MENU].view_pos);
     check_click_buttons(rpg);
+    check_mouse_on_all_buttons(rpg);
     draw_all(rpg);
 }
 

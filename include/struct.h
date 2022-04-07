@@ -26,6 +26,7 @@ typedef struct {
     sfIntRect rect;
     bool clickable;
     bool active;
+    bool change_sprite_on_mouse;
 } init_sprite_t;
 
 typedef struct {
@@ -99,6 +100,7 @@ typedef struct {
 typedef struct {
     bool active;
     bool clickable;
+    bool change_sprite_on_mouse;
     sfVector2f pos;
     sfIntRect rect;
     sfSprite *sprite;

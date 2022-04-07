@@ -32,6 +32,7 @@ SRC_FILES	=	events/events	\
 				interface/functions_pointers/choose_skin1	\
 				interface/functions_pointers/choose_skin2	\
 				interface/check_click_buttons	\
+				interface/check_mouse_on_buttons	\
 				interface/inventory	\
 				spritesheets/utils_sprites	\
 				clean_window	\

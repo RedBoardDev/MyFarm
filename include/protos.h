@@ -38,6 +38,7 @@ void events_mouse_moved(sfEvent event, events_t *all_events);
 
 //interface
 void check_click_buttons(rpg_t *rpg);
+void check_mouse_on_all_buttons(rpg_t *rpg);
 void launch_game(rpg_t *rpg);
 void quit_game(rpg_t *rpg);
 void skin_blue(rpg_t *rpg);
