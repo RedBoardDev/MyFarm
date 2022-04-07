@@ -22,7 +22,6 @@
     #include "struct.h"
 
 void myrpg(void);
-void my_exit(rpg_t *rpg);
 void manage_menu(rpg_t *rpg);
 void teleport_player_scene(rpg_t *rpg, sfImage *image, sfVector2f pos_player);
 
