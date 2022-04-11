@@ -50,6 +50,7 @@ void skin_pink(rpg_t *rpg);
 void skin_red(rpg_t *rpg);
 void skin_yellow(rpg_t *rpg);
 void display_custom_skins(rpg_t *rpg);
+void how_play(rpg_t *rpg);
 
 // init
 void init_all(rpg_t *rpg);
@@ -65,6 +66,7 @@ void init_view(rpg_t *rpg);
 void init_inventory(spritesheet_t *spritesheet, beginning_t *begin);
 void init_all_events(events_t *events);
 void init_spritesheets_armed(spritesheet_t *spritesheet, beginning_t *begin);
+void init_spritesheets_food(spritesheet_t *spritesheet, beginning_t *begin);
 
 // draw simple
 void my_draw_circle(sfUint8 *framebuffer, sfVector2i center, int radius,

@@ -29,6 +29,14 @@ void init_menu(spritesheet_t *spritesheet, beginning_t *begin)
     &spritesheet[SP_BACKGROUND_SC_MENU],
     begin, (init_sprite_t){{WIDTH / 2, HEIGHT / 2}, {1, 1}, {0, 0, 1920, 1080},
     .clickable = false, .active = true, .change_sprite_on_mouse = false});
+    set_one_sprite("assets/img/menu/background_how_play.png",
+    &spritesheet[SP_BACKGROUND_HOW_PLAY],
+    begin, (init_sprite_t){{WIDTH / 2, HEIGHT / 2}, {1, 1}, {0, 0, 1920, 1080},
+    .clickable = false, .active = false, .change_sprite_on_mouse = false});
+    set_one_sprite("assets/img/menu/monkey.png",
+    &spritesheet[SP_MONKEY], begin,
+    (init_sprite_t){{WIDTH / 1.36, HEIGHT / 1.32}, {1, 1}, {0, 0, 128, 147},
+    .clickable = true, .active = true, .change_sprite_on_mouse = true});
     init_buttons_menu(spritesheet, begin);
 }
 

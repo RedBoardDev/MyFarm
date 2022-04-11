@@ -9,6 +9,15 @@
 extern int screen_menu[];
 extern int screen_game[];
 extern int screen_custom[];
+extern int screen_how_play[];
+
+void how_play(rpg_t *rpg)
+{
+    sfSprite_setColor(rpg->spritesheet[SP_BACKGROUND_HOW_PLAY].sprite,
+    (sfColor){255, 255, 255, 140});
+    toggle_spritesheet_scene(rpg, false, screen_menu, rpg->spritesheet);
+    toggle_spritesheet_scene(rpg, true, screen_how_play, rpg->spritesheet);
+}
 
 void set_player(rpg_t *rpg)
 {
