@@ -30,7 +30,8 @@ void launch_game(rpg_t *rpg)
     rpg->screen[SC_MENU].active = false;
     rpg->screen[SC_CUSTOM_SKINS].active = false;
     rpg->screen[SC_MAIN_MAP].active = true;
-    rpg->spritesheet[rpg->player_stats.skin].pos = (sfVector2f){SPAWN_X, SPAWN_Y};
+    rpg->spritesheet[rpg->player_stats.skin].pos =
+    (sfVector2f){SPAWN_X, SPAWN_Y};
     set_player(rpg);
     sfView_zoom(rpg->begin.view.view , rpg->screen[SC_MAIN_MAP].view_zoom);
     toggle_spritesheet_scene(rpg, false, screen_menu, rpg->spritesheet);

@@ -12,10 +12,10 @@
     #include "protos.h"
     #include "struct.h"
     #define RADIAN(x) x * 3.14159265359 / 180
-    #define FUNCTIONS_BUTTONS {nothing, nothing, nothing, nothing, nothing, nothing,    \
-    how_play, nothing, \
-    skin_blue, skin_brown, skin_cyan, skin_green, skin_grey, skin_pink, \
-    skin_red, skin_yellow, nothing, nothing, nothing, launch_game, quit_game,   \
+    #define FUNCTIONS_BUTTONS {nothing, nothing, nothing, nothing, nothing, \
+    nothing, how_play, nothing, skin_blue, skin_brown, skin_cyan, skin_green, \
+    skin_grey, skin_pink, skin_red, skin_yellow, nothing, nothing, \
+    nothing, launch_game, quit_game,   \
     display_custom_skins, back_button,   \
     nothing}
     #define SPAWN_X WIDTH / 2
@@ -72,8 +72,6 @@ enum screens {
     SC_MAIN_MAP,
     SC_BASE,
     SC_GROTTE,
-    // SC_CUSTOM_PLAYER,
-    // SC_JAIL,
     SC_INVENTORY,
     NBR_SC
 };

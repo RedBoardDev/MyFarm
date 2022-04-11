@@ -67,8 +67,9 @@ void init_inventory(spritesheet_t *spritesheet, beginning_t *begin);
 void init_all_events(events_t *events);
 void init_spritesheets_armed(spritesheet_t *spritesheet, beginning_t *begin);
 void init_spritesheets_food(spritesheet_t *spritesheet, beginning_t *begin);
+void init_all_players(spritesheet_t *spritesheet, beginning_t *begin);
 
-// draw simple
+// utils draw
 void my_draw_circle(sfUint8 *framebuffer, sfVector2i center, int radius,
 sfColor color);
 void my_draw_rectangle(sfUint8 *framebuffer, sfIntRect rect, sfColor color);
@@ -76,6 +77,7 @@ void my_draw_line(sfUint8 *framebuffer, sfVector2i point_a, sfVector2i point_b,
 sfColor color);
 void my_draw_square(sfUint8 *framebuffer, unsigned int size, sfColor color);
 void my_putpixel(int x, int y, sfUint8 *framebuffer, sfColor color);
+void draw_all(rpg_t *rpg);
 
 // utils
 void clean_window(beginning_t *begin, sfColor color);
@@ -84,6 +86,7 @@ void destroy_all(rpg_t *rpg);
 int my_rand(int min, int max);
 bool check_mouse_on_one_button(sfVector2i pos, sfFloatRect collision);
 void move_life_bar(rpg_t *rpg, int percentage);
+sfInt64 getClockTime_microsecond(sfClock *clock);
 
 // utils sprites
 void set_one_sprite(char *filename, spritesheet_t *spritesheet,
@@ -109,7 +112,9 @@ void move_player_and_view(rpg_t *rpg);
 void move_all_fps_independant(rpg_t *rpg);
 sfColor get_color_from_player(sfImage *image, sfVector2f pos);
 void animate_player(rpg_t *rpg);
-void draw_sfImage(sfRenderWindow *window, sfImage *image, sfVector2f pos, sfIntRect rect);
+void animate_selected_skin(rpg_t *rpg);
+void draw_sfImage(sfRenderWindow *window, sfImage *image, sfVector2f pos,
+sfIntRect rect);
 
 //cursor
 void toggle_cursor(sfRenderWindow *window, bool status);

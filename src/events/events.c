@@ -43,7 +43,7 @@ events_t *all_events)
             break;
     }
 }
- 
+
 void my_events(rpg_t *rpg)
 {
     sfEvent event;

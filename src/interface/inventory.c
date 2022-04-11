@@ -27,7 +27,8 @@ void toggle_inventory(rpg_t *rpg)
     if (rpg->all_events.e) {
         rpg->all_events.e = false;
         rpg->screen[SC_INVENTORY].active = !status;
-        toggle_spritesheet_scene(rpg, !status, screen_inventory, rpg->spritesheet);
+        toggle_spritesheet_scene(rpg, !status, screen_inventory,
+        rpg->spritesheet);
     }
 }
 

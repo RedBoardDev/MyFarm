@@ -7,22 +7,6 @@
 
 #include "../include/rpg.h"
 
-sfUint8 *my_framebuffer_create(void)
-{
-    sfUint8 *framebuffer = malloc(sizeof(sfUint8) * (WIDTH * HEIGHT * 4));
-    return (framebuffer);
-}
-
-void init_csfml(beginning_t *begin)
-{
-    sfVideoMode mode = {WIDTH, HEIGHT, 32};
-    begin->window = sfRenderWindow_create(mode, "My RPG",
-    sfClose | sfFullscreen, NULL);
-    begin->framebuffer = my_framebuffer_create();
-    begin->texture = sfTexture_create(WIDTH, HEIGHT);
-    begin->sprite = sfSprite_create();
-}
-
 int my_rand(int min, int max)
 {
     return (min + rand() % ((max + 1) - min));
@@ -42,5 +26,6 @@ bool check_mouse_on_one_button(sfVector2i pos, sfFloatRect collision)
 void move_life_bar(rpg_t *rpg, int percentage)
 {
     rpg->spritesheet[SP_LIFE_BAR].rect.width = percentage * 3.6;
-    sfSprite_setTextureRect(rpg->spritesheet[SP_LIFE_BAR].sprite, rpg->spritesheet[SP_LIFE_BAR].rect);
+    sfSprite_setTextureRect(rpg->spritesheet[SP_LIFE_BAR].sprite,
+    rpg->spritesheet[SP_LIFE_BAR].rect);
 }
