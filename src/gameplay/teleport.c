@@ -23,7 +23,7 @@ void teleport_base(rpg_t *rpg)
     } else {
         rpg->screen[SC_MAIN_MAP].active = true;
         rpg->screen[SC_BASE].active = false;
-        rpg->spritesheet[rpg->skin].pos = rpg->screen[SC_MAIN_MAP].view_pos;
+        rpg->spritesheet[rpg->player_stats.skin].pos = rpg->screen[SC_MAIN_MAP].view_pos;
         rpg->begin.view.center = rpg->screen[SC_MAIN_MAP].view_pos;
         toggle_spritesheet_scene(rpg, false, screen_base, rpg->spritesheet);
         toggle_spritesheet_scene(rpg, true, screen_game, rpg->spritesheet);
@@ -35,13 +35,13 @@ void teleport_jail(rpg_t *rpg)
     if (rpg->screen[SC_MAIN_MAP].active) {
         rpg->screen[SC_MAIN_MAP].active = false;
         rpg->screen[SC_BASE].active = true;
-        // rpg->spritesheet[rpg->skin].pos.y - 10;
+        // rpg->spritesheet[rpg->player_stats.skin].pos.y - 10;
         toggle_spritesheet_scene(rpg, false, screen_game, rpg->spritesheet);
         toggle_spritesheet_scene(rpg, true, screen_base, rpg->spritesheet);
     } else {
         rpg->screen[SC_MAIN_MAP].active = true;
         rpg->screen[SC_BASE].active = false;
-        // rpg->spritesheet[rpg->skin].pos.y + 10;
+        // rpg->spritesheet[rpg->player_stats.skin].pos.y + 10;
         toggle_spritesheet_scene(rpg, false, screen_base, rpg->spritesheet);
         toggle_spritesheet_scene(rpg, true, screen_game, rpg->spritesheet);
     }
@@ -58,7 +58,7 @@ void teleport_grotte(rpg_t *rpg)
     } else {
         rpg->screen[SC_MAIN_MAP].active = true;
         rpg->screen[SC_GROTTE].active = false;
-        rpg->spritesheet[rpg->skin].pos = rpg->screen[SC_MAIN_MAP].view_pos;
+        rpg->spritesheet[rpg->player_stats.skin].pos = rpg->screen[SC_MAIN_MAP].view_pos;
         rpg->begin.view.center = rpg->screen[SC_MAIN_MAP].view_pos;
         toggle_spritesheet_scene(rpg, false, screen_grotte, rpg->spritesheet);
         toggle_spritesheet_scene(rpg, true, screen_game, rpg->spritesheet);

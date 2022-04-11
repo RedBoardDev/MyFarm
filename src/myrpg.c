@@ -39,13 +39,13 @@ sfColor get_color_from_player(sfImage *image, sfVector2f pos)
 void animate_selected_skin(rpg_t *rpg)
 {
     float time_player =
-    sfClock_getElapsedTime(rpg->spritesheet[rpg->skin].c_anim).microseconds;
+    sfClock_getElapsedTime(rpg->spritesheet[rpg->player_stats.skin].c_anim).microseconds;
     if (time_player >= 200000) {
-        rpg->spritesheet[rpg->skin].rect.left += 48;
-        sfClock_restart(rpg->spritesheet[rpg->skin].c_anim);
+        rpg->spritesheet[rpg->player_stats.skin].rect.left += 48;
+        sfClock_restart(rpg->spritesheet[rpg->player_stats.skin].c_anim);
     }
-    if (rpg->spritesheet[rpg->skin].rect.left >= 192)
-        rpg->spritesheet[rpg->skin].rect.left = 0;
+    if (rpg->spritesheet[rpg->player_stats.skin].rect.left >= 192)
+        rpg->spritesheet[rpg->player_stats.skin].rect.left = 0;
 }
 
 void draw_all(rpg_t *rpg)
@@ -73,7 +73,7 @@ void die(rpg_t *rpg)
     toggle_spritesheet_scene(rpg, false, screen_grotte, rpg->spritesheet);
     toggle_spritesheet_scene(rpg, true, screen_game, rpg->spritesheet);
     rpg->begin.view.center = (sfVector2f){SPAWN_X, SPAWN_Y};
-    rpg->spritesheet[rpg->skin].pos = (sfVector2f){SPAWN_X, SPAWN_Y};
+    rpg->spritesheet[rpg->player_stats.skin].pos = (sfVector2f){SPAWN_X, SPAWN_Y};
 }
 
 void big_loop(rpg_t *rpg)

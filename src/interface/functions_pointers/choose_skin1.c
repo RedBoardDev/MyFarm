@@ -9,40 +9,40 @@
 
 void skin_blue(rpg_t *rpg)
 {
-    rpg->skin = SP_PLAYER_BLUE;
+    rpg->player_stats.skin = SP_PLAYER_BLUE;
 }
 
 void skin_brown(rpg_t *rpg)
 {
-    rpg->skin = SP_PLAYER_BROWN;
+    rpg->player_stats.skin = SP_PLAYER_BROWN;
 }
 
 void skin_cyan(rpg_t *rpg)
 {
-    rpg->skin = SP_PLAYER_CYAN;
+    rpg->player_stats.skin = SP_PLAYER_CYAN;
 }
 
 void skin_green(rpg_t *rpg)
 {
-    rpg->skin = SP_PLAYER_GREEN;
+    rpg->player_stats.skin = SP_PLAYER_GREEN;
 }
 
 void skin_grey(rpg_t *rpg)
 {
-    rpg->skin = SP_PLAYER_GREY;
+    rpg->player_stats.skin = SP_PLAYER_GREY;
 }
 
 void skin_pink(rpg_t *rpg)
 {
-    rpg->skin = SP_PLAYER_PINK;
+    rpg->player_stats.skin = SP_PLAYER_PINK;
 }
 
 void skin_red(rpg_t *rpg)
 {
-    rpg->skin = SP_PLAYER_RED;
+    rpg->player_stats.skin = SP_PLAYER_RED;
 }
 
 void skin_yellow(rpg_t *rpg)
 {
-    rpg->skin = SP_PLAYER_YELLOW;
+    rpg->player_stats.skin = SP_PLAYER_YELLOW;
 }

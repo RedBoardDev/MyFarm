@@ -128,6 +128,7 @@ typedef struct {
 
 typedef struct {
     sfVector2f incr_pos;
+    int skin;
     int money;
     int inventory[10];
     float speed;
@@ -144,7 +145,6 @@ typedef struct {
     images_t imgs_colors;
     screen_t *screen;
     sound_t sound;
-    int skin;
     player_stats_t player_stats;
 } rpg_t;
 

@@ -55,7 +55,7 @@ spritesheet_t *spritesheet)
 {
     for (int i = 0; screen_i[i] != -1; ++i)
         if (screen_i[i] == SELECTED_PLAYER)
-            spritesheet[rpg->skin].active = status;
+            spritesheet[rpg->player_stats.skin].active = status;
         else if (screen_i[i] == CURSOR)
             toggle_cursor(rpg->begin.window, status);
         else
