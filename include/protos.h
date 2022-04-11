@@ -22,6 +22,7 @@
     #include "struct.h"
 
 void myrpg(void);
+void die(rpg_t *rpg);
 void manage_menu(rpg_t *rpg);
 void teleport_player_scene(rpg_t *rpg, sfImage *image, sfVector2f pos_player);
 
@@ -95,7 +96,7 @@ void write_text(beginning_t *begin, init_text_t struct_text);
 void draw_one_sprite(beginning_t *begin, sfSprite *sprite, sfIntRect rect,
 sfVector2f pos);
 void toggle_spritesheet_scene(rpg_t *rpg, bool status, int *screen_i,
-spritesheet_t *spritesheet);
+int scene);
 
 // lib sound
 void stop_sound(sfSound *sound);

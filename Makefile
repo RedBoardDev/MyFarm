@@ -37,16 +37,17 @@ SRC_FILES	=	events/events	\
 				interface/check_mouse_on_buttons	\
 				interface/inventory	\
 				spritesheets/utils_sprites	\
+				utils/utils_draw	\
+				utils/utils_csfml	\
+				utils/utils	\
 				clean_window	\
 				destroy_all	\
+				die	\
 				draw_all	\
-				utils_draw	\
 				lib_sound	\
 				main	\
 				myrpg	\
 				set_cursor	\
-				utils_csfml	\
-				utils	\
 				view	\
 
 SRC	=	$(addprefix $(SRC_DIR), $(addsuffix $(EXTENSION), $(SRC_FILES)))

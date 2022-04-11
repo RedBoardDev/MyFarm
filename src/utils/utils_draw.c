@@ -5,7 +5,7 @@
 ** draw_simple.c
 */
 
-#include "../include/rpg.h"
+#include "../../include/rpg.h"
 
 void my_putpixel(int x, int y, sfUint8 *framebuffer, sfColor color)
 {

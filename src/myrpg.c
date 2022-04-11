@@ -12,24 +12,6 @@ extern int screen_base[];
 extern int screen_jail[];
 extern int screen_grotte[];
 
-void die(rpg_t *rpg)
-{
-    init_all_events(&rpg->all_events);
-    rpg->player_stats.incr_pos.x = 0;
-    rpg->player_stats.incr_pos.y = 0;
-    rpg->player_stats.speed = 1.0;
-    rpg->player_stats.life = 20.0;
-    move_life_bar(rpg, rpg->player_stats.life * 5);
-    rpg->begin.view.center = rpg->screen[SC_MAIN_MAP].view_pos;
-    rpg->screen[SC_GROTTE].active = false;
-    rpg->screen[SC_MAIN_MAP].active = true;
-    toggle_spritesheet_scene(rpg, false, screen_grotte, rpg->spritesheet);
-    toggle_spritesheet_scene(rpg, true, screen_game, rpg->spritesheet);
-    rpg->begin.view.center = (sfVector2f){SPAWN_X, SPAWN_Y};
-    rpg->spritesheet[rpg->player_stats.skin].pos =
-    (sfVector2f){SPAWN_X, SPAWN_Y};
-}
-
 void big_loop(rpg_t *rpg)
 {
     my_events(rpg);

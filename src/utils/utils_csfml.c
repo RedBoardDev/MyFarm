@@ -5,7 +5,7 @@
 ** utils_csfml.c
 */
 
-#include "../include/rpg.h"
+#include "../../include/rpg.h"
 
 sfUint8 *my_framebuffer_create(void)
 {
