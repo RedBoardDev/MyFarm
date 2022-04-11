@@ -53,6 +53,8 @@ sfVector2f pos)
 void toggle_spritesheet_scene(rpg_t *rpg, bool status, int *screen_i,
 spritesheet_t *spritesheet)
 {
+    if (!status)
+        rpg->old_screen = screen_i;
     for (int i = 0; screen_i[i] != -1; ++i)
         if (screen_i[i] == SELECTED_PLAYER)
             spritesheet[rpg->player_stats.skin].active = status;

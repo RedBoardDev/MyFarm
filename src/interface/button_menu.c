@@ -23,3 +23,4 @@ void quit_game(rpg_t *rpg)
 {
     my_exit(rpg);
 }
+

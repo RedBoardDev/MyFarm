@@ -145,6 +145,7 @@ typedef struct {
     images_t imgs_colors;
     screen_t *screen;
     sound_t sound;
+    int *old_screen;
     player_stats_t player_stats;
 } rpg_t;
 
