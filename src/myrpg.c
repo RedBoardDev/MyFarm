@@ -28,7 +28,7 @@ void big_loop(rpg_t *rpg)
             rpg->all_events.page_down = false;
         }
         move_life_bar(rpg, rpg->player_stats.life * 5);
-        // animate_boss(rpg);
+        animate_boss(rpg);
     }
     if (rpg->screen[SC_GROTTE].active && rpg->all_events.page_up
     && rpg->player_stats.life < 20) {
