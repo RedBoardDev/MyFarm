@@ -87,7 +87,8 @@ void clean_window(beginning_t *begin, sfColor color);
 void init_csfml(beginning_t *beginning);
 void destroy_all(rpg_t *rpg);
 int my_rand(int min, int max);
-bool check_mouse_on_one_button(sfVector2i pos, sfFloatRect collision);
+bool check_mouse_on_one_button_int(sfVector2i pos, sfFloatRect collision);
+bool check_mouse_on_one_button_float(sfVector2f pos, sfFloatRect collision);
 void move_life_bar(rpg_t *rpg, int percentage);
 sfInt64 getClockTime_microsecond(sfClock *clock);
 

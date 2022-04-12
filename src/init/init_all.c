@@ -15,6 +15,7 @@ void init_all_events_mouse(events_t *events)
     events->mouse.move_x = 0;
     events->mouse.move_y = 0;
     events->mouse.pos = (sfVector2i){0, 0};
+    events->mouse.pos_view = (sfVector2f){0, 0};
     events->mouse_wheel.up = false;
     events->mouse_wheel.down = false;
     events->mouse_wheel.click = false;

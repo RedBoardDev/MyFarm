@@ -62,6 +62,7 @@ typedef struct {
     int move_x;
     int move_y;
     sfVector2i pos;
+    sfVector2f pos_view;
 } mouse_t;
 
 typedef struct {

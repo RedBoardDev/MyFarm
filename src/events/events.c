@@ -65,8 +65,8 @@ void my_events(rpg_t *rpg)
         event.type == sfEvtMouseMoved)
             events_mouse_global(event, &rpg->begin, &rpg->all_events);
     }
-    rpg->all_events.mouse.pos =
-    sfMouse_getPositionRenderWindow(rpg->begin.window);
+    rpg->all_events.mouse.pos = sfMouse_getPositionRenderWindow(rpg->begin.window);
+    rpg->all_events.mouse.pos_view = sfRenderWindow_mapPixelToCoords(rpg->begin.window, rpg->all_events.mouse.pos, rpg->begin.view.view);
     // if (rpg->screen[SC_BASE].active) {
     //     // pos_vecf = sfRenderWindow_mapPixelToCoords(rpg->begin.window,
     //     // rpg->all_events.mouse.pos, rpg->begin.view.view);

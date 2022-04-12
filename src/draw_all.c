@@ -21,6 +21,8 @@ sfIntRect rect)
 
 static void draw_spritesheets(beginning_t *begin, spritesheet_t *spritesheet)
 {
+    sfVector2i po = sfMouse_getPositionRenderWindow(begin->window);
+    spritesheet[SP_CURSOR].pos = sfRenderWindow_mapPixelToCoords(begin->window, po, begin->view.view);
     for (int i = 0; i < NBR_SP; ++i)
         if (spritesheet[i].active)
             draw_one_sprite(begin, spritesheet[i].sprite, spritesheet[i].rect,

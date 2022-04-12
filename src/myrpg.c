@@ -53,6 +53,7 @@ void myrpg(void)
     sfWindow_setFramerateLimit((sfWindow *)rpg->begin.window, 120);
     rpg->begin.fps.clock = sfClock_create();
     play_sound(rpg->sound.sound_list[SOUND_MENU].sound, rpg->sound.volume);
+    toggle_cursor(rpg->begin.window, false);
     while (sfRenderWindow_isOpen(rpg->begin.window)) {
         clean_window(&rpg->begin, sfBlack);
         big_loop(rpg);

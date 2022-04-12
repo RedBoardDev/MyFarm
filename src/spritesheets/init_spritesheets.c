@@ -38,4 +38,7 @@ void init_spritesheets(spritesheet_t *spritesheet, beginning_t *begin)
     init_spritesheets_armed(spritesheet, begin);
     init_bosses(spritesheet, begin);
     init_spritesheets_npc(spritesheet, begin);
+    set_one_sprite("assets/img/cursor.png", &spritesheet[SP_CURSOR],
+    begin, (init_sprite_t){{444 - 320, 1196 - 197}, {0.10, 0.10},
+    {0, 0, 181, 206}, false, true, false});
 }

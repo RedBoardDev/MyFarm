@@ -71,6 +71,7 @@ enum sprites {
     SP_ITEM_STRAWBERRY,
     SP_ITEM_BEETS,
     SP_NPC_SOLDIER,
+    SP_CURSOR,
     NBR_SP
 };
 
