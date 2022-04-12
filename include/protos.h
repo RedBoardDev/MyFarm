@@ -30,10 +30,8 @@ void teleport_player_scene(rpg_t *rpg, sfImage *image, sfVector2f pos_player);
 void my_events(rpg_t *rpg);
 void events_key_pressed(rpg_t *rpg, sfEvent event);
 void events_key_released(sfEvent event, events_t *all_events);
-void events_mouse_pressed(beginning_t *begin, sfEvent event,
-events_t *all_events);
-void events_mouse_released(beginning_t *begin, sfEvent event,
-events_t *all_events);
+void events_mouse_pressed(sfEvent event, events_t *all_events);
+void events_mouse_released(sfEvent event, events_t *all_events);
 void events_scroll_wheel(sfEvent event, events_t *all_events);
 void events_mouse_moved(sfEvent event, events_t *all_events);
 
@@ -56,21 +54,21 @@ void how_play(rpg_t *rpg);
 // init
 void init_all(rpg_t *rpg);
 void init_imgs(rpg_t *rpg);
-void init_main_map(spritesheet_t *spritesheet, beginning_t *begin);
+void init_main_map(spritesheet_t *spritesheet);
 void init_screens(rpg_t *rpg);
 void init_sounds(rpg_t *rpg);
-void init_soundbox(spritesheet_t *spritesheet, beginning_t *begin);
-void init_menu(spritesheet_t *spritesheet, beginning_t *begin);
-void init_spritesheets_rooms(spritesheet_t *spritesheet, beginning_t *begin);
-void init_spritesheets(spritesheet_t *spritesheet, beginning_t *begin);
+void init_soundbox(spritesheet_t *spritesheet);
+void init_menu(spritesheet_t *spritesheet);
+void init_spritesheets_rooms(spritesheet_t *spritesheet);
+void init_spritesheets(spritesheet_t *spritesheet);
 void init_view(rpg_t *rpg);
-void init_inventory(spritesheet_t *spritesheet, beginning_t *begin);
+void init_inventory(spritesheet_t *spritesheet);
 void init_all_events(events_t *events);
-void init_spritesheets_npc(spritesheet_t *spritesheet, beginning_t *begin);
-void init_spritesheets_armed(spritesheet_t *spritesheet, beginning_t *begin);
-void init_bosses(spritesheet_t *spritesheet, beginning_t *begin);
-void init_spritesheets_food(spritesheet_t *spritesheet, beginning_t *begin);
-void init_all_players(spritesheet_t *spritesheet, beginning_t *begin);
+void init_spritesheets_npc(spritesheet_t *spritesheet);
+void init_spritesheets_armed(spritesheet_t *spritesheet);
+void init_bosses(spritesheet_t *spritesheet);
+void init_spritesheets_food(spritesheet_t *spritesheet);
+void init_all_players(spritesheet_t *spritesheet);
 
 // utils draw
 void my_draw_circle(sfUint8 *framebuffer, sfVector2i center, int radius,
@@ -90,11 +88,11 @@ int my_rand(int min, int max);
 bool check_mouse_on_one_button_int(sfVector2i pos, sfFloatRect collision);
 bool check_mouse_on_one_button_float(sfVector2f pos, sfFloatRect collision);
 void move_life_bar(rpg_t *rpg, int percentage);
-sfInt64 getClockTime_microsecond(sfClock *clock);
+sfInt64 get_clock_time(sfClock *clock);
 
 // utils sprites
 void set_one_sprite(char *filename, spritesheet_t *spritesheet,
-beginning_t *begin, init_sprite_t init_sprite);
+init_sprite_t init_sprite);
 void write_text(beginning_t *begin, init_text_t struct_text);
 void draw_one_sprite(beginning_t *begin, sfSprite *sprite, sfIntRect rect,
 sfVector2f pos);
@@ -117,6 +115,7 @@ void move_all_fps_independant(rpg_t *rpg);
 sfColor get_color_from_player(sfImage *image, sfVector2f pos);
 void animate_player(rpg_t *rpg);
 void animate_selected_skin(rpg_t *rpg);
+void animate_boss(rpg_t *rpg);
 void draw_sfImage(sfRenderWindow *window, sfImage *image, sfVector2f pos,
 sfIntRect rect);
 
@@ -128,5 +127,8 @@ void manage_inventory(rpg_t *rpg);
 
 //quests
 void quest_soldiers(rpg_t *rpg);
+// gameplay
+sfBool check_collision_executioner(rpg_t *rpg);
+void remove_life_player(rpg_t *rpg, int offset);
 
 #endif

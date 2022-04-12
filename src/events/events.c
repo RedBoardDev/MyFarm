@@ -23,15 +23,14 @@ void events_key_global(sfEvent event, rpg_t *rpg)
     }
 }
 
-void events_mouse_global(sfEvent event, beginning_t *begin,
-events_t *all_events)
+void events_mouse_global(sfEvent event, events_t *all_events)
 {
     switch (event.type) {
         case sfEvtMouseButtonPressed:
-            events_mouse_pressed(begin, event, all_events);
+            events_mouse_pressed(event, all_events);
             break;
         case sfEvtMouseButtonReleased:
-            events_mouse_released(begin, event, all_events);
+            events_mouse_released(event, all_events);
             break;
         case sfEvtMouseWheelScrolled:
             events_scroll_wheel(event, all_events);
@@ -47,7 +46,6 @@ events_t *all_events)
 void my_events(rpg_t *rpg)
 {
     sfEvent event;
-    sfVector2f pos_vecf;
 
     rpg->all_events.mouse_wheel.up = false;
     rpg->all_events.mouse_wheel.down = false;
@@ -63,10 +61,11 @@ void my_events(rpg_t *rpg)
         if (event.type == sfEvtMouseButtonPressed || event.type ==
         sfEvtMouseButtonReleased || event.type == sfEvtMouseWheelScrolled ||
         event.type == sfEvtMouseMoved)
-            events_mouse_global(event, &rpg->begin, &rpg->all_events);
+            events_mouse_global(event, &rpg->all_events);
     }
     rpg->all_events.mouse.pos =
     sfMouse_getPositionRenderWindow(rpg->begin.window);
     rpg->all_events.mouse.pos_view = sfRenderWindow_mapPixelToCoords(
     rpg->begin.window, rpg->all_events.mouse.pos, rpg->begin.view.view);
+    rpg->all_events.mouse.pos_view.y -= 10;
 }

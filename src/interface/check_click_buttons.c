@@ -9,6 +9,7 @@
 
 static void nothing(rpg_t *rpg)
 {
+    rpg->all_events.ctrl = rpg->all_events.ctrl;
     return;
 }
 

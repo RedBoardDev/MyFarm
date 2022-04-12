@@ -29,7 +29,7 @@ void animate_player(rpg_t *rpg)
     sfColor color = get_color_from_player(rpg->imgs_colors.main_map,
     rpg->spritesheet[rpg->player_stats.skin].pos);
     float time_player =
-    getClockTime_microsecond(rpg->spritesheet[rpg->player_stats.skin].c_anim);
+    get_clock_time(rpg->spritesheet[rpg->player_stats.skin].c_anim);
 
     if (!rpg->all_events.down && !rpg->all_events.up && !rpg->all_events.left
     && !rpg->all_events.right && !rpg->all_events.s && !rpg->all_events.z
@@ -50,7 +50,7 @@ void animate_player(rpg_t *rpg)
 void animate_selected_skin(rpg_t *rpg)
 {
     float time_player =
-    getClockTime_microsecond(rpg->spritesheet[rpg->player_stats.skin].c_anim);
+    get_clock_time(rpg->spritesheet[rpg->player_stats.skin].c_anim);
     if (time_player >= 200000) {
         rpg->spritesheet[rpg->player_stats.skin].rect.left += 48;
         sfClock_restart(rpg->spritesheet[rpg->player_stats.skin].c_anim);

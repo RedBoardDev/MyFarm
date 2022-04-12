@@ -7,27 +7,25 @@
 
 #include "../../include/rpg.h"
 
-void events_mouse_pressed(beginning_t *begin, sfEvent event,
-events_t *all_events)
+void events_mouse_pressed(sfEvent event, events_t *all_events)
 {
-    if (sfMouseLeft == event.key.code)
+    if ((sfKeyCode)sfMouseLeft == event.key.code)
         all_events->mouse.left = true;
-    if (sfMouseRight == event.key.code)
+    if ((sfKeyCode)sfMouseRight == event.key.code)
         all_events->mouse.right = true;
-    if (sfMouseMiddle == event.key.code)
+    if ((sfKeyCode)sfMouseMiddle == event.key.code)
         all_events->mouse_wheel.click = true;
 }
 
-void events_mouse_released(beginning_t *begin, sfEvent event,
-events_t *all_events)
+void events_mouse_released(sfEvent event, events_t *all_events)
 {
-    if (sfMouseLeft == event.key.code) {
+    if ((sfKeyCode)sfMouseLeft == event.key.code) {
         all_events->mouse.left = false;
         all_events->mouse.left_released = true;
     }
-    if (sfMouseRight == event.key.code)
+    if ((sfKeyCode)sfMouseRight == event.key.code)
         all_events->mouse.right = false;
-    if (sfMouseMiddle == event.key.code)
+    if ((sfKeyCode)sfMouseMiddle == event.key.code)
         all_events->mouse_wheel.click = false;
 }
 

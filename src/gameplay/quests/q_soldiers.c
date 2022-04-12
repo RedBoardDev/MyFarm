@@ -19,6 +19,6 @@ sfBool check_collision_npc(rpg_t *rpg)
 
 void quest_soldiers(rpg_t *rpg)
 {
-
-
+    if (check_collision_npc(rpg))
+        printf("True");
 }

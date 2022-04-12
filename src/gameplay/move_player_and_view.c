@@ -69,21 +69,21 @@ sfVector2f pos_player, bool move_view)
     }
 }
 
-void move_player_jump(rpg_t *rpg, sfImage *image, sfVector2f pos_player)
+void move_player_jump(rpg_t *rpg)
 {
     int floor = 1330;
     int max_jump = 1200;
 
     if (rpg->all_events.space
     && rpg->spritesheet[rpg->player_stats.skin].pos.y >= floor)
-        rpg->player_stats.incr_pos.y = -2;
+        rpg->player_stats.incr_pos.y = -3;
     if (!rpg->all_events.space
     && rpg->spritesheet[rpg->player_stats.skin].pos.y < floor)
-        rpg->player_stats.incr_pos.y = 2;
+        rpg->player_stats.incr_pos.y = 3;
     rpg->spritesheet[rpg->player_stats.skin].pos.y +=
     rpg->player_stats.incr_pos.y;
     if (rpg->spritesheet[rpg->player_stats.skin].pos.y <= max_jump)
-        rpg->player_stats.incr_pos.y = 2;
+        rpg->player_stats.incr_pos.y = 3;
     if (rpg->spritesheet[rpg->player_stats.skin].pos.y >= floor)
         rpg->player_stats.incr_pos.y = 0;
 }
@@ -108,8 +108,7 @@ void move_player_and_view(rpg_t *rpg)
         rpg->spritesheet[rpg->player_stats.skin].pos);
     }
     if (rpg->screen[SC_GROTTE].active) {
-        move_player_jump(rpg, rpg->imgs_colors.backgrounds,
-        rpg->spritesheet[rpg->player_stats.skin].pos);
+        move_player_jump(rpg);
         move_player_and_view_horizontal(rpg, rpg->imgs_colors.backgrounds,
         rpg->spritesheet[rpg->player_stats.skin].pos, false);
     }

@@ -29,8 +29,8 @@ sfColor color)
     int xi = 0;
     int yi = 0;
 
-    for (unsigned int i = center.x - radius; i < center.x + radius * 2; ++i)
-        for (unsigned int j = center.y - radius;
+    for (int i = center.x - radius; i < center.x + radius * 2; ++i)
+        for (int j = center.y - radius;
         j < center.y + radius * 2; ++j) {
             xi = (i - center.x) * (i - center.x);
             yi = (j - center.y) * (j - center.y);

@@ -8,7 +8,7 @@
 #include "../../include/rpg.h"
 
 void set_one_sprite(char *filename, spritesheet_t *spritesheet,
-beginning_t *begin, init_sprite_t init_sprite)
+init_sprite_t init_sprite)
 {
     spritesheet->active = init_sprite.active;
     spritesheet->clickable = init_sprite.clickable;

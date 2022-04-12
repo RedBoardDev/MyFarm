@@ -7,8 +7,7 @@
 
 #include "../../include/rpg.h"
 
-void events_key_pressed_arrows(beginning_t *begin, sfEvent event,
-events_t *all_events)
+void events_key_pressed_arrows(sfEvent event, events_t *all_events)
 {
     if (sfKeyRight == event.key.code)
         all_events->right = true;
@@ -26,8 +25,7 @@ events_t *all_events)
         all_events->tab = true;
 }
 
-void events_key_pressed_letters(beginning_t *begin, sfEvent event,
-events_t *all_events)
+void events_key_pressed_letters(sfEvent event, events_t *all_events)
 {
     if (sfKeyZ == event.key.code)
         all_events->z = true;
@@ -58,6 +56,6 @@ void events_key_pressed_not_letters(rpg_t *rpg, sfEvent event)
 void events_key_pressed(rpg_t *rpg, sfEvent event)
 {
     events_key_pressed_not_letters(rpg, event);
-    events_key_pressed_arrows(&rpg->begin, event, &rpg->all_events);
-    events_key_pressed_letters(&rpg->begin, event, &rpg->all_events);
+    events_key_pressed_arrows(event, &rpg->all_events);
+    events_key_pressed_letters(event, &rpg->all_events);
 }
