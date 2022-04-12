@@ -21,7 +21,7 @@ void back_button(rpg_t *rpg)
 
 static bool check_click_one_button(rpg_t *rpg, int i)
 {
-    static const void (*functions[])(rpg_t *) = FUNCTIONS_BUTTONS;
+    static void (*functions[])(rpg_t *) = FUNCTIONS_BUTTONS;
     sfFloatRect collision;
 
     if (rpg->spritesheet[i].clickable && rpg->spritesheet[i].active) {

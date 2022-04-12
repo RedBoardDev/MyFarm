@@ -16,7 +16,7 @@
     nothing, how_play, nothing, skin_blue, skin_brown, skin_cyan, skin_green, \
     skin_grey, skin_pink, skin_red, skin_yellow, nothing, nothing, nothing, \
     nothing, launch_game, quit_game,   \
-    display_custom_skins, back_button,   \
+    display_custom_skins, back_button, quest_soldiers,   \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
@@ -57,6 +57,7 @@ enum sprites {
     SP_QUIT,
     SP_CUSTOM,
     SP_BACK,
+    SP_NPC_SOLDIER,
     SP_INVENTORY,
     SP_LIFE_BAR_BOX,
     SP_LIFE_BAR,
@@ -70,7 +71,6 @@ enum sprites {
     SP_ITEM_TOMATE,
     SP_ITEM_STRAWBERRY,
     SP_ITEM_BEETS,
-    SP_NPC_SOLDIER,
     SP_CURSOR,
     NBR_SP
 };

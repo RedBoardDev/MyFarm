@@ -126,4 +126,7 @@ void toggle_cursor(sfRenderWindow *window, bool status);
 //inventory
 void manage_inventory(rpg_t *rpg);
 
+//quests
+void quest_soldiers(rpg_t *rpg);
+
 #endif

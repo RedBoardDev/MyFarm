@@ -19,6 +19,7 @@ SRC_FILES	=	events/events	\
 				gameplay/move_all	\
 				gameplay/move_player_and_view	\
 				gameplay/teleport_player	\
+				gameplay/quests/q_soldiers	\
 				init/init_all	\
 				init/init_imgs	\
 				init/init_main_map	\
