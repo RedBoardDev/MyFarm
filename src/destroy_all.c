@@ -7,16 +7,6 @@
 
 #include "../include/rpg.h"
 
-void destroy_begin(rpg_t *rpg)
-{
-    sfRenderWindow_destroy(rpg->begin.window);
-    free(rpg->begin.framebuffer);
-    sfTexture_destroy(rpg->begin.texture);
-    sfSprite_destroy(rpg->begin.sprite);
-    sfView_destroy(rpg->begin.view.view);
-    sfClock_destroy(rpg->begin.fps.clock);
-}
-
 void destroy_spritesheets(rpg_t *rpg)
 {
     for (int i = 0; i < NBR_SP; ++i) {
@@ -50,7 +40,12 @@ void destroy_sounds(rpg_t *rpg)
 
 void destroy_all(rpg_t *rpg)
 {
-    destroy_begin(rpg);
+    sfRenderWindow_destroy(rpg->begin.window);
+    free(rpg->begin.framebuffer);
+    sfTexture_destroy(rpg->begin.texture);
+    sfSprite_destroy(rpg->begin.sprite);
+    sfView_destroy(rpg->begin.view.view);
+    sfClock_destroy(rpg->begin.fps.clock);
     destroy_spritesheets(rpg);
     destroy_images(rpg);
     destroy_screens(rpg);

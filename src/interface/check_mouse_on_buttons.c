@@ -7,6 +7,17 @@
 
 #include "../../include/rpg.h"
 
+bool check_mouse_on_one_button(sfVector2i pos, sfFloatRect collision)
+{
+    if (pos.x > collision.left &&
+    pos.x < collision.left + collision.width &&
+    pos.y > collision.top &&
+    pos.y < collision.top + collision.height)
+        return (true);
+    else
+        return (false);
+}
+
 void check_one_button(rpg_t *rpg, int i)
 {
     sfFloatRect collision;

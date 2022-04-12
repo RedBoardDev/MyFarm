@@ -59,7 +59,7 @@ void init_all(rpg_t *rpg)
 {
     rpg->begin.fps.clock = sfClock_create();
     rpg->begin.fps.timer = 0;
-    rpg->skin = SP_PLAYER;
+    rpg->player_stats.skin = SP_PLAYER;
     rpg->sound.volume = 0; //SET SOUND AT THE FINAL PUSH
     init_all_events(&rpg->all_events);
     init_imgs(rpg);

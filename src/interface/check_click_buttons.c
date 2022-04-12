@@ -7,12 +7,19 @@
 
 #include "../../include/rpg.h"
 
-void nothing(rpg_t *rpg)
+static void nothing(rpg_t *rpg)
 {
     return;
 }
 
-bool check_click_one_button(rpg_t *rpg, int i)
+void back_button(rpg_t *rpg)
+{
+    for (int i = 0; i < NBR_SP; ++i)
+        rpg->spritesheet[i].active = false;
+    toggle_spritesheet_scene(rpg, true, rpg->old_screen, -1);
+}
+
+static bool check_click_one_button(rpg_t *rpg, int i)
 {
     static const void (*functions[])(rpg_t *) = FUNCTIONS_BUTTONS;
     sfFloatRect collision;

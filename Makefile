@@ -18,7 +18,7 @@ SRC_FILES	=	events/events	\
 				gameplay/animate_player	\
 				gameplay/move_all	\
 				gameplay/move_player_and_view	\
-				gameplay/teleport	\
+				gameplay/teleport_player	\
 				init/init_all	\
 				init/init_imgs	\
 				init/init_main_map	\
@@ -26,6 +26,8 @@ SRC_FILES	=	events/events	\
 				init/init_sounds	\
 				spritesheets/init_spritesheets_boss	\
 				spritesheets/init_spritesheets_menu	\
+				spritesheets/init_spritesheets_npc	\
+				spritesheets/init_spritesheets_player	\
 				spritesheets/init_spritesheets_rooms	\
 				spritesheets/init_spritesheets	\
 				spritesheets/init_spritesheets_item	\
@@ -37,14 +39,17 @@ SRC_FILES	=	events/events	\
 				interface/check_mouse_on_buttons	\
 				interface/inventory	\
 				spritesheets/utils_sprites	\
+				utils/utils_draw	\
+				utils/utils_csfml	\
+				utils/utils	\
 				clean_window	\
 				destroy_all	\
-				draw_simple	\
+				die	\
+				draw_all	\
 				lib_sound	\
 				main	\
 				myrpg	\
 				set_cursor	\
-				utils	\
 				view	\
 
 SRC	=	$(addprefix $(SRC_DIR), $(addsuffix $(EXTENSION), $(SRC_FILES)))

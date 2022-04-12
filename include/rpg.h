@@ -12,10 +12,17 @@
     #include "protos.h"
     #include "struct.h"
     #define RADIAN(x) x * 3.14159265359 / 180
-    #define FUNCTIONS_BUTTONS {nothing, nothing, nothing, nothing, nothing, nothing, \
-    skin_blue, skin_brown, skin_cyan, skin_green, skin_grey, skin_pink, \
-    skin_red, skin_yellow, nothing, nothing, nothing, nothing, launch_game, quit_game, display_custom_skins,    \
-    nothing}
+    #define FUNCTIONS_BUTTONS {nothing, nothing, nothing, nothing, nothing, \
+    nothing, how_play, nothing, skin_blue, skin_brown, skin_cyan, skin_green, \
+    skin_grey, skin_pink, skin_red, skin_yellow, nothing, nothing, nothing, \
+    nothing, launch_game, quit_game,   \
+    display_custom_skins, back_button,   \
+    nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
+    nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
+    nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
+    nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
+    nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
+    nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing}
     #define SPAWN_X WIDTH / 2
     #define SPAWN_Y WIDTH / 2 + 80
     #define SPEED_PLAYER 1.5
@@ -31,6 +38,8 @@ enum sprites {
     SP_BACKGROUND_SC_BASE,
     SP_BACKGROUND_JAIL,
     SP_BACKGROUND_GROTTE,
+    SP_BACKGROUND_HOW_PLAY,
+    SP_MONKEY,
     SP_PLAYER,
     SP_PLAYER_BLUE,
     SP_PLAYER_BROWN,
@@ -47,10 +56,21 @@ enum sprites {
     SP_PLAY,
     SP_QUIT,
     SP_CUSTOM,
+    SP_BACK,
     SP_INVENTORY,
     SP_LIFE_BAR_BOX,
     SP_LIFE_BAR,
     SP_ITEM_SHOVEL,
+    SP_ITEM_HOE,
+    SP_ITEM_HAMMER,
+    SP_ITEM_FISHING_ROD,
+    SP_ITEM_SWORD,
+    SP_ITEM_CARROT,
+    SP_ITEM_PATATO,
+    SP_ITEM_TOMATE,
+    SP_ITEM_STRAWBERRY,
+    SP_ITEM_BEETS,
+    SP_NPC_SOLDIER,
     NBR_SP
 };
 
@@ -60,8 +80,6 @@ enum screens {
     SC_MAIN_MAP,
     SC_BASE,
     SC_GROTTE,
-    // SC_CUSTOM_PLAYER,
-    // SC_JAIL,
     SC_INVENTORY,
     NBR_SC
 };
