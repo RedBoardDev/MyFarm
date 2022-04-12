@@ -23,7 +23,7 @@ void init_csfml(beginning_t *begin)
     begin->sprite = sfSprite_create();
 }
 
-sfInt64 getClockTime_microsecond(sfClock *clock)
+sfInt64 get_clock_time(sfClock *clock)
 {
     return (sfClock_getElapsedTime(clock).microseconds);
 }

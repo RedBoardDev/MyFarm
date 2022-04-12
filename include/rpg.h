@@ -75,6 +75,14 @@ enum sprites {
     NBR_SP
 };
 
+enum status_boss {
+    ST_IDLE,
+    ST_ATTACK_1,
+    ST_ATTACK_2,
+    ST_DIE,
+    NBR_ST
+};
+
 enum screens {
     SC_MENU,
     SC_CUSTOM_SKINS,

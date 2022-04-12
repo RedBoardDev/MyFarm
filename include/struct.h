@@ -137,7 +137,18 @@ typedef struct {
     float mana;
     int damage;
     int knowledge;
+    sfClock *last_damage;
 } player_stats_t;
+
+typedef struct {
+    float life;
+    int damage;
+    float inc_pos;
+    int status;
+    float time_next_it;
+    bool rush_to_player;
+    sfClock *movement;
+} boss_stats_t;
 
 typedef struct {
     beginning_t begin;
@@ -148,6 +159,7 @@ typedef struct {
     sound_t sound;
     int *old_screen;
     player_stats_t player_stats;
+    boss_stats_t boss_stats;
 } rpg_t;
 
 #endif

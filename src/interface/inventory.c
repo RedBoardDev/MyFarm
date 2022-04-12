@@ -11,8 +11,8 @@ extern int screen_inventory[];
 
 void box_inventory(rpg_t *rpg)
 {
-    int cursor_x = rpg->all_events.mouse.pos.x;
-    int cursor_y = rpg->all_events.mouse.pos.y;
+    // int cursor_x = rpg->all_events.mouse.pos.x;
+    // int cursor_y = rpg->all_events.mouse.pos.y;
     if (rpg->screen[SC_INVENTORY].active) {
 
     }

@@ -7,38 +7,38 @@
 
 #include "../../include/rpg.h"
 
-void init_player(spritesheet_t *spritesheet, beginning_t *begin)
+void init_player(spritesheet_t *spritesheet)
 {
     set_one_sprite("assets/img/player.png", &spritesheet[SP_PLAYER],
-    begin, (init_sprite_t){{SPAWN_X, SPAWN_Y}, {0.7, 0.7},
+    (init_sprite_t){{SPAWN_X, SPAWN_Y}, {0.7, 0.7},
     {0, 0, 48, 62}, false, false, false});
 }
 
-void init_life_bar(spritesheet_t *spritesheet, beginning_t *begin)
+void init_life_bar(spritesheet_t *spritesheet)
 {
     set_one_sprite("assets/img/life_bar_box.png", &spritesheet[SP_LIFE_BAR_BOX],
-    begin, (init_sprite_t){{444 - 320, 1196 - 197}, {0.25, 0.25},
+    (init_sprite_t){{444 - 320, 1196 - 197}, {0.25, 0.25},
     {0, 0, 451, 121}, false, false, false});
     set_one_sprite("assets/img/life_bar.png", &spritesheet[SP_LIFE_BAR],
-    begin, (init_sprite_t){{444 - 320, 1196 - 197}, {0.25, 0.25},
+    (init_sprite_t){{444 - 320, 1196 - 197}, {0.25, 0.25},
     {0, 0, 451, 121}, false, false, false});
 }
 
-void init_spritesheets(spritesheet_t *spritesheet, beginning_t *begin)
+void init_spritesheets(spritesheet_t *spritesheet)
 {
-    init_main_map(spritesheet, begin);
-    init_spritesheets_rooms(spritesheet, begin);
-    init_player(spritesheet, begin);
-    init_all_players(spritesheet, begin);
-    init_menu(spritesheet, begin);
-    init_soundbox(spritesheet, begin);
-    init_inventory(spritesheet, begin);
-    init_life_bar(spritesheet, begin);
-    init_spritesheets_food(spritesheet, begin);
-    init_spritesheets_armed(spritesheet, begin);
-    init_bosses(spritesheet, begin);
-    init_spritesheets_npc(spritesheet, begin);
+    init_main_map(spritesheet);
+    init_spritesheets_rooms(spritesheet);
+    init_player(spritesheet);
+    init_all_players(spritesheet);
+    init_menu(spritesheet);
+    init_soundbox(spritesheet);
+    init_inventory(spritesheet);
+    init_life_bar(spritesheet);
+    init_spritesheets_food(spritesheet);
+    init_spritesheets_armed(spritesheet);
+    init_bosses(spritesheet);
+    init_spritesheets_npc(spritesheet);
     set_one_sprite("assets/img/cursor.png", &spritesheet[SP_CURSOR],
-    begin, (init_sprite_t){{444 - 320, 1196 - 197}, {0.10, 0.10},
+    (init_sprite_t){{444 - 320, 1196 - 197}, {0.10, 0.10},
     {0, 0, 181, 206}, false, true, false});
 }

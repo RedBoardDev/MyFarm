@@ -22,11 +22,13 @@ void big_loop(rpg_t *rpg)
     if (rpg->screen[SC_CUSTOM_SKINS].active)
         animate_selected_skin(rpg);
     manage_inventory(rpg);
-    if (rpg->screen[SC_GROTTE].active && rpg->all_events.page_down
-    && rpg->player_stats.life > 0) {
-        --rpg->player_stats.life;
-        rpg->all_events.page_down = false;
+    if (rpg->screen[SC_GROTTE].active) {
+        if (rpg->all_events.page_down && rpg->player_stats.life > 0) {
+            --rpg->player_stats.life;
+            rpg->all_events.page_down = false;
+        }
         move_life_bar(rpg, rpg->player_stats.life * 5);
+        // animate_boss(rpg);
     }
     if (rpg->screen[SC_GROTTE].active && rpg->all_events.page_up
     && rpg->player_stats.life < 20) {
@@ -34,7 +36,7 @@ void big_loop(rpg_t *rpg)
         rpg->all_events.page_up = false;
         move_life_bar(rpg, rpg->player_stats.life * 5);
     }
-    if (rpg->screen[SC_GROTTE].active && rpg->player_stats.life == 0)
+    if (rpg->screen[SC_GROTTE].active && rpg->player_stats.life <= 0)
         die(rpg);
     if (rpg->screen[SC_MENU].active || rpg->screen[SC_CUSTOM_SKINS].active)
         set_view(rpg, rpg->screen[SC_MENU].view_pos);

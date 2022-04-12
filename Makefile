@@ -16,9 +16,11 @@ SRC_FILES	=	events/events	\
 				events/key_released	\
 				events/mouse	\
 				gameplay/animate_player	\
+				gameplay/animate_boss	\
 				gameplay/move_all	\
 				gameplay/move_player_and_view	\
 				gameplay/teleport_player	\
+				gameplay/utils	\
 				init/init_all	\
 				init/init_imgs	\
 				init/init_main_map	\
@@ -84,9 +86,9 @@ FLAGS	=	-I./include	\
 		-lmy	\
 		-g	\
 
-WFLAGS	=	-Wall	\
-			-Werror	\
+CFLAGS	+=	-Werror	\
 			-Wextra	\
+			-Wall	\
 
 CSFML_FLAGS	=	-lcsfml-graphics	\
 			-lcsfml-window	\
@@ -103,7 +105,7 @@ $(NAME):	$(OBJ)
 	@echo -e "\033[1;34m\n============== Files compilation ok =============="
 	@echo -e "\033[0m"
 	make -C lib/my
-	$(CC) -o $(NAME) $(OBJ) $(FLAGS) $(CSFML_FLAGS)
+	$(CC) -o $(NAME) $(OBJ) $(FLAGS) $(CSFML_FLAGS) $(CFLAGS)
 	@echo -e "\033[1;32m\n================= Compilation done ================="
 	@echo -e "\033[0m"
 

@@ -54,6 +54,18 @@ void init_player_stats(player_stats_t *player_stats)
     player_stats->knowledge = 1;
     for (int i = 0; i < 10; ++i)
         player_stats->inventory[i] = -1;
+    player_stats->last_damage = sfClock_create();
+}
+
+void init_boss_stats(boss_stats_t *boss_stats)
+{
+    boss_stats->damage = 1;
+    boss_stats->inc_pos = 0.25;
+    boss_stats->life = 30;
+    boss_stats->status = ST_IDLE;
+    boss_stats->time_next_it = 0;
+    boss_stats->movement = sfClock_create();
+    boss_stats->rush_to_player = false;
 }
 
 void init_all(rpg_t *rpg)
@@ -67,8 +79,9 @@ void init_all(rpg_t *rpg)
     init_screens(rpg);
     rpg->spritesheet = malloc(sizeof(spritesheet_t) * NBR_SP);
     init_view(rpg);
-    init_spritesheets(rpg->spritesheet, &rpg->begin);
+    init_spritesheets(rpg->spritesheet);
     init_sounds(rpg);
     init_csfml(&rpg->begin);
     init_player_stats(&rpg->player_stats);
+    init_boss_stats(&rpg->boss_stats);
 }
