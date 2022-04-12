@@ -66,6 +66,7 @@ void init_spritesheets(spritesheet_t *spritesheet, beginning_t *begin);
 void init_view(rpg_t *rpg);
 void init_inventory(spritesheet_t *spritesheet, beginning_t *begin);
 void init_all_events(events_t *events);
+void init_spritesheets_npc(spritesheet_t *spritesheet, beginning_t *begin);
 void init_spritesheets_armed(spritesheet_t *spritesheet, beginning_t *begin);
 void init_spritesheets_food(spritesheet_t *spritesheet, beginning_t *begin);
 void init_all_players(spritesheet_t *spritesheet, beginning_t *begin);

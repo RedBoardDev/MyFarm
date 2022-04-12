@@ -14,6 +14,7 @@ extern int screen_grotte[];
 
 void big_loop(rpg_t *rpg)
 {
+    // printf("%d - %d\n", rpg->all_events.mouse.pos.x, rpg->all_events.mouse.pos.y);
     my_events(rpg);
     move_all_fps_independant(rpg);
     if (!rpg->screen[SC_CUSTOM_SKINS].active)

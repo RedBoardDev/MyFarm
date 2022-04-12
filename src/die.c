@@ -19,8 +19,6 @@ void die(rpg_t *rpg)
     rpg->player_stats.life = 20.0;
     move_life_bar(rpg, rpg->player_stats.life * 5);
     rpg->begin.view.center = rpg->screen[SC_MAIN_MAP].view_pos;
-    rpg->screen[SC_GROTTE].active = false;
-    rpg->screen[SC_MAIN_MAP].active = true;
     toggle_spritesheet_scene(rpg, false, screen_grotte, SC_GROTTE);
     toggle_spritesheet_scene(rpg, true, screen_game, SC_MAIN_MAP);
     rpg->begin.view.center = (sfVector2f){SPAWN_X, SPAWN_Y};

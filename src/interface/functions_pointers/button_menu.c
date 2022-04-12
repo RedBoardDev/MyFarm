@@ -27,9 +27,6 @@ void set_player(rpg_t *rpg)
 
 void launch_game(rpg_t *rpg)
 {
-    rpg->screen[SC_MENU].active = false;
-    rpg->screen[SC_CUSTOM_SKINS].active = false;
-    rpg->screen[SC_MAIN_MAP].active = true;
     rpg->spritesheet[rpg->player_stats.skin].pos =
     (sfVector2f){SPAWN_X, SPAWN_Y};
     set_player(rpg);
@@ -46,8 +43,6 @@ void quit_game(rpg_t *rpg)
 
 void display_custom_skins(rpg_t *rpg)
 {
-    rpg->screen[SC_MENU].active = false;
-    rpg->screen[SC_CUSTOM_SKINS].active = true;
     sfSprite_setColor(rpg->spritesheet[SP_BACKGROUND_SC_MENU].sprite,
     (sfColor){255, 255, 255, 180});
     toggle_spritesheet_scene(rpg, false, screen_menu, SC_MENU);

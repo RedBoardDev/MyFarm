@@ -36,4 +36,5 @@ void init_spritesheets(spritesheet_t *spritesheet, beginning_t *begin)
     init_life_bar(spritesheet, begin);
     init_spritesheets_food(spritesheet, begin);
     init_spritesheets_armed(spritesheet, begin);
+    init_spritesheets_npc(spritesheet, begin);
 }

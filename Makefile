@@ -18,13 +18,14 @@ SRC_FILES	=	events/events	\
 				gameplay/animate_player	\
 				gameplay/move_all	\
 				gameplay/move_player_and_view	\
-				gameplay/teleport	\
+				gameplay/teleport_player	\
 				init/init_all	\
 				init/init_imgs	\
 				init/init_main_map	\
 				init/init_screens	\
 				init/init_sounds	\
 				spritesheets/init_spritesheets_menu	\
+				spritesheets/init_spritesheets_npc	\
 				spritesheets/init_spritesheets_player	\
 				spritesheets/init_spritesheets_rooms	\
 				spritesheets/init_spritesheets	\
