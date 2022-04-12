@@ -15,7 +15,7 @@ SP_PLAYER_PINK, SP_PLAYER_RED, SP_PLAYER_YELLOW, SP_PLAY, CURSOR, -1};
 const int screen_game[] = {SP_BACKGROUND_SC_MAIN_MAP, SELECTED_PLAYER, -1};
 const int screen_base[] = {SP_BACKGROUND_SC_BASE, SELECTED_PLAYER, CURSOR, -1};
 const int screen_jail[] = {SP_BACKGROUND_JAIL, SELECTED_PLAYER, CURSOR, -1};
-const int screen_grotte[] = {SP_BACKGROUND_GROTTE, SELECTED_PLAYER, SP_LIFE_BAR_BOX, SP_LIFE_BAR, CURSOR, -1};
+const int screen_grotte[] = {SP_BACKGROUND_GROTTE, SELECTED_PLAYER, SP_BOSS_EXECUTIONER, SP_LIFE_BAR_BOX, SP_LIFE_BAR, CURSOR, -1};
 const int screen_inventory[] = {SP_INVENTORY, CURSOR, -1};
 
 void init_screens(rpg_t *rpg)

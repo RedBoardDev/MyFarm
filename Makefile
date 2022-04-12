@@ -24,6 +24,7 @@ SRC_FILES	=	events/events	\
 				init/init_main_map	\
 				init/init_screens	\
 				init/init_sounds	\
+				spritesheets/init_spritesheets_boss	\
 				spritesheets/init_spritesheets_menu	\
 				spritesheets/init_spritesheets_rooms	\
 				spritesheets/init_spritesheets	\
