@@ -58,6 +58,6 @@ void init_soundbox(spritesheet_t *spritesheet)
 void init_inventory(spritesheet_t *spritesheet)
 {
     set_one_sprite("assets/img/menu/inventory.png", &spritesheet[SP_INVENTORY],
-    (init_sprite_t){{WIDTH/2, HEIGHT/2}, {1, 1}, {0, 0, 750, 314},
+    (init_sprite_t){{WIDTH / 2, HEIGHT / 2}, {1, 1}, {0, 0, 742, 314},
     .clickable = false, .active = false, .change_sprite_on_mouse = false});
 }
