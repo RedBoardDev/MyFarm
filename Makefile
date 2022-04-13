@@ -25,12 +25,14 @@ SRC_FILES	=	events/events	\
 				init/init_all	\
 				init/init_imgs	\
 				init/init_main_map	\
+				init/init_quests	\
 				init/init_screens	\
 				init/init_sounds	\
 				spritesheets/init_spritesheets_boss	\
 				spritesheets/init_spritesheets_menu	\
 				spritesheets/init_spritesheets_npc	\
 				spritesheets/init_spritesheets_player	\
+				spritesheets/init_spritesheets_quests	\
 				spritesheets/init_spritesheets_rooms	\
 				spritesheets/init_spritesheets	\
 				spritesheets/init_spritesheets_item	\
@@ -50,6 +52,7 @@ SRC_FILES	=	events/events	\
 				die	\
 				draw_all	\
 				lib_sound	\
+				lib_text	\
 				main	\
 				myrpg	\
 				set_cursor	\

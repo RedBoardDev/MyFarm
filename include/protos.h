@@ -69,6 +69,8 @@ void init_spritesheets_armed(spritesheet_t *spritesheet);
 void init_bosses(spritesheet_t *spritesheet);
 void init_spritesheets_food(spritesheet_t *spritesheet);
 void init_all_players(spritesheet_t *spritesheet);
+void init_spritesheets_quests(spritesheet_t *spritesheet);
+void init_quests(rpg_t *rpg);
 
 // utils draw
 void my_draw_circle(sfUint8 *framebuffer, sfVector2i center, int radius,
@@ -94,7 +96,6 @@ sfInt64 get_clock_time(sfClock *clock);
 // utils sprites
 void set_one_sprite(char *filename, spritesheet_t *spritesheet,
 init_sprite_t init_sprite);
-void write_text(beginning_t *begin, init_text_t struct_text);
 void draw_one_sprite(beginning_t *begin, sfSprite *sprite, sfIntRect rect,
 sfVector2f pos);
 void toggle_spritesheet_scene(rpg_t *rpg, bool status, int *screen_i,
@@ -128,8 +129,14 @@ void manage_inventory(rpg_t *rpg);
 
 //quests
 void quest_soldiers(rpg_t *rpg);
+
 // gameplay
 sfBool check_collision_executioner(rpg_t *rpg);
 void remove_life_player(rpg_t *rpg, int offset);
+
+//lib text
+sfText *create_text(init_text_t struct_text);
+void write_text(sfRenderWindow *window, sfText *text);
+void destroy_text(sfText *text, sfFont *font);
 
 #endif

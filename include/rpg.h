@@ -58,6 +58,7 @@ enum sprites {
     SP_CUSTOM,
     SP_BACK,
     SP_NPC_SOLDIER,
+    SP_BUBBLE_CHAT,
     SP_INVENTORY,
     SP_LIFE_BAR_BOX,
     SP_LIFE_BAR,
@@ -114,6 +115,11 @@ enum sounds {
 enum utilitaire {
     SELECTED_PLAYER = -10,
     CURSOR,
+};
+
+enum quests {
+    QUEST_SOLDIER,
+    NBR_QUEST
 };
 
 #endif

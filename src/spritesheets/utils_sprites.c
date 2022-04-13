@@ -27,21 +27,6 @@ init_sprite_t init_sprite)
     / 2, init_sprite.rect.height / 2});
 }
 
-void write_text(beginning_t *begin, init_text_t struct_text)
-{
-    sfText *text = sfText_create();
-    sfFont *font = sfFont_createFromFile("assets/fonts/droid-sans-bold.ttf");
-
-    sfText_setFont(text, font);
-    sfText_setCharacterSize(text, struct_text.size);
-    sfText_setPosition(text, struct_text.pos);
-    sfText_setColor(text, struct_text.color);
-    sfText_setString(text, struct_text.str);
-    sfRenderWindow_drawText(begin->window, text, NULL);
-    sfText_destroy(text);
-    sfFont_destroy(font);
-}
-
 void draw_one_sprite(beginning_t *begin, sfSprite *sprite, sfIntRect rect,
 sfVector2f pos)
 {

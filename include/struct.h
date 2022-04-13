@@ -30,10 +30,11 @@ typedef struct {
 } init_sprite_t;
 
 typedef struct {
-    char *str;
     int size;
-    sfVector2f pos;
+    char *str;
     sfColor color;
+    sfVector2f pos;
+    char *filepath_font;
 } init_text_t;
 
 typedef struct {
@@ -151,6 +152,13 @@ typedef struct {
 } boss_stats_t;
 
 typedef struct {
+    sfText *npc;
+    sfText *player;
+    bool active;
+    bool finished;
+} quest_t;
+
+typedef struct {
     beginning_t begin;
     events_t all_events;
     spritesheet_t *spritesheet;
@@ -160,6 +168,7 @@ typedef struct {
     int *old_screen;
     player_stats_t player_stats;
     boss_stats_t boss_stats;
+    quest_t *quest;
 } rpg_t;
 
 #endif

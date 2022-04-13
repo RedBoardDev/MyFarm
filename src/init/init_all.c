@@ -84,4 +84,5 @@ void init_all(rpg_t *rpg)
     init_csfml(&rpg->begin);
     init_player_stats(&rpg->player_stats);
     init_boss_stats(&rpg->boss_stats);
+    init_quests(rpg);
 }
