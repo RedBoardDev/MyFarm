@@ -42,6 +42,7 @@ SRC_FILES	=	events/events	\
 				interface/check_mouse_on_buttons	\
 				interface/inventory	\
 				spritesheets/utils_sprites	\
+				utils/check_screens	\
 				utils/utils_draw	\
 				utils/utils_csfml	\
 				utils/utils	\
@@ -49,6 +50,7 @@ SRC_FILES	=	events/events	\
 				destroy_all	\
 				die	\
 				draw_all	\
+				execute_all	\
 				lib_sound	\
 				main	\
 				myrpg	\
