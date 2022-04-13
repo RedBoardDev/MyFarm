@@ -63,17 +63,9 @@ void my_events(rpg_t *rpg)
         event.type == sfEvtMouseMoved)
             events_mouse_global(event, &rpg->all_events);
     }
-    rpg->all_events.mouse.pos = sfMouse_getPositionRenderWindow(rpg->begin.window);
-    rpg->all_events.mouse.pos_view = sfRenderWindow_mapPixelToCoords(rpg->begin.window, rpg->all_events.mouse.pos, rpg->begin.view.view);
-    // if (rpg->screen[SC_BASE].active) {
-    //     // pos_vecf = sfRenderWindow_mapPixelToCoords(rpg->begin.window,
-    //     // rpg->all_events.mouse.pos, rpg->begin.view.view);
-    //     // sfMouse_getPositionRenderWindow(rpg->begin.window);
-    //     rpg->all_events.mouse.pos = sfRenderWindow_mapCoordsToPixel(rpg->begin.window,
-    //     (sfVector2f){rpg->all_events.mouse.pos.x, rpg->all_events.mouse.pos.y}, rpg->begin.view.view);
-    //     // rpg->all_events.mouse.pos.x = (int)pos_vecf.x;
-    //     // rpg->all_events.mouse.pos.x = (int)pos_vecf.y;
-    // }
-    // printf("%d - %d\n", rpg->all_events.mouse.pos.x, rpg->all_events.mouse.pos.y);
-    // printf("%f - %f\n", rpg->spritesheet[rpg->player_stats.skin].pos.x, rpg->spritesheet[rpg->player_stats.skin].pos.y);
+    rpg->all_events.mouse.pos =
+    sfMouse_getPositionRenderWindow(rpg->begin.window);
+    rpg->all_events.mouse.pos_view = sfRenderWindow_mapPixelToCoords(
+    rpg->begin.window, rpg->all_events.mouse.pos, rpg->begin.view.view);
+    rpg->all_events.mouse.pos_view.y -= 10;
 }
