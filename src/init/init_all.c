@@ -61,7 +61,7 @@ void init_boss_stats(boss_stats_t *boss_stats)
 {
     boss_stats->damage = 1;
     boss_stats->inc_pos = 0.25;
-    boss_stats->life = 30;
+    boss_stats->life = 20;
     boss_stats->status = ST_IDLE;
     boss_stats->time_next_it = 0;
     boss_stats->movement = sfClock_create();

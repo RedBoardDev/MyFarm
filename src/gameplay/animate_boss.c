@@ -56,7 +56,7 @@ void animate_die(rpg_t *rpg)
         sfClock_restart(rpg->spritesheet[SP_BOSS_EXECUTIONER].c_anim);
     }
     if (rpg->spritesheet[SP_BOSS_EXECUTIONER].rect.left >= 2000)
-        rpg->spritesheet[SP_BOSS_EXECUTIONER].rect.left = 0;
+        rpg->spritesheet[SP_BOSS_EXECUTIONER].rect.left = 2000;
 }
 
 void ia_boss_rush_to_player(rpg_t *rpg)
@@ -94,9 +94,10 @@ void ia_boss(rpg_t *rpg)
 
 void animate_boss(rpg_t *rpg)
 {
-    ia_boss(rpg);
     if (rpg->boss_stats.life <= 0)
         rpg->boss_stats.status = ST_DIE;
+    else
+        ia_boss(rpg);
     switch (rpg->boss_stats.status) {
         case ST_IDLE:
             animate_idle(rpg);

@@ -23,16 +23,17 @@ void big_loop(rpg_t *rpg)
         animate_selected_skin(rpg);
     manage_inventory(rpg);
     if (rpg->screen[SC_GROTTE].active) {
-        if (rpg->all_events.page_down && rpg->player_stats.life > 0) {
-            --rpg->player_stats.life;
+        if (rpg->all_events.page_down && rpg->boss_stats.life > 0) {
+            --rpg->boss_stats.life;
             rpg->all_events.page_down = false;
         }
         move_life_bar(rpg, rpg->player_stats.life * 5);
+        move_life_bar_boss(rpg, rpg->boss_stats.life * 5);
         animate_boss(rpg);
     }
     if (rpg->screen[SC_GROTTE].active && rpg->all_events.page_up
-    && rpg->player_stats.life < 20) {
-        ++rpg->player_stats.life;
+    && rpg->boss_stats.life < 20) {
+        ++rpg->boss_stats.life;
         rpg->all_events.page_up = false;
         move_life_bar(rpg, rpg->player_stats.life * 5);
     }

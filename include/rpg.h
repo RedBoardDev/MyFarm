@@ -60,6 +60,8 @@ enum sprites {
     SP_INVENTORY,
     SP_LIFE_BAR_BOX,
     SP_LIFE_BAR,
+    SP_LIFE_BAR_BOX_BOSS,
+    SP_LIFE_BAR_BOSS,
     SP_ITEM_SHOVEL,
     SP_ITEM_HOE,
     SP_ITEM_HAMMER,
