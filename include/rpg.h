@@ -89,6 +89,7 @@ enum status_boss {
 enum screens {
     SC_MENU,
     SC_CUSTOM_SKINS,
+    SC_HELP,
     SC_MAIN_MAP,
     SC_BASE,
     SC_GROTTE,

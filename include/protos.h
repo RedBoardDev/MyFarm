@@ -25,6 +25,7 @@ void myrpg(void);
 void die(rpg_t *rpg);
 void manage_menu(rpg_t *rpg);
 void teleport_player_scene(rpg_t *rpg, sfImage *image, sfVector2f pos_player);
+void execute_all(rpg_t *rpg);
 
 // events
 void my_events(rpg_t *rpg);
@@ -123,6 +124,7 @@ sfIntRect rect);
 
 //cursor
 void toggle_cursor(sfRenderWindow *window, bool status);
+void set_size_cursor(rpg_t *rpg, float size);
 
 //inventory
 void manage_inventory(rpg_t *rpg);
@@ -138,5 +140,9 @@ void remove_life_player(rpg_t *rpg, int offset);
 sfText *create_text(init_text_t struct_text);
 void write_text(sfRenderWindow *window, sfText *text);
 void destroy_text(sfText *text, sfFont *font);
+
+// check screens
+bool is_in_menu(rpg_t *rpg);
+bool is_in_gameplay(rpg_t *rpg);
 
 #endif
