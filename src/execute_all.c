@@ -39,14 +39,14 @@ void execute_custom_skins(rpg_t *rpg)
 
 void execute_grotte(rpg_t *rpg)
 {
-    if (rpg->all_events.page_down && rpg->boss_stats.life > 0) {
-        --rpg->boss_stats.life;
-        rpg->all_events.page_down = false;
-    }
-    if (rpg->all_events.page_up && rpg->boss_stats.life < 20) {
-        ++rpg->boss_stats.life;
-        rpg->all_events.page_up = false;
-    }
+    // if (rpg->all_events.page_down && rpg->boss_stats.life > 0) {
+    //     --rpg->boss_stats.life;
+    //     rpg->all_events.page_down = false;
+    // }
+    // if (rpg->all_events.page_up && rpg->boss_stats.life < 20) {
+    //     ++rpg->boss_stats.life;
+    //     rpg->all_events.page_up = false;
+    // }
     move_life_bar(rpg, rpg->player_stats.life * 5);
     move_life_bar_boss(rpg, rpg->boss_stats.life * 5);
     animate_boss(rpg);

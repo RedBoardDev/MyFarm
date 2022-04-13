@@ -88,6 +88,10 @@ void ia_boss(rpg_t *rpg)
         rpg->boss_stats.status = ST_ATTACK_1;
         if (time_last_damage >= 500000)
             remove_life_player(rpg, 1);
+        if (rpg->all_events.enter && rpg->boss_stats.life >= 0) {
+            --rpg->boss_stats.life;
+            rpg->all_events.enter = false;
+        }
     } else
         rpg->boss_stats.status = ST_IDLE;
 }
