@@ -70,6 +70,8 @@ void init_boss_stats(boss_stats_t *boss_stats)
 
 void init_all(rpg_t *rpg)
 {
+    rpg->old_screen = NULL;
+    rpg->index_old_s = 0;
     rpg->begin.fps.clock = sfClock_create();
     rpg->begin.fps.timer = 0;
     rpg->player_stats.skin = SP_PLAYER;

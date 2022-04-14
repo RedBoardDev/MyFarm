@@ -38,6 +38,7 @@ SRC_FILES	=	events/events	\
 				spritesheets/init_spritesheets_item	\
 				init/init_view	\
 				interface/functions_pointers/button_menu	\
+				interface/functions_pointers/buttons_boss	\
 				interface/functions_pointers/choose_skin1	\
 				interface/functions_pointers/choose_skin2	\
 				interface/check_click_buttons	\

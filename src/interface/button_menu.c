@@ -6,8 +6,8 @@
 */
 
 #include "../../include/rpg.h"
-extern int screen_menu[];
-extern int screen_game[];
+
+SCREENS_INT
 
 void launch_game(rpg_t *rpg)
 {

@@ -6,6 +6,7 @@
 */
 
 #include "../include/rpg.h"
+#include <time.h>
 
 void help(void)
 {

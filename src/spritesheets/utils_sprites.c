@@ -38,8 +38,10 @@ sfVector2f pos)
 void toggle_spritesheet_scene(rpg_t *rpg, bool status, int *screen_i,
 int scene)
 {
-    if (!status)
+    if (!status) {
         rpg->old_screen = screen_i;
+        rpg->index_old_s = scene;
+    }
     if (scene != -1)
         rpg->screen[scene].active = status;
     for (int i = 0; screen_i[i] != -1; ++i)

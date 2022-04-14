@@ -7,6 +7,8 @@
 
 #include "../../include/rpg.h"
 
+SCREENS_INT
+
 void animate_attack_1(rpg_t *rpg)
 {
     float time = get_clock_time(rpg->spritesheet[SP_BOSS_EXECUTIONER].c_anim);
@@ -98,8 +100,13 @@ void ia_boss(rpg_t *rpg)
 
 void animate_boss(rpg_t *rpg)
 {
-    if (rpg->boss_stats.life <= 0)
+    if (rpg->boss_stats.life <= 0) {
         rpg->boss_stats.status = ST_DIE;
+        if (rpg->spritesheet[SP_BOSS_EXECUTIONER].rect.left >= 2000) {
+            toggle_spritesheet_scene(rpg, false, screen_grotte, SC_GROTTE);
+            toggle_spritesheet_scene(rpg, true, screen_victory_grotte, SP_BACKGROUND_VICRORY_GROTTE);
+        }
+    }
     else
         ia_boss(rpg);
     switch (rpg->boss_stats.status) {

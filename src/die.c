@@ -7,10 +7,9 @@
 
 #include "../include/rpg.h"
 
-extern int screen_game[];
-extern int screen_grotte[];
+SCREENS_INT
 
-void die(rpg_t *rpg)
+void return_home(rpg_t *rpg)
 {
     init_all_events(&rpg->all_events);
     rpg->player_stats.incr_pos.x = 0;
@@ -19,9 +18,17 @@ void die(rpg_t *rpg)
     rpg->player_stats.life = 20.0;
     move_life_bar(rpg, rpg->player_stats.life * 5);
     rpg->begin.view.center = rpg->screen[SC_MAIN_MAP].view_pos;
-    toggle_spritesheet_scene(rpg, false, screen_grotte, SC_GROTTE);
+    for (int i = 0; i < NBR_SP; ++i)
+        rpg->spritesheet[i].active = false;
+    for (int i = 0; i < NBR_SC; ++i)
+        rpg->screen[i].active = false;
     toggle_spritesheet_scene(rpg, true, screen_game, SC_MAIN_MAP);
     rpg->begin.view.center = (sfVector2f){SPAWN_X, SPAWN_Y};
     rpg->spritesheet[rpg->player_stats.skin].pos =
     (sfVector2f){SPAWN_X, SPAWN_Y};
+}
+
+void die(rpg_t *rpg)
+{
+    return_home(rpg);
 }

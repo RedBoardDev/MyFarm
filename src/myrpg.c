@@ -7,10 +7,7 @@
 
 #include "../include/rpg.h"
 
-extern int screen_game[];
-extern int screen_base[];
-extern int screen_jail[];
-extern int screen_grotte[];
+SCREENS_INT
 
 void big_loop(rpg_t *rpg)
 {

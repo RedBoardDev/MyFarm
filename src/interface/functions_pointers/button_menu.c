@@ -6,10 +6,8 @@
 */
 
 #include "../../../include/rpg.h"
-extern int screen_menu[];
-extern int screen_game[];
-extern int screen_custom[];
-extern int screen_how_play[];
+
+SCREENS_INT
 
 void how_play(rpg_t *rpg)
 {
