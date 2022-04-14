@@ -13,8 +13,8 @@ void how_play(rpg_t *rpg)
 {
     sfSprite_setColor(rpg->spritesheet[SP_BACKGROUND_HOW_PLAY].sprite,
     (sfColor){255, 255, 255, 140});
-    toggle_spritesheet_scene(rpg, false, screen_menu, -1);
-    toggle_spritesheet_scene(rpg, true, screen_how_play, -1); // a faire (screen)
+    toggle_spritesheet_scene(rpg, false, screen_menu, SC_MENU);
+    toggle_spritesheet_scene(rpg, true, screen_how_play, SC_HOW_PLAY);
 }
 
 void set_player(rpg_t *rpg)
