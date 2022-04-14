@@ -16,12 +16,13 @@ sfText *create_text(init_text_t struct_text)
     sfText_setCharacterSize(text, struct_text.size);
     sfText_setPosition(text, struct_text.pos);
     sfText_setColor(text, struct_text.color);
-    sfText_setString(text, struct_text.str);
+    sfText_scale(text, (sfVector2f){0.2, 0.2});
     return (text);
 }
 
-void write_text(sfRenderWindow *window, sfText *text)
+void write_text(sfRenderWindow *window, sfText *text, char *str)
 {
+    sfText_setString(text, str);
     sfRenderWindow_drawText(window, text, NULL);
 }
 

@@ -131,6 +131,7 @@ void manage_inventory(rpg_t *rpg);
 
 //quests
 void quest_soldiers(rpg_t *rpg);
+void send_chat_bubble_soldiers(sfRenderWindow *window, rpg_t *rpg);
 
 // gameplay
 sfBool check_collision_executioner(rpg_t *rpg);
@@ -138,7 +139,7 @@ void remove_life_player(rpg_t *rpg, int offset);
 
 //lib text
 sfText *create_text(init_text_t struct_text);
-void write_text(sfRenderWindow *window, sfText *text);
+void write_text(sfRenderWindow *window, sfText *text, char *str);
 void destroy_text(sfText *text, sfFont *font);
 
 // check screens

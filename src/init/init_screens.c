@@ -36,4 +36,6 @@ void init_screens(rpg_t *rpg)
     .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0};
     rpg->screen[SC_GROTTE] = (screen_t){.active = false,
     .view_pos = {444, 1196}, .view_zoom = 0.4};
+    rpg->screen[SC_HELP] = (screen_t){.active = false,
+    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0};
 }

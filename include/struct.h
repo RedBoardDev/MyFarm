@@ -154,7 +154,8 @@ typedef struct {
 typedef struct {
     sfText *npc;
     sfText *player;
-    bool active;
+    sfClock *clock_chat;
+    int step;
     bool finished;
 } quest_t;
 

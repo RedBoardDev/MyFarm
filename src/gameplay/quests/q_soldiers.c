@@ -19,14 +19,36 @@ sfBool check_collision_npc(rpg_t *rpg)
     return (sfFloatRect_intersects(&player, &npc, NULL));
 }
 
-void send_chat_bubble(rpg_t *rpg)
+void send_chat_bubble_soldiers(sfRenderWindow *window, rpg_t *rpg)
 {
-    rpg->spritesheet[SP_BUBBLE_CHAT].active = true;
+    if (rpg->quest[QUEST_SOLDIER].step == -1
+    || rpg->quest[QUEST_SOLDIER].step == 0)
+        return;
+    switch (rpg->quest[QUEST_SOLDIER].step) {
+    case 1:
+        write_text(window, rpg->quest[QUEST_SOLDIER].npc, "Bien le bonjour !\n Que veux tu ?");
+        break;
+    case 2:
+        write_text(window, rpg->quest[QUEST_SOLDIER].player, "Moi vouloir épée");
+        break;
+    case 3:
+        write_text(window, rpg->quest[QUEST_SOLDIER].npc,
+        "Si toi vouloir, moi vouloir\npoisson. Va donc voler\nla canne a peche\na la prison pour pecher.");
+        break;
+    default:
+        break;
+    }
+    if (get_clock_time(rpg->quest[QUEST_SOLDIER].clock_chat) >= 10000000) {
+        ++rpg->quest[QUEST_SOLDIER].step;
+        // printf("RRR\n");
+        sfClock_restart(rpg->quest[QUEST_SOLDIER].clock_chat);
+    }
 }
 
 void quest_soldiers(rpg_t *rpg)
 {
-    // if (!check_collision_npc(rpg))
-    //     return;
-    send_chat_bubble(rpg);
+    rpg->quest[QUEST_SOLDIER].clock_chat = sfClock_create();
+    rpg->spritesheet[SP_BUBBLE_CHAT].active = true;
+    if (rpg->quest[QUEST_SOLDIER].step == 0)
+        rpg->quest[QUEST_SOLDIER].step = 1;
 }

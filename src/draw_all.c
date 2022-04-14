@@ -37,5 +37,6 @@ void draw_all(rpg_t *rpg)
     sfRenderWindow_drawSprite(rpg->begin.window,
     rpg->begin.sprite, NULL);
     draw_spritesheets(&rpg->begin, rpg->spritesheet);
+    send_chat_bubble_soldiers(rpg->begin.window, rpg);
     sfRenderWindow_display(rpg->begin.window);
 }
