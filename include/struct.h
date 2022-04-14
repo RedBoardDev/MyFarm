@@ -97,6 +97,7 @@ typedef struct {
     bool active;
     float view_zoom;
     sfVector2f view_pos;
+    sfClock *clock;
 } screen_t;
 
 typedef struct {
@@ -167,6 +168,7 @@ typedef struct {
     screen_t *screen;
     sound_t sound;
     int *old_screen;
+    int index_old_s;
     player_stats_t player_stats;
     boss_stats_t boss_stats;
     quest_t *quest;

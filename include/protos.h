@@ -23,6 +23,7 @@
 
 void myrpg(void);
 void die(rpg_t *rpg);
+void return_home(rpg_t *rpg);
 void manage_menu(rpg_t *rpg);
 void teleport_player_scene(rpg_t *rpg, sfImage *image, sfVector2f pos_player);
 void execute_all(rpg_t *rpg);
@@ -51,6 +52,8 @@ void skin_red(rpg_t *rpg);
 void skin_yellow(rpg_t *rpg);
 void display_custom_skins(rpg_t *rpg);
 void how_play(rpg_t *rpg);
+void back_button(rpg_t *rpg);
+void button_next_grotte(rpg_t *rpg);
 
 // init
 void init_all(rpg_t *rpg);

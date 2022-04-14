@@ -13,20 +13,28 @@
     #include "struct.h"
     #define RADIAN(x) x * 3.14159265359 / 180
     #define FUNCTIONS_BUTTONS {nothing, nothing, nothing, nothing, nothing, \
-    nothing, how_play, nothing, skin_blue, skin_brown, skin_cyan, skin_green, \
-    skin_grey, skin_pink, skin_red, skin_yellow, nothing, nothing, nothing, \
-    nothing, launch_game, quit_game,   \
-    display_custom_skins, back_button, quest_soldiers,   \
+    nothing, nothing, how_play, quest_soldiers, nothing, skin_blue, skin_brown, skin_cyan,  \
+    skin_green, skin_grey, skin_pink, skin_red, skin_yellow, nothing, nothing, \
+    nothing, nothing, launch_game, quit_game,   \
+    display_custom_skins, back_button, button_next_grotte, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing}
+    #define SCREENS_INT extern int screen_menu[];   \
+                        extern int screen_custom[];   \
+                        extern int screen_game[];   \
+                        extern int screen_base[]; \
+                        extern int screen_jail[]; \
+                        extern int screen_grotte[]; \
+                        extern int screen_inventory[]; \
+                        extern int screen_how_play[]; \
+                        extern int screen_victory_grotte[];
     #define SPAWN_X WIDTH / 2
     #define SPAWN_Y WIDTH / 2 + 80
     #define SPEED_PLAYER 1.5
-
 enum size_window {
     WIDTH = 1920,
     HEIGHT = 1080
@@ -39,7 +47,9 @@ enum sprites {
     SP_BACKGROUND_JAIL,
     SP_BACKGROUND_GROTTE,
     SP_BACKGROUND_HOW_PLAY,
+    SP_BACKGROUND_VICRORY_GROTTE,
     SP_MONKEY,
+    SP_NPC_SOLDIER,
     SP_PLAYER,
     SP_PLAYER_BLUE,
     SP_PLAYER_BROWN,
@@ -57,7 +67,7 @@ enum sprites {
     SP_QUIT,
     SP_CUSTOM,
     SP_BACK,
-    SP_NPC_SOLDIER,
+    SP_NEXT_GROTTE,
     SP_BUBBLE_CHAT,
     SP_INVENTORY,
     SP_LIFE_BAR_BOX,
@@ -89,7 +99,7 @@ enum status_boss {
 enum screens {
     SC_MENU,
     SC_CUSTOM_SKINS,
-    SC_HELP,
+    SC_HOW_PLAY,
     SC_MAIN_MAP,
     SC_BASE,
     SC_GROTTE,

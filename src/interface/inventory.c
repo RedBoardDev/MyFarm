@@ -7,7 +7,7 @@
 
 #include "../../include/rpg.h"
 
-extern int screen_inventory[];
+SCREENS_INT
 
 void box_inventory(rpg_t *rpg)
 {
