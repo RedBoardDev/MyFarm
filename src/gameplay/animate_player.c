@@ -26,7 +26,8 @@ static void move_animate_player(rpg_t *rpg)
 
 void animate_player(rpg_t *rpg)
 {
-    sfColor color = get_color_from_player(rpg->imgs_colors.main_map,
+    sfColor color = get_color_from_player((rpg->screen[SC_MAIN_MAP].active ?
+    rpg->imgs_colors.main_map : rpg->imgs_colors.backgrounds),
     rpg->spritesheet[rpg->player_stats.skin].pos);
     float time_player =
     get_clock_time(rpg->spritesheet[rpg->player_stats.skin].c_anim);
@@ -37,8 +38,6 @@ void animate_player(rpg_t *rpg)
         rpg->spritesheet[rpg->player_stats.skin].rect.left = 0;
     else if (time_player >= 200000)
         move_animate_player(rpg);
-    if (!rpg->screen[SC_MAIN_MAP].active)
-        return;
     if (color.g == 255
     && rpg->spritesheet[rpg->player_stats.skin].rect.top < 256)
         rpg->spritesheet[rpg->player_stats.skin].rect.top += 256;
