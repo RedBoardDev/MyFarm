@@ -34,6 +34,7 @@ void init_all_events(events_t *events)
     events->s = false;
     events->d = false;
     events->e = false;
+    events->c = false;
     events->escape = false;
     events->space = false;
     events->ctrl = false;

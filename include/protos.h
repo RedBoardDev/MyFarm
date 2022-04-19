@@ -54,6 +54,7 @@ void display_custom_skins(rpg_t *rpg);
 void how_play(rpg_t *rpg);
 void back_button(rpg_t *rpg);
 void button_next_grotte(rpg_t *rpg);
+void menu_pause(rpg_t *rpg);
 
 // init
 void init_all(rpg_t *rpg);
@@ -70,6 +71,7 @@ void init_inventory(spritesheet_t *spritesheet);
 void init_all_events(events_t *events);
 void init_spritesheets_npc(spritesheet_t *spritesheet);
 void init_spritesheets_armed(spritesheet_t *spritesheet);
+void init_buttuns_pause_menu(spritesheet_t *spritesheet);
 void init_bosses(spritesheet_t *spritesheet);
 void init_spritesheets_food(spritesheet_t *spritesheet);
 void init_all_players(spritesheet_t *spritesheet);

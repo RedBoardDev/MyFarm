@@ -17,7 +17,7 @@
     skin_brown, skin_cyan, skin_green, skin_grey, skin_pink, skin_red, \
     skin_yellow, nothing, nothing, nothing, nothing, launch_game, quit_game, \
     display_custom_skins, back_button, button_next_grotte, nothing, \
-    nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
+    nothing, menu_pause, nothing, nothing, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
@@ -31,7 +31,8 @@
                         extern int screen_grotte[]; \
                         extern int screen_inventory[]; \
                         extern int screen_how_play[]; \
-                        extern int screen_victory_grotte[];
+                        extern int screen_victory_grotte[]; \
+                        extern int screen_pause_menu[];
     #define SPAWN_X WIDTH / 2
     #define SPAWN_Y WIDTH / 2 + 80
     #define SPEED_PLAYER 1.5
@@ -70,6 +71,9 @@ enum sprites {
     SP_NEXT_GROTTE,
     SP_BUBBLE_CHAT,
     SP_INVENTORY,
+    SP_RESUME,
+    SP_OPTION,
+    SP_LEAVE_GAME,
     SP_LIFE_BAR_BOX,
     SP_LIFE_BAR,
     SP_LIFE_BAR_BOX_BOSS,
@@ -104,6 +108,7 @@ enum screens {
     SC_BASE,
     SC_GROTTE,
     SC_INVENTORY,
+    SC_PAUSE,
     NBR_SC
 };
 
