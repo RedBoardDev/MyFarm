@@ -37,6 +37,8 @@ void events_key_pressed_letters(sfEvent event, events_t *all_events)
         all_events->d = true;
     if (sfKeyE == event.key.code)
         all_events->e = true;
+    if (sfKeyC == event.key.code)
+        all_events->c = true;
     if (sfKeySpace == event.key.code)
         all_events->space = true;
     if (sfKeySpace == event.key.code)

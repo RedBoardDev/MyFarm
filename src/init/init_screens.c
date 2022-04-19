@@ -23,6 +23,7 @@ const int screen_how_play[] = {SP_BACKGROUND_HOW_PLAY, SP_BACK, SP_CURSOR, -1};
 const int screen_victory_grotte[] = {SP_BACKGROUND_GROTTE, SELECTED_PLAYER,
 SP_BOSS_EXECUTIONER, SP_LIFE_BAR_BOX, SP_LIFE_BAR, SP_LIFE_BAR_BOX_BOSS,
 SP_LIFE_BAR_BOSS, SP_CURSOR, SP_BACKGROUND_VICRORY_GROTTE, SP_NEXT_GROTTE, -1};
+const int screen_pause_menu[] = {SP_PAUSE, SP_CURSOR, SP_BACK, -1};
 
 void init_screens(rpg_t *rpg)
 {
@@ -40,6 +41,8 @@ void init_screens(rpg_t *rpg)
     rpg->screen[SC_GROTTE] = (screen_t){.active = false,
     .view_pos = {444, 1196}, .view_zoom = 0.4};
     rpg->screen[SC_HOW_PLAY] = (screen_t){.active = false,
+    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0};
+    rpg->screen[SC_PAUSE] = (screen_t){.active = false,
     .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0};
     for (int i = 0; i < NBR_SC; ++i)
         rpg->screen[i].clock = sfClock_create();

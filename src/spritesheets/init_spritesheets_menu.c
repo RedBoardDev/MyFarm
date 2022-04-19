@@ -23,6 +23,14 @@ void init_buttons_menu(spritesheet_t *spritesheet)
     .clickable = true, .active = false, .change_sprite_on_mouse = true});
 }
 
+void init_buttuns_pause_menu(spritesheet_t *spritesheet)
+{
+    set_one_sprite("assets/img/menu/pause_menu_buttons.png",
+    &spritesheet[SP_PAUSE], (init_sprite_t){{WIDTH, HEIGHT},
+    {0.6, 0.6}, {0, 0, 404, 94}, .clickable = true, .active = false,
+    .change_sprite_on_mouse = true });
+}
+
 void init_menu(spritesheet_t *spritesheet)
 {
     set_one_sprite("assets/img/menu/background_menu.png",

@@ -84,6 +84,7 @@ typedef struct {
     bool s;
     bool d;
     bool e;
+    bool c;
     bool escape;
     bool space;
     bool ctrl;

@@ -49,6 +49,8 @@ int scene)
             rpg->spritesheet[rpg->player_stats.skin].active = status;
         else if (screen_i[i] == CURSOR)
             toggle_cursor(rpg->begin.window, status);
-        else
+        else {
+            printf("screen I %i\n", screen_i[i]);
             rpg->spritesheet[screen_i[i]].active = status;
+        }
 }

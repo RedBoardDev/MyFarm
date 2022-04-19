@@ -7,6 +7,8 @@
 
 #include "../include/rpg.h"
 
+SCREENS_INT
+
 // void execute_menu(rpg_t *rpg)
 // {
 
@@ -59,6 +61,7 @@ void execute_all_gameplay(rpg_t *rpg)
     animate_player(rpg);
     set_size_cursor(rpg, 0.06);
     manage_inventory(rpg);
+    menu_pause(rpg);
 }
 
 void execute_all_menus(rpg_t *rpg)
