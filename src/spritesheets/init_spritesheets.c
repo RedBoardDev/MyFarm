@@ -22,10 +22,12 @@ void init_life_bar(spritesheet_t *spritesheet)
     set_one_sprite("assets/img/life_bar.png", &spritesheet[SP_LIFE_BAR],
     (init_sprite_t){{444 - 320, 1196 - 197}, {0.25, 0.25},
     {0, 0, 451, 121}, false, false, false});
-    set_one_sprite("assets/img/boss/boss_life_bar_box.png", &spritesheet[SP_LIFE_BAR_BOX_BOSS],
+    set_one_sprite("assets/img/boss/boss_life_bar_box.png",
+    &spritesheet[SP_LIFE_BAR_BOX_BOSS],
     (init_sprite_t){{444 - 320, 1196}, {0.25, 0.25},
     {0, 0, 451, 121}, false, false, false});
-    set_one_sprite("assets/img/boss/boss_life_bar.png", &spritesheet[SP_LIFE_BAR_BOSS],
+    set_one_sprite("assets/img/boss/boss_life_bar.png",
+    &spritesheet[SP_LIFE_BAR_BOSS],
     (init_sprite_t){{444 - 320, 1196}, {0.25, 0.25},
     {0, 0, 451, 121}, false, false, false});
 }

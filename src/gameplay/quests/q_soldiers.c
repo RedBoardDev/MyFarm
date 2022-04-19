@@ -15,7 +15,7 @@ int get_size_file(char *path)
     return (stats.st_size);
 }
 
-int get_chat_into_file(char* filepath, int quest, rpg_t *rpg)
+int get_chat_into_file(char *filepath, int quest, rpg_t *rpg)
 {
     char *lineptr;
     FILE *fd;
@@ -27,7 +27,7 @@ int get_chat_into_file(char* filepath, int quest, rpg_t *rpg)
     for (int i = 0; i < rpg->quest[quest].step; ++i)
         getline(&lineptr, &n, fd);
     rpg->quest[quest].speaker = (lineptr[0] == 'N');
-    printf("buffer:%s\n", lineptr+2);
+    printf("buffer: %s\n", lineptr + 2);
     fclose(fd);
     free(lineptr);
     return (-1);
@@ -38,7 +38,8 @@ void send_chat_bubble_soldiers(sfRenderWindow *window, rpg_t *rpg)
     if (rpg->quest[QUEST_SOLDIER].step <= 0)
         return;
     if (get_clock_time(rpg->quest[QUEST_SOLDIER].clock_chat) >= 6000000) {
-        if (!get_chat_into_file("assets/quest_dialog/soldiers", QUEST_SOLDIER, rpg))
+        if (!get_chat_into_file("assets/quest_dialog/soldiers",
+        QUEST_SOLDIER, rpg))
             rpg->quest[QUEST_SOLDIER].step = -1;
         ++rpg->quest[QUEST_SOLDIER].step;
         sfSprite_scale(rpg->spritesheet[SP_BUBBLE_CHAT].sprite,

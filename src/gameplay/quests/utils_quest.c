@@ -27,5 +27,5 @@ void disable_quests(rpg_t *rpg, int quests_enum, bool scale)
     rpg->spritesheet[SP_BUBBLE_CHAT].active = false;
     if (scale)
         sfSprite_scale(rpg->spritesheet[SP_BUBBLE_CHAT].sprite,
-        (sfVector2f){-1.f,1.f});
+        (sfVector2f){-1.f, 1.f});
 }

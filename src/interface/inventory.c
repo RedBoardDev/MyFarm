@@ -11,8 +11,6 @@ SCREENS_INT
 
 void box_inventory(rpg_t *rpg)
 {
-    // int cursor_x = rpg->all_events.mouse.pos.x;
-    // int cursor_y = rpg->all_events.mouse.pos.y;
     if (rpg->screen[SC_INVENTORY].active) {
 
     }
@@ -35,5 +33,4 @@ void manage_inventory(rpg_t *rpg)
 {
     rpg->spritesheet[SP_INVENTORY].pos = rpg->begin.view.center;
     toggle_inventory(rpg);
-    // box_inventory(rpg);
 }

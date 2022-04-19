@@ -10,7 +10,8 @@
 void move_boss(rpg_t *rpg)
 {
     sfColor color;
-    float diff = rpg->spritesheet[rpg->player_stats.skin].pos.x - rpg->spritesheet[SP_BOSS_EXECUTIONER].pos.x;
+    float diff = rpg->spritesheet[rpg->player_stats.skin].pos.x -
+    rpg->spritesheet[SP_BOSS_EXECUTIONER].pos.x;
 
     if (rpg->boss_stats.rush_to_player) {
         if (diff < 0)
@@ -20,14 +21,20 @@ void move_boss(rpg_t *rpg)
         return;
     }
     if (rpg->boss_stats.inc_pos < 0) {
-        color = get_color_from_player(rpg->imgs_colors.backgrounds, (sfVector2f){rpg->spritesheet[SP_BOSS_EXECUTIONER].pos.x - 2, rpg->spritesheet[SP_BOSS_EXECUTIONER].pos.y});
+        color = get_color_from_player(rpg->imgs_colors.backgrounds,
+        (sfVector2f){rpg->spritesheet[SP_BOSS_EXECUTIONER].pos.x - 2,
+        rpg->spritesheet[SP_BOSS_EXECUTIONER].pos.y});
         if (color.r != 255)
-            rpg->spritesheet[SP_BOSS_EXECUTIONER].pos.x += rpg->boss_stats.inc_pos;
+            rpg->spritesheet[SP_BOSS_EXECUTIONER].pos.x +=
+            rpg->boss_stats.inc_pos;
     }
     if (rpg->boss_stats.inc_pos > 0) {
-        color = get_color_from_player(rpg->imgs_colors.backgrounds, (sfVector2f){rpg->spritesheet[SP_BOSS_EXECUTIONER].pos.x + 2, rpg->spritesheet[SP_BOSS_EXECUTIONER].pos.y});
+        color = get_color_from_player(rpg->imgs_colors.backgrounds,
+        (sfVector2f){rpg->spritesheet[SP_BOSS_EXECUTIONER].pos.x + 2,
+        rpg->spritesheet[SP_BOSS_EXECUTIONER].pos.y});
         if (color.r != 255)
-            rpg->spritesheet[SP_BOSS_EXECUTIONER].pos.x += rpg->boss_stats.inc_pos;
+            rpg->spritesheet[SP_BOSS_EXECUTIONER].pos.x +=
+            rpg->boss_stats.inc_pos;
     }
 }
 
