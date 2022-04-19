@@ -134,6 +134,8 @@ void manage_inventory(rpg_t *rpg);
 
 //quests
 void quest_soldiers(rpg_t *rpg);
+void disable_quests(rpg_t *rpg, int quests_enum, bool scale);
+sfBool check_collision_npc(rpg_t *rpg);
 void send_chat_bubble_soldiers(sfRenderWindow *window, rpg_t *rpg);
 
 // gameplay

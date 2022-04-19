@@ -21,6 +21,7 @@ SRC_FILES	=	events/events	\
 				gameplay/move_player_and_view	\
 				gameplay/teleport_player	\
 				gameplay/quests/q_soldiers	\
+				gameplay/quests/utils_quest	\
 				gameplay/utils	\
 				init/init_all	\
 				init/init_imgs	\
@@ -94,8 +95,8 @@ FLAGS	=	-I./include	\
 		-g	\
 
 CFLAGS	+=	-Werror	\
-			-Wextra	\
-			-Wall	\
+			# -Wextra	\
+			# -Wall	\
 
 CSFML_FLAGS	=	-lcsfml-graphics	\
 			-lcsfml-window	\
