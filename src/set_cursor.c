@@ -14,5 +14,6 @@ void toggle_cursor(sfRenderWindow *window, bool status)
 
 void set_size_cursor(rpg_t *rpg, float size)
 {
-    sfSprite_setScale(rpg->spritesheet[SP_CURSOR].sprite, (sfVector2f){size, size});
+    sfSprite_setScale(rpg->spritesheet[SP_CURSOR].sprite,
+    (sfVector2f){size, size});
 }

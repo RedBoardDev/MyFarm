@@ -73,7 +73,8 @@ void ia_boss_rush_to_player(rpg_t *rpg)
 void ia_boss(rpg_t *rpg)
 {
     float time_movement = get_clock_time(rpg->boss_stats.movement);
-    float time_attack = get_clock_time(rpg->spritesheet[SP_BOSS_EXECUTIONER].c_attack);
+    float time_attack =
+    get_clock_time(rpg->spritesheet[SP_BOSS_EXECUTIONER].c_attack);
     float time_last_damage = get_clock_time(rpg->player_stats.last_damage);
     int random = 0;
 
@@ -104,7 +105,8 @@ void animate_boss(rpg_t *rpg)
         rpg->boss_stats.status = ST_DIE;
         if (rpg->spritesheet[SP_BOSS_EXECUTIONER].rect.left >= 2000) {
             toggle_spritesheet_scene(rpg, false, screen_grotte, SC_GROTTE);
-            toggle_spritesheet_scene(rpg, true, screen_victory_grotte, SP_BACKGROUND_VICRORY_GROTTE);
+            toggle_spritesheet_scene(rpg, true,
+            screen_victory_grotte, SP_BACKGROUND_VICRORY_GROTTE);
         }
     }
     else

@@ -7,40 +7,43 @@
 
 #include "../../../include/rpg.h"
 
-sfBool check_collision_npc(rpg_t *rpg)
+int get_size_file(char *path)
 {
-    sfFloatRect player = sfSprite_getGlobalBounds(rpg->spritesheet[rpg->player_stats.skin].sprite);
-    sfFloatRect npc = sfSprite_getGlobalBounds(rpg->spritesheet[SP_NPC_SOLDIER].sprite);
+    struct stat stats;
 
-    npc.left += 15;
-    npc.width += 15;
-    npc.height += 15;
-    npc.top += 15;
-    return (sfFloatRect_intersects(&player, &npc, NULL));
+    stat(path, &stats);
+    return (stats.st_size);
+}
+
+int get_chat_into_file(char *filepath, int quest, rpg_t *rpg)
+{
+    char *lineptr;
+    FILE *fd;
+    size_t n = 0;
+
+    fd = fopen(filepath, "r");
+    if (!fd)
+        return (84);
+    for (int i = 0; i < rpg->quest[quest].step; ++i)
+        getline(&lineptr, &n, fd);
+    rpg->quest[quest].speaker = (lineptr[0] == 'N');
+    printf("buffer: %s\n", lineptr + 2);
+    fclose(fd);
+    free(lineptr);
+    return (-1);
 }
 
 void send_chat_bubble_soldiers(sfRenderWindow *window, rpg_t *rpg)
 {
-    if (rpg->quest[QUEST_SOLDIER].step == -1
-    || rpg->quest[QUEST_SOLDIER].step == 0)
+    if (rpg->quest[QUEST_SOLDIER].step <= 0)
         return;
-    switch (rpg->quest[QUEST_SOLDIER].step) {
-    case 1:
-        write_text(window, rpg->quest[QUEST_SOLDIER].npc, "Bien le bonjour !\n Que veux tu ?");
-        break;
-    case 2:
-        write_text(window, rpg->quest[QUEST_SOLDIER].player, "Moi vouloir épée");
-        break;
-    case 3:
-        write_text(window, rpg->quest[QUEST_SOLDIER].npc,
-        "Si toi vouloir, moi vouloir\npoisson. Va donc voler\nla canne a peche\na la prison pour pecher.");
-        break;
-    default:
-        break;
-    }
-    if (get_clock_time(rpg->quest[QUEST_SOLDIER].clock_chat) >= 10000000) {
+    if (get_clock_time(rpg->quest[QUEST_SOLDIER].clock_chat) >= 6000000) {
+        if (!get_chat_into_file("assets/quest_dialog/soldiers",
+        QUEST_SOLDIER, rpg))
+            rpg->quest[QUEST_SOLDIER].step = -1;
         ++rpg->quest[QUEST_SOLDIER].step;
-        // printf("RRR\n");
+        sfSprite_scale(rpg->spritesheet[SP_BUBBLE_CHAT].sprite,
+        (sfVector2f){-1.f, 1.f});
         sfClock_restart(rpg->quest[QUEST_SOLDIER].clock_chat);
     }
 }
@@ -49,6 +52,8 @@ void quest_soldiers(rpg_t *rpg)
 {
     rpg->quest[QUEST_SOLDIER].clock_chat = sfClock_create();
     rpg->spritesheet[SP_BUBBLE_CHAT].active = true;
-    if (rpg->quest[QUEST_SOLDIER].step == 0)
+    if (rpg->quest[QUEST_SOLDIER].step == 0) {
         rpg->quest[QUEST_SOLDIER].step = 1;
+        get_chat_into_file("assets/quest_dialog/soldiers", QUEST_SOLDIER, rpg);
+    }
 }

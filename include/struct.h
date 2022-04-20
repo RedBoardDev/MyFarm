@@ -156,11 +156,10 @@ typedef struct {
 } boss_stats_t;
 
 typedef struct {
-    sfText *npc;
-    sfText *player;
-    sfClock *clock_chat;
     int step;
-    bool finished;
+    sfText *dialog;
+    sfClock *clock_chat;
+    bool speaker;
 } quest_t;
 
 typedef struct {
