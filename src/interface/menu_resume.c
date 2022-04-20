@@ -14,11 +14,11 @@ void menu_pause(rpg_t *rpg)
     bool status = rpg->screen[SC_PAUSE].active;
 
     rpg->spritesheet[SP_RESUME].pos.x = rpg->begin.view.center.x;
-    rpg->spritesheet[SP_RESUME].pos.y = rpg->begin.view.center.y - 100;
+    rpg->spritesheet[SP_RESUME].pos.y = rpg->begin.view.center.y - 70;
     rpg->spritesheet[SP_OPTION].pos.x = rpg->begin.view.center.x;
     rpg->spritesheet[SP_OPTION].pos.y = rpg->begin.view.center.y;
     rpg->spritesheet[SP_LEAVE_GAME].pos.x = rpg->begin.view.center.x;
-    rpg->spritesheet[SP_LEAVE_GAME].pos.y = rpg->begin.view.center.y + 100;
+    rpg->spritesheet[SP_LEAVE_GAME].pos.y = rpg->begin.view.center.y + 70;
     if (rpg->all_events.c) {
         rpg->all_events.c = false;
         rpg->screen[SC_PAUSE].active = !status;
