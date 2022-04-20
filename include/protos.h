@@ -149,7 +149,7 @@ void remove_life_player(rpg_t *rpg, int offset);
 
 //lib text
 sfText *create_text(init_text_t struct_text);
-void write_text(sfRenderWindow *window, sfText *text, char *str);
+void write_text(sfRenderWindow *window, sfText *text);
 void destroy_text(sfText *text, sfFont *font);
 
 // check screens

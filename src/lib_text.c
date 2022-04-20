@@ -20,9 +20,8 @@ sfText *create_text(init_text_t struct_text)
     return (text);
 }
 
-void write_text(sfRenderWindow *window, sfText *text, char *str)
+void write_text(sfRenderWindow *window, sfText *text)
 {
-    sfText_setString(text, str);
     sfRenderWindow_drawText(window, text, NULL);
 }
 
