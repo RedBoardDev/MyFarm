@@ -11,6 +11,8 @@ SCREENS_INT
 
 void menu_pause(rpg_t *rpg)
 {
+    if (rpg->screen[SC_MENU].active || rpg->screen[SC_HOW_PLAY].active)
+        return; 
     bool status = rpg->screen[SC_PAUSE].active;
 
     rpg->spritesheet[SP_RESUME].pos.x = rpg->begin.view.center.x;

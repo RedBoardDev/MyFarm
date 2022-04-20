@@ -55,6 +55,9 @@ void how_play(rpg_t *rpg);
 void back_button(rpg_t *rpg);
 void button_next_grotte(rpg_t *rpg);
 void menu_pause(rpg_t *rpg);
+void buttun_resume_game(rpg_t *rpg);
+void buttun_option_game(rpg_t *rpg);
+void buttun_leave_game(rpg_t *rpg);
 
 // init
 void init_all(rpg_t *rpg);

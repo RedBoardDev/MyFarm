@@ -17,7 +17,7 @@
     skin_green, skin_grey, skin_pink, skin_red, skin_yellow, nothing, nothing, \
     nothing, nothing, launch_game, quit_game,   \
     display_custom_skins, back_button, button_next_grotte, nothing, \
-    nothing, menu_pause, nothing, nothing, nothing, nothing, nothing, nothing, \
+    nothing, buttun_resume_game, buttun_option_game, buttun_leave_game, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
