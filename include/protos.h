@@ -101,6 +101,7 @@ bool check_mouse_on_one_button_float(sfVector2f pos, sfFloatRect collision);
 void move_life_bar(rpg_t *rpg, int percentage);
 void move_life_bar_boss(rpg_t *rpg, int percentage);
 sfInt64 get_clock_time(sfClock *clock);
+void set_zoom(sfView *view, float new_zoom);
 
 // utils sprites
 void set_one_sprite(char *filename, spritesheet_t *spritesheet,
