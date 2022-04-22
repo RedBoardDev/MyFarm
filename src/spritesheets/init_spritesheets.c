@@ -40,7 +40,7 @@ void init_spritesheets(spritesheet_t *spritesheet)
     init_all_players(spritesheet);
     init_menu(spritesheet);
     init_soundbox(spritesheet);
-    init_inventory(spritesheet);
+    init_spritesheet_inventory(spritesheet);
     init_life_bar(spritesheet);
     init_spritesheets_food(spritesheet);
     init_spritesheets_armed(spritesheet);

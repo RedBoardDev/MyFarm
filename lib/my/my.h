@@ -78,5 +78,6 @@ int isope(char c);
 int isletter(char c);
 int my_printf(char *str, ...);
 void my_putcolor(char *str, char *color);
+char *my_itoa(int nb);
 
 #endif /* MY_H_ */
