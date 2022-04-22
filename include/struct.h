@@ -123,6 +123,8 @@ typedef struct {
     sound_list_t *sound_list;
     float volume;
     float volume_backup;
+    float volume_effect;
+    float volume_effect_backup;
 } sound_t;
 
 typedef struct {

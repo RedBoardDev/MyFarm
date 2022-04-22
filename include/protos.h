@@ -55,6 +55,9 @@ void how_play(rpg_t *rpg);
 void back_button(rpg_t *rpg);
 void button_next_grotte(rpg_t *rpg);
 void menu_pause(rpg_t *rpg);
+void buttun_resume_game(rpg_t *rpg);
+void buttun_option_game(rpg_t *rpg);
+void buttun_leave_game(rpg_t *rpg);
 
 // init
 void init_all(rpg_t *rpg);
@@ -147,7 +150,7 @@ void remove_life_player(rpg_t *rpg, int offset);
 
 //lib text
 sfText *create_text(init_text_t struct_text);
-void write_text(sfRenderWindow *window, sfText *text, char *str);
+void write_text(sfRenderWindow *window, sfText *text);
 void destroy_text(sfText *text, sfFont *font);
 
 // check screens

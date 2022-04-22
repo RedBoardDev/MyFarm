@@ -1,4 +1,4 @@
-N:Bien le bonjour !\n Que veux tu ?
-P:Moi vouloir epee
-N:Si toi vouloir, moi vouloir\npoisson. Va donc voler\nla canne a peche\na la prison pour pecher.
+N: Greetings !|What do you want ?
+P:I will need|a sword to fight.
+N:There is one in|the prison, you should|go and see.
 F

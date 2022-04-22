@@ -46,3 +46,24 @@ void display_custom_skins(rpg_t *rpg)
     toggle_spritesheet_scene(rpg, false, screen_menu, SC_MENU);
     toggle_spritesheet_scene(rpg, true, screen_custom, SC_CUSTOM_SKINS);
 }
+
+void buttun_resume_game(rpg_t *rpg)
+{
+    printf("RESUME %d\n", rpg->index_old_s);
+    rpg->all_events.c = false;
+    toggle_spritesheet_scene(rpg, false, screen_pause_menu, SC_PAUSE);
+}
+
+void buttun_option_game(rpg_t *rpg)
+{
+    printf("OPTION %d\n", rpg->index_old_s);
+}
+
+void buttun_leave_game(rpg_t *rpg)
+{
+    printf("LEAVE %d\n", rpg->index_old_s);
+    rpg->all_events.c = false;
+    sfView_zoom(rpg->begin.view.view, 2.5);
+    toggle_spritesheet_scene(rpg, false, screen_pause_menu, SC_PAUSE);
+    toggle_spritesheet_scene(rpg, true, screen_menu, SC_MENU);
+}
