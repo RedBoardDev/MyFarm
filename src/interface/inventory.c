@@ -33,7 +33,7 @@ void manage_inventory(rpg_t *rpg)
 {
     toggle_inventory(rpg);
     if (rpg->screen[SC_INVENTORY].active) {
-        rpg->player_stats.money = 100;
+        rpg->player_stats.money = 1;
         rpg->spritesheet[SP_INVENTORY].pos = rpg->begin.view.center;
         sfText_setPosition(rpg->player_stats.inventory.money,
         (sfVector2f){rpg->spritesheet[SP_INVENTORY].pos.x - 130,

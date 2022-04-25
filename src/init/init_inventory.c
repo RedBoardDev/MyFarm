@@ -11,6 +11,6 @@ void init_inventory(inventory_t *inventory)
 {
     for (int i = 0; i < 10; ++i)
         inventory->cases[i] = -1;
-    inventory->money = create_text((init_text_t){100, "SDFGHJKDFGHJK", sfRed,
-    {825, 765}, "assets/fonts/NotoSerif-Regular.ttf"});
+    inventory->money = create_text((init_text_t){120, "\0", sfBlack,
+    {825, 760}, "assets/fonts/Sriracha-Regular.ttf"});
 }
