@@ -7,7 +7,7 @@
 
 #include "../../../include/rpg.h"
 
-void send_chat_bubble_soldiers(sfRenderWindow *window, rpg_t *rpg)
+void send_chat_bubble_soldiers(rpg_t *rpg)
 {
     if (rpg->quest[QUEST_SOLDIER].step <= 0)
         return;

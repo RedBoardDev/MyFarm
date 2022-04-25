@@ -92,7 +92,8 @@ void move_player_and_view(rpg_t *rpg)
 {
     if (check_status_dialog(rpg->quest))
         return;
-    if (rpg->screen[SC_MAIN_MAP].active && !rpg->screen[SC_INVENTORY].active) {
+    if (rpg->screen[SC_MAIN_MAP].active && !rpg->screen[SC_INVENTORY].active &&
+    !rpg->screen[SC_PAUSE].active) {
         move_player_and_view_horizontal(rpg, rpg->imgs_colors.main_map,
         rpg->spritesheet[rpg->player_stats.skin].pos, true);
         move_player_and_view_vertical(rpg, rpg->imgs_colors.main_map,

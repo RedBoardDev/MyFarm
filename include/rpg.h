@@ -107,6 +107,7 @@ enum screens {
     SC_MAIN_MAP,
     SC_BASE,
     SC_GROTTE,
+    SC_VICTORY_GROTTE,
     SC_INVENTORY,
     SC_PAUSE,
     NBR_SC

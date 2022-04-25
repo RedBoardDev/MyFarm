@@ -112,7 +112,8 @@ init_sprite_t init_sprite);
 void draw_one_sprite(beginning_t *begin, sfSprite *sprite, sfIntRect rect,
 sfVector2f pos);
 void toggle_spritesheet_scene(rpg_t *rpg, bool status, int *screen_i,
-int scene);
+int scene_enum);
+void disable_all_screens_gameplay(rpg_t *rpg);
 
 // lib sound
 void stop_sound(sfSound *sound);
@@ -146,7 +147,7 @@ void init_inventory(inventory_t *inventory);
 void quest_soldiers(rpg_t *rpg);
 void disable_quests(rpg_t *rpg, int quests_enum, bool scale);
 sfBool check_collision_npc(rpg_t *rpg);
-void send_chat_bubble_soldiers(sfRenderWindow *window, rpg_t *rpg);
+void send_chat_bubble_soldiers(rpg_t *rpg);
 
 // gameplay
 sfBool check_collision_executioner(rpg_t *rpg);

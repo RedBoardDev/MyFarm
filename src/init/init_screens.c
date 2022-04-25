@@ -25,27 +25,29 @@ const int screen_victory_grotte[] = {SP_BACKGROUND_GROTTE, SELECTED_PLAYER,
 SP_BOSS_EXECUTIONER, SP_LIFE_BAR_BOX, SP_LIFE_BAR, SP_LIFE_BAR_BOX_BOSS,
 SP_LIFE_BAR_BOSS, SP_CURSOR, SP_BACKGROUND_VICRORY_GROTTE, SP_NEXT_GROTTE, -1};
 const int screen_pause_menu[] = {SP_RESUME, SP_OPTION, SP_LEAVE_GAME, \
-SP_CURSOR, SP_BACK, -1};
+SP_CURSOR, -1};
 
 void init_screens(rpg_t *rpg)
 {
     rpg->screen = malloc(sizeof(screen_t) * NBR_SC);
     rpg->screen[SC_MENU] = (screen_t){.active = true,
-    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0};
+    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 1};
     rpg->screen[SC_CUSTOM_SKINS] = (screen_t){.active = false,
-    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0};
+    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 1};
     rpg->screen[SC_MAIN_MAP] = (screen_t){.active = false,
     .view_pos = {SPAWN_X, SPAWN_Y}, .view_zoom = 0.4};
     rpg->screen[SC_BASE] = (screen_t){.active = false,
     .view_pos = {SPAWN_X - 30, SPAWN_Y - 170}, .view_zoom = 0.4};
     rpg->screen[SC_INVENTORY] = (screen_t){.active = false,
-    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0};
+    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0.4};
     rpg->screen[SC_GROTTE] = (screen_t){.active = false,
     .view_pos = {444, 1196}, .view_zoom = 0.4};
+    rpg->screen[SC_VICTORY_GROTTE] = (screen_t){.active = false,
+    .view_pos = {444, 1196}, .view_zoom = 0.4};
     rpg->screen[SC_HOW_PLAY] = (screen_t){.active = false,
-    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0};
+    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 1};
     rpg->screen[SC_PAUSE] = (screen_t){.active = false,
-    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0};
+    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0.4};
     for (int i = 0; i < NBR_SC; ++i)
         rpg->screen[i].clock = sfClock_create();
 }

@@ -96,8 +96,9 @@ typedef struct {
 
 typedef struct {
     bool active;
-    float view_zoom;
     sfVector2f view_pos;
+    float view_zoom;
+    const int *const_screen;
     sfClock *clock;
 } screen_t;
 

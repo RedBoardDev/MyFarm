@@ -7,6 +7,8 @@
 
 #include "../../include/rpg.h"
 
+SCREENS_INT
+
 void set_one_sprite(char *filename, spritesheet_t *spritesheet,
 init_sprite_t init_sprite)
 {
@@ -36,14 +38,15 @@ sfVector2f pos)
 }
 
 void toggle_spritesheet_scene(rpg_t *rpg, bool status, int *screen_i,
-int scene)
+int scene_enum)
 {
     if (!status) {
         rpg->old_screen = screen_i;
-        rpg->index_old_s = scene;
-    }
-    if (scene != -1)
-        rpg->screen[scene].active = status;
+        rpg->index_old_s = scene_enum;
+    } else if (scene_enum != -1)
+        set_zoom(rpg->begin.view.view, rpg->screen[scene_enum].view_zoom);
+    if (scene_enum != -1)
+        rpg->screen[scene_enum].active = status;
     for (int i = 0; screen_i[i] != -1; ++i)
         if (screen_i[i] == SELECTED_PLAYER)
             rpg->spritesheet[rpg->player_stats.skin].active = status;
@@ -51,4 +54,15 @@ int scene)
             toggle_cursor(rpg->begin.window, status);
         else
             rpg->spritesheet[screen_i[i]].active = status;
+}
+
+void disable_all_screens_gameplay(rpg_t *rpg)
+{
+    toggle_spritesheet_scene(rpg, false, screen_base, SC_BASE);
+    toggle_spritesheet_scene(rpg, false, screen_game, SC_MAIN_MAP);
+    toggle_spritesheet_scene(rpg, false, screen_grotte, SC_GROTTE);
+    toggle_spritesheet_scene(rpg, false, screen_inventory, SC_INVENTORY);
+    toggle_spritesheet_scene(rpg, false, screen_jail, -1);
+    toggle_spritesheet_scene(rpg, false, screen_victory_grotte, SC_VICTORY_GROTTE);
+    toggle_spritesheet_scene(rpg, false, screen_pause_menu, SC_PAUSE);
 }

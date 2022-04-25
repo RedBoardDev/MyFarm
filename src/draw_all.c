@@ -34,15 +34,16 @@ void draw_inventory(inventory_t inventory, beginning_t *begin,
 spritesheet_t *spritesheet)
 {
     write_text(begin->window, inventory.money);
-    for (int i = 0; inventory.cases[i]; ++i)
+    for (int i = 0; i < 10; ++i) {
         if (inventory.cases[i] != -1)
             draw_one_sprite(begin, spritesheet[i].sprite,
             spritesheet[i].rect, spritesheet[i].pos);
+    }
 }
 
 void draw_text(rpg_t *rpg)
 {
-    send_chat_bubble_soldiers(rpg->begin.window, rpg);
+    send_chat_bubble_soldiers(rpg);
 }
 
 void draw_all(rpg_t *rpg)
