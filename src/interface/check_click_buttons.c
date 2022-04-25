@@ -19,7 +19,7 @@ void back_button(rpg_t *rpg)
         rpg->spritesheet[i].active = false;
     for (int i = 0; i < NBR_SC; ++i)
         rpg->screen[i].active = false;
-    toggle_spritesheet_scene(rpg, true, rpg->old_screen, rpg->index_old_s);
+    toggle_spritesheet_scene(rpg, true, rpg->index_old_s);
 }
 
 static bool check_click_one_button(rpg_t *rpg, int i)

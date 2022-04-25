@@ -104,9 +104,8 @@ void animate_boss(rpg_t *rpg)
     if (rpg->boss_stats.life <= 0) {
         rpg->boss_stats.status = ST_DIE;
         if (rpg->spritesheet[SP_BOSS_EXECUTIONER].rect.left >= 2000) {
-            toggle_spritesheet_scene(rpg, false, screen_grotte, SC_GROTTE);
-            toggle_spritesheet_scene(rpg, true,
-            screen_victory_grotte, SC_VICTORY_GROTTE);
+            toggle_spritesheet_scene(rpg, false, SC_GROTTE);
+            toggle_spritesheet_scene(rpg, true, SC_VICTORY_GROTTE);
         }
     }
     else

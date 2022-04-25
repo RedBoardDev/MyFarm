@@ -24,6 +24,6 @@ void menu_pause(rpg_t *rpg)
     if (rpg->all_events.escape) {
         rpg->all_events.escape = false;
         rpg->screen[SC_PAUSE].active = !status;
-        toggle_spritesheet_scene(rpg, !status, screen_pause_menu, SC_PAUSE);
+        toggle_spritesheet_scene(rpg, !status, SC_PAUSE);
     }
 }

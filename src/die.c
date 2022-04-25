@@ -22,7 +22,7 @@ void return_home(rpg_t *rpg)
         rpg->spritesheet[i].active = false;
     for (int i = 0; i < NBR_SC; ++i)
         rpg->screen[i].active = false;
-    toggle_spritesheet_scene(rpg, true, screen_game, SC_MAIN_MAP);
+    toggle_spritesheet_scene(rpg, true, SC_MAIN_MAP);
     rpg->begin.view.center = (sfVector2f){SPAWN_X, SPAWN_Y};
     rpg->spritesheet[rpg->player_stats.skin].pos =
     (sfVector2f){SPAWN_X, SPAWN_Y};

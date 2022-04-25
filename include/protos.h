@@ -111,8 +111,7 @@ void set_one_sprite(char *filename, spritesheet_t *spritesheet,
 init_sprite_t init_sprite);
 void draw_one_sprite(beginning_t *begin, sfSprite *sprite, sfIntRect rect,
 sfVector2f pos);
-void toggle_spritesheet_scene(rpg_t *rpg, bool status, int *screen_i,
-int scene_enum);
+void toggle_spritesheet_scene(rpg_t *rpg, bool status, int scene_enum);
 void disable_all_screens_gameplay(rpg_t *rpg);
 
 // lib sound
