@@ -12,6 +12,7 @@ sfText *create_text(init_text_t struct_text)
     sfText *text = sfText_create();
     sfFont *font = sfFont_createFromFile(struct_text.filepath_font);
 
+    sfText_setString(text, struct_text.str);
     sfText_setFont(text, font);
     sfText_setCharacterSize(text, struct_text.size);
     sfText_setPosition(text, struct_text.pos);

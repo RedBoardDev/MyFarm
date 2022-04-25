@@ -133,16 +133,21 @@ typedef struct {
 } images_t;
 
 typedef struct {
+    int cases[10];
+    sfText *money;
+} inventory_t;
+
+typedef struct {
     sfVector2f incr_pos;
     int skin;
     int money;
-    int inventory[10];
     float speed;
     float life;
     float mana;
     int damage;
     int knowledge;
     sfClock *last_damage;
+    inventory_t inventory;
 } player_stats_t;
 
 typedef struct {
@@ -161,6 +166,7 @@ typedef struct {
     sfClock *clock_chat;
     bool speaker;
 } quest_t;
+
 
 typedef struct {
     beginning_t begin;

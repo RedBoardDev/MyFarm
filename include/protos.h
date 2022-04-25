@@ -70,7 +70,7 @@ void init_menu(spritesheet_t *spritesheet);
 void init_spritesheets_rooms(spritesheet_t *spritesheet);
 void init_spritesheets(spritesheet_t *spritesheet);
 void init_view(rpg_t *rpg);
-void init_inventory(spritesheet_t *spritesheet);
+void init_spritesheet_inventory(spritesheet_t *spritesheet);
 void init_all_events(events_t *events);
 void init_spritesheets_npc(spritesheet_t *spritesheet);
 void init_spritesheets_armed(spritesheet_t *spritesheet);
@@ -138,6 +138,7 @@ void set_size_cursor(rpg_t *rpg, float size);
 
 //inventory
 void manage_inventory(rpg_t *rpg);
+void init_inventory(inventory_t *inventory);
 
 //quests
 void quest_soldiers(rpg_t *rpg);

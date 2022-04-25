@@ -24,10 +24,25 @@ static void draw_spritesheets(beginning_t *begin, spritesheet_t *spritesheet)
     sfVector2i po = sfMouse_getPositionRenderWindow(begin->window);
     spritesheet[SP_CURSOR].pos =
     sfRenderWindow_mapPixelToCoords(begin->window, po, begin->view.view);
-    for (int i = 0; i < NBR_SP; ++i)
+    for (int i = 0; i < NBR_SP - 1; ++i)
         if (spritesheet[i].active)
             draw_one_sprite(begin, spritesheet[i].sprite, spritesheet[i].rect,
             spritesheet[i].pos);
+}
+
+void draw_inventory(inventory_t inventory, beginning_t *begin,
+spritesheet_t *spritesheet)
+{
+    write_text(begin->window, inventory.money);
+    for (int i = 0; inventory.cases[i]; ++i)
+        if (inventory.cases[i] != -1)
+            draw_one_sprite(begin, spritesheet[i].sprite,
+            spritesheet[i].rect, spritesheet[i].pos);
+}
+
+void draw_text(rpg_t *rpg)
+{
+    send_chat_bubble_soldiers(rpg->begin.window, rpg);
 }
 
 void draw_all(rpg_t *rpg)
@@ -38,6 +53,12 @@ void draw_all(rpg_t *rpg)
     sfRenderWindow_drawSprite(rpg->begin.window,
     rpg->begin.sprite, NULL);
     draw_spritesheets(&rpg->begin, rpg->spritesheet);
-    send_chat_bubble_soldiers(rpg->begin.window, rpg);
+    draw_text(rpg);
+    if (rpg->screen[SC_INVENTORY].active)
+        draw_inventory(rpg->player_stats.inventory,
+        &rpg->begin, rpg->spritesheet);
+    if (rpg->spritesheet[SP_CURSOR].active)
+        draw_one_sprite(&rpg->begin, rpg->spritesheet[SP_CURSOR].sprite,
+        rpg->spritesheet[SP_CURSOR].rect, rpg->spritesheet[SP_CURSOR].pos);
     sfRenderWindow_display(rpg->begin.window);
 }

@@ -29,6 +29,7 @@ SRC_FILES	=	events/events	\
 				init/init_quests	\
 				init/init_screens	\
 				init/init_sounds	\
+				init/init_inventory	\
 				spritesheets/init_spritesheets_boss	\
 				spritesheets/init_spritesheets_menu	\
 				spritesheets/init_spritesheets_npc	\
