@@ -7,45 +7,6 @@
 
 #include "../../../include/rpg.h"
 
-int get_size_file(char *path)
-{
-    struct stat stats;
-
-    stat(path, &stats);
-    return (stats.st_size);
-}
-
-int get_chat_into_file(char *filepath, int quest, rpg_t *rpg)
-{
-    char *lineptr;
-    FILE *fd;
-    size_t n = 0;
-
-    if (rpg->quest[quest].step == 0)
-        rpg->quest[quest].step = 1;
-    else
-        sfSprite_scale(rpg->spritesheet[SP_BUBBLE_CHAT].sprite,
-        (sfVector2f){-1.f, 1.f});
-    fd = fopen(filepath, "r");
-    if (!fd)
-        return (0);
-    for (int i = 0; i < rpg->quest[quest].step; ++i)
-        getline(&lineptr, &n, fd);
-    rpg->quest[quest].step += 1;
-    rpg->quest[quest].speaker = lineptr[0] == 'N' ? 1 : 0;
-    if (lineptr[0] == 'F') {
-        rpg->spritesheet[SP_BUBBLE_CHAT].active = false;
-        return (0);
-    }
-    for (int i = 0; lineptr[i]; ++i)
-        lineptr[i] = lineptr[i] == '|' ? '\n' : lineptr[i];
-    printf("%s", lineptr);
-    sfText_setString(rpg->quest[quest].dialog, lineptr + 2);
-    fclose(fd);
-    free(lineptr);
-    return (1);
-}
-
 void send_chat_bubble_soldiers(sfRenderWindow *window, rpg_t *rpg)
 {
     if (rpg->quest[QUEST_SOLDIER].step <= 0)

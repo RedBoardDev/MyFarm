@@ -50,6 +50,7 @@ SRC_FILES	=	events/events	\
 				spritesheets/utils_sprites	\
 				utils/check_screens	\
 				utils/utils_draw	\
+				utils/utils_quests	\
 				utils/utils_csfml	\
 				utils/utils	\
 				clean_window	\
