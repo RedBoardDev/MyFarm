@@ -31,21 +31,23 @@ void init_screens(rpg_t *rpg)
 {
     rpg->screen = malloc(sizeof(screen_t) * NBR_SC);
     rpg->screen[SC_MENU] = (screen_t){.active = true,
-    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0};
+    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 1};
     rpg->screen[SC_CUSTOM_SKINS] = (screen_t){.active = false,
-    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0};
+    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 1};
     rpg->screen[SC_MAIN_MAP] = (screen_t){.active = false,
     .view_pos = {SPAWN_X, SPAWN_Y}, .view_zoom = 0.4};
     rpg->screen[SC_BASE] = (screen_t){.active = false,
     .view_pos = {SPAWN_X - 30, SPAWN_Y - 170}, .view_zoom = 0.4};
     rpg->screen[SC_INVENTORY] = (screen_t){.active = false,
-    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0};
+    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0.4};
     rpg->screen[SC_GROTTE] = (screen_t){.active = false,
     .view_pos = {444, 1196}, .view_zoom = 0.4};
+    rpg->screen[SC_VICTORY_GROTTE] = (screen_t){.active = false,
+    .view_pos = {444, 1196}, .view_zoom = 0.4};
     rpg->screen[SC_HOW_PLAY] = (screen_t){.active = false,
-    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0};
+    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 1};
     rpg->screen[SC_PAUSE] = (screen_t){.active = false,
-    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0};
+    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0.4};
     for (int i = 0; i < NBR_SC; ++i)
         rpg->screen[i].clock = sfClock_create();
 }

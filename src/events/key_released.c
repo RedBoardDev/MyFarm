@@ -49,6 +49,8 @@ void events_key_released(sfEvent event, events_t *all_events)
         all_events->tab = false;
     if (sfKeyEnter == event.key.code)
         all_events->enter = false;
+    if (sfKeyEscape == event.key.code)
+        all_events->escape = false;
     events_key_released_arrows(event, all_events);
     events_key_released_letters(event, all_events);
 }
