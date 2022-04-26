@@ -16,7 +16,8 @@ SRC_FILES	=	events/events	\
 				events/key_released	\
 				events/mouse	\
 				gameplay/animate_player	\
-				gameplay/animate_boss	\
+				gameplay/animate_boss_cemetery	\
+				gameplay/animate_boss_grotte	\
 				gameplay/move_all	\
 				gameplay/move_player_and_view	\
 				gameplay/teleport_player	\

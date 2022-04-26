@@ -107,6 +107,7 @@ void set_zoom(sfView *view, float new_zoom);
 int get_size_file(char *path);
 int check_status_dialog(quest_t *quest);
 int get_chat_into_file(char *filepath, int quest, rpg_t *rpg);
+sfColor my_rgb(sfColor color);
 
 // utils sprites
 void set_one_sprite(char *filename, spritesheet_t *spritesheet,
@@ -132,7 +133,8 @@ void move_all_fps_independant(rpg_t *rpg);
 sfColor get_color_from_player(sfImage *image, sfVector2f pos);
 void animate_player(rpg_t *rpg);
 void animate_selected_skin(rpg_t *rpg);
-void animate_boss(rpg_t *rpg);
+void animate_boss_cemetery(rpg_t *rpg);
+void animate_boss_grotte(rpg_t *rpg);
 void draw_sfImage(sfRenderWindow *window, sfImage *image, sfVector2f pos,
 sfIntRect rect);
 
@@ -152,6 +154,7 @@ void send_chat_bubble_soldiers(rpg_t *rpg);
 
 // gameplay
 sfBool check_collision_executioner(rpg_t *rpg);
+sfBool check_collision_golem_proj(rpg_t *rpg);
 void remove_life_player(rpg_t *rpg, int offset);
 
 //lib text

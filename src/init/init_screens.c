@@ -48,7 +48,7 @@ void init_screens(rpg_t *rpg)
     rpg->screen[SC_INVENTORY] = (screen_t){.active = false,
     .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0.4, screen_inventory};
     rpg->screen[SC_GROTTE] = (screen_t){.active = false,
-    .view_pos = {444, 1196}, .view_zoom = 0.4, screen_grotte};
+    .view_pos = {444, 1196 + 20}, .view_zoom = 0.4, screen_grotte};
     rpg->screen[SC_VICTORY_CEMETERY] = (screen_t){.active = false,
     .view_pos = {384, 1581}, .view_zoom = 0.4, screen_victory_cemetery};
     rpg->screen[SC_HOW_PLAY] = (screen_t){.active = false,

@@ -45,7 +45,7 @@ static void execute_cemetery(rpg_t *rpg)
     rpg->spritesheet[SP_LIFE_BAR_BOX_BOSS].pos = (sfVector2f){rpg->screen[SC_CEMETERY].view_pos.x + 320, rpg->screen[SC_CEMETERY].view_pos.y - 197};
     move_life_bar(rpg, rpg->player_stats.life * 5);
     move_life_bar_boss(rpg, rpg->boss_stats.life * 5);
-    animate_boss(rpg);
+    animate_boss_cemetery(rpg);
     if (rpg->player_stats.life <= 0)
         die(rpg);
 }
@@ -66,7 +66,7 @@ static void execute_grotte(rpg_t *rpg)
     rpg->spritesheet[SP_LIFE_BAR_BOX_BOSS].pos = (sfVector2f){rpg->screen[SC_GROTTE].view_pos.x + 320, rpg->screen[SC_GROTTE].view_pos.y - 197};
     move_life_bar(rpg, rpg->player_stats.life * 5);
     move_life_bar_boss(rpg, rpg->boss_stats.life * 5);
-    // animate_boss(rpg);
+    animate_boss_grotte(rpg);
     if (rpg->player_stats.life <= 0)
         die(rpg);
 }

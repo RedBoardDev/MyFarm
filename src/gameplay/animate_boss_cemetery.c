@@ -97,7 +97,7 @@ static void ia_boss(rpg_t *rpg)
         rpg->boss_stats.status = ST_IDLE;
 }
 
-void animate_boss(rpg_t *rpg)
+void animate_boss_cemetery(rpg_t *rpg)
 {
     if (rpg->boss_stats.life <= 0) {
         rpg->boss_stats.status = ST_DIE;
