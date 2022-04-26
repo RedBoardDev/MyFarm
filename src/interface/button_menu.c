@@ -7,8 +7,6 @@
 
 #include "../../include/rpg.h"
 
-SCREENS_INT
-
 // void launch_game(rpg_t *rpg)
 // {
 //     sfView_zoom(rpg->begin.view.view , rpg->screen[SC_MAIN_MAP].view_zoom);

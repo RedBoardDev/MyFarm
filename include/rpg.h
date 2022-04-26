@@ -23,17 +23,6 @@
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing}
-    #define SCREENS_INT extern int screen_menu[];   \
-                        extern int screen_custom[];   \
-                        extern int screen_game[];   \
-                        extern int screen_base[]; \
-                        extern int screen_jail[]; \
-                        extern int screen_grotte[]; \
-                        extern int screen_inventory[]; \
-                        extern int screen_how_play[]; \
-                        extern int screen_victory_grotte[]; \
-                        extern int screen_pause_menu[]; \
-                        extern int screen_option_menu[];
     #define SPAWN_X WIDTH / 2
     #define SPAWN_Y WIDTH / 2 + 80
     #define SPEED_PLAYER 1.5

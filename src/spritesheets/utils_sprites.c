@@ -7,8 +7,6 @@
 
 #include "../../include/rpg.h"
 
-SCREENS_INT
-
 void set_one_sprite(char *filename, spritesheet_t *spritesheet,
 init_sprite_t init_sprite)
 {

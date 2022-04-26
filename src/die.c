@@ -7,8 +7,6 @@
 
 #include "../include/rpg.h"
 
-SCREENS_INT
-
 void return_home(rpg_t *rpg)
 {
     init_all_events(&rpg->all_events);

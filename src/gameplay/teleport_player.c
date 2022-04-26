@@ -7,8 +7,6 @@
 
 #include "../../include/rpg.h"
 
-SCREENS_INT
-
 void teleport_base(rpg_t *rpg)
 {
     if (rpg->screen[SC_MAIN_MAP].active) {

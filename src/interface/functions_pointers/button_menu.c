@@ -7,8 +7,6 @@
 
 #include "../../../include/rpg.h"
 
-SCREENS_INT
-
 void how_play(rpg_t *rpg)
 {
     sfSprite_setColor(rpg->spritesheet[SP_BACKGROUND_HOW_PLAY].sprite,

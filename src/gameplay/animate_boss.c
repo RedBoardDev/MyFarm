@@ -7,8 +7,6 @@
 
 #include "../../include/rpg.h"
 
-SCREENS_INT
-
 void animate_attack_1(rpg_t *rpg)
 {
     float time = get_clock_time(rpg->spritesheet[SP_BOSS_EXECUTIONER].c_anim);

@@ -7,8 +7,6 @@
 
 #include "../include/rpg.h"
 
-SCREENS_INT
-
 void big_loop(rpg_t *rpg)
 {
     my_events(rpg);

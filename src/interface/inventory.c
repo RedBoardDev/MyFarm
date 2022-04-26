@@ -7,8 +7,6 @@
 
 #include "../../include/rpg.h"
 
-SCREENS_INT
-
 void box_inventory(rpg_t *rpg)
 {
     if (rpg->screen[SC_INVENTORY].active) {

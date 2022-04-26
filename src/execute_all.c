@@ -7,8 +7,6 @@
 
 #include "../include/rpg.h"
 
-SCREENS_INT
-
 // void execute_menu(rpg_t *rpg)
 // {
 
