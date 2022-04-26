@@ -32,7 +32,8 @@
                         extern int screen_inventory[]; \
                         extern int screen_how_play[]; \
                         extern int screen_victory_grotte[]; \
-                        extern int screen_pause_menu[];
+                        extern int screen_pause_menu[]; \
+                        extern int screen_option_menu[];
     #define SPAWN_X WIDTH / 2
     #define SPAWN_Y WIDTH / 2 + 80
     #define SPEED_PLAYER 1.5
@@ -74,6 +75,14 @@ enum sprites {
     SP_RESUME,
     SP_OPTION,
     SP_LEAVE_GAME,
+    SP_BOX_BUTTON,
+    SP_SOUND,
+    SP_SOUNDBAR,
+    SP_SOUND_SLIDER,
+    SP_BOX_BUTTON_MUSIC,
+    SP_SOUND_MUSIC,
+    SP_SOUNDBAR_MUSIC,
+    SP_SOUND_SLIDER_MUSIC,
     SP_LIFE_BAR_BOX,
     SP_LIFE_BAR,
     SP_LIFE_BAR_BOX_BOSS,
@@ -110,6 +119,7 @@ enum screens {
     SC_VICTORY_GROTTE,
     SC_INVENTORY,
     SC_PAUSE,
+    SC_OPTION,
     NBR_SC
 };
 

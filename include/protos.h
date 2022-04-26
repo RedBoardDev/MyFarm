@@ -57,6 +57,7 @@ void button_next_grotte(rpg_t *rpg);
 void menu_pause(rpg_t *rpg);
 void buttun_resume_game(rpg_t *rpg);
 void buttun_option_game(rpg_t *rpg);
+void buttun_option_game_2(rpg_t *rpg);
 void buttun_leave_game(rpg_t *rpg);
 
 // init
@@ -75,6 +76,7 @@ void init_all_events(events_t *events);
 void init_spritesheets_npc(spritesheet_t *spritesheet);
 void init_spritesheets_armed(spritesheet_t *spritesheet);
 void init_buttuns_pause_menu(spritesheet_t *spritesheet);
+void init_buttuns_option_menu(spritesheet_t *spritesheet);
 void init_bosses(spritesheet_t *spritesheet);
 void init_spritesheets_food(spritesheet_t *spritesheet);
 void init_all_players(spritesheet_t *spritesheet);

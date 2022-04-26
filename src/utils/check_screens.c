@@ -10,7 +10,7 @@
 bool is_in_menu(rpg_t *rpg)
 {
     return (rpg->screen[SC_MENU].active || rpg->screen[SC_CUSTOM_SKINS].active
-    || rpg->screen[SC_HOW_PLAY].active);
+    || rpg->screen[SC_HOW_PLAY].active || rpg->screen[SC_OPTION].active);
 }
 
 bool is_in_gameplay(rpg_t *rpg)
