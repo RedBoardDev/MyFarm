@@ -13,7 +13,6 @@ void init_bosses(spritesheet_t *spritesheet)
     &spritesheet[SP_BOSS_EXECUTIONER],
     (init_sprite_t){{444, 1196 + 100}, {1.5, 1.5}, {0, 0, 100, 100},
     .clickable = true, .active = false, .change_sprite_on_mouse = false});
-
     set_one_sprite("assets/img/boss/victory_grotte.png",
     &spritesheet[SP_BACKGROUND_VICRORY_GROTTE],
     (init_sprite_t){{444, 1196}, {0.5, 0.5}, {0, 0, 1200, 675},
