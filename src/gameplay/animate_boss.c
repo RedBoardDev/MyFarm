@@ -7,7 +7,7 @@
 
 #include "../../include/rpg.h"
 
-void animate_attack_1(rpg_t *rpg)
+static void animate_attack_1(rpg_t *rpg)
 {
     float time = get_clock_time(rpg->spritesheet[SP_BOSS_EXECUTIONER].c_anim);
 
@@ -20,7 +20,7 @@ void animate_attack_1(rpg_t *rpg)
         rpg->spritesheet[SP_BOSS_EXECUTIONER].rect.left = 0;
 }
 
-void animate_attack_2(rpg_t *rpg)
+static void animate_attack_2(rpg_t *rpg)
 {
     float time = get_clock_time(rpg->spritesheet[SP_BOSS_EXECUTIONER].c_anim);
 
@@ -33,7 +33,7 @@ void animate_attack_2(rpg_t *rpg)
         rpg->spritesheet[SP_BOSS_EXECUTIONER].rect.left = 0;
 }
 
-void animate_idle(rpg_t *rpg)
+static void animate_idle(rpg_t *rpg)
 {
     float time = get_clock_time(rpg->spritesheet[SP_BOSS_EXECUTIONER].c_anim);
 
@@ -46,7 +46,7 @@ void animate_idle(rpg_t *rpg)
         rpg->spritesheet[SP_BOSS_EXECUTIONER].rect.left = 0;
 }
 
-void animate_die(rpg_t *rpg)
+static void animate_die(rpg_t *rpg)
 {
     float time = get_clock_time(rpg->spritesheet[SP_BOSS_EXECUTIONER].c_anim);
 
@@ -59,7 +59,7 @@ void animate_die(rpg_t *rpg)
         rpg->spritesheet[SP_BOSS_EXECUTIONER].rect.left = 2000;
 }
 
-void ia_boss_rush_to_player(rpg_t *rpg)
+static void ia_boss_rush_to_player(rpg_t *rpg)
 {
     if (check_collision_executioner(rpg)) {
         rpg->boss_stats.rush_to_player = false;
@@ -68,7 +68,7 @@ void ia_boss_rush_to_player(rpg_t *rpg)
     }
 }
 
-void ia_boss(rpg_t *rpg)
+static void ia_boss(rpg_t *rpg)
 {
     float time_movement = get_clock_time(rpg->boss_stats.movement);
     float time_attack =
@@ -102,8 +102,8 @@ void animate_boss(rpg_t *rpg)
     if (rpg->boss_stats.life <= 0) {
         rpg->boss_stats.status = ST_DIE;
         if (rpg->spritesheet[SP_BOSS_EXECUTIONER].rect.left >= 2000) {
-            toggle_spritesheet_scene(rpg, false, SC_GROTTE);
-            toggle_spritesheet_scene(rpg, true, SC_VICTORY_GROTTE);
+            toggle_spritesheet_scene(rpg, false, SC_CEMETERY);
+            toggle_spritesheet_scene(rpg, true, SC_VICTORY_CEMETERY);
         }
     }
     else

@@ -14,25 +14,25 @@ SP_PLAYER_BROWN, SP_PLAYER_CYAN, SP_PLAYER_GREEN, SP_PLAYER_GREY,
 SP_PLAYER_PINK, SP_PLAYER_RED, SP_PLAYER_YELLOW, SP_PLAY, SP_CURSOR, -1};
 const int screen_game[] = {SP_BACKGROUND_SC_MAIN_MAP, SELECTED_PLAYER, -1};
 const int screen_base[] = {SP_BACKGROUND_SC_BASE, SELECTED_PLAYER, SP_CURSOR,  \
-                            SP_NPC_SOLDIER, -1};
+SP_NPC_SOLDIER, -1};
 const int screen_inventory[] = {SP_INVENTORY, SP_CURSOR, -1};
 const int screen_jail[] = {SP_BACKGROUND_JAIL, SELECTED_PLAYER, SP_CURSOR, -1};
-const int screen_grotte[] = {SP_BACKGROUND_GROTTE, SELECTED_PLAYER,
-SP_BOSS_EXECUTIONER, SP_LIFE_BAR_BOX, SP_LIFE_BAR, SP_LIFE_BAR_BOX_BOSS,
-SP_LIFE_BAR_BOSS, SP_CURSOR, -1};
 const int screen_how_play[] = {SP_BACKGROUND_HOW_PLAY, SP_BACK, SP_CURSOR, -1};
-const int screen_victory_grotte[] = {SP_BACKGROUND_GROTTE, SELECTED_PLAYER,
+const int screen_victory_cemetery[] = {SP_BACKGROUND_CEMETERY, SELECTED_PLAYER,
 SP_BOSS_EXECUTIONER, SP_LIFE_BAR_BOX, SP_LIFE_BAR, SP_LIFE_BAR_BOX_BOSS,
-SP_LIFE_BAR_BOSS, SP_CURSOR, SP_BACKGROUND_VICRORY_GROTTE, SP_NEXT_GROTTE, -1};
+SP_LIFE_BAR_BOSS, SP_BACKGROUND_VICRORY_GROTTE, SP_NEXT_GROTTE, SP_CURSOR, -1};
 const int screen_pause_menu[] = {SP_RESUME, SP_OPTION, SP_LEAVE_GAME, \
 SP_CURSOR, -1};
 const int screen_option_menu[] = {SP_BACKGROUND_HOW_PLAY, SP_SOUND,
 SP_SOUND_SLIDER, SP_SOUNDBAR, SP_BOX_BUTTON, SP_SOUND_MUSIC,
 SP_SOUND_SLIDER_MUSIC, SP_SOUNDBAR_MUSIC, SP_BOX_BUTTON_MUSIC, SP_BACK,
 SP_CURSOR, -1};
-const int screen_cemetery[] = {SP_BACKGROUND_GROTTE, SELECTED_PLAYER,
-SP_BOSS_EXECUTIONER, SP_LIFE_BAR_BOX, SP_LIFE_BAR, SP_LIFE_BAR_BOX_BOSS,
+const int screen_grotte[] = {SP_BACKGROUND_GROTTE, SELECTED_PLAYER,
+SP_BOSS_GOLEM, SP_LIFE_BAR_BOX, SP_LIFE_BAR, SP_LIFE_BAR_BOX_BOSS,
 SP_LIFE_BAR_BOSS, SP_CURSOR, -1};
+const int screen_cemetery[] = {SP_BACKGROUND_CEMETERY, SELECTED_PLAYER,
+SP_BOSS_EXECUTIONER, SP_LIFE_BAR_BOX, SP_LIFE_BAR, SP_LIFE_BAR_BOX_BOSS,
+SP_LIFE_BAR_BOSS, -1};
 
 void init_screens(rpg_t *rpg)
 {
@@ -49,8 +49,8 @@ void init_screens(rpg_t *rpg)
     .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0.4, screen_inventory};
     rpg->screen[SC_GROTTE] = (screen_t){.active = false,
     .view_pos = {444, 1196}, .view_zoom = 0.4, screen_grotte};
-    rpg->screen[SC_VICTORY_GROTTE] = (screen_t){.active = false,
-    .view_pos = {444, 1196}, .view_zoom = 0.4, screen_victory_grotte};
+    rpg->screen[SC_VICTORY_CEMETERY] = (screen_t){.active = false,
+    .view_pos = {384, 1581}, .view_zoom = 0.4, screen_victory_cemetery};
     rpg->screen[SC_HOW_PLAY] = (screen_t){.active = false,
     .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 1, screen_how_play};
     rpg->screen[SC_PAUSE] = (screen_t){.active = false,
@@ -58,7 +58,7 @@ void init_screens(rpg_t *rpg)
     rpg->screen[SC_OPTION] = (screen_t){.active = false,
     .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 1, screen_option_menu};
     rpg->screen[SC_CEMETERY] = (screen_t){.active = false,
-    .view_pos = {444, 1196}, .view_zoom = 0.4, screen_cemetery};
+    .view_pos = {384, 1581}, .view_zoom = 0.4, screen_cemetery};
     for (int i = 0; i < NBR_SC; ++i)
         rpg->screen[i].clock = sfClock_create();
 }

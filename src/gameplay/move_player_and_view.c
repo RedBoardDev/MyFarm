@@ -71,8 +71,8 @@ sfVector2f pos_player, bool move_view)
 
 void move_player_jump(rpg_t *rpg)
 {
-    int floor = 1330;
-    int max_jump = 1200;
+    int floor = rpg->screen[SC_GROTTE].active ? 1330 : 1698;
+    int max_jump = floor - 130;
 
     if (rpg->all_events.space
     && rpg->spritesheet[rpg->player_stats.skin].pos.y >= floor)
@@ -110,7 +110,7 @@ void move_player_and_view(rpg_t *rpg)
         teleport_player_scene(rpg, rpg->imgs_colors.backgrounds,
         rpg->spritesheet[rpg->player_stats.skin].pos);
     }
-    if (rpg->screen[SC_GROTTE].active) {
+    if (rpg->screen[SC_GROTTE].active || rpg->screen[SC_CEMETERY].active) {
         move_player_jump(rpg);
         move_player_and_view_horizontal(rpg, rpg->imgs_colors.backgrounds,
         rpg->spritesheet[rpg->player_stats.skin].pos, false);

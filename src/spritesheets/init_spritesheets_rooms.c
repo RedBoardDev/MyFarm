@@ -22,4 +22,9 @@ void init_spritesheets_rooms(spritesheet_t *spritesheet)
     &spritesheet[SP_BACKGROUND_GROTTE],
     (init_sprite_t){{444, 1196}, {1, 1}, {0, 0, 768, 432},
     .clickable = false, .active = false, .change_sprite_on_mouse = false});
+
+    set_one_sprite("assets/img/donjons/background_cemetery.png",
+    &spritesheet[SP_BACKGROUND_CEMETERY],
+    (init_sprite_t){{384, 1581}, {1, 1}, {0, 0, 768, 432},
+    .clickable = false, .active = false, .change_sprite_on_mouse = false});
 }

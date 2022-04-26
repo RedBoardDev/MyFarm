@@ -12,6 +12,7 @@ void big_loop(rpg_t *rpg)
     my_events(rpg);
     if ((rpg->all_events.q || rpg->all_events.c) && rpg->all_events.ctrl)
         sfRenderWindow_close(rpg->begin.window);
+    // printf("pos = %0.0f\n", rpg->spritesheet[rpg->player_stats.skin].pos.y);
     move_all_fps_independant(rpg);
     execute_all(rpg);
     check_click_buttons(rpg);

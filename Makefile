@@ -113,24 +113,24 @@ TESTS_FLAGS	=	--coverage	\
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	@echo -e "\033[1;34m\n============== Files compilation ok =============="
+	@echo -ne "\033[1;34m============== Files compilation ok =============="
 	@echo -e "\033[0m"
 	make -C lib/my
 	$(CC) -o $(NAME) $(OBJ) $(FLAGS) $(CSFML_FLAGS) $(CFLAGS)
-	@echo -e "\033[1;32m\n================= Compilation done ================="
+	@echo -ne "\033[1;32m================= Compilation done ================="
 	@echo -e "\033[0m"
 
 clean:
 	rm -f $(BIN)
 	rm -f $(OBJ)
 	make -C lib/my clean
-	@echo -e "\033[1;33m\n=============== Cleaning done ==============="
+	@echo -ne "\033[1;33m=============== Cleaning done ==============="
 	@echo -e "\033[0m"
 
 fclean:	clean
 	rm -f $(NAME)
 	make -C lib/my fclean
-	@echo -e "\033[1;33m\n=============== Full cleaning done ==============="
+	@echo -ne "\033[1;33m=============== Full cleaning done ==============="
 	@echo -e "\033[0m"
 
 re:	fclean all
