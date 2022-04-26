@@ -12,7 +12,7 @@ SCREENS_INT
 void big_loop(rpg_t *rpg)
 {
     my_events(rpg);
-    if (rpg->all_events.q && rpg->all_events.ctrl)
+    if ((rpg->all_events.q || rpg->all_events.c) && rpg->all_events.ctrl)
         sfRenderWindow_close(rpg->begin.window);
     move_all_fps_independant(rpg);
     execute_all(rpg);
