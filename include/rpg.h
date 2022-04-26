@@ -90,14 +90,6 @@ enum sprites {
     NBR_SP
 };
 
-enum status_boss {
-    ST_IDLE,
-    ST_ATTACK_1,
-    ST_ATTACK_2,
-    ST_DIE,
-    NBR_ST
-};
-
 enum screens {
     SC_MENU,
     SC_CUSTOM_SKINS,
@@ -106,10 +98,19 @@ enum screens {
     SC_BASE,
     SC_GROTTE,
     SC_VICTORY_GROTTE,
+    SC_CEMETERY,
     SC_INVENTORY,
     SC_PAUSE,
     SC_OPTION,
     NBR_SC
+};
+
+enum status_boss {
+    ST_IDLE,
+    ST_ATTACK_1,
+    ST_ATTACK_2,
+    ST_DIE,
+    NBR_ST
 };
 
 enum bleu_maisons {

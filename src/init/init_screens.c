@@ -30,6 +30,9 @@ const int screen_option_menu[] = {SP_BACKGROUND_HOW_PLAY, SP_SOUND,
 SP_SOUND_SLIDER, SP_SOUNDBAR, SP_BOX_BUTTON, SP_SOUND_MUSIC,
 SP_SOUND_SLIDER_MUSIC, SP_SOUNDBAR_MUSIC, SP_BOX_BUTTON_MUSIC, SP_BACK,
 SP_CURSOR, -1};
+const int screen_cemetery[] = {SP_BACKGROUND_GROTTE, SELECTED_PLAYER,
+SP_BOSS_EXECUTIONER, SP_LIFE_BAR_BOX, SP_LIFE_BAR, SP_LIFE_BAR_BOX_BOSS,
+SP_LIFE_BAR_BOSS, SP_CURSOR, -1};
 
 void init_screens(rpg_t *rpg)
 {
@@ -54,6 +57,8 @@ void init_screens(rpg_t *rpg)
     .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0.4, screen_pause_menu};
     rpg->screen[SC_OPTION] = (screen_t){.active = false,
     .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 1, screen_option_menu};
+    rpg->screen[SC_CEMETERY] = (screen_t){.active = false,
+    .view_pos = {444, 1196}, .view_zoom = 0.4, screen_cemetery};
     for (int i = 0; i < NBR_SC; ++i)
         rpg->screen[i].clock = sfClock_create();
 }
