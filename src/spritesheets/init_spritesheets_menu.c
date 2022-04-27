@@ -45,8 +45,8 @@ void init_buttuns_option_menu_4(spritesheet_t *spritesheet)
     &spritesheet[SP_ARROW_LEFT], (init_sprite_t){{WIDTH / 1.7, HEIGHT / 3},
     {0.7, 0.7}, {0, 0, 200, 200}, .clickable = true, .active = false,
     .change_sprite_on_mouse = true});
-    set_one_sprite("assets/img/menu/show_fps.png",
-    &spritesheet[SP_SHOW_FPS], (init_sprite_t){{WIDTH / 1.4, HEIGHT / 2.05},
+    set_one_sprite("assets/img/menu/fps_selector.png",
+    &spritesheet[SP_FPS_SELECTOR], (init_sprite_t){{WIDTH / 1.4, HEIGHT / 3},
     {0.7, 0.7}, {0, 0, 400, 200}, .clickable = false, .active = false,
     .change_sprite_on_mouse = false});
 }
@@ -54,16 +54,16 @@ void init_buttuns_option_menu_4(spritesheet_t *spritesheet)
 void init_buttuns_option_menu_3(spritesheet_t *spritesheet)
 {
     set_one_sprite("assets/img/menu/button_fs_wd.png",
-    &spritesheet[SP_BUTTON_SCREEN], (init_sprite_t){{WIDTH / 1.4, HEIGHT / 1.2},
+    &spritesheet[SP_BUTTON_SCREEN], (init_sprite_t){{WIDTH / 1.4, HEIGHT / 1.252},
     {0.7, 0.7}, {0, 0, 400, 200}, .clickable = true, .active = false,
     .change_sprite_on_mouse = true});
-    set_one_sprite("assets/img/menu/button_on_off.png",
-    &spritesheet[SP_BUTTON_ON_OFF_FPS], (init_sprite_t){{WIDTH / 1.19, HEIGHT / 2.05},
-    {0.7, 0.7}, {0, 0, 200, 200}, .clickable = true, .active = false,
+    set_one_sprite("assets/img/menu/show_fps.png",
+    &spritesheet[SP_BUTTON_ON_OFF_FPS], (init_sprite_t){{WIDTH / 1.4, HEIGHT / 2.05},
+    {0.7, 0.7}, {0, 0, 400, 200}, .clickable = true, .active = false,
     .change_sprite_on_mouse = true});
-    set_one_sprite("assets/img/menu/button_on_off.png",
-    &spritesheet[SP_BUTTON_ON_OFF_LUM], (init_sprite_t){{WIDTH / 1.19, HEIGHT / 1.55},
-    {0.7, 0.7}, {0, 0, 200, 200}, .clickable = true, .active = false,
+    set_one_sprite("assets/img/menu/light_dark_mode.png",
+    &spritesheet[SP_BUTTON_ON_OFF_LUM], (init_sprite_t){{WIDTH / 1.4, HEIGHT / 1.55},
+    {0.7, 0.7}, {0, 0, 400, 200}, .clickable = true, .active = false,
     .change_sprite_on_mouse = true});
     set_one_sprite("assets/img/menu/button_arrow_right.png",
     &spritesheet[SP_ARROW_RIGHT], (init_sprite_t){{WIDTH / 1.19, HEIGHT / 3},
