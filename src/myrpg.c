@@ -43,11 +43,14 @@ void myrpg(void)
 {
     rpg_t *rpg = malloc(sizeof(rpg_t));
     sfColor oui = {255, 0, 0, 255};
+    sfImage *img = sfImage_createFromFile("assets/img/logo.png");
+    const sfUint8 *pixels = sfImage_getPixelsPtr(img);
 
     init_all(rpg);
     if (!rpg->begin.window || !rpg->begin.framebuffer)
         return;
     sfWindow_setFramerateLimit((sfWindow *)rpg->begin.window, 0);
+    sfWindow_setIcon((sfWindow *)rpg->begin.window, 512, 512, pixels);
     rpg->begin.fps.clock = sfClock_create();
     play_sound(rpg->sound.sound_list[SOUND_MENU].sound, rpg->sound.volume);
     toggle_cursor(rpg->begin.window, false);
