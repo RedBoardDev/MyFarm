@@ -32,7 +32,6 @@ static void big_loop(rpg_t *rpg, sfColor *oui)
         set_zoom(rpg->begin.view.view, get_zoom(rpg->begin.view.view) - 0.1);
         rpg->all_events.page_up = false;
     }
-    printf("get_zoom() = %0.2f\n", get_zoom(rpg->begin.view.view));
     move_all_fps_independant(rpg);
     execute_all(rpg);
     check_click_buttons(rpg);
@@ -48,7 +47,7 @@ void myrpg(void)
     init_all(rpg);
     if (!rpg->begin.window || !rpg->begin.framebuffer)
         return;
-    sfWindow_setFramerateLimit((sfWindow *)rpg->begin.window, 1000);
+    sfWindow_setFramerateLimit((sfWindow *)rpg->begin.window, 0);
     rpg->begin.fps.clock = sfClock_create();
     play_sound(rpg->sound.sound_list[SOUND_MENU].sound, rpg->sound.volume);
     toggle_cursor(rpg->begin.window, false);
