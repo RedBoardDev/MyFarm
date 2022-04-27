@@ -27,8 +27,14 @@ void launch_game(rpg_t *rpg)
     (sfVector2f){SPAWN_X, SPAWN_Y};
     rpg->begin.view.center = (sfVector2f){SPAWN_X, SPAWN_Y};
     set_player(rpg);
-    toggle_spritesheet_scene(rpg, false, SC_MENU);
-    toggle_spritesheet_scene(rpg, false, SC_CUSTOM_SKINS);
+    if (rpg->screen[SC_MENU].active) {
+        toggle_spritesheet_scene(rpg, false, SC_CUSTOM_SKINS);
+        toggle_spritesheet_scene(rpg, false, SC_MENU);
+    }
+    if (rpg->screen[SC_CUSTOM_SKINS].active) {
+        toggle_spritesheet_scene(rpg, false, SC_MENU);
+        toggle_spritesheet_scene(rpg, false, SC_CUSTOM_SKINS);
+    }
     toggle_spritesheet_scene(rpg, true, SC_MAIN_MAP);
 }
 

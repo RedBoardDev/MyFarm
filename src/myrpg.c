@@ -7,6 +7,15 @@
 
 #include "../include/rpg.h"
 
+int get_current_screen(rpg_t *rpg)
+{
+    for (int i = 0; i < NBR_SC; ++i) {
+        if (rpg->screen[i].active)
+            return (i);
+    }
+    return (-1);
+}
+
 int get_fps(rpg_t *rpg)
 {
     rpg->begin.fps_disp.time = sfClock_getElapsedTime(rpg->begin.fps_disp.clock).microseconds;

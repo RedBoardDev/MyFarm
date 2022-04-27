@@ -185,4 +185,6 @@ void move_proj_golem(rpg_t *rpg);
 void move_proj_player(rpg_t *rpg);
 void move_executioner(rpg_t *rpg);
 
+int get_current_screen(rpg_t *rpg);
+
 #endif
