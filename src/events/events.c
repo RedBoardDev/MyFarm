@@ -23,14 +23,14 @@ void events_key_global(sfEvent event, rpg_t *rpg)
     }
 }
 
-void events_mouse_global(sfEvent event, events_t *all_events)
+static void events_mouse_global(rpg_t *rpg, sfEvent event, events_t *all_events)
 {
     switch (event.type) {
         case sfEvtMouseButtonPressed:
             events_mouse_pressed(event, all_events);
             break;
         case sfEvtMouseButtonReleased:
-            events_mouse_released(event, all_events);
+            events_mouse_released(rpg, event, all_events);
             break;
         case sfEvtMouseWheelScrolled:
             events_scroll_wheel(event, all_events);
@@ -61,7 +61,7 @@ void my_events(rpg_t *rpg)
         if (event.type == sfEvtMouseButtonPressed || event.type ==
         sfEvtMouseButtonReleased || event.type == sfEvtMouseWheelScrolled ||
         event.type == sfEvtMouseMoved)
-            events_mouse_global(event, &rpg->all_events);
+            events_mouse_global(rpg, event, &rpg->all_events);
     }
     rpg->all_events.mouse.pos =
     sfMouse_getPositionRenderWindow(rpg->begin.window);

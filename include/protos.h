@@ -33,7 +33,7 @@ void my_events(rpg_t *rpg);
 void events_key_pressed(rpg_t *rpg, sfEvent event);
 void events_key_released(sfEvent event, events_t *all_events);
 void events_mouse_pressed(sfEvent event, events_t *all_events);
-void events_mouse_released(sfEvent event, events_t *all_events);
+void events_mouse_released(rpg_t *rpg, sfEvent event, events_t *all_events);
 void events_scroll_wheel(sfEvent event, events_t *all_events);
 void events_mouse_moved(sfEvent event, events_t *all_events);
 
@@ -59,6 +59,7 @@ void buttun_resume_game(rpg_t *rpg);
 void buttun_option_game(rpg_t *rpg);
 void buttun_option_game_2(rpg_t *rpg);
 void buttun_leave_game(rpg_t *rpg);
+void check_click_soundbox(rpg_t *rpg);
 
 // init
 void init_all(rpg_t *rpg);
@@ -66,7 +67,6 @@ void init_imgs(rpg_t *rpg);
 void init_main_map(spritesheet_t *spritesheet);
 void init_screens(rpg_t *rpg);
 void init_sounds(rpg_t *rpg);
-void init_soundbox(spritesheet_t *spritesheet);
 void init_menu(spritesheet_t *spritesheet);
 void init_spritesheets_rooms(spritesheet_t *spritesheet);
 void init_spritesheets(spritesheet_t *spritesheet);

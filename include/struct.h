@@ -132,6 +132,8 @@ typedef struct {
 
 typedef struct {
     sound_list_t *sound_list;
+    bool volume_active;
+    bool volume_backup_active;
     float volume;
     float volume_backup;
     float volume_effect;

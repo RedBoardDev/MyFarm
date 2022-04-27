@@ -15,6 +15,19 @@ int get_fps(rpg_t *rpg)
     return (rpg->begin.fps_disp.fps);
 }
 
+static void move_sound_box(rpg_t *rpg)
+{
+    int pos_x = rpg->all_events.mouse.pos.x;
+
+    if (!rpg->sound.volume_active)
+        return;
+    if (pos_x >= 200 && pos_x <= 708) {
+        rpg->spritesheet[SP_SOUND_SLIDER].pos.x = pos_x;
+        rpg->sound.volume = (pos_x - 200) / 5.05;
+    }
+    rpg->sound.volume < 0 ? rpg->sound.volume = 0 : 0;
+}
+
 static void big_loop(rpg_t *rpg, sfColor *oui)
 {
     *oui = my_rgb(*oui);
@@ -32,6 +45,7 @@ static void big_loop(rpg_t *rpg, sfColor *oui)
         set_zoom(rpg->begin.view.view, get_zoom(rpg->begin.view.view) - 0.1);
         rpg->all_events.page_up = false;
     }
+    move_sound_box(rpg);
     move_all_fps_independant(rpg);
     execute_all(rpg);
     check_click_buttons(rpg);

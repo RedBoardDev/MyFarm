@@ -44,6 +44,7 @@ SRC_FILES	=	events/events	\
 				interface/functions_pointers/buttons_boss	\
 				interface/functions_pointers/choose_skin1	\
 				interface/functions_pointers/choose_skin2	\
+				interface/functions_pointers/button_soundbar	\
 				interface/check_click_buttons	\
 				interface/check_mouse_on_buttons	\
 				interface/inventory	\

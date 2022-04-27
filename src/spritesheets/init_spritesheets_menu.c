@@ -130,22 +130,6 @@ void init_menu(spritesheet_t *spritesheet)
     init_buttons_menu(spritesheet);
 }
 
-void init_soundbox(spritesheet_t *spritesheet)
-{
-    set_one_sprite("assets/img/soundbox/sound_click.png",
-    &spritesheet[SP_SOUND_CLICK],
-    (init_sprite_t){{WIDTH - 120, 40}, {0.1, 0.1}, {0, 0, 541, 541},
-    .clickable = true, .active = false, .change_sprite_on_mouse = false});
-    set_one_sprite("assets/img/soundbox/soundbox_potentio.png",
-    &spritesheet[SP_SOUND_POTENTIO],
-    (init_sprite_t){{WIDTH - 275, 100}, {0.1, 0.1}, {0, 0, 3620, 541},
-    .clickable = true, .active = false, .change_sprite_on_mouse = false});
-    set_one_sprite("assets/img/soundbox/soundbox_select.png",
-    &spritesheet[SP_SOUND_SELECT],
-    (init_sprite_t){{WIDTH - 312, 100}, {0.06, 0.06}, {0, 0, 541, 541},
-    .clickable = true, .active = false, .change_sprite_on_mouse = false});
-}
-
 void init_spritesheet_inventory(spritesheet_t *spritesheet)
 {
     set_one_sprite("assets/img/menu/inventory.png", &spritesheet[SP_INVENTORY],
