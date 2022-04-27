@@ -164,7 +164,8 @@ typedef struct {
 
 typedef struct {
     float life;
-    int damage;
+    int damage_executioner;
+    int damage_golem;
     float inc_pos;
     int status;
     float time_next_it;

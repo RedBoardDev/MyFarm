@@ -55,7 +55,8 @@ static void init_player_boss_stats(player_stats_t *player_stats, boss_stats_t *b
     player_stats->damage = 1;
     player_stats->knowledge = 1;
     player_stats->last_damage = sfClock_create();
-    boss_stats->damage = 1;
+    boss_stats->damage_executioner = 2;
+    boss_stats->damage_golem = 10;
     boss_stats->inc_pos = 0.25;
     boss_stats->life = 20;
     boss_stats->status = ST_IDLE;

@@ -5,7 +5,7 @@
 ** animate_boss.c
 */
 
-#include "../../include/rpg.h"
+#include "../../../include/rpg.h"
 
 static void animate_attack_1(rpg_t *rpg)
 {
@@ -64,7 +64,7 @@ static void ia_boss_rush_to_player(rpg_t *rpg)
     if (check_collision_executioner(rpg)) {
         rpg->boss_stats.rush_to_player = false;
         sfClock_restart(rpg->spritesheet[SP_BOSS_EXECUTIONER].c_attack);
-        remove_life_player(rpg, 2);
+        remove_life_player(rpg, rpg->boss_stats.damage_executioner);
     }
 }
 

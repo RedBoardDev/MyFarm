@@ -169,4 +169,8 @@ void destroy_text(sfText *text, sfFont *font);
 bool is_in_menu(rpg_t *rpg);
 bool is_in_gameplay(rpg_t *rpg);
 
+void animate_idle_golem(rpg_t *rpg);
+void animate_die_golem(rpg_t *rpg);
+void animate_attack_proj_golem(rpg_t *rpg);
+
 #endif
