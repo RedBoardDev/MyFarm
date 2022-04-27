@@ -144,7 +144,12 @@ typedef struct {
 } images_t;
 
 typedef struct {
-    int cases[10];
+    int item_spritesheet;
+    sfVector2f pos;
+} inventory_case_t;
+
+typedef struct {
+    inventory_case_t *inventory_case;
     sfText *money;
 } inventory_t;
 

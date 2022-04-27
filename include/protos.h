@@ -146,7 +146,7 @@ void set_size_cursor(rpg_t *rpg, float size);
 
 //inventory
 void manage_inventory(rpg_t *rpg);
-void init_inventory(inventory_t *inventory);
+void init_inventory(inventory_t *inventory, rpg_t *rpg);
 
 //quests
 void quest_soldiers(rpg_t *rpg);

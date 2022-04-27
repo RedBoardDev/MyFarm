@@ -33,11 +33,16 @@ static void draw_spritesheets(beginning_t *begin, spritesheet_t *spritesheet)
 void draw_inventory(inventory_t inventory, beginning_t *begin,
 spritesheet_t *spritesheet)
 {
+    int enum_sprite_place = 0;
+
     write_text(begin->window, inventory.money);
-    for (int i = 0; i < 10; ++i) {
-        if (inventory.cases[i] != -1)
-            draw_one_sprite(begin, spritesheet[i].sprite,
-            spritesheet[i].rect, spritesheet[i].pos);
+    for (int i = 0; i <= 10; ++i) {
+        enum_sprite_place = inventory.inventory_case[i].item_spritesheet;
+        if (enum_sprite_place >= SP_ITEM_SHOVEL && enum_sprite_place <= SP_ITEM_BEETS) {
+            draw_one_sprite(begin, spritesheet[enum_sprite_place].sprite,
+            spritesheet[enum_sprite_place].rect,
+            inventory.inventory_case[i].pos);
+        }
     }
 }
 
