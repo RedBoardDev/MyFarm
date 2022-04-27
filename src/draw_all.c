@@ -66,17 +66,17 @@ void draw_all_text(rpg_t *rpg)
     write_text(rpg->begin.window, rpg->begin.fps_disp.legende);
 }
 
-// void display_rect_sprite(rpg_t *rpg, sfFloatRect rect)
-// {
-//     sfRectangleShape *sh = sfRectangleShape_create();
-//     sfColor c = {255, 0, 0, 100};
+void display_rect_sprite(rpg_t *rpg, sfFloatRect rect)
+{
+    sfRectangleShape *sh = sfRectangleShape_create();
+    sfColor c = {255, 0, 0, 100};
 
-//     sfRectangleShape_setPosition(sh, (sfVector2f){rect.left, rect.top});
-//     sfRectangleShape_setSize(sh, (sfVector2f){rect.width, rect.height});
-//     sfRectangleShape_setFillColor(sh, c);
-//     sfRenderWindow_drawRectangleShape(rpg->begin.window, sh, NULL);
-//     sfRectangleShape_destroy(sh);
-// }
+    sfRectangleShape_setPosition(sh, (sfVector2f){rect.left, rect.top});
+    sfRectangleShape_setSize(sh, (sfVector2f){rect.width, rect.height});
+    sfRectangleShape_setFillColor(sh, c);
+    sfRenderWindow_drawRectangleShape(rpg->begin.window, sh, NULL);
+    sfRectangleShape_destroy(sh);
+}
 
 void draw_all(rpg_t *rpg)
 {
@@ -93,10 +93,14 @@ void draw_all(rpg_t *rpg)
     if (rpg->spritesheet[SP_CURSOR].active)
         draw_one_sprite(&rpg->begin, rpg->spritesheet[SP_CURSOR].sprite,
         rpg->spritesheet[SP_CURSOR].rect, rpg->spritesheet[SP_CURSOR].pos);
-    // sfFloatRect exe = sfSprite_getGlobalBounds(rpg->spritesheet[SP_BOSS_EXECUTIONER].sprite);
+    // sfFloatRect golem = sfSprite_getGlobalBounds(rpg->spritesheet[SP_BOSS_GOLEM].sprite);
+    // sfFloatRect hoe = sfSprite_getGlobalBounds(rpg->spritesheet[SP_ITEM_HOE].sprite);
 
-    // exe.left += 50;
-    // exe.width -= 50;
-    // display_rect_sprite(rpg, exe);
+    // golem.left += 40;
+    // golem.top += 30;
+    // golem.height -= 90;
+    // golem.width -= 80;
+    // display_rect_sprite(rpg, golem);
+    // display_rect_sprite(rpg, hoe);
     sfRenderWindow_display(rpg->begin.window);
 }

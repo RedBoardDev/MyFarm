@@ -110,11 +110,13 @@ void move_player_and_view(rpg_t *rpg)
         teleport_player_scene(rpg, rpg->imgs_colors.backgrounds,
         rpg->spritesheet[rpg->player_stats.skin].pos);
     }
-    if (rpg->screen[SC_GROTTE].active || rpg->screen[SC_CEMETERY].active) {
+    if (rpg->screen[SC_CEMETERY].active) {
         move_player_jump(rpg);
         move_player_and_view_horizontal(rpg, rpg->imgs_colors.backgrounds,
         rpg->spritesheet[rpg->player_stats.skin].pos, false);
     }
+    if (rpg->screen[SC_GROTTE].active)
+        move_player_jump(rpg);
     set_limits_player(rpg);
     set_view(rpg, rpg->begin.view.center);
 }
