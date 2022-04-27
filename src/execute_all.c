@@ -32,17 +32,20 @@
 
 // }
 
-static void execute_custom_skins(rpg_t *rpg)
-{
-    animate_selected_skin(rpg);
-}
-
 static void execute_cemetery(rpg_t *rpg)
 {
-    rpg->spritesheet[SP_LIFE_BAR].pos = (sfVector2f){rpg->screen[SC_CEMETERY].view_pos.x - 320, rpg->screen[SC_CEMETERY].view_pos.y - 197};
-    rpg->spritesheet[SP_LIFE_BAR_BOX].pos = (sfVector2f){rpg->screen[SC_CEMETERY].view_pos.x - 320, rpg->screen[SC_CEMETERY].view_pos.y - 197};
-    rpg->spritesheet[SP_LIFE_BAR_BOSS].pos = (sfVector2f){rpg->screen[SC_CEMETERY].view_pos.x + 320, rpg->screen[SC_CEMETERY].view_pos.y - 197};
-    rpg->spritesheet[SP_LIFE_BAR_BOX_BOSS].pos = (sfVector2f){rpg->screen[SC_CEMETERY].view_pos.x + 320, rpg->screen[SC_CEMETERY].view_pos.y - 197};
+    rpg->spritesheet[SP_LIFE_BAR].pos =
+    (sfVector2f){rpg->screen[SC_CEMETERY].view_pos.x - 320,
+    rpg->screen[SC_CEMETERY].view_pos.y - 197};
+    rpg->spritesheet[SP_LIFE_BAR_BOX].pos =
+    (sfVector2f){rpg->screen[SC_CEMETERY].view_pos.x - 320,
+    rpg->screen[SC_CEMETERY].view_pos.y - 197};
+    rpg->spritesheet[SP_LIFE_BAR_BOSS].pos =
+    (sfVector2f){rpg->screen[SC_CEMETERY].view_pos.x + 320,
+    rpg->screen[SC_CEMETERY].view_pos.y - 197};
+    rpg->spritesheet[SP_LIFE_BAR_BOX_BOSS].pos =
+    (sfVector2f){rpg->screen[SC_CEMETERY].view_pos.x + 320,
+    rpg->screen[SC_CEMETERY].view_pos.y - 197};
     move_life_bar(rpg, rpg->player_stats.life * 5);
     move_life_bar_boss(rpg, rpg->boss_stats.life * 5);
     animate_boss_cemetery(rpg);
@@ -52,18 +55,18 @@ static void execute_cemetery(rpg_t *rpg)
 
 static void execute_grotte(rpg_t *rpg)
 {
-    // if (rpg->all_events.page_down && rpg->boss_stats.life > 0) {
-    //     --rpg->boss_stats.life;
-    //     rpg->all_events.page_down = false;
-    // }
-    // if (rpg->all_events.page_up && rpg->boss_stats.life < 20) {
-    //     ++rpg->boss_stats.life;
-    //     rpg->all_events.page_up = false;
-    // }
-    rpg->spritesheet[SP_LIFE_BAR].pos = (sfVector2f){rpg->screen[SC_GROTTE].view_pos.x - 320, rpg->screen[SC_GROTTE].view_pos.y - 197};
-    rpg->spritesheet[SP_LIFE_BAR_BOX].pos = (sfVector2f){rpg->screen[SC_GROTTE].view_pos.x - 320, rpg->screen[SC_GROTTE].view_pos.y - 197};
-    rpg->spritesheet[SP_LIFE_BAR_BOSS].pos = (sfVector2f){rpg->screen[SC_GROTTE].view_pos.x + 320, rpg->screen[SC_GROTTE].view_pos.y - 197};
-    rpg->spritesheet[SP_LIFE_BAR_BOX_BOSS].pos = (sfVector2f){rpg->screen[SC_GROTTE].view_pos.x + 320, rpg->screen[SC_GROTTE].view_pos.y - 197};
+    rpg->spritesheet[SP_LIFE_BAR].pos =
+    (sfVector2f){rpg->screen[SC_GROTTE].view_pos.x - 320,
+    rpg->screen[SC_GROTTE].view_pos.y - 197};
+    rpg->spritesheet[SP_LIFE_BAR_BOX].pos =
+    (sfVector2f){rpg->screen[SC_GROTTE].view_pos.x - 320,
+    rpg->screen[SC_GROTTE].view_pos.y - 197};
+    rpg->spritesheet[SP_LIFE_BAR_BOSS].pos =
+    (sfVector2f){rpg->screen[SC_GROTTE].view_pos.x + 320,
+    rpg->screen[SC_GROTTE].view_pos.y - 197};
+    rpg->spritesheet[SP_LIFE_BAR_BOX_BOSS].pos =
+    (sfVector2f){rpg->screen[SC_GROTTE].view_pos.x + 320,
+    rpg->screen[SC_GROTTE].view_pos.y - 197};
     move_life_bar(rpg, rpg->player_stats.life * 5);
     move_life_bar_boss(rpg, rpg->boss_stats.life * 5);
     animate_boss_grotte(rpg);
@@ -92,7 +95,7 @@ void execute_all(rpg_t *rpg)
     if (is_in_menu(rpg))
         execute_all_menus(rpg);
     if (rpg->screen[SC_CUSTOM_SKINS].active)
-        execute_custom_skins(rpg);
+        animate_selected_skin(rpg);
     if (rpg->screen[SC_GROTTE].active)
         execute_grotte(rpg);
     if (rpg->screen[SC_CEMETERY].active)

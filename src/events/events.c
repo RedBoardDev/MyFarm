@@ -7,7 +7,7 @@
 
 #include "../../include/rpg.h"
 
-void events_key_global(sfEvent event, rpg_t *rpg)
+static void events_key_global(sfEvent event, rpg_t *rpg)
 {
     switch (event.type) {
         case sfEvtKeyPressed:
@@ -43,15 +43,20 @@ static void events_mouse_global(rpg_t *rpg, sfEvent event, events_t *all_events)
     }
 }
 
-void my_events(rpg_t *rpg)
+static void init_mouse(rpg_t *rpg)
 {
-    sfEvent event;
-
     rpg->all_events.mouse_wheel.up = false;
     rpg->all_events.mouse_wheel.down = false;
     rpg->all_events.mouse.left_released = false;
     rpg->all_events.mouse.move_x = 0;
     rpg->all_events.mouse.move_y = 0;
+}
+
+void my_events(rpg_t *rpg)
+{
+    sfEvent event;
+
+    init_mouse(rpg);
     while (sfRenderWindow_pollEvent(rpg->begin.window, &event)) {
         if (event.type == sfEvtClosed)
             sfRenderWindow_close(rpg->begin.window);

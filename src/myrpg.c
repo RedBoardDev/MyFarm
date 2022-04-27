@@ -18,7 +18,7 @@ int get_current_screen(rpg_t *rpg)
 
 int get_fps(rpg_t *rpg)
 {
-    rpg->begin.fps_disp.time = sfClock_getElapsedTime(rpg->begin.fps_disp.clock).microseconds;
+    rpg->begin.fps_disp.time = get_clock_time(rpg->begin.fps_disp.clock);
     rpg->begin.fps_disp.fps = 1 / (rpg->begin.fps_disp.time / 1000000);
     sfClock_restart(rpg->begin.fps_disp.clock);
     return (rpg->begin.fps_disp.fps);
@@ -44,8 +44,6 @@ static void big_loop(rpg_t *rpg, sfColor *oui)
     my_events(rpg);
     if ((rpg->all_events.q || rpg->all_events.c) && rpg->all_events.ctrl)
         sfRenderWindow_close(rpg->begin.window);
-    // for (int i = 0; i < NBR_SP; ++i)
-    //     sfSprite_setColor(rpg->spritesheet[i].sprite, *oui);
     if (rpg->all_events.page_down) {
         set_zoom(rpg->begin.view.view, get_zoom(rpg->begin.view.view) + 0.1);
         rpg->all_events.page_down = false;

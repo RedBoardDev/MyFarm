@@ -13,7 +13,8 @@ const int screen_custom[] = {SP_BACKGROUND_SC_MENU, SP_PLAYER_BLUE,
 SP_PLAYER_BROWN, SP_PLAYER_CYAN, SP_PLAYER_GREEN, SP_PLAYER_GREY,
 SP_PLAYER_PINK, SP_PLAYER_RED, SP_PLAYER_YELLOW, SP_PLAY, SP_CURSOR, -1};
 const int screen_game[] = {SP_BACKGROUND_SC_MAIN_MAP, SELECTED_PLAYER, -1};
-const int screen_base[] = {SP_BACKGROUND_SC_BASE, SELECTED_PLAYER, SP_CURSOR, -1};
+const int screen_base[] = {SP_BACKGROUND_SC_BASE, SELECTED_PLAYER,  \
+SP_CURSOR, -1};
 const int screen_inventory[] = {SP_INVENTORY, SP_CURSOR, -1};
 const int screen_jail[] = {SP_BACKGROUND_JAIL, SELECTED_PLAYER, SP_CURSOR, -1};
 const int screen_how_play[] = {SP_BACKGROUND_HOW_PLAY, SP_BACK, SP_CURSOR, -1};
@@ -33,7 +34,8 @@ SP_LIFE_BAR_BOSS, SP_CURSOR, -1};
 const int screen_cemetery[] = {SP_BACKGROUND_CEMETERY, SELECTED_PLAYER,
 SP_BOSS_EXECUTIONER, SP_LIFE_BAR_BOX, SP_LIFE_BAR, SP_LIFE_BAR_BOX_BOSS,
 SP_LIFE_BAR_BOSS, -1};
-const int screen_tente[] = {SP_BACKGROUND_TENTE, SELECTED_PLAYER, SP_NPC_SOLDIER, SP_CURSOR, -1};
+const int screen_tente[] = {SP_BACKGROUND_TENTE, SELECTED_PLAYER,   \
+SP_NPC_SOLDIER, SP_CURSOR, -1};
 
 void init_screens(rpg_t *rpg)
 {
@@ -62,7 +64,8 @@ void init_screens(rpg_t *rpg)
     .view_pos = {384, 1581}, .view_zoom = 0.4, screen_cemetery};
 
     rpg->screen[SC_TENTE] = (screen_t){.active = false,
-    .view_pos = {SPAWN_X - 760, SPAWN_Y - 770}, .view_zoom = 0.32, screen_tente};
+    .view_pos = {SPAWN_X - 760, SPAWN_Y - 770},
+    .view_zoom = 0.32, screen_tente};
 
     for (int i = 0; i < NBR_SC; ++i)
         rpg->screen[i].clock = sfClock_create();
