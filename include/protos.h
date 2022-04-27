@@ -180,4 +180,9 @@ void animate_attack_2_executioner(rpg_t *rpg);
 void animate_idle_executioner(rpg_t *rpg);
 void animate_die_executioner(rpg_t *rpg);
 
+// move bosses
+void move_proj_golem(rpg_t *rpg);
+void move_proj_player(rpg_t *rpg);
+void move_executioner(rpg_t *rpg);
+
 #endif

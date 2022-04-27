@@ -93,14 +93,14 @@ void draw_all(rpg_t *rpg)
     if (rpg->spritesheet[SP_CURSOR].active)
         draw_one_sprite(&rpg->begin, rpg->spritesheet[SP_CURSOR].sprite,
         rpg->spritesheet[SP_CURSOR].rect, rpg->spritesheet[SP_CURSOR].pos);
-    sfFloatRect golem = sfSprite_getGlobalBounds(rpg->spritesheet[SP_BOSS_GOLEM].sprite);
-    sfFloatRect hoe = sfSprite_getGlobalBounds(rpg->spritesheet[SP_ITEM_HOE].sprite);
+    // sfFloatRect golem = sfSprite_getGlobalBounds(rpg->spritesheet[SP_BOSS_GOLEM].sprite);
+    // sfFloatRect hoe = sfSprite_getGlobalBounds(rpg->spritesheet[SP_ITEM_HOE].sprite);
 
-    golem.left += 40;
-    golem.top += 30;
-    golem.height -= 90;
-    golem.width -= 80;
-    display_rect_sprite(rpg, golem);
-    display_rect_sprite(rpg, hoe);
+    // golem.left += 40;
+    // golem.top += 30;
+    // golem.height -= 90;
+    // golem.width -= 80;
+    // display_rect_sprite(rpg, golem);
+    // display_rect_sprite(rpg, hoe);
     sfRenderWindow_display(rpg->begin.window);
 }
