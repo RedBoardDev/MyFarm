@@ -48,6 +48,7 @@ static void init_player_boss_stats(player_stats_t *player_stats, boss_stats_t *b
     player_stats->incr_pos.x = 0;
     player_stats->incr_pos.y = 0;
     player_stats->money = 0;
+    player_stats->attack = false;
     player_stats->speed = 1.0;
     player_stats->life = 20.0;
     player_stats->mana = 0.0;

@@ -59,8 +59,19 @@ void draw_all_text(rpg_t *rpg)
     sfText_setScale(rpg->begin.fps_disp.legende, scale);
     write_text(rpg->begin.window, rpg->begin.fps_disp.fps_text);
     write_text(rpg->begin.window, rpg->begin.fps_disp.legende);
-
 }
+
+// void display_rect_sprite(rpg_t *rpg, sfFloatRect rect)
+// {
+//     sfRectangleShape *sh = sfRectangleShape_create();
+//     sfColor c = {255, 0, 0, 100};
+
+//     sfRectangleShape_setPosition(sh, (sfVector2f){rect.left, rect.top});
+//     sfRectangleShape_setSize(sh, (sfVector2f){rect.width, rect.height});
+//     sfRectangleShape_setFillColor(sh, c);
+//     sfRenderWindow_drawRectangleShape(rpg->begin.window, sh, NULL);
+//     sfRectangleShape_destroy(sh);
+// }
 
 void draw_all(rpg_t *rpg)
 {
@@ -77,5 +88,10 @@ void draw_all(rpg_t *rpg)
     if (rpg->spritesheet[SP_CURSOR].active)
         draw_one_sprite(&rpg->begin, rpg->spritesheet[SP_CURSOR].sprite,
         rpg->spritesheet[SP_CURSOR].rect, rpg->spritesheet[SP_CURSOR].pos);
+    // sfFloatRect exe = sfSprite_getGlobalBounds(rpg->spritesheet[SP_BOSS_EXECUTIONER].sprite);
+
+    // exe.left += 50;
+    // exe.width -= 50;
+    // display_rect_sprite(rpg, exe);
     sfRenderWindow_display(rpg->begin.window);
 }

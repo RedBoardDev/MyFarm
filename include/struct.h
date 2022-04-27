@@ -157,6 +157,7 @@ typedef struct {
     float mana;
     int damage;
     int knowledge;
+    bool attack;
     sfClock *last_damage;
     inventory_t inventory;
 } player_stats_t;

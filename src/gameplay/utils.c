@@ -32,7 +32,23 @@ sfBool check_collision_golem_proj(rpg_t *rpg)
     sfFloatRect proj =
     sfSprite_getGlobalBounds(rpg->spritesheet[SP_BOSS_GOLEM_PROJ].sprite);
 
-    proj.left += 40;
-    proj.width -= 40;
+    proj.left += 10;
+    proj.top += 45;
+    proj.width -= 110;
+    proj.height -= 130;
     return (sfFloatRect_intersects(&player, &proj, NULL));
+}
+
+sfBool check_collision_hoe_to_golem(rpg_t *rpg)
+{
+    sfFloatRect golem =
+    sfSprite_getGlobalBounds(rpg->spritesheet[SP_BOSS_GOLEM].sprite);
+    sfFloatRect hoe =
+    sfSprite_getGlobalBounds(rpg->spritesheet[SP_ITEM_HOE].sprite);
+
+    golem.left += 40;
+    golem.top += 30;
+    golem.height -= 60;
+    golem.width -= 80;
+    return (sfFloatRect_intersects(&golem, &hoe, NULL));
 }

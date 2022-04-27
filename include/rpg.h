@@ -25,6 +25,7 @@
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing}
     #define SPAWN_X WIDTH / 2
     #define SPAWN_Y WIDTH / 2 + 80
+    // #define SPEED_PLAYER 4
     #define SPEED_PLAYER 1.5
     #define SECOND_TO_MICRO(x) x * 1000000
 
