@@ -38,7 +38,8 @@ spritesheet_t *spritesheet)
     write_text(begin->window, inventory.money);
     for (int i = 0; i <= 10; ++i) {
         enum_sprite_place = inventory.inventory_case[i].item_spritesheet;
-        if (enum_sprite_place >= SP_ITEM_SHOVEL && enum_sprite_place <= SP_ITEM_BEETS) {
+        if (enum_sprite_place >= SP_ITEM_SHOVEL
+        && enum_sprite_place <= SP_ITEM_BEETS) {
             draw_one_sprite(begin, spritesheet[enum_sprite_place].sprite,
             spritesheet[enum_sprite_place].rect,
             inventory.inventory_case[i].pos);
@@ -49,13 +50,16 @@ spritesheet_t *spritesheet)
 void draw_all_text(rpg_t *rpg)
 {
     float zoom = get_zoom(rpg->begin.view.view);
-    sfVector2f pos_l = {rpg->begin.view.center.x - ((WIDTH / 2) * zoom) + (10 * zoom), rpg->begin.view.center.y + ((HEIGHT / 2) * zoom) - (40 * zoom)};
+    sfVector2f pos_l = {rpg->begin.view.center.x - ((WIDTH / 2) * zoom) + (10 *
+    zoom), rpg->begin.view.center.y + ((HEIGHT / 2) * zoom) - (40 * zoom)};
     sfVector2f pos = {pos_l.x + (70 * zoom), pos_l.y};
     sfVector2f scale = {0.3 * zoom, 0.3 * zoom};
 
     send_chat_bubble_soldiers(rpg);
-    if (get_clock_time(rpg->begin.fps_disp.display_clock) >= SECOND_TO_MICRO(0.2)) {
-        sfText_setString(rpg->begin.fps_disp.fps_text, my_itoa(rpg->begin.fps_disp.fps));
+    if (get_clock_time(rpg->begin.fps_disp.display_clock) >=
+    SECOND_TO_MICRO(0.2)) {
+        sfText_setString(rpg->begin.fps_disp.fps_text,
+        my_itoa(rpg->begin.fps_disp.fps));
         sfClock_restart(rpg->begin.fps_disp.display_clock);
     }
     sfText_setPosition(rpg->begin.fps_disp.fps_text, pos);
@@ -64,18 +68,6 @@ void draw_all_text(rpg_t *rpg)
     sfText_setScale(rpg->begin.fps_disp.legende, scale);
     write_text(rpg->begin.window, rpg->begin.fps_disp.fps_text);
     write_text(rpg->begin.window, rpg->begin.fps_disp.legende);
-}
-
-void display_rect_sprite(rpg_t *rpg, sfFloatRect rect)
-{
-    sfRectangleShape *sh = sfRectangleShape_create();
-    sfColor c = {255, 0, 0, 100};
-
-    sfRectangleShape_setPosition(sh, (sfVector2f){rect.left, rect.top});
-    sfRectangleShape_setSize(sh, (sfVector2f){rect.width, rect.height});
-    sfRectangleShape_setFillColor(sh, c);
-    sfRenderWindow_drawRectangleShape(rpg->begin.window, sh, NULL);
-    sfRectangleShape_destroy(sh);
 }
 
 void draw_all(rpg_t *rpg)
@@ -93,14 +85,5 @@ void draw_all(rpg_t *rpg)
     if (rpg->spritesheet[SP_CURSOR].active)
         draw_one_sprite(&rpg->begin, rpg->spritesheet[SP_CURSOR].sprite,
         rpg->spritesheet[SP_CURSOR].rect, rpg->spritesheet[SP_CURSOR].pos);
-    // sfFloatRect golem = sfSprite_getGlobalBounds(rpg->spritesheet[SP_BOSS_GOLEM].sprite);
-    // sfFloatRect hoe = sfSprite_getGlobalBounds(rpg->spritesheet[SP_ITEM_HOE].sprite);
-
-    // golem.left += 40;
-    // golem.top += 30;
-    // golem.height -= 90;
-    // golem.width -= 80;
-    // display_rect_sprite(rpg, golem);
-    // display_rect_sprite(rpg, hoe);
     sfRenderWindow_display(rpg->begin.window);
 }

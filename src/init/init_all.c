@@ -69,10 +69,10 @@ static void init_fps(rpg_t *rpg)
 {
     rpg->begin.fps.clock = sfClock_create();
     rpg->begin.fps.timer = 0;
-    rpg->begin.fps_disp.fps_text = create_text((init_text_t){100, "", sfWhite,
-    {WIDTH / 2, HEIGHT / 2}, "assets/fonts/Sriracha-Regular.ttf"});
-    rpg->begin.fps_disp.legende = create_text((init_text_t){100, "FPS: ", sfWhite,
-    {WIDTH / 2, HEIGHT / 2}, "assets/fonts/Sriracha-Regular.ttf"});
+    rpg->begin.fps_disp.fps_text = create_text((init_text_t){100, "",
+    sfWhite, {WIDTH / 2, HEIGHT / 2}, "assets/fonts/Sriracha-Regular.ttf"});
+    rpg->begin.fps_disp.legende = create_text((init_text_t){100, "FPS: ",
+    sfWhite, {WIDTH / 2, HEIGHT / 2}, "assets/fonts/Sriracha-Regular.ttf"});
     rpg->begin.fps_disp.clock = sfClock_create();
     rpg->begin.fps_disp.display_clock = sfClock_create();
     rpg->begin.fps_disp.time = 0;

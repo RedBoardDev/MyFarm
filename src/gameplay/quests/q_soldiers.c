@@ -12,7 +12,8 @@ void send_chat_bubble_soldiers(rpg_t *rpg)
     if (rpg->quest[QUEST_SOLDIER].step <= 0)
         return;
     write_text(rpg->begin.window, rpg->quest[QUEST_SOLDIER].dialog);
-    if (get_clock_time(rpg->quest[QUEST_SOLDIER].clock_chat) >= SECOND_TO_MICRO(6)) {
+    if (get_clock_time(rpg->quest[QUEST_SOLDIER].clock_chat) >=
+    SECOND_TO_MICRO(6)) {
         if (!get_chat_into_file("assets/quest_dialog/soldiers.txt",
         QUEST_SOLDIER, rpg))
             rpg->quest[QUEST_SOLDIER].step = -1;

@@ -47,13 +47,11 @@ void display_custom_skins(rpg_t *rpg)
 
 void buttun_resume_game(rpg_t *rpg)
 {
-    printf("RESUME %d\n", rpg->index_old_s);
     toggle_spritesheet_scene(rpg, false, SC_PAUSE);
 }
 
 void buttun_option_game(rpg_t *rpg)
 {
-    printf("OPTION %d\n", rpg->index_old_s);
     disable_all_screens_gameplay(rpg);
     toggle_spritesheet_scene(rpg, true, SC_OPTION);
     sfView_setCenter(rpg->begin.view.view, rpg->screen[SC_OPTION].view_pos);
@@ -61,7 +59,6 @@ void buttun_option_game(rpg_t *rpg)
 
 void buttun_leave_game(rpg_t *rpg)
 {
-    printf("LEAVE %d\n", rpg->index_old_s);
     disable_all_screens_gameplay(rpg);
     toggle_spritesheet_scene(rpg, false, SC_PAUSE);
     toggle_spritesheet_scene(rpg, true, SC_MENU);

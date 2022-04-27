@@ -54,17 +54,17 @@ void init_buttuns_option_menu_4(spritesheet_t *spritesheet)
 void init_buttuns_option_menu_3(spritesheet_t *spritesheet)
 {
     set_one_sprite("assets/img/menu/button_fs_wd.png",
-    &spritesheet[SP_BUTTON_SCREEN], (init_sprite_t){{WIDTH / 1.4, HEIGHT / 1.252},
-    {0.7, 0.7}, {0, 0, 400, 200}, .clickable = true, .active = false,
-    .change_sprite_on_mouse = true});
+    &spritesheet[SP_BUTTON_SCREEN], (init_sprite_t){{WIDTH / 1.4,
+    HEIGHT / 1.252}, {0.7, 0.7}, {0, 0, 400, 200}, .clickable = true,
+    .active = false, .change_sprite_on_mouse = true});
     set_one_sprite("assets/img/menu/show_fps.png",
-    &spritesheet[SP_BUTTON_ON_OFF_FPS], (init_sprite_t){{WIDTH / 1.4, HEIGHT / 2.05},
-    {0.7, 0.7}, {0, 0, 400, 200}, .clickable = true, .active = false,
-    .change_sprite_on_mouse = true});
+    &spritesheet[SP_BUTTON_ON_OFF_FPS], (init_sprite_t){{WIDTH / 1.4,
+    HEIGHT / 2.05}, {0.7, 0.7}, {0, 0, 400, 200}, .clickable = true,
+    .active = false, .change_sprite_on_mouse = true});
     set_one_sprite("assets/img/menu/light_dark_mode.png",
-    &spritesheet[SP_BUTTON_ON_OFF_LUM], (init_sprite_t){{WIDTH / 1.4, HEIGHT / 1.55},
-    {0.7, 0.7}, {0, 0, 400, 200}, .clickable = true, .active = false,
-    .change_sprite_on_mouse = true});
+    &spritesheet[SP_BUTTON_ON_OFF_LUM], (init_sprite_t){{WIDTH / 1.4,
+    HEIGHT / 1.55}, {0.7, 0.7}, {0, 0, 400, 200}, .clickable = true,
+    .active = false, .change_sprite_on_mouse = true});
     set_one_sprite("assets/img/menu/button_arrow_right.png",
     &spritesheet[SP_ARROW_RIGHT], (init_sprite_t){{WIDTH / 1.19, HEIGHT / 3},
     {0.7, 0.7}, {0, 0, 200, 200}, .clickable = true, .active = false,
@@ -75,8 +75,8 @@ void init_buttuns_option_menu_3(spritesheet_t *spritesheet)
 void init_buttuns_option_menu_2(spritesheet_t *spritesheet)
 {
     set_one_sprite("assets/img/menu/SoundButton.png",
-    &spritesheet[SP_SOUND_SLIDER_MUSIC], (init_sprite_t){{WIDTH / 4.3, HEIGHT / 2},
-    {0.55, 0.55}, {0, 0, 155, 154}, .clickable = true, .active = false,
+    &spritesheet[SP_SOUND_SLIDER_MUSIC], (init_sprite_t){{WIDTH / 4.3, HEIGHT
+    / 2}, {0.55, 0.55}, {0, 0, 155, 154}, .clickable = true, .active = false,
     .change_sprite_on_mouse = false});
     set_one_sprite("assets/img/menu/SoundBar.png",
     &spritesheet[SP_SOUNDBAR_MUSIC], (init_sprite_t){{WIDTH / 4.3, HEIGHT / 2},
@@ -87,8 +87,8 @@ void init_buttuns_option_menu_2(spritesheet_t *spritesheet)
     {0.3, 0.3}, {0, 0, 300, 260}, .clickable = true, .active = false,
     .change_sprite_on_mouse = false});
     set_one_sprite("assets/img/menu/box_button.png",
-    &spritesheet[SP_BOX_BUTTON_MUSIC], (init_sprite_t){{WIDTH / 4.3, HEIGHT / 2},
-    {0.65, 0.65}, {0, 0, 1000, 200}, .clickable = false, .active = false,
+    &spritesheet[SP_BOX_BUTTON_MUSIC], (init_sprite_t){{WIDTH / 4.3, HEIGHT
+    / 2}, {0.65, 0.65}, {0, 0, 1000, 200}, .clickable = false, .active = false,
     .change_sprite_on_mouse = false});
     init_buttuns_option_menu_3(spritesheet);
 }
