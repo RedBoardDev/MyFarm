@@ -46,27 +46,27 @@ void init_buttuns_option_menu_4(spritesheet_t *spritesheet)
     {0.7, 0.7}, {0, 0, 200, 200}, .clickable = true, .active = false,
     .change_sprite_on_mouse = true});
     set_one_sprite("assets/img/menu/show_fps.png",
-    &spritesheet[SP_SHOW_FPS], (init_sprite_t){{WIDTH / 2, HEIGHT / 2},
-    {1, 1}, {0, 0, 400, 200}, .clickable = false, .active = false,
+    &spritesheet[SP_SHOW_FPS], (init_sprite_t){{WIDTH / 1.4, HEIGHT / 2.05},
+    {0.7, 0.7}, {0, 0, 400, 200}, .clickable = false, .active = false,
     .change_sprite_on_mouse = false});
 }
 
 void init_buttuns_option_menu_3(spritesheet_t *spritesheet)
 {
     set_one_sprite("assets/img/menu/button_fs_wd.png",
-    &spritesheet[SP_BUTTON_SCREEN], (init_sprite_t){{WIDTH / 1.43, HEIGHT / 1.2},
+    &spritesheet[SP_BUTTON_SCREEN], (init_sprite_t){{WIDTH / 1.4, HEIGHT / 1.2},
     {0.7, 0.7}, {0, 0, 400, 200}, .clickable = true, .active = false,
     .change_sprite_on_mouse = true});
     set_one_sprite("assets/img/menu/button_on_off.png",
-    &spritesheet[SP_BUTTON_ON_OFF_FPS], (init_sprite_t){{WIDTH / 1.24, HEIGHT / 1.55},
+    &spritesheet[SP_BUTTON_ON_OFF_FPS], (init_sprite_t){{WIDTH / 1.19, HEIGHT / 2.05},
     {0.7, 0.7}, {0, 0, 200, 200}, .clickable = true, .active = false,
     .change_sprite_on_mouse = true});
     set_one_sprite("assets/img/menu/button_on_off.png",
-    &spritesheet[SP_BUTTON_ON_OFF_LUM], (init_sprite_t){{WIDTH / 1.24, HEIGHT / 2.05},
+    &spritesheet[SP_BUTTON_ON_OFF_LUM], (init_sprite_t){{WIDTH / 1.19, HEIGHT / 1.55},
     {0.7, 0.7}, {0, 0, 200, 200}, .clickable = true, .active = false,
     .change_sprite_on_mouse = true});
     set_one_sprite("assets/img/menu/button_arrow_right.png",
-    &spritesheet[SP_ARROW_RIGHT], (init_sprite_t){{WIDTH / 1.24, HEIGHT / 3},
+    &spritesheet[SP_ARROW_RIGHT], (init_sprite_t){{WIDTH / 1.19, HEIGHT / 3},
     {0.7, 0.7}, {0, 0, 200, 200}, .clickable = true, .active = false,
     .change_sprite_on_mouse = true});
     init_buttuns_option_menu_4(spritesheet);
