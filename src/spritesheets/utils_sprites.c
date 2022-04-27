@@ -60,6 +60,6 @@ void disable_all_screens_gameplay(rpg_t *rpg)
     toggle_spritesheet_scene(rpg, false, SC_GROTTE);
     toggle_spritesheet_scene(rpg, false, SC_INVENTORY);
     // toggle_spritesheet_scene(rpg, false, -1); //jails
-    toggle_spritesheet_scene(rpg, false, SC_VICTORY_GROTTE);
+    toggle_spritesheet_scene(rpg, false, SC_VICTORY_CEMETERY);
     toggle_spritesheet_scene(rpg, false, SC_PAUSE);
 }

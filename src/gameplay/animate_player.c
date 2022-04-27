@@ -9,6 +9,8 @@
 
 static void move_animate_player(rpg_t *rpg)
 {
+    if (check_status_dialog(rpg->quest))
+        return;
     rpg->spritesheet[rpg->player_stats.skin].rect.left += 48;
     if (rpg->all_events.down || rpg->all_events.s)
         rpg->spritesheet[rpg->player_stats.skin].rect.top = 0;

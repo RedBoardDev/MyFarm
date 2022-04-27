@@ -7,7 +7,7 @@
 
 #include "../../include/rpg.h"
 
-void teleport_base(rpg_t *rpg)
+static void teleport_base(rpg_t *rpg)
 {
     if (rpg->screen[SC_MAIN_MAP].active) {
         rpg->begin.view.center = rpg->screen[SC_BASE].view_pos;
@@ -22,7 +22,7 @@ void teleport_base(rpg_t *rpg)
     }
 }
 
-void teleport_jail(rpg_t *rpg)
+static void teleport_jail(rpg_t *rpg)
 {
     if (rpg->screen[SC_MAIN_MAP].active) {
         toggle_spritesheet_scene(rpg, false, SC_MAIN_MAP);
@@ -33,7 +33,7 @@ void teleport_jail(rpg_t *rpg)
     }
 }
 
-void teleport_grotte(rpg_t *rpg)
+static void teleport_grotte(rpg_t *rpg)
 {
     if (rpg->screen[SC_MAIN_MAP].active) {
         rpg->begin.view.center = rpg->screen[SC_GROTTE].view_pos;
@@ -48,25 +48,38 @@ void teleport_grotte(rpg_t *rpg)
     }
 }
 
+static void teleport_cemetery(rpg_t *rpg)
+{
+    if (rpg->screen[SC_MAIN_MAP].active) {
+        rpg->begin.view.center = rpg->screen[SC_CEMETERY].view_pos;
+        // rpg->spritesheet[rpg->player_stats.skin].pos.y -= 50;
+        toggle_spritesheet_scene(rpg, false, SC_MAIN_MAP);
+        toggle_spritesheet_scene(rpg, true, SC_CEMETERY);
+    }
+}
+
 void teleport_player_scene(rpg_t *rpg, sfImage *image, sfVector2f pos_player)
 {
     sfColor color;
 
     color = get_color_from_player(image, pos_player);
     switch (color.b) {
-    case B_BASE:
-        play_sound(rpg->sound.sound_list[SOUND_DOOR].sound, rpg->sound.volume);
-        teleport_base(rpg);
-        break;
-    case B_JAIL:
-        play_sound(rpg->sound.sound_list[SOUND_DOOR].sound, rpg->sound.volume);
-        teleport_jail(rpg);
-        break;
-    case B_GROTTE:
-        play_sound(rpg->sound.sound_list[SOUND_DOOR].sound, rpg->sound.volume);
-        teleport_grotte(rpg);
-        break;
-    default:
-        break;
+        case B_BASE:
+            play_sound(rpg->sound.sound_list[SOUND_DOOR].sound, rpg->sound.volume);
+            teleport_base(rpg);
+            break;
+        case B_JAIL:
+            play_sound(rpg->sound.sound_list[SOUND_DOOR].sound, rpg->sound.volume);
+            teleport_jail(rpg);
+            break;
+        case B_GROTTE:
+            play_sound(rpg->sound.sound_list[SOUND_DOOR].sound, rpg->sound.volume);
+            teleport_grotte(rpg);
+            break;
+        case B_CEMETERY:
+            play_sound(rpg->sound.sound_list[SOUND_DOOR].sound, rpg->sound.volume);
+            teleport_cemetery(rpg);
+        default:
+            break;
     }
 }
