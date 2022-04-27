@@ -25,7 +25,10 @@
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing}
     #define SPAWN_X WIDTH / 2
     #define SPAWN_Y WIDTH / 2 + 80
-    #define SPEED_PLAYER 4
+    // #define SPEED_PLAYER 4
+    #define SPEED_PLAYER 1.5
+    #define SECOND_TO_MICRO(x) x * 1000000
+
 enum size_window {
     WIDTH = 1920,
     HEIGHT = 1080
@@ -78,9 +81,9 @@ enum sprites {
     SP_SOUND_SLIDER_MUSIC,
     SP_ARROW_LEFT,
     SP_ARROW_RIGHT,
+    SP_FPS_SELECTOR,
     SP_BUTTON_SCREEN,
     SP_BUTTON_ON_OFF_LUM,
-    SP_SHOW_FPS,
     SP_BUTTON_ON_OFF_FPS,
     SP_LIFE_BAR_BOX,
     SP_LIFE_BAR,

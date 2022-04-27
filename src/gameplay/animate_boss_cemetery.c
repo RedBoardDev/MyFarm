@@ -25,7 +25,7 @@ static void animate_attack_2(rpg_t *rpg)
     float time = get_clock_time(rpg->spritesheet[SP_BOSS_EXECUTIONER].c_anim);
 
     rpg->spritesheet[SP_BOSS_EXECUTIONER].rect.top = 100;
-    if (time >= 100000) {
+    if (time >= SECOND_TO_MICRO(0.1)) {
         rpg->spritesheet[SP_BOSS_EXECUTIONER].rect.left += 100;
         sfClock_restart(rpg->spritesheet[SP_BOSS_EXECUTIONER].c_anim);
     }
@@ -38,7 +38,7 @@ static void animate_idle(rpg_t *rpg)
     float time = get_clock_time(rpg->spritesheet[SP_BOSS_EXECUTIONER].c_anim);
 
     rpg->spritesheet[SP_BOSS_EXECUTIONER].rect.top = 300;
-    if (time >= 200000) {
+    if (time >= SECOND_TO_MICRO(0.2)) {
         rpg->spritesheet[SP_BOSS_EXECUTIONER].rect.left += 100;
         sfClock_restart(rpg->spritesheet[SP_BOSS_EXECUTIONER].c_anim);
     }
@@ -51,7 +51,7 @@ static void animate_die(rpg_t *rpg)
     float time = get_clock_time(rpg->spritesheet[SP_BOSS_EXECUTIONER].c_anim);
 
     rpg->spritesheet[SP_BOSS_EXECUTIONER].rect.top = 200;
-    if (time >= 70000) {
+    if (time >= SECOND_TO_MICRO(0.07)) {
         rpg->spritesheet[SP_BOSS_EXECUTIONER].rect.left += 100;
         sfClock_restart(rpg->spritesheet[SP_BOSS_EXECUTIONER].c_anim);
     }
@@ -76,18 +76,18 @@ static void ia_boss(rpg_t *rpg)
     float time_last_damage = get_clock_time(rpg->player_stats.last_damage);
     int random = 0;
 
-    if (time_movement >= 1000000) {
+    if (time_movement >= SECOND_TO_MICRO(1)) {
         random = my_rand(0, 1);
         random ? rpg->boss_stats.inc_pos *= -1 : 0;
         sfClock_restart(rpg->boss_stats.movement);
     }
-    if (time_attack >= 10000000)
+    if (time_attack >= SECOND_TO_MICRO(10))
         rpg->boss_stats.rush_to_player = true;
     if (rpg->boss_stats.rush_to_player)
         ia_boss_rush_to_player(rpg);
     else if (check_collision_executioner(rpg)) {
         rpg->boss_stats.status = ST_ATTACK_1;
-        if (time_last_damage >= 500000)
+        if (time_last_damage >= SECOND_TO_MICRO(0.5))
             remove_life_player(rpg, 1);
         if (rpg->all_events.enter && rpg->boss_stats.life >= 0) {
             --rpg->boss_stats.life;

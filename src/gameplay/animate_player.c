@@ -38,7 +38,7 @@ void animate_player(rpg_t *rpg)
     && !rpg->all_events.right && !rpg->all_events.s && !rpg->all_events.z
     && !rpg->all_events.q && !rpg->all_events.d)
         rpg->spritesheet[rpg->player_stats.skin].rect.left = 0;
-    else if (time_player >= 200000)
+    else if (time_player >= SECOND_TO_MICRO(0.2))
         move_animate_player(rpg);
     if (color.g == 255
     && rpg->spritesheet[rpg->player_stats.skin].rect.top < 256)
@@ -52,7 +52,7 @@ void animate_selected_skin(rpg_t *rpg)
 {
     float time_player =
     get_clock_time(rpg->spritesheet[rpg->player_stats.skin].c_anim);
-    if (time_player >= 200000) {
+    if (time_player >= SECOND_TO_MICRO(0.2)) {
         rpg->spritesheet[rpg->player_stats.skin].rect.left += 48;
         sfClock_restart(rpg->spritesheet[rpg->player_stats.skin].c_anim);
     }

@@ -7,7 +7,7 @@
 
 #include "../../include/rpg.h"
 
-void init_all_events_mouse(events_t *events)
+static void init_all_events_mouse(events_t *events)
 {
     events->mouse.left = false;
     events->mouse.left_released = false;
@@ -43,21 +43,18 @@ void init_all_events(events_t *events)
     init_all_events_mouse(events);
 }
 
-void init_player_stats(player_stats_t *player_stats)
+static void init_player_boss_stats(player_stats_t *player_stats, boss_stats_t *boss_stats)
 {
     player_stats->incr_pos.x = 0;
     player_stats->incr_pos.y = 0;
     player_stats->money = 0;
+    player_stats->attack = false;
     player_stats->speed = 1.0;
     player_stats->life = 20.0;
     player_stats->mana = 0.0;
     player_stats->damage = 1;
     player_stats->knowledge = 1;
     player_stats->last_damage = sfClock_create();
-}
-
-void init_boss_stats(boss_stats_t *boss_stats)
-{
     boss_stats->damage = 1;
     boss_stats->inc_pos = 0.25;
     boss_stats->life = 20;
@@ -67,13 +64,26 @@ void init_boss_stats(boss_stats_t *boss_stats)
     boss_stats->rush_to_player = false;
 }
 
+static void init_fps(rpg_t *rpg)
+{
+    rpg->begin.fps.clock = sfClock_create();
+    rpg->begin.fps.timer = 0;
+    rpg->begin.fps_disp.fps_text = create_text((init_text_t){100, "", sfWhite,
+    {WIDTH / 2, HEIGHT / 2}, "assets/fonts/Sriracha-Regular.ttf"});
+    rpg->begin.fps_disp.legende = create_text((init_text_t){100, "FPS: ", sfWhite,
+    {WIDTH / 2, HEIGHT / 2}, "assets/fonts/Sriracha-Regular.ttf"});
+    rpg->begin.fps_disp.clock = sfClock_create();
+    rpg->begin.fps_disp.display_clock = sfClock_create();
+    rpg->begin.fps_disp.time = 0;
+    rpg->begin.fps_disp.fps = 0;
+}
+
 void init_all(rpg_t *rpg)
 {
     rpg->index_old_s = 0;
-    rpg->begin.fps.clock = sfClock_create();
-    rpg->begin.fps.timer = 0;
     rpg->player_stats.skin = SP_PLAYER;
     rpg->sound.volume = 0;
+    init_fps(rpg);
     init_all_events(&rpg->all_events);
     init_imgs(rpg);
     init_screens(rpg);
@@ -82,8 +92,7 @@ void init_all(rpg_t *rpg)
     init_spritesheets(rpg->spritesheet);
     init_sounds(rpg);
     init_csfml(&rpg->begin);
-    init_player_stats(&rpg->player_stats);
-    init_boss_stats(&rpg->boss_stats);
+    init_player_boss_stats(&rpg->player_stats, &rpg->boss_stats);
     init_quests(rpg);
     init_inventory(&rpg->player_stats.inventory, rpg);
 }

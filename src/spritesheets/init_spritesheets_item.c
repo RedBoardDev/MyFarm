@@ -27,7 +27,7 @@ void init_spritesheets_armed(spritesheet_t *spritesheet)
     set_one_sprite("assets/img/item/shovel.png", &spritesheet[SP_ITEM_SHOVEL],
     (init_sprite_t){{100, 100}, {15, 15}, {0, 0, 13, 13}, true, false, false});
     set_one_sprite("assets/img/item/hoe.png", &spritesheet[SP_ITEM_HOE],
-    (init_sprite_t){{100, 100}, {15, 15}, {0, 0, 14, 12}, true, false, false});
+    (init_sprite_t){{100, 100}, {2, 2}, {0, 0, 14, 12}, false, false, false});
     set_one_sprite("assets/img/item/martin.png", &spritesheet[SP_ITEM_HAMMER],
     (init_sprite_t){{100, 100}, {15, 15}, {0, 0, 15, 15}, true, false, false});
     set_one_sprite("assets/img/item/fishing_rod.png",
