@@ -85,5 +85,5 @@ void init_all(rpg_t *rpg)
     init_player_stats(&rpg->player_stats);
     init_boss_stats(&rpg->boss_stats);
     init_quests(rpg);
-    init_inventory(&rpg->player_stats.inventory);
+    init_inventory(&rpg->player_stats.inventory, rpg);
 }
