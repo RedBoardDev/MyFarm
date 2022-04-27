@@ -12,7 +12,10 @@ void move_proj_golem(rpg_t *rpg)
     float diff = rpg->spritesheet[rpg->player_stats.skin].pos.x -
     rpg->spritesheet[SP_BOSS_GOLEM_PROJ].pos.x;
 
-    if (rpg->boss_stats.rush_to_player) {
+    if (rpg->boss_stats.rush_to_player &&
+    rpg->spritesheet[SP_BOSS_GOLEM].rect.top == 200 &&
+    rpg->spritesheet[SP_BOSS_GOLEM].rect.left >= 700) {
+        rpg->spritesheet[SP_BOSS_GOLEM_PROJ].active = true;
         if (diff < 0)
             rpg->spritesheet[SP_BOSS_GOLEM_PROJ].pos.x -= 3;
         else if (diff > 0)

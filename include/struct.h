@@ -40,7 +40,16 @@ typedef struct {
 typedef struct {
     sfClock *clock;
     float timer;
-} fps_t;
+} fps_inde_t;
+
+typedef struct {
+    sfText *fps_text;
+    sfText *legende;
+    sfClock *clock;
+    sfClock *display_clock;
+    float time;
+    int fps;
+} fps_disp_t;
 
 typedef struct {
     sfView *view;
@@ -53,7 +62,8 @@ typedef struct {
     sfTexture *texture;
     sfSprite *sprite;
     view_t view;
-    fps_t fps;
+    fps_inde_t fps;
+    fps_disp_t fps_disp;
 } beginning_t;
 
 typedef struct {
@@ -167,7 +177,6 @@ typedef struct {
     sfClock *clock_chat;
     bool speaker;
 } quest_t;
-
 
 typedef struct {
     beginning_t begin;

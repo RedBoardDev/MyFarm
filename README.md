@@ -18,7 +18,7 @@ git clone https://github.com/EpitechPromo2026/B-MUL-200-MLH-2-1-myrpg-martin.d-h
 ***
 ## Author
 
-👤 **Thomas OTT**
+👤 **Thomas Ott**
 
 * Github: [@RedBoardDev](https://github.com/RedBoardDev)
 * LinkedIn: [@thomas--ott](https://linkedin.com/in/thomas--ott)
@@ -28,10 +28,10 @@ git clone https://github.com/EpitechPromo2026/B-MUL-200-MLH-2-1-myrpg-martin.d-h
 * Github: [@Mazettt](https://github.com/Mazettt)
 * LinkedIn: [@martin-d-herouville](https://linkedin.com/in/martin-d-herouville)
 
-👤 **Thomas OTT**
+👤 **Luca Haumesser**
 
-* Github: [@RedBoardDev](https://github.com/Loutchau)
-* LinkedIn: [@thomas--ott](https://linkedin.com/in/luca-haumesser)
+* Github: [@Loutchau](https://github.com/Loutchau)
+* LinkedIn: [@luca-haumesser](https://linkedin.com/in/luca-haumesser)
 
 ## Show your support
 
