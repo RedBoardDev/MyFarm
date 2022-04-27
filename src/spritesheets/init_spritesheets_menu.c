@@ -39,43 +39,77 @@ void init_buttuns_pause_menu(spritesheet_t *spritesheet)
     .change_sprite_on_mouse = true});
 }
 
+void init_buttuns_option_menu_4(spritesheet_t *spritesheet)
+{
+    set_one_sprite("assets/img/menu/button_arrow_left.png",
+    &spritesheet[SP_ARROW_LEFT], (init_sprite_t){{WIDTH / 1.7, HEIGHT / 3},
+    {0.7, 0.7}, {0, 0, 200, 200}, .clickable = true, .active = false,
+    .change_sprite_on_mouse = true});
+    set_one_sprite("assets/img/menu/show_fps.png",
+    &spritesheet[SP_SHOW_FPS], (init_sprite_t){{WIDTH / 1.4, HEIGHT / 2.05},
+    {0.7, 0.7}, {0, 0, 400, 200}, .clickable = false, .active = false,
+    .change_sprite_on_mouse = false});
+}
+
+void init_buttuns_option_menu_3(spritesheet_t *spritesheet)
+{
+    set_one_sprite("assets/img/menu/button_fs_wd.png",
+    &spritesheet[SP_BUTTON_SCREEN], (init_sprite_t){{WIDTH / 1.4, HEIGHT / 1.2},
+    {0.7, 0.7}, {0, 0, 400, 200}, .clickable = true, .active = false,
+    .change_sprite_on_mouse = true});
+    set_one_sprite("assets/img/menu/button_on_off.png",
+    &spritesheet[SP_BUTTON_ON_OFF_FPS], (init_sprite_t){{WIDTH / 1.19, HEIGHT / 2.05},
+    {0.7, 0.7}, {0, 0, 200, 200}, .clickable = true, .active = false,
+    .change_sprite_on_mouse = true});
+    set_one_sprite("assets/img/menu/button_on_off.png",
+    &spritesheet[SP_BUTTON_ON_OFF_LUM], (init_sprite_t){{WIDTH / 1.19, HEIGHT / 1.55},
+    {0.7, 0.7}, {0, 0, 200, 200}, .clickable = true, .active = false,
+    .change_sprite_on_mouse = true});
+    set_one_sprite("assets/img/menu/button_arrow_right.png",
+    &spritesheet[SP_ARROW_RIGHT], (init_sprite_t){{WIDTH / 1.19, HEIGHT / 3},
+    {0.7, 0.7}, {0, 0, 200, 200}, .clickable = true, .active = false,
+    .change_sprite_on_mouse = true});
+    init_buttuns_option_menu_4(spritesheet);
+}
+
 void init_buttuns_option_menu_2(spritesheet_t *spritesheet)
 {
-        set_one_sprite("assets/img/menu/SoundButton.png",
-    &spritesheet[SP_SOUND_SLIDER_MUSIC], (init_sprite_t){{WIDTH / 1.9, HEIGHT / 2},
+    set_one_sprite("assets/img/menu/SoundButton.png",
+    &spritesheet[SP_SOUND_SLIDER_MUSIC], (init_sprite_t){{WIDTH / 4.3, HEIGHT / 2},
     {0.55, 0.55}, {0, 0, 155, 154}, .clickable = true, .active = false,
     .change_sprite_on_mouse = false});
     set_one_sprite("assets/img/menu/SoundBar.png",
-    &spritesheet[SP_SOUNDBAR_MUSIC], (init_sprite_t){{WIDTH / 1.9, HEIGHT / 2},
-    {0.4, 0.4}, {0, 0, 1516, 121}, .clickable = false, .active = false,
+    &spritesheet[SP_SOUNDBAR_MUSIC], (init_sprite_t){{WIDTH / 4.3, HEIGHT / 2},
+    {0.35, 0.35}, {0, 0, 1516, 121}, .clickable = false, .active = false,
     .change_sprite_on_mouse = false});
     set_one_sprite("assets/img/menu/Sound.png",
-    &spritesheet[SP_SOUND_MUSIC], (init_sprite_t){{WIDTH / 3, HEIGHT / 2},
+    &spritesheet[SP_SOUND_MUSIC], (init_sprite_t){{WIDTH / 30, HEIGHT / 2},
     {0.3, 0.3}, {0, 0, 300, 260}, .clickable = true, .active = false,
     .change_sprite_on_mouse = false});
     set_one_sprite("assets/img/menu/box_button.png",
-    &spritesheet[SP_BOX_BUTTON_MUSIC], (init_sprite_t){{WIDTH / 2, HEIGHT / 2},
-    {0.8, 0.8}, {0, 0, 1000, 200}, .clickable = false, .active = false,
+    &spritesheet[SP_BOX_BUTTON_MUSIC], (init_sprite_t){{WIDTH / 4.3, HEIGHT / 2},
+    {0.65, 0.65}, {0, 0, 1000, 200}, .clickable = false, .active = false,
     .change_sprite_on_mouse = false});
+    init_buttuns_option_menu_3(spritesheet);
 }
 
 void init_buttuns_option_menu(spritesheet_t *spritesheet)
 {
     set_one_sprite("assets/img/menu/SoundButton.png",
-    &spritesheet[SP_SOUND_SLIDER], (init_sprite_t){{WIDTH / 1.9, HEIGHT / 3},
+    &spritesheet[SP_SOUND_SLIDER], (init_sprite_t){{WIDTH / 4.3, HEIGHT / 3},
     {0.55, 0.55}, {0, 0, 155, 154}, .clickable = true, .active = false,
     .change_sprite_on_mouse = false});
     set_one_sprite("assets/img/menu/SoundBar.png",
-    &spritesheet[SP_SOUNDBAR], (init_sprite_t){{WIDTH / 1.9, HEIGHT / 3},
-    {0.4, 0.4}, {0, 0, 1516, 121}, .clickable = false, .active = false,
+    &spritesheet[SP_SOUNDBAR], (init_sprite_t){{WIDTH / 4.3, HEIGHT / 3},
+    {0.35, 0.35}, {0, 0, 1516, 121}, .clickable = false, .active = false,
     .change_sprite_on_mouse = false});
     set_one_sprite("assets/img/menu/Sound.png",
-    &spritesheet[SP_SOUND], (init_sprite_t){{WIDTH / 3, HEIGHT / 3},
+    &spritesheet[SP_SOUND], (init_sprite_t){{WIDTH / 30, HEIGHT / 3},
     {0.3, 0.3}, {0, 0, 300, 260}, .clickable = true, .active = false,
     .change_sprite_on_mouse = false});
     set_one_sprite("assets/img/menu/box_button.png",
-    &spritesheet[SP_BOX_BUTTON], (init_sprite_t){{WIDTH / 2, HEIGHT / 3},
-    {0.8, 0.8}, {0, 0, 1000, 200}, .clickable = false, .active = false,
+    &spritesheet[SP_BOX_BUTTON], (init_sprite_t){{WIDTH / 4.3, HEIGHT / 3},
+    {0.65, 0.65}, {0, 0, 1000, 200}, .clickable = false, .active = false,
     .change_sprite_on_mouse = false});
     init_buttuns_option_menu_2(spritesheet);
 }
