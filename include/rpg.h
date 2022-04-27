@@ -15,7 +15,7 @@
     #define FUNCTIONS_BUTTONS {nothing, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, how_play, quest_soldiers, nothing, skin_blue, \
     skin_brown, skin_cyan, skin_green, skin_grey, skin_pink, skin_red, \
-    skin_yellow, nothing, nothing, nothing, nothing, nothing, launch_game, quit_game, \
+    skin_yellow, nothing, nothing, nothing, nothing, nothing, nothing, launch_game, quit_game, \
     display_custom_skins, back_button, button_next_grotte, nothing, \
     nothing, buttun_resume_game, buttun_option_game, buttun_leave_game, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
@@ -54,6 +54,7 @@ enum sprites {
     SP_PLAYER_YELLOW,
     SP_BOSS_EXECUTIONER,
     SP_BOSS_GOLEM,
+    SP_BOSS_GOLEM_PROJ,
     SP_SOUND_CLICK,
     SP_SOUND_POTENTIO,
     SP_SOUND_SELECT,

@@ -12,6 +12,23 @@ int my_rand(int min, int max)
     return (min + rand() % ((max + 1) - min));
 }
 
+sfColor my_rgb(sfColor color)
+{
+    if (color.r == 255 && color.b == 0)
+        ++color.g;
+    if (color.g == 255 && color.b == 0)
+        --color.r;
+    if (color.g == 255 && color.r == 0)
+        ++color.b;
+    if (color.b == 255 && color.r == 0)
+        --color.g;
+    if (color.b == 255 && color.g == 0)
+        ++color.r;
+    if (color.r == 255 && color.g == 0)
+        --color.b;
+    return (color);
+}
+
 void move_life_bar(rpg_t *rpg, int percentage)
 {
     rpg->spritesheet[SP_LIFE_BAR].rect.width = percentage * 3.6;

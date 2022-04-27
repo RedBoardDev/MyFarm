@@ -24,3 +24,15 @@ sfBool check_collision_executioner(rpg_t *rpg)
     executioner.width -= 40;
     return (sfFloatRect_intersects(&player, &executioner, NULL));
 }
+
+sfBool check_collision_golem_proj(rpg_t *rpg)
+{
+    sfFloatRect player =
+    sfSprite_getGlobalBounds(rpg->spritesheet[rpg->player_stats.skin].sprite);
+    sfFloatRect executioner =
+    sfSprite_getGlobalBounds(rpg->spritesheet[SP_BOSS_GOLEM_PROJ].sprite);
+
+    executioner.left += 40;
+    executioner.width -= 40;
+    return (sfFloatRect_intersects(&player, &executioner, NULL));
+}
