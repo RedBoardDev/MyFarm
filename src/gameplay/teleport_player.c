@@ -15,7 +15,7 @@ static void teleport_grotte(rpg_t *rpg)
         rpg->begin.view.center = rpg->screen[SC_GROTTE].view_pos;
         toggle_spritesheet_scene(rpg, false, SC_MAIN_MAP);
         toggle_spritesheet_scene(rpg, true, SC_GROTTE);
-        stop_sound(rpg->sound.sound_list[SOUND_MENU].sound);
+        stop_sound(rpg->sound.sound_list[SOUND_MAIN].sound);
         play_sound(rpg->sound.sound_list[SOUND_AMBIANT_CAVE].sound,
         rpg->sound.volume_music * 2);
     }
@@ -55,13 +55,9 @@ static void teleport_player_scene_norme(rpg_t *rpg, sfColor color)
             teleport_tente(rpg);
             break;
         case B_GROTTE:
-            play_sound(rpg->sound.sound_list[SOUND_DOOR].sound,
-            rpg->sound.volume_effect);
             teleport_grotte(rpg);
             break;
-        case B_CEMETERY:
-            play_sound(rpg->sound.sound_list[SOUND_DOOR].sound,
-            rpg->sound.volume_effect);
+        case B_CEMETERY:;
             teleport_cemetery(rpg);
             break;
         case B_TAVERNE:

@@ -30,11 +30,13 @@ int main(int ac, char **av)
     if (ac == 2 && !my_strcmp("-h", av[1])) {
         help();
         return (0);
-    } else if (ac == 2 && !my_strcmp("-s", av[1]))
-        myrpg(1);
-    else if (ac != 1)
-        return (84);
-    else
+    }
+    if (ac == 2 && !my_strcmp("-s", av[1])) {
         myrpg(0);
+        return (0);
+    }
+    if (ac != 1)
+        return (84);
+    myrpg(1);
     return (0);
 }

@@ -24,7 +24,7 @@ static void move_animate_player(rpg_t *rpg)
         rpg->spritesheet[rpg->player_stats.skin].rect.left = 0;
     sfClock_restart(rpg->spritesheet[rpg->player_stats.skin].c_anim);
     play_sound(rpg->sound.sound_list[SOUND_WALK].sound,
-    rpg->sound.volume_effect);
+    rpg->sound.volume_effect / 2);
 }
 
 void animate_player(rpg_t *rpg)
