@@ -16,4 +16,10 @@ void init_sounds(rpg_t *rpg)
     false, &rpg->sound.sound_list[SOUND_WALK]);
     create_sound("assets/sounds/door.ogg",
     false, &rpg->sound.sound_list[SOUND_DOOR]);
+    create_sound("assets/sounds/ambiant_cave.ogg",
+    true, &rpg->sound.sound_list[SOUND_AMBIANT_CAVE]);
+    create_sound("assets/sounds/die_player.ogg",
+    true, &rpg->sound.sound_list[SOUND_DIE_PLAYER]);
+    create_sound("assets/sounds/main_sound.ogg",
+    true, &rpg->sound.sound_list[SOUND_MAIN]);
 }

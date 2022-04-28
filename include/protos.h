@@ -32,7 +32,7 @@ void execute_all(rpg_t *rpg);
 void my_events(rpg_t *rpg);
 void events_key_pressed(rpg_t *rpg, sfEvent event);
 void events_key_released(sfEvent event, events_t *all_events);
-void events_mouse_pressed(sfEvent event, events_t *all_events);
+void events_mouse_pressed(rpg_t *rpg, sfEvent event, events_t *all_events);
 void events_mouse_released(rpg_t *rpg, sfEvent event, events_t *all_events);
 void events_scroll_wheel(sfEvent event, events_t *all_events);
 void events_mouse_moved(sfEvent event, events_t *all_events);
@@ -59,7 +59,7 @@ void buttun_resume_game(rpg_t *rpg);
 void buttun_option_game(rpg_t *rpg);
 void buttun_option_game_2(rpg_t *rpg);
 void buttun_leave_game(rpg_t *rpg);
-void check_click_soundbox(rpg_t *rpg);
+int check_click_soundbox(rpg_t *rpg);
 
 // init
 void init_all(rpg_t *rpg);
@@ -124,6 +124,7 @@ void stop_sound(sfSound *sound);
 void play_sound(sfSound *sound, float volume);
 void create_sound(char *filepath, bool loop, sound_list_t *sound_list);
 void destroy_sound(sfSound *sound, sfSoundBuffer *sound_buffer);
+void play_main_sound(rpg_t *rpg);
 
 //view
 void set_view(rpg_t *rpg, sfVector2f view_pos);
@@ -194,5 +195,7 @@ void teleport_jail(rpg_t *rpg);
 void teleport_base(rpg_t *rpg);
 void teleport_tente(rpg_t *rpg);
 int get_current_screen(rpg_t *rpg);
+
+void stop_all_sounds(rpg_t *rpg);
 
 #endif

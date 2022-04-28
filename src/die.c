@@ -26,7 +26,17 @@ void return_home(rpg_t *rpg)
     (sfVector2f){SPAWN_X, SPAWN_Y};
 }
 
+void stop_all_sounds(rpg_t *rpg)
+{
+    for (int i = 0; i < NBR_SOUND; ++i)
+        stop_sound(rpg->sound.sound_list[i].sound);
+}
+
 void die(rpg_t *rpg)
 {
+    stop_all_sounds(rpg);
+    play_sound(rpg->sound.sound_list[SOUND_DIE_PLAYER].sound,
+    rpg->sound.volume_effect);
+    play_main_sound(rpg);
     return_home(rpg);
 }

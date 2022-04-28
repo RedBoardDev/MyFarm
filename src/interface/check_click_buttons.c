@@ -29,7 +29,8 @@ static bool check_click_one_button(rpg_t *rpg, int i)
 
     if (rpg->spritesheet[i].clickable && rpg->spritesheet[i].active) {
         collision = sfSprite_getGlobalBounds(rpg->spritesheet[i].sprite);
-        if (check_mouse_on_one_button_float(rpg->all_events.mouse.pos_view, collision)) {
+        if (check_mouse_on_one_button_float(rpg->all_events.mouse.pos_view,
+        collision)) {
             (*functions[i])(rpg);
             rpg->all_events.mouse.left = false;
             return (true);

@@ -84,7 +84,8 @@ void init_all(rpg_t *rpg)
 {
     rpg->index_old_s = 0;
     rpg->player_stats.skin = SP_PLAYER;
-    rpg->sound.volume = 0;
+    rpg->sound.volume_music = 50;
+    rpg->sound.volume_effect = 50;
     rpg->sound.volume_active = false;
     init_fps(rpg);
     init_all_events(&rpg->all_events);

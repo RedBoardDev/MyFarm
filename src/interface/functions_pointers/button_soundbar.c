@@ -7,23 +7,22 @@
 
 #include "../../../include/rpg.h"
 
-void check_click_soundbox(rpg_t *rpg)
+int check_click_soundbox(rpg_t *rpg)
 {
-    sfFloatRect collision =
-    sfSprite_getGlobalBounds(rpg->spritesheet[SP_SOUNDBAR].sprite);
+    sfFloatRect collision_music =
+    sfSprite_getGlobalBounds(rpg->spritesheet[SP_SOUND_SLIDER_MUSIC].sprite);
 
-    rpg->sound.volume_active = true;
-    collision.width = collision.height;
-    if (check_mouse_on_one_button_int(rpg->all_events.mouse.pos, collision)) {
-        if (rpg->sound.volume) {
-            rpg->sound.volume_backup = rpg->sound.volume;
-            rpg->sound.volume = 0;
-            rpg->spritesheet[SP_SOUND_SLIDER].pos.x = WIDTH - 380;
-        } else {
-            rpg->sound.volume = rpg->sound.volume_backup;
-            rpg->spritesheet[SP_SOUND_SLIDER].pos.x =
-            (WIDTH - 380) + (rpg->sound.volume * 2.6);
-        }
+    sfFloatRect collision_effect =
+    sfSprite_getGlobalBounds(rpg->spritesheet[SP_SOUND_SLIDER_EFFECT].sprite);
+
+    if (check_mouse_on_one_button_int(rpg->all_events.mouse.pos,
+    collision_music)) {
         rpg->all_events.mouse.left = false;
+        return (SP_SOUND_SLIDER_MUSIC);
+    } else if (check_mouse_on_one_button_int(rpg->all_events.mouse.pos,
+    collision_effect)) {
+        rpg->all_events.mouse.left = false;
+        return (SP_SOUND_SLIDER_EFFECT);
     }
+    return (0);
 }

@@ -7,10 +7,16 @@
 
 #include "../../include/rpg.h"
 
-void events_mouse_pressed(sfEvent event, events_t *all_events)
+void events_mouse_pressed(rpg_t *rpg, sfEvent event, events_t *all_events)
 {
-    if ((sfKeyCode)sfMouseLeft == event.key.code)
+    int click_soundbox = 0;
+
+    if ((sfKeyCode)sfMouseLeft == event.key.code) {
         all_events->mouse.left = true;
+        click_soundbox = check_click_soundbox(rpg);
+        if (click_soundbox)
+            rpg->sound.volume_active = click_soundbox;
+    }
     if ((sfKeyCode)sfMouseRight == event.key.code)
         all_events->mouse.right = true;
     if ((sfKeyCode)sfMouseMiddle == event.key.code)

@@ -18,7 +18,7 @@
     skin_red, skin_yellow, nothing, nothing, nothing, launch_game, quit_game, \
     display_custom_skins, back_button, button_next_grotte, nothing, \
     nothing, buttun_resume_game, buttun_option_game, buttun_leave_game, \
-    nothing, nothing, nothing, check_click_soundbox, \
+    nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
@@ -69,10 +69,10 @@ enum sprites {
     SP_RESUME,
     SP_OPTION,
     SP_LEAVE_GAME,
-    SP_BOX_BUTTON,
-    SP_SOUND,
-    SP_SOUNDBAR,
-    SP_SOUND_SLIDER,
+    SP_BOX_BUTTON_EFFECT,
+    SP_SOUND_EFFECT,
+    SP_SOUNDBAR_EFFECT,
+    SP_SOUND_SLIDER_EFFECT,
     SP_BOX_BUTTON_MUSIC,
     SP_SOUND_MUSIC,
     SP_SOUNDBAR_MUSIC,
@@ -139,6 +139,9 @@ enum sounds {
     SOUND_MENU,
     SOUND_WALK,
     SOUND_DOOR,
+    SOUND_MAIN,
+    SOUND_AMBIANT_CAVE,
+    SOUND_DIE_PLAYER,
     NBR_SOUND,
 };
 
