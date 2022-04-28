@@ -9,7 +9,7 @@
 
 void send_chat_bubble_before_shop(rpg_t *rpg)
 {
-    
+    printf("test: %d", rpg->player_stats.money);
 }
 
 void send_chat_bubble_seller(rpg_t *rpg)
@@ -36,4 +36,5 @@ void quest_seller(rpg_t *rpg)
     }
     if (rpg->quest[QUEST_SELLER].step == -1) {
         send_chat_bubble_before_shop(rpg);
+}
 }
