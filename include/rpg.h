@@ -142,12 +142,12 @@ enum bleu_maisons {
 };
 
 enum sounds {
-    SOUND_MENU,
     SOUND_WALK,
+    SOUND_DIE_PLAYER,
+    SOUND_MENU,
     SOUND_DOOR,
     SOUND_MAIN,
     SOUND_AMBIANT_CAVE,
-    SOUND_DIE_PLAYER,
     NBR_SOUND,
 };
 
