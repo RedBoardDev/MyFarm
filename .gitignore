@@ -18,3 +18,4 @@ check
 push.sh
 maps/
 stats
+.mailmap
