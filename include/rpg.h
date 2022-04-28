@@ -102,18 +102,18 @@ enum sprites {
 };
 
 enum screens {
+    SC_MAIN_MAP,
     SC_MENU,
     SC_CUSTOM_SKINS,
     SC_HOW_PLAY,
-    SC_MAIN_MAP,
     SC_BASE,
-    SC_GROTTE,
     SC_VICTORY_CEMETERY,
     SC_CEMETERY,
+    SC_GROTTE,
+    SC_TENTE,
+    SC_OPTION,
     SC_INVENTORY,
     SC_PAUSE,
-    SC_OPTION,
-    SC_TENTE,
     NBR_SC
 };
 

@@ -55,10 +55,14 @@ void toggle_spritesheet_scene(rpg_t *rpg, bool status, int scene_enum)
 
 void disable_all_screens_gameplay(rpg_t *rpg)
 {
+    int current = get_current_screen(rpg);
+
     toggle_spritesheet_scene(rpg, false, SC_BASE);
     toggle_spritesheet_scene(rpg, false, SC_MAIN_MAP);
     toggle_spritesheet_scene(rpg, false, SC_GROTTE);
     toggle_spritesheet_scene(rpg, false, SC_INVENTORY);
     toggle_spritesheet_scene(rpg, false, SC_VICTORY_CEMETERY);
     toggle_spritesheet_scene(rpg, false, SC_PAUSE);
+    if (current != -1)
+        toggle_spritesheet_scene(rpg, false, current);
 }
