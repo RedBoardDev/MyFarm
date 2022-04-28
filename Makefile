@@ -23,6 +23,7 @@ SRC_FILES	=	events/events	\
 				gameplay/animate_player	\
 				gameplay/animate_selected_skin	\
 				gameplay/collisions	\
+				gameplay/minimap	\
 				gameplay/move_all	\
 				gameplay/move_player_and_view	\
 				gameplay/move_player_view	\
@@ -70,6 +71,7 @@ SRC_FILES	=	events/events	\
 				die	\
 				draw_all	\
 				execute_all	\
+				fps	\
 				lib_sound	\
 				lib_text	\
 				main	\

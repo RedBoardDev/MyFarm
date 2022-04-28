@@ -16,14 +16,6 @@ int get_current_screen(rpg_t *rpg)
     return (-1);
 }
 
-int get_fps(rpg_t *rpg)
-{
-    rpg->begin.fps_disp.time = get_clock_time(rpg->begin.fps_disp.clock);
-    rpg->begin.fps_disp.fps = 1 / (rpg->begin.fps_disp.time / 1000000);
-    sfClock_restart(rpg->begin.fps_disp.clock);
-    return (rpg->begin.fps_disp.fps);
-}
-
 static void move_sound_box(rpg_t *rpg)
 {
     int pos_x = rpg->all_events.mouse.pos.x;

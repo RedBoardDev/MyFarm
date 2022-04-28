@@ -98,6 +98,7 @@ enum sprites {
     SP_ITEM_STRAWBERRY,
     SP_ITEM_BEETS,
     SP_MINIMAP,
+    SP_MINIMAP_LAYER,
     SP_CURSOR,
     NBR_SP
 };

@@ -105,7 +105,6 @@ void move_life_bar_boss(rpg_t *rpg, int percentage);
 sfInt64 get_clock_time(sfClock *clock);
 void set_zoom(sfView *view, float new_zoom);
 float get_zoom(sfView *view);
-int get_fps(rpg_t *rpg);
 int get_size_file(char *path);
 int check_status_dialog(quest_t *quest);
 int get_chat_into_file(char *filepath, int quest, rpg_t *rpg);
@@ -194,5 +193,11 @@ void teleport_jail(rpg_t *rpg);
 void teleport_base(rpg_t *rpg);
 void teleport_tente(rpg_t *rpg);
 int get_current_screen(rpg_t *rpg);
+
+// fps
+void draw_fps(rpg_t *rpg);
+int get_fps(rpg_t *rpg);
+
+void move_minimap(rpg_t *rpg);
 
 #endif

@@ -13,8 +13,12 @@ void init_main_map(spritesheet_t *spritesheet)
     &spritesheet[SP_BACKGROUND_SC_MAIN_MAP],
     (init_sprite_t){{WIDTH / 2, WIDTH / 2}, {1, 1}, {0, 0, 1920, 1920},
     false, false, false});
-    set_one_sprite("assets/img/main_map.png",
+    set_one_sprite("assets/img/minimap.png",
     &spritesheet[SP_MINIMAP],
-    (init_sprite_t){{WIDTH / 2, WIDTH / 2}, {0.05, 0.05}, {0, 0, 1920, 1920},
+    (init_sprite_t){{WIDTH / 2, WIDTH / 2}, {0.58, 0.58}, {0, 0, 200, 200},
+    false, false, false});
+    set_one_sprite("assets/img/minimap_layer.png",
+    &spritesheet[SP_MINIMAP_LAYER],
+    (init_sprite_t){{WIDTH / 2, WIDTH / 2}, {0.58, 0.58}, {0, 0, 200, 112},
     false, false, false});
 }
