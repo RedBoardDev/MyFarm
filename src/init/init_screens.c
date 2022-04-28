@@ -42,7 +42,7 @@ SP_NPC_SOLDIER, SP_CURSOR, -1};
 static void init_screen_norme(rpg_t *rpg)
 {
     rpg->screen[SC_GROTTE] = (screen_t){false,
-    {444, 1196 + 20}, 0.4, screen_grotte};
+    {444, 1196 + 20}, 0.4, screen_grotte, sfClock_create()};
     rpg->screen[SC_VICTORY_CEMETERY] = (screen_t){.active = false,
     {384, 1581}, .view_zoom = 0.4, screen_victory_cemetery};
     rpg->screen[SC_HOW_PLAY] = (screen_t){.active = false,
@@ -50,7 +50,8 @@ static void init_screen_norme(rpg_t *rpg)
     rpg->screen[SC_PAUSE] = (screen_t){.active = false,
     .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0.4, screen_pause_menu};
     rpg->screen[SC_OPTION] = (screen_t){.active = false,
-    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 1, screen_option_menu};
+    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 1,
+    .const_screen = screen_option_menu};
     rpg->screen[SC_CEMETERY] = (screen_t){.active = false,
     .view_pos = { 384, 1581 }, .view_zoom = 0.4, screen_cemetery };
     rpg->screen[SC_TENTE] = (screen_t){.active = false,
