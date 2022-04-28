@@ -33,15 +33,3 @@ sfColor get_color_from_player(sfImage *image, sfVector2f pos)
     return (sfImage_getPixel(image, pos.x, pos.y + 15));
 }
 
-void set_zoom(sfView *view, float new_zoom)
-{
-    sfView_reset(view, (sfFloatRect){0, 0, 1920, 1080});
-    sfView_zoom(view, new_zoom);
-}
-
-float get_zoom(sfView *view)
-{
-    sfVector2f size = sfView_getSize(view);
-
-    return (size.x / WIDTH);
-}

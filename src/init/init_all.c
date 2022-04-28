@@ -43,7 +43,8 @@ void init_all_events(events_t *events)
     init_all_events_mouse(events);
 }
 
-static void init_player_boss_stats(player_stats_t *player_stats, boss_stats_t *boss_stats)
+static void init_player_boss_stats(player_stats_t *player_stats,
+boss_stats_t *boss_stats)
 {
     player_stats->incr_pos.x = 0;
     player_stats->incr_pos.y = 0;
