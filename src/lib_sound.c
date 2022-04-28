@@ -32,3 +32,9 @@ void stop_sound(sfSound *sound)
 {
     sfSound_stop(sound);
 }
+
+void play_main_sound(rpg_t *rpg)
+{
+    play_sound(rpg->sound.sound_list[SOUND_MAIN].sound,
+    rpg->sound.volume_music);
+}

@@ -23,10 +23,14 @@ static void move_sound_box(rpg_t *rpg)
     if (!rpg->sound.volume_active)
         return;
     if (pos_x >= 200 && pos_x <= 708) {
-        rpg->spritesheet[SP_SOUND_SLIDER].pos.x = pos_x;
-        rpg->sound.volume = (pos_x - 200) / 5.05;
+        rpg->spritesheet[rpg->sound.volume_active].pos.x = pos_x;
+        if (rpg->sound.volume_active == SP_SOUND_SLIDER_MUSIC)
+            rpg->sound.volume_music = (pos_x - 200) / 5.05;
+        else if (rpg->sound.volume_active == SP_SOUND_SLIDER_EFFECT)
+            rpg->sound.volume_music = (pos_x - 200) / 5.05;
     }
-    rpg->sound.volume < 0 ? rpg->sound.volume = 0 : 0;
+    rpg->sound.volume_music < 0 ? rpg->sound.volume_music = 0 : 0;
+    rpg->sound.volume_effect < 0 ? rpg->sound.volume_effect = 0 : 0;
 }
 
 static void big_loop(rpg_t *rpg, sfColor *oui)
@@ -53,7 +57,7 @@ static void big_loop(rpg_t *rpg, sfColor *oui)
     draw_all(rpg);
 }
 
-void myrpg(void)
+void myrpg(int sound)
 {
     rpg_t *rpg = malloc(sizeof(rpg_t));
     sfColor oui = {255, 0, 0, 255};
@@ -61,12 +65,17 @@ void myrpg(void)
     const sfUint8 *pixels = sfImage_getPixelsPtr(img);
 
     init_all(rpg);
+    if (sound == 0) {
+        rpg->sound.volume_music = 0;
+        rpg->sound.volume_effect = 0;
+    }
     if (!rpg->begin.window || !rpg->begin.framebuffer)
         return;
     sfWindow_setFramerateLimit((sfWindow *)rpg->begin.window, 0);
     sfWindow_setIcon((sfWindow *)rpg->begin.window, 512, 512, pixels);
     rpg->begin.fps.clock = sfClock_create();
-    play_sound(rpg->sound.sound_list[SOUND_MENU].sound, rpg->sound.volume);
+    play_sound(rpg->sound.sound_list[SOUND_MENU].sound,
+    rpg->sound.volume_music);
     toggle_cursor(rpg->begin.window, false);
     while (sfRenderWindow_isOpen(rpg->begin.window)) {
         clean_window(&rpg->begin, sfBlack);

@@ -27,7 +27,7 @@ static void events_mouse_global(rpg_t *rpg, sfEvent event, events_t *all_events)
 {
     switch (event.type) {
         case sfEvtMouseButtonPressed:
-            events_mouse_pressed(event, all_events);
+            events_mouse_pressed(rpg, event, all_events);
             break;
         case sfEvtMouseButtonReleased:
             events_mouse_released(rpg, event, all_events);
