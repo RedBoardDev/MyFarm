@@ -66,6 +66,12 @@ void draw_all(rpg_t *rpg)
     if (rpg->screen[SC_INVENTORY].active)
         draw_inventory(rpg->player_stats.inventory,
         &rpg->begin, rpg->spritesheet);
+    // printf("rpg->spritesheet[SP_CURSOR].active = %d\n", rpg->spritesheet[SP_CURSOR].active);
+    // printf("view:       %0.0f, %0.0f\n", rpg->begin.view.center.x, rpg->begin.view.center.y);
+    // printf("mouse view: %0.0f, %0.0f\n", rpg->all_events.mouse.pos_view.x, rpg->all_events.mouse.pos_view.y);
+    // printf("mouse:      %d, %d\n", rpg->all_events.mouse.pos.x, rpg->all_events.mouse.pos.y);
+    // printf("sp cursor:  %0.0f, %0.0f\n\n", rpg->spritesheet[SP_CURSOR].pos.x, rpg->spritesheet[SP_CURSOR].pos.y);
+    // rpg->spritesheet[SP_CURSOR].pos = rpg->all_events.mouse.pos_view;
     if (rpg->spritesheet[SP_CURSOR].active)
         draw_one_sprite(&rpg->begin, rpg->spritesheet[SP_CURSOR].sprite,
         rpg->spritesheet[SP_CURSOR].rect, rpg->spritesheet[SP_CURSOR].pos);

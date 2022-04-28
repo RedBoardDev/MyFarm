@@ -24,13 +24,14 @@ void teleport_base(rpg_t *rpg)
 
 void teleport_tente(rpg_t *rpg)
 {
+    sfVector2f pos = {183, 432};
+
     if (rpg->screen[SC_MAIN_MAP].active) {
         rpg->begin.view.center = rpg->screen[SC_TENTE].view_pos;
         toggle_spritesheet_scene(rpg, false, SC_MAIN_MAP);
         toggle_spritesheet_scene(rpg, true, SC_TENTE);
     } else {
-        rpg->spritesheet[rpg->player_stats.skin].pos =
-        rpg->screen[SC_MAIN_MAP].view_pos;
+        rpg->spritesheet[rpg->player_stats.skin].pos = pos;
         rpg->begin.view.center = rpg->screen[SC_MAIN_MAP].view_pos;
         toggle_spritesheet_scene(rpg, false, SC_TENTE);
         toggle_spritesheet_scene(rpg, true, SC_MAIN_MAP);

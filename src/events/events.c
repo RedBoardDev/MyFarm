@@ -72,5 +72,4 @@ void my_events(rpg_t *rpg)
     sfMouse_getPositionRenderWindow(rpg->begin.window);
     rpg->all_events.mouse.pos_view = sfRenderWindow_mapPixelToCoords(
     rpg->begin.window, rpg->all_events.mouse.pos, rpg->begin.view.view);
-    rpg->all_events.mouse.pos_view.y -= 10;
 }

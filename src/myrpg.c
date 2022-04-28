@@ -35,6 +35,7 @@ static void move_sound_box(rpg_t *rpg)
 
 static void big_loop(rpg_t *rpg, sfColor *oui)
 {
+    set_view(rpg, rpg->begin.view.center);
     *oui = my_rgb(*oui);
     get_fps(rpg);
     my_events(rpg);

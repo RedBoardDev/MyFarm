@@ -17,6 +17,7 @@ SRC_FILES	=	events/events	\
 				events/mouse	\
 				gameplay/boss/animations_executioner	\
 				gameplay/boss/animations_golem	\
+				gameplay/boss/attack_player_hoe	\
 				gameplay/boss/ia_executioner	\
 				gameplay/boss/ia_golem	\
 				gameplay/boss/move_bosses	\

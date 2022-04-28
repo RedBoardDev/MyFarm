@@ -12,7 +12,7 @@
     #include "protos.h"
     #include "struct.h"
     #define RADIAN(x) x * 3.14159265359 / 180
-    #define FUNCTIONS_BUTTONS {nothing, nothing, nothing, nothing, nothing, \
+    #define FUNCTIONS_BUTTONS {nothing, nothing, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, how_play, quest_seller, quest_soldiers, nothing,  \
     skin_blue, skin_brown, skin_cyan, skin_green, skin_grey, skin_pink, \
     skin_red, skin_yellow, nothing, nothing, nothing, launch_game, quit_game, \
@@ -26,8 +26,8 @@
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing}
     #define SPAWN_X WIDTH / 2
     #define SPAWN_Y WIDTH / 2 + 80
-    #define SPEED_PLAYER 4
-    // #define SPEED_PLAYER 1.5
+    // #define SPEED_PLAYER 4
+    #define SPEED_PLAYER 1.5
     #define SECOND_TO_MICRO(x) x * 1000000
 
 enum size_window {
@@ -43,6 +43,7 @@ enum sprites {
     SP_BACKGROUND_GROTTE,
     SP_BACKGROUND_CEMETERY,
     SP_BACKGROUND_TENTE,
+    SP_BACKGROUND_TAVERNE,
     SP_BACKGROUND_HOW_PLAY,
     SP_BACKGROUND_VICRORY_GROTTE,
     SP_MONKEY,
@@ -112,7 +113,9 @@ enum screens {
     SC_BASE,
     SC_VICTORY_CEMETERY,
     SC_CEMETERY,
+    SC_VICTORY_GROTTE,
     SC_GROTTE,
+    SC_TAVERNE,
     SC_TENTE,
     SC_OPTION,
     SC_INVENTORY,
