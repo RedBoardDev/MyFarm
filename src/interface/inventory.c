@@ -19,8 +19,8 @@ static void box_inventory(rpg_t *rpg, inventory_t *inventory)
 
     for (int i = 2, y = 0; y < 3; ++y) {
         for (int x = 0; x < 3; ++x, ++i) {
-            inventory->inventory_case[i].pos.x = (pos_inv.x + 22) + 72 * x;
-            inventory->inventory_case[i].pos.y = (pos_inv.y - 30) + 72 * y;
+            inventory->inventory_case[i].pos.x = (pos_inv.x + 14) + 75 * x;
+            inventory->inventory_case[i].pos.y = (pos_inv.y - 30) + 75 * y;
         }
     }
 }
