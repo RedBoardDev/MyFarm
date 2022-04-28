@@ -59,8 +59,7 @@ void animate_boss_cemetery(rpg_t *rpg)
             toggle_spritesheet_scene(rpg, false, SC_CEMETERY);
             toggle_spritesheet_scene(rpg, true, SC_VICTORY_CEMETERY);
         }
-    }
-    else
+    } else
         ia_executioner(rpg);
     if (rpg->boss_stats.status == ST_IDLE)
         animate_idle_executioner(rpg);

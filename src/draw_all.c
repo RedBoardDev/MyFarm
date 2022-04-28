@@ -50,6 +50,7 @@ spritesheet_t *spritesheet)
 void draw_all_text(rpg_t *rpg)
 {
     send_chat_bubble_soldiers(rpg);
+    send_chat_bubble_seller(rpg);
     draw_fps(rpg);
 }
 

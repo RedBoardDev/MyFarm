@@ -153,6 +153,8 @@ void quest_soldiers(rpg_t *rpg);
 void disable_quests(rpg_t *rpg, int quests_enum, bool scale);
 sfBool check_collision_npc(rpg_t *rpg);
 void send_chat_bubble_soldiers(rpg_t *rpg);
+void quest_seller(rpg_t *rpg);
+void send_chat_bubble_seller(rpg_t *rpg);
 
 // gameplay
 sfBool check_collision_executioner(rpg_t *rpg);

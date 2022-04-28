@@ -30,6 +30,7 @@ SRC_FILES	=	events/events	\
 				gameplay/teleport_player_house	\
 				gameplay/teleport_player	\
 				gameplay/quests/q_soldiers	\
+				gameplay/quests/q_seller	\
 				gameplay/quests/utils_quest	\
 				gameplay/utils	\
 				init/init_all	\

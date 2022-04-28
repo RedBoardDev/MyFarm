@@ -14,7 +14,7 @@ SP_PLAYER_BROWN, SP_PLAYER_CYAN, SP_PLAYER_GREEN, SP_PLAYER_GREY,
 SP_PLAYER_PINK, SP_PLAYER_RED, SP_PLAYER_YELLOW, SP_PLAY, SP_CURSOR, -1};
 const int screen_main_map[] = {SP_BACKGROUND_SC_MAIN_MAP, SELECTED_PLAYER,
 SP_MINIMAP, SP_MINIMAP_LAYER, -1};
-const int screen_base[] = {SP_BACKGROUND_SC_BASE, SELECTED_PLAYER,  \
+const int screen_base[] = {SP_BACKGROUND_SC_BASE, SELECTED_PLAYER, SP_NPC_SELLER,  \
 SP_CURSOR, -1};
 const int screen_inventory[] = {SP_INVENTORY, SP_CURSOR, -1};
 const int screen_jail[] = {SP_BACKGROUND_JAIL, SELECTED_PLAYER, SP_CURSOR, -1};
@@ -42,18 +42,17 @@ SP_NPC_SOLDIER, SP_CURSOR, -1};
 static void init_screen_norme(rpg_t *rpg)
 {
     rpg->screen[SC_GROTTE] = (screen_t){false,
-    {444, 1196 + 20}, 0.4, screen_grotte, sfClock_create()};
+    (sfVector2f){444, 1196 + 20}, 0.4, screen_grotte, sfClock_create()};
     rpg->screen[SC_VICTORY_CEMETERY] = (screen_t){.active = false,
-    {384, 1581}, .view_zoom = 0.4, screen_victory_cemetery};
+    .view_pos = {384, 1581}, .view_zoom = 0.4, screen_victory_cemetery};
     rpg->screen[SC_HOW_PLAY] = (screen_t){.active = false,
     .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 1, screen_how_play};
     rpg->screen[SC_PAUSE] = (screen_t){.active = false,
     .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0.4, screen_pause_menu};
     rpg->screen[SC_OPTION] = (screen_t){.active = false,
-    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 1,
-    .const_screen = screen_option_menu};
+    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 1, screen_option_menu};
     rpg->screen[SC_CEMETERY] = (screen_t){.active = false,
-    .view_pos = { 384, 1581 }, .view_zoom = 0.4, screen_cemetery };
+    .view_pos = {384, 1581}, .view_zoom = 0.4, screen_cemetery};
     rpg->screen[SC_TENTE] = (screen_t){.active = false,
     .view_pos = {SPAWN_X - 760, SPAWN_Y - 770},
     .view_zoom = 0.32, screen_tente};

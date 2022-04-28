@@ -14,4 +14,8 @@ void init_quests(rpg_t *rpg)
     rpg->quest[QUEST_SOLDIER].dialog =
     create_text((init_text_t){30, "\0", sfBlack,
     {825, 765}, "assets/fonts/NotoSerif-Regular.ttf"});
+    rpg->quest[QUEST_SELLER] = (quest_t) {.step = 0};
+    rpg->quest[QUEST_SELLER].dialog =
+    create_text((init_text_t){30, "\0", sfBlack,
+    {825, 765}, "assets/fonts/NotoSerif-Regular.ttf"});
 }
