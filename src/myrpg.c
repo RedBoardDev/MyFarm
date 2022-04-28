@@ -81,7 +81,8 @@ void myrpg(int sound)
     if (!rpg->begin.window || !rpg->begin.framebuffer)
         return;
     sfWindow_setFramerateLimit((sfWindow *)rpg->begin.window, rpg->params.fps);
-    sfWindow_setIcon((sfWindow *)rpg->begin.window, 512, 512, rpg->begin.pixels);
+    sfWindow_setIcon((sfWindow *)rpg->begin.window, 512, 512,
+    rpg->begin.pixels);
     rpg->begin.fps.clock = sfClock_create();
     play_sound(rpg->sound.sound_list[SOUND_MENU].sound,
     rpg->sound.volume_music);

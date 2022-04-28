@@ -35,6 +35,7 @@ SRC_FILES	=	events/events	\
 				gameplay/quests/utils_quest	\
 				gameplay/utils	\
 				init/init_all	\
+				init/init_events	\
 				init/init_imgs	\
 				init/init_main_map	\
 				init/init_quests	\

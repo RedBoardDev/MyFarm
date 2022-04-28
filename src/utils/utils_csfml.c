@@ -37,7 +37,8 @@ void re_create_window(rpg_t *rpg, bool fullscreen)
         rpg->begin.window = sfRenderWindow_create(mode, "My RPG",
         sfClose | sfResize, NULL);
     sfWindow_setFramerateLimit((sfWindow *)rpg->begin.window, rpg->params.fps);
-    sfWindow_setIcon((sfWindow *)rpg->begin.window, 512, 512, rpg->begin.pixels);
+    sfWindow_setIcon((sfWindow *)rpg->begin.window, 512, 512,
+    rpg->begin.pixels);
 }
 
 sfInt64 get_clock_time(sfClock *clock)
