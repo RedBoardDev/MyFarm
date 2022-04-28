@@ -20,7 +20,7 @@
     nothing, buttun_resume_game, buttun_option_game, buttun_leave_game, \
     nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing,  \
-    button_toggle_fullscreen, \
+    button_toggle_fullscreen, button_toggle_dark_mode, button_toggle_show_fps, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \

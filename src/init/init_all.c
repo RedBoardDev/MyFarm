@@ -80,6 +80,14 @@ static void init_fps(rpg_t *rpg)
     rpg->begin.fps_disp.fps = 0;
 }
 
+static void init_params(rpg_t *rpg)
+{
+    rpg->params.fullscreen = true;
+    rpg->params.show_fps = true;
+    rpg->params.dark_mode = true;
+    rpg->params.fps = 0;
+}
+
 void init_all(rpg_t *rpg)
 {
     rpg->index_old_s = 0;
@@ -95,6 +103,7 @@ void init_all(rpg_t *rpg)
     init_view(rpg);
     init_spritesheets(rpg->spritesheet);
     init_sounds(rpg);
+    init_params(rpg);
     init_csfml(&rpg->begin);
     init_player_boss_stats(&rpg->player_stats, &rpg->boss_stats);
     init_quests(rpg);

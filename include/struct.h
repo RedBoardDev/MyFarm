@@ -64,7 +64,6 @@ typedef struct {
     view_t view;
     fps_inde_t fps;
     fps_disp_t fps_disp;
-    bool fullscreen;
 } beginning_t;
 
 typedef struct {
@@ -188,6 +187,13 @@ typedef struct {
 } quest_t;
 
 typedef struct {
+    bool fullscreen;
+    bool show_fps;
+    bool dark_mode;
+    int fps;
+} params_t;
+
+typedef struct {
     beginning_t begin;
     events_t all_events;
     spritesheet_t *spritesheet;
@@ -198,6 +204,7 @@ typedef struct {
     player_stats_t player_stats;
     boss_stats_t boss_stats;
     quest_t *quest;
+    params_t params;
 } rpg_t;
 
 #endif

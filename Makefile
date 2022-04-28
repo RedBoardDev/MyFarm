@@ -54,6 +54,7 @@ SRC_FILES	=	events/events	\
 				interface/functions_pointers/button_menu	\
 				interface/functions_pointers/button_menu_options	\
 				interface/functions_pointers/buttons_boss	\
+				interface/functions_pointers/buttons_toggle_params	\
 				interface/functions_pointers/choose_skin1	\
 				interface/functions_pointers/choose_skin2	\
 				interface/functions_pointers/button_soundbar	\

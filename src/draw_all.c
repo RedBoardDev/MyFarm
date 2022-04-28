@@ -51,7 +51,8 @@ void draw_all_text(rpg_t *rpg)
 {
     send_chat_bubble_soldiers(rpg);
     send_chat_bubble_seller(rpg);
-    draw_fps(rpg);
+    if (rpg->params.show_fps)
+        draw_fps(rpg);
 }
 
 void draw_all(rpg_t *rpg)

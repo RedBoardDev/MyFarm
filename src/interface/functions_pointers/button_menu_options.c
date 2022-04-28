@@ -30,16 +30,3 @@ void quit_game(rpg_t *rpg)
 {
     sfRenderWindow_close(rpg->begin.window);
 }
-
-void button_toggle_fullscreen(rpg_t *rpg)
-{
-    if (rpg->begin.fullscreen) {
-        rpg->begin.fullscreen = false;
-        re_create_window(rpg, false);
-        rpg->spritesheet[SP_BUTTON_SCREEN].rect.left = rpg->spritesheet[SP_BUTTON_SCREEN].rect.width;
-    } else {
-        rpg->begin.fullscreen = true;
-        re_create_window(rpg, true);
-        rpg->spritesheet[SP_BUTTON_SCREEN].rect.left = 0;
-    }
-}

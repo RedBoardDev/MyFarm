@@ -61,6 +61,8 @@ void buttun_option_game(rpg_t *rpg);
 void buttun_option_game_2(rpg_t *rpg);
 void buttun_leave_game(rpg_t *rpg);
 int check_click_soundbox(rpg_t *rpg);
+void button_toggle_dark_mode(rpg_t *rpg);
+void button_toggle_show_fps(rpg_t *rpg);
 
 // init
 void init_all(rpg_t *rpg);

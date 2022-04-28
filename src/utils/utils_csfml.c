@@ -17,7 +17,6 @@ void init_csfml(beginning_t *begin)
 {
     sfVideoMode mode = {WIDTH, HEIGHT, 32};
 
-    begin->fullscreen = true;
     begin->window = sfRenderWindow_create(mode, "My RPG",
     sfClose | sfResize | sfFullscreen, NULL);
     begin->framebuffer = my_framebuffer_create();
