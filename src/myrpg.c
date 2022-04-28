@@ -72,6 +72,7 @@ void myrpg(int sound)
     sfImage *img = sfImage_createFromFile("assets/img/logo.png");
     const sfUint8 *pixels = sfImage_getPixelsPtr(img);
 
+    rpg->begin.pixels = pixels;
     init_all(rpg);
     if (sound == 0) {
         rpg->sound.volume_music = 0;
@@ -79,8 +80,8 @@ void myrpg(int sound)
     }
     if (!rpg->begin.window || !rpg->begin.framebuffer)
         return;
-    sfWindow_setFramerateLimit((sfWindow *)rpg->begin.window, 0);
-    sfWindow_setIcon((sfWindow *)rpg->begin.window, 512, 512, pixels);
+    sfWindow_setFramerateLimit((sfWindow *)rpg->begin.window, rpg->params.fps);
+    sfWindow_setIcon((sfWindow *)rpg->begin.window, 512, 512, rpg->begin.pixels);
     rpg->begin.fps.clock = sfClock_create();
     play_sound(rpg->sound.sound_list[SOUND_MENU].sound,
     rpg->sound.volume_music);
