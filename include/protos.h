@@ -33,7 +33,7 @@ void my_events(rpg_t *rpg);
 void events_key_pressed(rpg_t *rpg, sfEvent event);
 void events_key_released(sfEvent event, events_t *all_events);
 void events_mouse_pressed(sfEvent event, events_t *all_events);
-void events_mouse_released(sfEvent event, events_t *all_events);
+void events_mouse_released(rpg_t *rpg, sfEvent event, events_t *all_events);
 void events_scroll_wheel(sfEvent event, events_t *all_events);
 void events_mouse_moved(sfEvent event, events_t *all_events);
 
@@ -59,6 +59,7 @@ void buttun_resume_game(rpg_t *rpg);
 void buttun_option_game(rpg_t *rpg);
 void buttun_option_game_2(rpg_t *rpg);
 void buttun_leave_game(rpg_t *rpg);
+void check_click_soundbox(rpg_t *rpg);
 
 // init
 void init_all(rpg_t *rpg);
@@ -66,7 +67,6 @@ void init_imgs(rpg_t *rpg);
 void init_main_map(spritesheet_t *spritesheet);
 void init_screens(rpg_t *rpg);
 void init_sounds(rpg_t *rpg);
-void init_soundbox(spritesheet_t *spritesheet);
 void init_menu(spritesheet_t *spritesheet);
 void init_spritesheets_rooms(spritesheet_t *spritesheet);
 void init_spritesheets(spritesheet_t *spritesheet);
@@ -146,7 +146,7 @@ void set_size_cursor(rpg_t *rpg, float size);
 
 //inventory
 void manage_inventory(rpg_t *rpg);
-void init_inventory(inventory_t *inventory);
+void init_inventory(inventory_t *inventory, rpg_t *rpg);
 
 //quests
 void quest_soldiers(rpg_t *rpg);
@@ -157,6 +157,7 @@ void send_chat_bubble_soldiers(rpg_t *rpg);
 // gameplay
 sfBool check_collision_executioner(rpg_t *rpg);
 sfBool check_collision_golem_proj(rpg_t *rpg);
+sfBool check_collision_hoe_to_golem(rpg_t *rpg);
 void remove_life_player(rpg_t *rpg, int offset);
 
 //lib text
@@ -167,5 +168,23 @@ void destroy_text(sfText *text, sfFont *font);
 // check screens
 bool is_in_menu(rpg_t *rpg);
 bool is_in_gameplay(rpg_t *rpg);
+
+// animations golem
+void animate_idle_golem(rpg_t *rpg);
+void animate_die_golem(rpg_t *rpg);
+void animate_attack_proj_golem(rpg_t *rpg);
+
+// animations executioner
+void animate_attack_1_executioner(rpg_t *rpg);
+void animate_attack_2_executioner(rpg_t *rpg);
+void animate_idle_executioner(rpg_t *rpg);
+void animate_die_executioner(rpg_t *rpg);
+
+// move bosses
+void move_proj_golem(rpg_t *rpg);
+void move_proj_player(rpg_t *rpg);
+void move_executioner(rpg_t *rpg);
+
+int get_current_screen(rpg_t *rpg);
 
 #endif

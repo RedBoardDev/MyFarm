@@ -27,8 +27,14 @@ void launch_game(rpg_t *rpg)
     (sfVector2f){SPAWN_X, SPAWN_Y};
     rpg->begin.view.center = (sfVector2f){SPAWN_X, SPAWN_Y};
     set_player(rpg);
-    toggle_spritesheet_scene(rpg, false, SC_MENU);
-    toggle_spritesheet_scene(rpg, false, SC_CUSTOM_SKINS);
+    if (rpg->screen[SC_MENU].active) {
+        toggle_spritesheet_scene(rpg, false, SC_CUSTOM_SKINS);
+        toggle_spritesheet_scene(rpg, false, SC_MENU);
+    }
+    if (rpg->screen[SC_CUSTOM_SKINS].active) {
+        toggle_spritesheet_scene(rpg, false, SC_MENU);
+        toggle_spritesheet_scene(rpg, false, SC_CUSTOM_SKINS);
+    }
     toggle_spritesheet_scene(rpg, true, SC_MAIN_MAP);
 }
 
@@ -47,13 +53,11 @@ void display_custom_skins(rpg_t *rpg)
 
 void buttun_resume_game(rpg_t *rpg)
 {
-    printf("RESUME %d\n", rpg->index_old_s);
     toggle_spritesheet_scene(rpg, false, SC_PAUSE);
 }
 
 void buttun_option_game(rpg_t *rpg)
 {
-    printf("OPTION %d\n", rpg->index_old_s);
     disable_all_screens_gameplay(rpg);
     toggle_spritesheet_scene(rpg, true, SC_OPTION);
     sfView_setCenter(rpg->begin.view.view, rpg->screen[SC_OPTION].view_pos);
@@ -61,7 +65,6 @@ void buttun_option_game(rpg_t *rpg)
 
 void buttun_leave_game(rpg_t *rpg)
 {
-    printf("LEAVE %d\n", rpg->index_old_s);
     disable_all_screens_gameplay(rpg);
     toggle_spritesheet_scene(rpg, false, SC_PAUSE);
     toggle_spritesheet_scene(rpg, true, SC_MENU);

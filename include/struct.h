@@ -132,6 +132,8 @@ typedef struct {
 
 typedef struct {
     sound_list_t *sound_list;
+    bool volume_active;
+    bool volume_backup_active;
     float volume;
     float volume_backup;
     float volume_effect;
@@ -144,7 +146,12 @@ typedef struct {
 } images_t;
 
 typedef struct {
-    int cases[10];
+    int item_spritesheet;
+    sfVector2f pos;
+} inventory_case_t;
+
+typedef struct {
+    inventory_case_t *inventory_case;
     sfText *money;
 } inventory_t;
 
@@ -157,13 +164,15 @@ typedef struct {
     float mana;
     int damage;
     int knowledge;
+    bool attack;
     sfClock *last_damage;
     inventory_t inventory;
 } player_stats_t;
 
 typedef struct {
     float life;
-    int damage;
+    int damage_executioner;
+    int damage_golem;
     float inc_pos;
     int status;
     float time_next_it;

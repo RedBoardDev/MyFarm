@@ -33,24 +33,33 @@ static void draw_spritesheets(beginning_t *begin, spritesheet_t *spritesheet)
 void draw_inventory(inventory_t inventory, beginning_t *begin,
 spritesheet_t *spritesheet)
 {
+    int enum_sprite_place = 0;
+
     write_text(begin->window, inventory.money);
-    for (int i = 0; i < 10; ++i) {
-        if (inventory.cases[i] != -1)
-            draw_one_sprite(begin, spritesheet[i].sprite,
-            spritesheet[i].rect, spritesheet[i].pos);
+    for (int i = 0; i <= 10; ++i) {
+        enum_sprite_place = inventory.inventory_case[i].item_spritesheet;
+        if (enum_sprite_place >= SP_ITEM_SHOVEL
+        && enum_sprite_place <= SP_ITEM_BEETS) {
+            draw_one_sprite(begin, spritesheet[enum_sprite_place].sprite,
+            spritesheet[enum_sprite_place].rect,
+            inventory.inventory_case[i].pos);
+        }
     }
 }
 
 void draw_all_text(rpg_t *rpg)
 {
     float zoom = get_zoom(rpg->begin.view.view);
-    sfVector2f pos_l = {rpg->begin.view.center.x - ((WIDTH / 2) * zoom) + (10 * zoom), rpg->begin.view.center.y + ((HEIGHT / 2) * zoom) - (40 * zoom)};
+    sfVector2f pos_l = {rpg->begin.view.center.x - ((WIDTH / 2) * zoom) + (10 *
+    zoom), rpg->begin.view.center.y + ((HEIGHT / 2) * zoom) - (40 * zoom)};
     sfVector2f pos = {pos_l.x + (70 * zoom), pos_l.y};
     sfVector2f scale = {0.3 * zoom, 0.3 * zoom};
 
     send_chat_bubble_soldiers(rpg);
-    if (get_clock_time(rpg->begin.fps_disp.display_clock) >= SECOND_TO_MICRO(0.2)) {
-        sfText_setString(rpg->begin.fps_disp.fps_text, my_itoa(rpg->begin.fps_disp.fps));
+    if (get_clock_time(rpg->begin.fps_disp.display_clock) >=
+    SECOND_TO_MICRO(0.2)) {
+        sfText_setString(rpg->begin.fps_disp.fps_text,
+        my_itoa(rpg->begin.fps_disp.fps));
         sfClock_restart(rpg->begin.fps_disp.display_clock);
     }
     sfText_setPosition(rpg->begin.fps_disp.fps_text, pos);
@@ -59,7 +68,6 @@ void draw_all_text(rpg_t *rpg)
     sfText_setScale(rpg->begin.fps_disp.legende, scale);
     write_text(rpg->begin.window, rpg->begin.fps_disp.fps_text);
     write_text(rpg->begin.window, rpg->begin.fps_disp.legende);
-
 }
 
 void draw_all(rpg_t *rpg)

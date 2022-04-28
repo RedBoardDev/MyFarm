@@ -15,9 +15,14 @@ SRC_FILES	=	events/events	\
 				events/key_pressed	\
 				events/key_released	\
 				events/mouse	\
+				gameplay/boss/animations_executioner	\
+				gameplay/boss/animations_golem	\
+				gameplay/boss/ia_executioner	\
+				gameplay/boss/ia_golem	\
+				gameplay/boss/move_bosses	\
 				gameplay/animate_player	\
-				gameplay/animate_boss_cemetery	\
-				gameplay/animate_boss_grotte	\
+				gameplay/animate_selected_skin	\
+				gameplay/collisions	\
 				gameplay/move_all	\
 				gameplay/move_player_and_view	\
 				gameplay/teleport_player	\
@@ -44,6 +49,7 @@ SRC_FILES	=	events/events	\
 				interface/functions_pointers/buttons_boss	\
 				interface/functions_pointers/choose_skin1	\
 				interface/functions_pointers/choose_skin2	\
+				interface/functions_pointers/button_soundbar	\
 				interface/check_click_buttons	\
 				interface/check_mouse_on_buttons	\
 				interface/inventory	\

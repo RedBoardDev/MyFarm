@@ -17,11 +17,13 @@ void events_mouse_pressed(sfEvent event, events_t *all_events)
         all_events->mouse_wheel.click = true;
 }
 
-void events_mouse_released(sfEvent event, events_t *all_events)
+void events_mouse_released(rpg_t *rpg, sfEvent event, events_t *all_events)
 {
     if ((sfKeyCode)sfMouseLeft == event.key.code) {
         all_events->mouse.left = false;
         all_events->mouse.left_released = true;
+        if (rpg->sound.volume_active)
+            rpg->sound.volume_active = false;
     }
     if ((sfKeyCode)sfMouseRight == event.key.code)
         all_events->mouse.right = false;
