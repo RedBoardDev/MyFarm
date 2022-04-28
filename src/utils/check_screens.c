@@ -18,5 +18,6 @@ bool is_in_gameplay(rpg_t *rpg)
     return (rpg->screen[SC_MAIN_MAP].active || rpg->screen[SC_BASE].active
     || rpg->screen[SC_GROTTE].active || rpg->screen[SC_INVENTORY].active
     || rpg->screen[SC_CEMETERY].active ||
-    rpg->screen[SC_VICTORY_CEMETERY].active || rpg->screen[SC_TENTE].active);
+    rpg->screen[SC_VICTORY_CEMETERY].active || rpg->screen[SC_TENTE].active
+    || rpg->screen[SC_TAVERNE].active);
 }
