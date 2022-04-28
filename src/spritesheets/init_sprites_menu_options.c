@@ -7,7 +7,7 @@
 
 #include "../../include/rpg.h"
 
-void init_buttuns_option_menu_4(spritesheet_t *spritesheet)
+void init_buttons_option_menu_4(spritesheet_t *spritesheet)
 {
     set_one_sprite("assets/img/menu/button_arrow_left.png",
     &spritesheet[SP_ARROW_LEFT], (init_sprite_t){{WIDTH / 1.7, HEIGHT / 3},
@@ -19,7 +19,7 @@ void init_buttuns_option_menu_4(spritesheet_t *spritesheet)
     .change_sprite_on_mouse = false});
 }
 
-void init_buttuns_option_menu_3(spritesheet_t *spritesheet)
+void init_buttons_option_menu_3(spritesheet_t *spritesheet)
 {
     set_one_sprite("assets/img/menu/button_fs_wd.png",
     &spritesheet[SP_BUTTON_SCREEN], (init_sprite_t){{WIDTH / 1.4,
@@ -37,10 +37,10 @@ void init_buttuns_option_menu_3(spritesheet_t *spritesheet)
     &spritesheet[SP_ARROW_RIGHT], (init_sprite_t){{WIDTH / 1.19, HEIGHT / 3},
     {0.7, 0.7}, {0, 0, 200, 200}, .clickable = true, .active = false,
     .change_sprite_on_mouse = true});
-    init_buttuns_option_menu_4(spritesheet);
+    init_buttons_option_menu_4(spritesheet);
 }
 
-void init_buttuns_option_menu_2(spritesheet_t *spritesheet)
+void init_buttons_option_menu_2(spritesheet_t *spritesheet)
 {
     set_one_sprite("assets/img/soundbox/SoundButton.png",
     &spritesheet[SP_SOUND_SLIDER_MUSIC], (init_sprite_t){{WIDTH / 4.3, HEIGHT
@@ -58,10 +58,10 @@ void init_buttuns_option_menu_2(spritesheet_t *spritesheet)
     &spritesheet[SP_BOX_BUTTON_MUSIC], (init_sprite_t){{WIDTH / 4.3, HEIGHT
     / 2}, {0.65, 0.65}, {0, 0, 1000, 200}, .clickable = false, .active = false,
     .change_sprite_on_mouse = false});
-    init_buttuns_option_menu_3(spritesheet);
+    init_buttons_option_menu_3(spritesheet);
 }
 
-void init_buttuns_option_menu(spritesheet_t *spritesheet)
+void init_buttons_option_menu(spritesheet_t *spritesheet)
 {
     set_one_sprite("assets/img/soundbox/SoundButton.png",
     &spritesheet[SP_SOUND_SLIDER_EFFECT], (init_sprite_t){{WIDTH / 4.3,
@@ -79,5 +79,5 @@ void init_buttuns_option_menu(spritesheet_t *spritesheet)
     &spritesheet[SP_BOX_BUTTON_EFFECT], (init_sprite_t){{WIDTH / 4.3,
     HEIGHT / 3}, {0.65, 0.65}, {0, 0, 1000, 200}, .clickable = false,
     .active = false, .change_sprite_on_mouse = false});
-    init_buttuns_option_menu_2(spritesheet);
+    init_buttons_option_menu_2(spritesheet);
 }

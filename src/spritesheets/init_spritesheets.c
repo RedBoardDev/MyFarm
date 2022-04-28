@@ -46,8 +46,8 @@ void init_spritesheets(spritesheet_t *spritesheet)
     init_bosses(spritesheet);
     init_spritesheets_npc(spritesheet);
     init_spritesheets_quests(spritesheet);
-    init_buttuns_pause_menu(spritesheet);
-    init_buttuns_option_menu(spritesheet);
+    init_buttons_pause_menu(spritesheet);
+    init_buttons_option_menu(spritesheet);
     set_one_sprite("assets/img/cursor.png", &spritesheet[SP_CURSOR],
     (init_sprite_t){{444 - 320, 1196 - 197}, {0.10, 0.10},
     {0, 0, 181, 206}, false, true, false});

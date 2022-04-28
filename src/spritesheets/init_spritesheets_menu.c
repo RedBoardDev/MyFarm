@@ -23,7 +23,7 @@ void init_buttons_menu(spritesheet_t *spritesheet)
     .clickable = true, .active = false, .change_sprite_on_mouse = true});
 }
 
-void init_buttuns_pause_menu(spritesheet_t *spritesheet)
+void init_buttons_pause_menu(spritesheet_t *spritesheet)
 {
     set_one_sprite("assets/img/menu/menu_resume.png",
     &spritesheet[SP_RESUME], (init_sprite_t){{WIDTH, HEIGHT},
