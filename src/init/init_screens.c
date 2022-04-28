@@ -37,6 +37,25 @@ SP_LIFE_BAR_BOSS, -1};
 const int screen_tente[] = {SP_BACKGROUND_TENTE, SELECTED_PLAYER,   \
 SP_NPC_SOLDIER, SP_CURSOR, -1};
 
+static void init_screen_norme(rpg_t *rpg)
+{
+    rpg->screen[SC_GROTTE] = (screen_t){.active = false,
+    .view_pos = {444, 1196 + 20}, .view_zoom = 0.4, screen_grotte};
+    rpg->screen[SC_VICTORY_CEMETERY] = (screen_t){.active = false,
+    .view_pos = {384, 1581}, .view_zoom = 0.4, screen_victory_cemetery};
+    rpg->screen[SC_HOW_PLAY] = (screen_t){.active = false,
+    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 1, screen_how_play};
+    rpg->screen[SC_PAUSE] = (screen_t){.active = false,
+    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0.4, screen_pause_menu};
+    rpg->screen[SC_OPTION] = (screen_t){.active = false,
+    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 1, screen_option_menu};
+    rpg->screen[SC_CEMETERY] = (screen_t){.active = false,
+    .view_pos = {384, 1581}, .view_zoom = 0.4, screen_cemetery};
+    rpg->screen[SC_TENTE] = (screen_t){.active = false,
+    .view_pos = {SPAWN_X - 760, SPAWN_Y - 770},
+    .view_zoom = 0.32, screen_tente};
+}
+
 void init_screens(rpg_t *rpg)
 {
     rpg->screen = malloc(sizeof(screen_t) * NBR_SC);
@@ -50,23 +69,7 @@ void init_screens(rpg_t *rpg)
     .view_pos = {SPAWN_X - 30, SPAWN_Y - 170}, .view_zoom = 0.4, screen_base};
     rpg->screen[SC_INVENTORY] = (screen_t){.active = false,
     .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0.4, screen_inventory};
-    rpg->screen[SC_GROTTE] = (screen_t){.active = false,
-    .view_pos = {444, 1196 + 20}, .view_zoom = 0.4, screen_grotte};
-    rpg->screen[SC_VICTORY_CEMETERY] = (screen_t){.active = false,
-    .view_pos = {384, 1581}, .view_zoom = 0.4, screen_victory_cemetery};
-    rpg->screen[SC_HOW_PLAY] = (screen_t){.active = false,
-    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 1, screen_how_play};
-    rpg->screen[SC_PAUSE] = (screen_t){.active = false,
-    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0.4, screen_pause_menu};
-    rpg->screen[SC_OPTION] = (screen_t){.active = false,
-    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 1, screen_option_menu};
-    rpg->screen[SC_CEMETERY] = (screen_t){.active = false,
-    .view_pos = {384, 1581}, .view_zoom = 0.4, screen_cemetery};
-
-    rpg->screen[SC_TENTE] = (screen_t){.active = false,
-    .view_pos = {SPAWN_X - 760, SPAWN_Y - 770},
-    .view_zoom = 0.32, screen_tente};
-
+    init_screen_norme(rpg);
     for (int i = 0; i < NBR_SC; ++i)
         rpg->screen[i].clock = sfClock_create();
 }

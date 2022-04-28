@@ -25,6 +25,8 @@ SRC_FILES	=	events/events	\
 				gameplay/collisions	\
 				gameplay/move_all	\
 				gameplay/move_player_and_view	\
+				gameplay/move_player_view	\
+				gameplay/teleport_player_house	\
 				gameplay/teleport_player	\
 				gameplay/quests/q_soldiers	\
 				gameplay/quests/utils_quest	\
@@ -44,8 +46,10 @@ SRC_FILES	=	events/events	\
 				spritesheets/init_spritesheets_rooms	\
 				spritesheets/init_spritesheets	\
 				spritesheets/init_spritesheets_item	\
+				spritesheets/init_sprites_menu_options	\
 				init/init_view	\
 				interface/functions_pointers/button_menu	\
+				interface/functions_pointers/button_menu_options	\
 				interface/functions_pointers/buttons_boss	\
 				interface/functions_pointers/choose_skin1	\
 				interface/functions_pointers/choose_skin2	\
@@ -58,6 +62,7 @@ SRC_FILES	=	events/events	\
 				utils/check_screens	\
 				utils/utils_draw	\
 				utils/utils_quests	\
+				utils/utils_zoom	\
 				utils/utils_csfml	\
 				utils/utils	\
 				clean_window	\

@@ -7,31 +7,6 @@
 
 #include "../include/rpg.h"
 
-// void execute_menu(rpg_t *rpg)
-// {
-
-// }
-
-// void execute_help(rpg_t *rpg)
-// {
-
-// }
-
-// void execute_main_map(rpg_t *rpg)
-// {
-
-// }
-
-// void execute_base_player(rpg_t *rpg)
-// {
-
-// }
-
-// void execute_inventory(rpg_t *rpg)
-// {
-
-// }
-
 static void execute_cemetery(rpg_t *rpg)
 {
     rpg->spritesheet[SP_LIFE_BAR].pos =

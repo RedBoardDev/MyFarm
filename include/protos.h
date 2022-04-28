@@ -159,6 +159,10 @@ sfBool check_collision_executioner(rpg_t *rpg);
 sfBool check_collision_golem_proj(rpg_t *rpg);
 sfBool check_collision_hoe_to_golem(rpg_t *rpg);
 void remove_life_player(rpg_t *rpg, int offset);
+void move_player_and_view_vertical(rpg_t *rpg, sfImage *image,
+sfVector2f pos_player, bool move_view);
+void move_player_and_view_horizontal(rpg_t *rpg, sfImage *image,
+sfVector2f pos_player, bool move_view);
 
 //lib text
 sfText *create_text(init_text_t struct_text);
@@ -184,5 +188,10 @@ void animate_die_executioner(rpg_t *rpg);
 void move_proj_golem(rpg_t *rpg);
 void move_proj_player(rpg_t *rpg);
 void move_executioner(rpg_t *rpg);
+
+//teleport
+void teleport_jail(rpg_t *rpg);
+void teleport_base(rpg_t *rpg);
+void teleport_tente(rpg_t *rpg);
 
 #endif

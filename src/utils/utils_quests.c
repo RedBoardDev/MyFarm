@@ -14,22 +14,31 @@ int check_status_dialog(quest_t *quest)
     return (0);
 }
 
-int get_chat_into_file(char *filepath, int quest, rpg_t *rpg)
+static char *get_line_into_file(char *filepath, int quest, rpg_t *rpg)
 {
     char *lineptr;
     FILE *fd;
     size_t n = 0;
+
+    fd = fopen(filepath, "r");
+    if (!fd)
+        return (0);
+    for (int i = 0; i < rpg->quest[quest].step; ++i)
+        getline(&lineptr, &n, fd);
+    fclose(fd);
+    return (lineptr);
+}
+
+int get_chat_into_file(char *filepath, int quest, rpg_t *rpg)
+{
+    char *lineptr;
 
     if (rpg->quest[quest].step == 0)
         rpg->quest[quest].step = 1;
     else
         sfSprite_scale(rpg->spritesheet[SP_BUBBLE_CHAT].sprite,
         (sfVector2f){-1.f, 1.f});
-    fd = fopen(filepath, "r");
-    if (!fd)
-        return (0);
-    for (int i = 0; i < rpg->quest[quest].step; ++i)
-        getline(&lineptr, &n, fd);
+    lineptr = get_line_into_file(filepath, quest, rpg);
     rpg->quest[quest].step += 1;
     rpg->quest[quest].speaker = lineptr[0] == 'N' ? 1 : 0;
     if (lineptr[0] == 'F') {
@@ -39,7 +48,6 @@ int get_chat_into_file(char *filepath, int quest, rpg_t *rpg)
     for (int i = 0; lineptr[i]; ++i)
         lineptr[i] = lineptr[i] == '|' ? '\n' : lineptr[i];
     sfText_setString(rpg->quest[quest].dialog, lineptr + 2);
-    fclose(fd);
     free(lineptr);
     return (1);
 }
