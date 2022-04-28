@@ -37,7 +37,7 @@ static void teleport_cemetery(rpg_t *rpg)
 static void teleport_player_scene_norme(rpg_t *rpg, sfColor color)
 {
     switch (color.b) {
-    case B_TENTE:
+        case B_TENTE:
             play_sound(rpg->sound.sound_list[SOUND_DOOR].sound,
             rpg->sound.volume);
             teleport_tente(rpg);

@@ -51,23 +51,41 @@ static void ia_executioner(rpg_t *rpg)
     ia_executioner_rush(rpg);
 }
 
+static void switch_status(rpg_t *rpg)
+{
+    switch (rpg->boss_stats.status) {
+        case ST_IDLE:
+            animate_idle_executioner(rpg);
+            break;
+        case ST_ATTACK_1:
+            animate_attack_1_executioner(rpg);
+            break;
+        case ST_ATTACK_2:
+            animate_attack_2_executioner(rpg);
+            break;
+        case ST_DIE:
+            animate_die_executioner(rpg);
+            break;
+        default:
+            break;
+    }
+}
+
 void animate_boss_cemetery(rpg_t *rpg)
 {
     if (rpg->boss_stats.life <= 0) {
         rpg->boss_stats.status = ST_DIE;
         if (rpg->spritesheet[SP_BOSS_EXECUTIONER].rect.left >= 2000) {
+            rpg->spritesheet[SP_BACKGROUND_VICRORY_GROTTE].pos =
+            rpg->screen[SC_VICTORY_CEMETERY].view_pos;
+            rpg->spritesheet[SP_NEXT_GROTTE].pos = (sfVector2f)
+            {rpg->screen[SC_VICTORY_CEMETERY].view_pos.x + 148,
+            rpg->screen[SC_VICTORY_CEMETERY].view_pos.y + 110};
             toggle_spritesheet_scene(rpg, false, SC_CEMETERY);
             toggle_spritesheet_scene(rpg, true, SC_VICTORY_CEMETERY);
         }
     }
     else
         ia_executioner(rpg);
-    if (rpg->boss_stats.status == ST_IDLE)
-        animate_idle_executioner(rpg);
-    if (rpg->boss_stats.status == ST_ATTACK_1)
-            animate_attack_1_executioner(rpg);
-    if (rpg->boss_stats.status == ST_ATTACK_2)
-            animate_attack_2_executioner(rpg);
-    if (rpg->boss_stats.status == ST_DIE)
-            animate_die_executioner(rpg);
+    switch_status(rpg);
 }

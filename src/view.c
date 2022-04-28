@@ -9,6 +9,7 @@
 
 void set_view(rpg_t *rpg, sfVector2f view_pos)
 {
+    rpg->begin.view.center = view_pos;
     sfView_setCenter(rpg->begin.view.view, view_pos);
     sfRenderWindow_setView(rpg->begin.window, rpg->begin.view.view);
 }
