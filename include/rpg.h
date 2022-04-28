@@ -19,7 +19,8 @@
     display_custom_skins, back_button, button_next_grotte, nothing, \
     nothing, buttun_resume_game, buttun_option_game, buttun_leave_game, \
     nothing, nothing, nothing, nothing, \
-    nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
+    nothing, nothing, nothing, nothing, nothing, nothing, nothing,  \
+    button_toggle_fullscreen, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \

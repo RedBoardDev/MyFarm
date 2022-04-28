@@ -64,6 +64,7 @@ typedef struct {
     view_t view;
     fps_inde_t fps;
     fps_disp_t fps_disp;
+    bool fullscreen;
 } beginning_t;
 
 typedef struct {

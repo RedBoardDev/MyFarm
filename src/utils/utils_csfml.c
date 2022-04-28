@@ -16,11 +16,27 @@ sfUint8 *my_framebuffer_create(void)
 void init_csfml(beginning_t *begin)
 {
     sfVideoMode mode = {WIDTH, HEIGHT, 32};
+
+    begin->fullscreen = true;
     begin->window = sfRenderWindow_create(mode, "My RPG",
     sfClose | sfResize | sfFullscreen, NULL);
     begin->framebuffer = my_framebuffer_create();
     begin->texture = sfTexture_create(WIDTH, HEIGHT);
     begin->sprite = sfSprite_create();
+}
+
+void re_create_window(rpg_t *rpg, bool fullscreen)
+{
+    sfVideoMode mode = {WIDTH, HEIGHT, 32};
+
+    sfRenderWindow_close(rpg->begin.window);
+    sfRenderWindow_destroy(rpg->begin.window);
+    if (fullscreen)
+        rpg->begin.window = sfRenderWindow_create(mode, "My RPG",
+        sfClose | sfResize | sfFullscreen, NULL);
+    else
+        rpg->begin.window = sfRenderWindow_create(mode, "My RPG",
+        sfClose | sfResize, NULL);
 }
 
 sfInt64 get_clock_time(sfClock *clock)

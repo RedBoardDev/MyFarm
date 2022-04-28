@@ -54,6 +54,7 @@ void display_custom_skins(rpg_t *rpg);
 void how_play(rpg_t *rpg);
 void back_button(rpg_t *rpg);
 void button_next_grotte(rpg_t *rpg);
+void button_toggle_fullscreen(rpg_t *rpg);
 void menu_pause(rpg_t *rpg);
 void buttun_resume_game(rpg_t *rpg);
 void buttun_option_game(rpg_t *rpg);
@@ -96,6 +97,7 @@ void draw_all(rpg_t *rpg);
 // utils
 void clean_window(beginning_t *begin, sfColor color);
 void init_csfml(beginning_t *beginning);
+void re_create_window(rpg_t *rpg, bool fullscreen);
 void destroy_all(rpg_t *rpg);
 int my_rand(int min, int max);
 bool check_mouse_on_one_button_int(sfVector2i pos, sfFloatRect collision);
@@ -198,6 +200,7 @@ void teleport_tente(rpg_t *rpg);
 int get_current_screen(rpg_t *rpg);
 
 void stop_all_sounds(rpg_t *rpg);
+
 // fps
 void draw_fps(rpg_t *rpg);
 int get_fps(rpg_t *rpg);
