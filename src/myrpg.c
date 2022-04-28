@@ -16,31 +16,6 @@ int get_current_screen(rpg_t *rpg)
     return (-1);
 }
 
-static void move_sound_box(rpg_t *rpg)
-{
-    int pos_x = rpg->all_events.mouse.pos.x;
-
-    if (!rpg->sound.volume_active)
-        return;
-    if (pos_x >= 200 && pos_x <= 708) {
-        rpg->spritesheet[rpg->sound.volume_active].pos.x = pos_x;
-        if (rpg->sound.volume_active == SP_SOUND_SLIDER_MUSIC) {
-            rpg->sound.volume_music = (pos_x - 200) / 5.05;
-            for (int i = 0; i <= SOUND_DIE_PLAYER; ++i)
-                sfSound_setVolume(rpg->sound.sound_list[i].sound,
-                rpg->sound.volume_effect);
-        }
-        else if (rpg->sound.volume_active == SP_SOUND_SLIDER_EFFECT) {
-            rpg->sound.volume_music = (pos_x - 200) / 5.05;
-            for (int i = SOUND_MENU; i < NBR_SOUND; ++i)
-                sfSound_setVolume(rpg->sound.sound_list[i].sound,
-                rpg->sound.volume_music);
-        }
-    }
-    rpg->sound.volume_music < 1 ? rpg->sound.volume_music = 0 : 0;
-    rpg->sound.volume_effect < 1 ? rpg->sound.volume_effect = 0 : 0;
-}
-
 static void big_loop(rpg_t *rpg, sfColor *oui)
 {
     set_view(rpg, rpg->begin.view.center);

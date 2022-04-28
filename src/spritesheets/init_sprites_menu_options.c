@@ -42,15 +42,15 @@ void init_buttuns_option_menu_3(spritesheet_t *spritesheet)
 
 void init_buttuns_option_menu_2(spritesheet_t *spritesheet)
 {
-    set_one_sprite("assets/img/menu/SoundButton.png",
+    set_one_sprite("assets/img/soundbox/SoundButton.png",
     &spritesheet[SP_SOUND_SLIDER_MUSIC], (init_sprite_t){{WIDTH / 4.3, HEIGHT
     / 2}, {0.55, 0.55}, {0, 0, 155, 154}, .clickable = true, .active = false,
     .change_sprite_on_mouse = false});
-    set_one_sprite("assets/img/menu/SoundBar.png",
+    set_one_sprite("assets/img/soundbox/SoundBar.png",
     &spritesheet[SP_SOUNDBAR_MUSIC], (init_sprite_t){{WIDTH / 4.3, HEIGHT / 2},
     {0.35, 0.35}, {0, 0, 1516, 121}, .clickable = false, .active = false,
     .change_sprite_on_mouse = false});
-    set_one_sprite("assets/img/menu/Sound.png",
+    set_one_sprite("assets/img/soundbox/Sound.png",
     &spritesheet[SP_SOUND_MUSIC], (init_sprite_t){{WIDTH / 30, HEIGHT / 2},
     {0.3, 0.3}, {0, 0, 300, 260}, .clickable = true, .active = false,
     .change_sprite_on_mouse = false});
@@ -63,15 +63,15 @@ void init_buttuns_option_menu_2(spritesheet_t *spritesheet)
 
 void init_buttuns_option_menu(spritesheet_t *spritesheet)
 {
-    set_one_sprite("assets/img/menu/SoundButton.png",
+    set_one_sprite("assets/img/soundbox/SoundButton.png",
     &spritesheet[SP_SOUND_SLIDER_EFFECT], (init_sprite_t){{WIDTH / 4.3,
     HEIGHT / 3}, {0.55, 0.55}, {0, 0, 155, 154}, .clickable = true,
     .active = false, .change_sprite_on_mouse = false});
-    set_one_sprite("assets/img/menu/SoundBar.png",
+    set_one_sprite("assets/img/soundbox/SoundBar.png",
     &spritesheet[SP_SOUNDBAR_EFFECT], (init_sprite_t){{WIDTH / 4.3, HEIGHT / 3},
     {0.35, 0.35}, {0, 0, 1516, 121}, .clickable = false, .active = false,
     .change_sprite_on_mouse = false});
-    set_one_sprite("assets/img/menu/Sound.png",
+    set_one_sprite("assets/img/soundbox/Sound.png",
     &spritesheet[SP_SOUND_EFFECT], (init_sprite_t){{WIDTH / 30, HEIGHT / 3},
     {0.3, 0.3}, {0, 0, 300, 260}, .clickable = true, .active = false,
     .change_sprite_on_mouse = false});

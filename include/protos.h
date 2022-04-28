@@ -128,6 +128,9 @@ void play_sound(sfSound *sound, float volume);
 void create_sound(char *filepath, bool loop, sound_list_t *sound_list);
 void destroy_sound(sfSound *sound, sfSoundBuffer *sound_buffer);
 void play_main_sound(rpg_t *rpg);
+void move_sound_box(rpg_t *rpg);
+void button_toggle_sound_effect(rpg_t *rpg);
+void button_toggle_sound_music(rpg_t *rpg);
 
 //view
 void set_view(rpg_t *rpg, sfVector2f view_pos);
