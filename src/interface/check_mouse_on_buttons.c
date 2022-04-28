@@ -36,7 +36,8 @@ void check_one_button(rpg_t *rpg, int i)
     if (rpg->spritesheet[i].active && rpg->spritesheet[i].clickable &&
     rpg->spritesheet[i].change_sprite_on_mouse) {
         collision = sfSprite_getGlobalBounds(rpg->spritesheet[i].sprite);
-        if (check_mouse_on_one_button_float(rpg->all_events.mouse.pos_view, collision)) {
+        if (check_mouse_on_one_button_float(rpg->all_events.mouse.pos_view,
+        collision)) {
             rpg->spritesheet[i].rect.top = (rpg->all_events.mouse.left) ?
             rpg->spritesheet[i].rect.height * 2 :
             rpg->spritesheet[i].rect.height;
