@@ -16,14 +16,6 @@ int get_current_screen(rpg_t *rpg)
     return (-1);
 }
 
-int get_fps(rpg_t *rpg)
-{
-    rpg->begin.fps_disp.time = get_clock_time(rpg->begin.fps_disp.clock);
-    rpg->begin.fps_disp.fps = 1 / (rpg->begin.fps_disp.time / 1000000);
-    sfClock_restart(rpg->begin.fps_disp.clock);
-    return (rpg->begin.fps_disp.fps);
-}
-
 static void move_sound_box(rpg_t *rpg)
 {
     int pos_x = rpg->all_events.mouse.pos.x;
@@ -64,7 +56,7 @@ static void big_loop(rpg_t *rpg, sfColor *oui)
     draw_all(rpg);
 }
 
-void myrpg(void)
+void myrpg(int sound)
 {
     rpg_t *rpg = malloc(sizeof(rpg_t));
     sfColor oui = {255, 0, 0, 255};
@@ -72,6 +64,10 @@ void myrpg(void)
     const sfUint8 *pixels = sfImage_getPixelsPtr(img);
 
     init_all(rpg);
+    if (sound == 0) {
+        rpg->sound.volume_music = 0;
+        rpg->sound.volume_effect = 0;
+    }
     if (!rpg->begin.window || !rpg->begin.framebuffer)
         return;
     sfWindow_setFramerateLimit((sfWindow *)rpg->begin.window, 0);
