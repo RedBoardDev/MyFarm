@@ -74,7 +74,7 @@ void animate_boss_grotte(rpg_t *rpg)
         rpg->spritesheet[SP_BOSS_GOLEM].pos);
         if (rpg->spritesheet[SP_BOSS_GOLEM].rect.left >= 300 &&
         rpg->spritesheet[SP_BOSS_GOLEM].rect.top == 800) {
-            rpg->spritesheet[SP_BACKGROUND_VICRORY_GROTTE].pos =
+            rpg->spritesheet[SP_BACKGROUND_VICTORY_GROTTE].pos =
             rpg->screen[SC_VICTORY_GROTTE].view_pos;
             rpg->spritesheet[SP_NEXT_GROTTE].pos = (sfVector2f)
             {rpg->screen[SC_VICTORY_GROTTE].view_pos.x + 148,

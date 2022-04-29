@@ -26,7 +26,7 @@ static void init_boss_cemetery(spritesheet_t *spritesheet)
     (init_sprite_t){{384, 1581 + 80}, {1.5, 1.5}, {0, 0, 100, 100},
     .clickable = true, .active = false, .change_sprite_on_mouse = false});
     set_one_sprite("assets/img/boss/victory_grotte.png",
-    &spritesheet[SP_BACKGROUND_VICRORY_GROTTE],
+    &spritesheet[SP_BACKGROUND_VICTORY_GROTTE],
     (init_sprite_t){{384, 1581}, {0.5, 0.5}, {0, 0, 1200, 675},
     .clickable = false, .active = false, .change_sprite_on_mouse = false});
     set_one_sprite("assets/img/boss/button_next_grotte.png",

@@ -21,5 +21,5 @@ void init_quests(rpg_t *rpg)
     rpg->quest[QUEST_SELLER].scale = (sfVector2f){0.08, 0.08};
     rpg->quest[QUEST_SELLER].dialog =
     create_text((init_text_t){30, "\0", sfBlack,
-    {1020, 40}, "assets/fonts/NotoSerif-Regular.ttf"});
+    {1015, 35}, "assets/fonts/NotoSerif-Regular.ttf"});
 }
