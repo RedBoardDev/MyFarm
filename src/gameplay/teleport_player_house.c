@@ -40,11 +40,13 @@ void teleport_tente(rpg_t *rpg)
 
 void teleport_jail(rpg_t *rpg)
 {
+    printf("%0.0f %0.0f\n", rpg->spritesheet[rpg->player_stats.skin].pos.x, rpg->spritesheet[rpg->player_stats.skin].pos.y);
     if (rpg->screen[SC_MAIN_MAP].active) {
+        set_view(rpg, rpg->screen[SC_JAIL].view_pos);
         toggle_spritesheet_scene(rpg, false, SC_MAIN_MAP);
-        toggle_spritesheet_scene(rpg, true, SC_BASE);
+        toggle_spritesheet_scene(rpg, true, SC_JAIL);
     } else {
-        toggle_spritesheet_scene(rpg, false, SC_BASE);
+        toggle_spritesheet_scene(rpg, false, SC_JAIL);
         toggle_spritesheet_scene(rpg, true, SC_MAIN_MAP);
     }
 }

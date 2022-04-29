@@ -94,6 +94,7 @@ enum screens {
     SC_VICTORY_GROTTE,
     SC_GROTTE,
     SC_TAVERNE,
+    SC_JAIL,
     SC_TENTE,
     SC_OPTION,
     SC_INVENTORY,

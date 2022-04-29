@@ -31,7 +31,7 @@ void init_spritesheets_rooms(spritesheet_t *spritesheet)
     .clickable = false, .active = false, .change_sprite_on_mouse = false});
     set_one_sprite("assets/img/house/background_jail.png",
     &spritesheet[SP_BACKGROUND_JAIL],
-    (init_sprite_t){{WIDTH / 2, HEIGHT / 2}, {1, 1}, {0, 0, 640, 360},
+    (init_sprite_t){{1716, 1742}, {1, 1}, {0, 0, 768, 432},
     .clickable = false, .active = false, .change_sprite_on_mouse = false});
     set_one_sprite("assets/img/donjons/background_grotte.png",
     &spritesheet[SP_BACKGROUND_GROTTE],

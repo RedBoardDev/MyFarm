@@ -17,7 +17,6 @@ SP_MINIMAP, SP_MINIMAP_LAYER, -1};
 const int screen_base[] = {SP_BACKGROUND_SC_BASE, SELECTED_PLAYER,  \
 SP_CURSOR, -1};
 const int screen_inventory[] = {SP_INVENTORY, SP_CURSOR, -1};
-const int screen_jail[] = {SP_BACKGROUND_JAIL, SELECTED_PLAYER, SP_CURSOR, -1};
 const int screen_how_play[] = {SP_BACKGROUND_HOW_PLAY, SP_BACK, SP_CURSOR, -1};
 const int screen_pause_menu[] = {SP_RESUME, SP_OPTION, SP_LEAVE_GAME, \
 SP_CURSOR, -1};
@@ -43,6 +42,8 @@ const int screen_tente[] = {SP_BACKGROUND_TENTE, SELECTED_PLAYER,   \
 SP_NPC_SOLDIER, SP_CURSOR, -1};
 const int screen_taverne[] = {SP_BACKGROUND_TAVERNE, SELECTED_PLAYER,   \
 SP_NPC_SELLER, SP_CURSOR, -1};
+
+const int screen_jail[] = {SP_BACKGROUND_JAIL, SELECTED_PLAYER, -1};
 
 static void init_screen_norme(rpg_t *rpg)
 {
@@ -81,6 +82,12 @@ void init_screens(rpg_t *rpg)
     .view_pos = {SPAWN_X - 30, SPAWN_Y - 170}, .view_zoom = 0.4, screen_base};
     rpg->screen[SC_INVENTORY] = (screen_t){.active = false,
     .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0.4, screen_inventory};
+
+
+    rpg->screen[SC_JAIL] = (screen_t){.active = false,
+    .view_pos = {1716, 1742}, .view_zoom = 0.4, screen_jail};
+
+
     init_screen_norme(rpg);
     for (int i = 0; i < NBR_SC; ++i)
         rpg->screen[i].clock = sfClock_create();
