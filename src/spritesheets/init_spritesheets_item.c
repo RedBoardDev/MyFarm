@@ -22,15 +22,12 @@ void init_spritesheets_food(spritesheet_t *spritesheet)
     (init_sprite_t){{100, 100}, {1, 1}, {0, 0, 33, 48}, true, false, false});
 }
 
-// void init_spritesheets_flask(spritesheet_t *spritesheet)
-// {
-//     set_one_sprite("assets/img/item/flask_attack.png",
-//     &spritesheet[SP_FLASK_ATTACK],
-//     (init_sprite_t){{100, 100}, {1, 1}, {0, 0, 33, 48}, true, false, false});
-//     set_one_sprite("assets/img/item/flask_attack.png",
-//     &spritesheet[SP_FLASK_ATTACK],
-//     (init_sprite_t){{100, 100}, {1, 1}, {0, 0, 33, 48}, true, false, false})
-// }
+void init_spritesheets_flask(spritesheet_t *spritesheet)
+{
+    set_one_sprite("assets/img/item/flask_attack.png",
+    &spritesheet[SP_FLASK_ATTACK],
+    (init_sprite_t){{100, 100}, {1, 1}, {0, 0, 33, 48}, true, false, false});
+}
 
 void init_spritesheets_armed(spritesheet_t *spritesheet)
 {

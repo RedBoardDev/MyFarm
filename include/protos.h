@@ -88,7 +88,7 @@ void init_all_players(spritesheet_t *spritesheet);
 void init_spritesheets_quests(spritesheet_t *spritesheet);
 void init_quests(rpg_t *rpg);
 void init_spritesheet_gui_shop(spritesheet_t *spritesheet);
-// void init_spritesheets_flask(spritesheet_t *spritesheet);
+void init_spritesheets_flask(spritesheet_t *spritesheet);
 
 // utils draw
 void my_draw_circle(sfUint8 *framebuffer, sfVector2i center, int radius,
@@ -222,5 +222,12 @@ int get_fps(rpg_t *rpg);
 void move_minimap(rpg_t *rpg);
 void attack_of_player(rpg_t *rpg);
 void open_big_maps(rpg_t *rpg);
+
+//shop gui
+void put_shop_gui(rpg_t *rpg);
+void shop_button1(rpg_t *rpg);
+void shop_button2(rpg_t *rpg);
+void shop_button3(rpg_t *rpg);
+void shop_button4(rpg_t *rpg);
 
 #endif
