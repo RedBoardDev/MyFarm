@@ -30,12 +30,13 @@ static void draw_spritesheets(beginning_t *begin, spritesheet_t *spritesheet)
             spritesheet[i].pos);
 }
 
-void draw_inventory(inventory_t inventory, beginning_t *begin,
+void draw_inventory(inventory_t inventory,
 spritesheet_t *spritesheet, rpg_t *rpg)
 {
     int enum_sprite_place = 0;
 
-    write_text(begin->window, inventory.money);
+    for (int i = SP_ITEM_SHOVEL; i <= SP_ITEM_BEETS; ++i)
+        rpg->spritesheet[i].active = false;
     for (int i = 0; i < 12; ++i) {
         enum_sprite_place = inventory.inventory_case[i].item_spritesheet;
         if (enum_sprite_place >= SP_ITEM_SHOVEL
@@ -54,6 +55,8 @@ void draw_all_text(rpg_t *rpg)
         draw_text_fps_settings(rpg);
     if (rpg->params.show_fps)
         draw_fps(rpg);
+    if (rpg->screen[SC_INVENTORY].active)
+        write_text(rpg->begin.window, rpg->player_stats.inventory.money);
 }
 
 void draw_all(rpg_t *rpg)
@@ -63,16 +66,12 @@ void draw_all(rpg_t *rpg)
     rpg->begin.framebuffer, WIDTH, HEIGHT, 0, 0);
     sfRenderWindow_drawSprite(rpg->begin.window,
     rpg->begin.sprite, NULL);
-    for (int i = SP_ITEM_SHOVEL; i <= SP_ITEM_BEETS; ++i)
-        rpg->spritesheet[i].active = false;
     if (rpg->screen[SC_INVENTORY].active)
-        draw_inventory(rpg->player_stats.inventory,
-        &rpg->begin, rpg->spritesheet, rpg);
+        draw_inventory(rpg->player_stats.inventory, rpg->spritesheet, rpg);
     draw_spritesheets(&rpg->begin, rpg->spritesheet);
     draw_all_text(rpg);
     if (rpg->spritesheet[SP_CURSOR].active)
         draw_one_sprite(&rpg->begin, rpg->spritesheet[SP_CURSOR].sprite,
         rpg->spritesheet[SP_CURSOR].rect, rpg->spritesheet[SP_CURSOR].pos);
     sfRenderWindow_display(rpg->begin.window);
-    // printf("%f - %f\n", rpg->spritesheet[SP_CURSOR].pos.x, rpg->spritesheet[SP_CURSOR].pos.y);
 }

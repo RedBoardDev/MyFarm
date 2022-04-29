@@ -34,6 +34,8 @@ void manage_inventory(rpg_t *rpg)
     box_inventory(rpg, &rpg->player_stats.inventory);
     if (rpg->all_events.e) {
         rpg->all_events.e = false;
+        for (int i = SP_ITEM_SHOVEL; i <= SP_ITEM_BEETS; ++i)
+            rpg->spritesheet[i].active = false;
         rpg->screen[SC_INVENTORY].active = !status;
         toggle_spritesheet_scene(rpg, !status, SC_INVENTORY);
     }
