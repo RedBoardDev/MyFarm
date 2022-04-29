@@ -87,6 +87,7 @@ void init_spritesheets_food(spritesheet_t *spritesheet);
 void init_all_players(spritesheet_t *spritesheet);
 void init_spritesheets_quests(spritesheet_t *spritesheet);
 void init_quests(rpg_t *rpg);
+void init_spritesheet_gui_shop(spritesheet_t *spritesheet);
 
 // utils draw
 void my_draw_circle(sfUint8 *framebuffer, sfVector2i center, int radius,

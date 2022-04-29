@@ -61,3 +61,10 @@ void init_spritesheet_inventory(spritesheet_t *spritesheet)
     (init_sprite_t){{WIDTH / 2, HEIGHT / 2}, {1, 1}, {0, 0, 742, 314},
     .clickable = false, .active = false, .change_sprite_on_mouse = false});
 }
+
+void init_spritesheet_gui_shop(spritesheet_t *spritesheet)
+{
+    set_one_sprite("assets/img/menu/gui_shop.png", &spritesheet[SP_GUI_SHOP],
+    (init_sprite_t){{700, 160}, {0.8, 0.8}, {0, 0, 400, 490},
+    .clickable = false, .active = false, .change_sprite_on_mouse = false});
+}

@@ -26,7 +26,6 @@ typedef struct {
     int money;
     float speed;
     float life;
-    float mana;
     int damage;
     int knowledge;
     bool attack;
