@@ -60,6 +60,7 @@ SRC_FILES	=	events/events	\
 				interface/functions_pointers/choose_skin2	\
 				interface/functions_pointers/button_soundbar	\
 				interface/check_click_buttons	\
+				interface/check_click_items_inv	\
 				interface/check_mouse_on_buttons	\
 				interface/inventory	\
 				interface/menu_pause	\

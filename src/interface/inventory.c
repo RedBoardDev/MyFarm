@@ -13,10 +13,10 @@ static void box_inventory(rpg_t *rpg, inventory_t *inventory)
 
     if (!rpg->screen[SC_INVENTORY].active)
         return;
-    inventory->inventory_case[0].pos.x = pos_inv.x - 170;
-    inventory->inventory_case[0].pos.y = pos_inv.y + 25;
-    inventory->inventory_case[1].pos.x = pos_inv.x - 105;
-    inventory->inventory_case[1].pos.y = pos_inv.y + 25;
+    inventory->inventory_case[0].pos.x = pos_inv.x - 180 + 18;
+    inventory->inventory_case[0].pos.y = pos_inv.y + 25 + 18;
+    inventory->inventory_case[1].pos.x = pos_inv.x - 105 + 18;
+    inventory->inventory_case[1].pos.y = pos_inv.y + 25 + 18;
     for (int i = 2, y = 0; y < 3; ++y) {
         for (int x = 0; x < 3; ++x, ++i) {
             inventory->inventory_case[i].pos.x = (pos_inv.x + 14) + 75 * x;
