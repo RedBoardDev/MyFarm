@@ -42,7 +42,6 @@ void draw_text_fps_settings(rpg_t *rpg)
     else if (rpg->params.index_fps < 0)
         rpg->params.index_fps = array_len(fps_settings) - 1;
     sfText_setString(rpg->params.fps_text, fps_settings[rpg->params.index_fps]);
-
     char_size = sfText_getCharacterSize(rpg->params.fps_text);
     origin.x = (my_strlen(fps_settings[rpg->params.index_fps]) * char_size) / 4;
     origin.y = char_size / 2;
