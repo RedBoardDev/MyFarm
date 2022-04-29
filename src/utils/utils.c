@@ -50,3 +50,11 @@ int get_size_file(char *path)
     stat(path, &stats);
     return (stats.st_size);
 }
+
+int array_len(const char **arr)
+{
+    int i = 0;
+
+    for (; arr[i] != NULL; ++i);
+    return (i);
+}

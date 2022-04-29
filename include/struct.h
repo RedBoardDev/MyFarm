@@ -192,6 +192,8 @@ typedef struct {
     bool show_fps;
     bool dark_mode;
     int fps;
+    int index_fps;
+    sfText *fps_text;
 } params_t;
 
 typedef struct {
