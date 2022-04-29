@@ -65,6 +65,6 @@ void init_spritesheet_inventory(spritesheet_t *spritesheet)
 void init_spritesheet_gui_shop(spritesheet_t *spritesheet)
 {
     set_one_sprite("assets/img/menu/gui_shop.png", &spritesheet[SP_GUI_SHOP],
-    (init_sprite_t){{700, 160}, {0.8, 0.8}, {0, 0, 400, 490},
+    (init_sprite_t){{700, 160}, {1, 1}, {0, 0, 400, 490},
     .clickable = false, .active = false, .change_sprite_on_mouse = false});
 }
