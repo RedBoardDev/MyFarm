@@ -11,7 +11,6 @@ void move_player_and_view_horizontal(rpg_t *rpg, sfImage *image,
 sfVector2f pos_player, bool move_view)
 {
     sfColor color;
-
     if (rpg->all_events.right || rpg->all_events.d) {
         color = get_color_from_player(image,
         (sfVector2f){pos_player.x + 2, pos_player.y});
@@ -30,13 +29,13 @@ sfVector2f pos_player, bool move_view)
         if (color.r != 255)
             rpg->spritesheet[rpg->player_stats.skin].pos.x -= SPEED_PLAYER;
     }
+    set_view(rpg, rpg->begin.view.center);
 }
 
 void move_player_and_view_vertical(rpg_t *rpg, sfImage *image,
 sfVector2f pos_player, bool move_view)
 {
     sfColor color;
-
     if (rpg->all_events.up || rpg->all_events.z) {
         color = get_color_from_player(image,
         (sfVector2f){pos_player.x, pos_player.y - 2});
@@ -55,4 +54,5 @@ sfVector2f pos_player, bool move_view)
         if (color.r != 255)
             rpg->spritesheet[rpg->player_stats.skin].pos.y += SPEED_PLAYER;
     }
+    set_view(rpg, rpg->begin.view.center);
 }

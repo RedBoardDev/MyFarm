@@ -15,13 +15,13 @@ void return_home(rpg_t *rpg)
     rpg->player_stats.speed = 1.0;
     rpg->player_stats.life = 20.0;
     move_life_bar(rpg, rpg->player_stats.life * 5);
-    rpg->begin.view.center = rpg->screen[SC_MAIN_MAP].view_pos;
+    set_view(rpg, rpg->screen[SC_MAIN_MAP].view_pos);
     for (int i = 0; i < NBR_SP; ++i)
         rpg->spritesheet[i].active = false;
     for (int i = 0; i < NBR_SC; ++i)
         rpg->screen[i].active = false;
     toggle_spritesheet_scene(rpg, true, SC_MAIN_MAP);
-    rpg->begin.view.center = (sfVector2f){SPAWN_X, SPAWN_Y};
+    set_view(rpg, (sfVector2f){SPAWN_X, SPAWN_Y});
     rpg->spritesheet[rpg->player_stats.skin].pos =
     (sfVector2f){SPAWN_X, SPAWN_Y};
 }

@@ -12,7 +12,7 @@ static void teleport_grotte(rpg_t *rpg)
     if (rpg->screen[SC_MAIN_MAP].active) {
         rpg->boss_stats.life = 20;
         rpg->spritesheet[rpg->player_stats.skin].pos.x = 444 - 200;
-        rpg->begin.view.center = rpg->screen[SC_GROTTE].view_pos;
+        set_view(rpg, rpg->screen[SC_GROTTE].view_pos);
         toggle_spritesheet_scene(rpg, false, SC_MAIN_MAP);
         toggle_spritesheet_scene(rpg, true, SC_GROTTE);
         stop_sound(rpg->sound.sound_list[SOUND_MAIN].sound);
@@ -24,7 +24,7 @@ static void teleport_grotte(rpg_t *rpg)
 static void teleport_cemetery(rpg_t *rpg)
 {
     if (rpg->screen[SC_MAIN_MAP].active) {
-        rpg->begin.view.center = rpg->screen[SC_CEMETERY].view_pos;
+        set_view(rpg, rpg->screen[SC_CEMETERY].view_pos);
         rpg->boss_stats.life = 20;
         toggle_spritesheet_scene(rpg, false, SC_MAIN_MAP);
         toggle_spritesheet_scene(rpg, true, SC_CEMETERY);
@@ -34,13 +34,13 @@ static void teleport_cemetery(rpg_t *rpg)
 static void teleport_taverne(rpg_t *rpg)
 {
     if (rpg->screen[SC_MAIN_MAP].active) {
-        rpg->begin.view.center = rpg->screen[SC_TAVERNE].view_pos;
+        set_view(rpg, rpg->screen[SC_TAVERNE].view_pos);
         toggle_spritesheet_scene(rpg, false, SC_MAIN_MAP);
         toggle_spritesheet_scene(rpg, true, SC_TAVERNE);
     } else {
         rpg->spritesheet[rpg->player_stats.skin].pos =
         rpg->screen[SC_MAIN_MAP].view_pos;
-        rpg->begin.view.center = rpg->screen[SC_MAIN_MAP].view_pos;
+        set_view(rpg, rpg->screen[SC_MAIN_MAP].view_pos);
         toggle_spritesheet_scene(rpg, false, SC_TAVERNE);
         toggle_spritesheet_scene(rpg, true, SC_MAIN_MAP);
     }

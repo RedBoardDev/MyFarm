@@ -64,11 +64,11 @@ void init_all(rpg_t *rpg)
     init_imgs(rpg);
     init_screens(rpg);
     rpg->spritesheet = malloc(sizeof(spritesheet_t) * NBR_SP);
-    init_view(rpg);
     init_spritesheets(rpg->spritesheet);
     init_sounds(rpg);
     init_params(rpg);
     init_csfml(&rpg->begin);
+    init_view(rpg);
     init_player_boss_stats(&rpg->player_stats, &rpg->boss_stats);
     init_quests(rpg);
     init_inventory(&rpg->player_stats.inventory, rpg);

@@ -11,5 +11,5 @@ void init_view(rpg_t *rpg)
 {
     rpg->begin.view.view =
     sfView_createFromRect((sfFloatRect){0, 0, 1920, 1080});
-    rpg->begin.view.center = rpg->screen[SC_MENU].view_pos;
+    set_view(rpg, rpg->screen[SC_MENU].view_pos);
 }

@@ -33,7 +33,7 @@ void launch_game(rpg_t *rpg)
 {
     rpg->spritesheet[rpg->player_stats.skin].pos =
     (sfVector2f){SPAWN_X, SPAWN_Y};
-    rpg->begin.view.center = (sfVector2f){SPAWN_X, SPAWN_Y};
+    set_view(rpg, (sfVector2f){SPAWN_X, SPAWN_Y});
     set_player(rpg);
     stop_all_sounds(rpg);
     play_main_sound(rpg);
@@ -47,4 +47,3 @@ void launch_game(rpg_t *rpg)
     }
     toggle_spritesheet_scene(rpg, true, SC_MAIN_MAP);
 }
-
