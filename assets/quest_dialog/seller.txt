@@ -1,4 +1,2 @@
-N: Greetings !|What do you want bebou ?
-P:I will need|a sword to fight.
-N:There is one in|the prison, you should|go and see.
+N: Greetings !|What do you|want bebou ?
 F

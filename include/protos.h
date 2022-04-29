@@ -217,5 +217,6 @@ int get_fps(rpg_t *rpg);
 
 void move_minimap(rpg_t *rpg);
 void attack_of_player(rpg_t *rpg);
+void open_big_maps(rpg_t *rpg);
 
 #endif
