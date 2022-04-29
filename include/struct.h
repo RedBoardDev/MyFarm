@@ -8,34 +8,7 @@
 #ifndef STRUCT_H
     #define STRUCT_H
 
-    #include <SFML/Graphics/Export.h>
-    #include <SFML/Graphics.h>
-    #include <SFML/Audio.h>
-    #include <sys/stat.h>
-    #include <stdbool.h>
-    #include <stdlib.h>
-    #include <unistd.h>
-    #include <fcntl.h>
-    #include <stdio.h>
-    #include <stdio.h>
-    #include <math.h>
-
-typedef struct {
-    sfVector2f pos;
-    sfVector2f scale;
-    sfIntRect rect;
-    bool clickable;
-    bool active;
-    bool change_sprite_on_mouse;
-} init_sprite_t;
-
-typedef struct {
-    int size;
-    char *str;
-    sfColor color;
-    sfVector2f pos;
-    char *filepath_font;
-} init_text_t;
+    #include "structs_utils.h"
 
 typedef struct {
     sfClock *clock;
@@ -55,17 +28,6 @@ typedef struct {
     sfView *view;
     sfVector2f center;
 } view_t;
-
-typedef struct {
-    sfRenderWindow *window;
-    sfUint8 *framebuffer;
-    sfTexture *texture;
-    sfSprite *sprite;
-    view_t view;
-    fps_inde_t fps;
-    fps_disp_t fps_disp;
-    const sfUint8 *pixels;
-} beginning_t;
 
 typedef struct {
     bool left;
@@ -195,6 +157,17 @@ typedef struct {
     int index_fps;
     sfText *fps_text;
 } params_t;
+
+typedef struct {
+    sfRenderWindow *window;
+    sfUint8 *framebuffer;
+    sfTexture *texture;
+    sfSprite *sprite;
+    view_t view;
+    fps_inde_t fps;
+    fps_disp_t fps_disp;
+    const sfUint8 *pixels;
+} beginning_t;
 
 typedef struct {
     beginning_t begin;
