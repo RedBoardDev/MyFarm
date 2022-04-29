@@ -135,6 +135,7 @@ enum sounds {
 enum utilitaire {
     SELECTED_PLAYER = -10,
     CURSOR,
+    INFIN = 2147483647
 };
 
 enum quests {

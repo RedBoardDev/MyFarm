@@ -42,6 +42,11 @@ static bool check_click_one_button(rpg_t *rpg, int i)
 
 void check_click_buttons(rpg_t *rpg)
 {
+    put_back_in_inventory(rpg);
+    for (int i = SP_ITEM_SHOVEL; rpg->all_events.mouse.left &&
+    i <= SP_ITEM_BEETS; ++i)
+        if (check_click_items_inventory(rpg, i))
+            return;
     if (!rpg->all_events.mouse.left_released)
         return;
     for (int i = 0; i < NBR_SP; ++i)

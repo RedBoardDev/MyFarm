@@ -32,5 +32,6 @@
     // #define SPEED_PLAYER 4
     #define SPEED_PLAYER 1.5
     #define SECOND_TO_MICRO(x) x * 1000000
+    #define SQUARE(x) (x) * (x)
 
 #endif
