@@ -48,3 +48,12 @@ void manage_inventory(rpg_t *rpg)
         my_itoa(rpg->player_stats.money));
     }
 }
+
+void add_item_inventory(rpg_t *rpg, int item)
+{
+    for (int i = 2; i < 11; ++i)
+        if (rpg->player_stats.inventory.inventory_case[i].
+        item_spritesheet == -1)
+            rpg->player_stats.inventory.inventory_case[i].
+            item_spritesheet = item;
+}

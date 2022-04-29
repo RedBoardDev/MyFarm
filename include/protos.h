@@ -159,6 +159,7 @@ void manage_inventory(rpg_t *rpg);
 void init_inventory(inventory_t *inventory, rpg_t *rpg);
 void put_back_in_inventory(rpg_t *rpg);
 bool check_click_items_inventory(rpg_t *rpg, int i);
+void add_item_inventory(rpg_t *rpg, int item);
 
 //quests
 void quest_soldiers(rpg_t *rpg);
