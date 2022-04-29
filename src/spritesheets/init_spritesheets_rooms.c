@@ -21,6 +21,10 @@ static void init_spritesheets_rooms_norme(spritesheet_t *spritesheet)
     &spritesheet[SP_BACKGROUND_TAVERNE],
     (init_sprite_t){{850, 356 - ((432 - 50) / 2)}, {1, 1}, {0, 0, 768, 432},
     .clickable = false, .active = false, .change_sprite_on_mouse = false});
+    set_one_sprite("assets/img/house/maps_taverne.png",
+    &spritesheet[SP_MAPS_TAVERNE],
+    (init_sprite_t){{701, 236}, {1, 1}, {0, 0, 56, 34},
+    .clickable = true, .active = false, .change_sprite_on_mouse = false});
 }
 
 void init_spritesheets_rooms(spritesheet_t *spritesheet)
