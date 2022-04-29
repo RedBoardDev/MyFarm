@@ -82,12 +82,8 @@ void init_screens(rpg_t *rpg)
     .view_pos = {SPAWN_X - 30, SPAWN_Y - 170}, .view_zoom = 0.4, screen_base};
     rpg->screen[SC_INVENTORY] = (screen_t){.active = false,
     .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0.4, screen_inventory};
-
-
     rpg->screen[SC_JAIL] = (screen_t){.active = false,
-    .view_pos = {1716, 1742}, .view_zoom = 0.4, screen_jail};
-
-
+    .view_pos = {1716 - 250, 1742 - 200}, .view_zoom = 0.4, screen_jail};
     init_screen_norme(rpg);
     for (int i = 0; i < NBR_SC; ++i)
         rpg->screen[i].clock = sfClock_create();
