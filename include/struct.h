@@ -185,6 +185,8 @@ typedef struct {
     sfText *dialog;
     sfClock *clock_chat;
     bool speaker;
+    sfVector2f pos_dialog;
+    sfVector2f scale;
 } quest_t;
 
 typedef struct {

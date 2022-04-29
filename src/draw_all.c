@@ -71,4 +71,5 @@ void draw_all(rpg_t *rpg)
         draw_one_sprite(&rpg->begin, rpg->spritesheet[SP_CURSOR].sprite,
         rpg->spritesheet[SP_CURSOR].rect, rpg->spritesheet[SP_CURSOR].pos);
     sfRenderWindow_display(rpg->begin.window);
+    printf("%f - %f\n", rpg->spritesheet[SP_CURSOR].pos.x, rpg->spritesheet[SP_CURSOR].pos.y);
 }
