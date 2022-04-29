@@ -23,7 +23,8 @@ static void player_rush_to_golem(rpg_t *rpg)
         if (check) {
             rpg->boss_stats.life -= 2;
             rpg->boss_stats.life <= 0 ?
-            rpg->spritesheet[SP_BOSS_GOLEM].rect.left = 0 : 0;
+            (rpg->spritesheet[SP_BOSS_GOLEM].rect.left = 0,
+            rpg->player_stats.money += 24) : 0;
         }
     }
 }

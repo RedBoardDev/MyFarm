@@ -40,11 +40,10 @@ void manage_inventory(rpg_t *rpg)
         toggle_spritesheet_scene(rpg, !status, SC_INVENTORY);
     }
     if (rpg->screen[SC_INVENTORY].active) {
-        rpg->player_stats.money = 1;
         rpg->spritesheet[SP_INVENTORY].pos = rpg->begin.view.center;
         sfText_setPosition(rpg->player_stats.inventory.money,
-        (sfVector2f){rpg->spritesheet[SP_INVENTORY].pos.x - 130,
-        rpg->spritesheet[SP_INVENTORY].pos.y + 102});
+        (sfVector2f){rpg->spritesheet[SP_INVENTORY].pos.x - 80,
+        rpg->spritesheet[SP_INVENTORY].pos.y + 98});
         sfText_setString(rpg->player_stats.inventory.money,
         my_itoa(rpg->player_stats.money));
     }
