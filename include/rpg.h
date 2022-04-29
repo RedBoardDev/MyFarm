@@ -20,7 +20,8 @@
     display_custom_skins, back_button, button_next_grotte, nothing, \
     nothing, button_resume_game, button_option_game, button_leave_game, \
     nothing, button_toggle_sound_effect, nothing, nothing, \
-    nothing, button_toggle_sound_music, nothing, nothing, nothing, nothing, nothing,  \
+    nothing, button_toggle_sound_music, nothing, nothing, button_left_fps,  \
+    button_right_fps, nothing,  \
     button_toggle_fullscreen, button_toggle_dark_mode, button_toggle_show_fps, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \

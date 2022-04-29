@@ -7,6 +7,9 @@
 
 #include "../include/rpg.h"
 
+const char *fps_settings[] = {"Uncapped", "30", "60", "120", "144", "240",
+"360", NULL};
+
 void draw_fps(rpg_t *rpg)
 {
     float zoom = get_zoom(rpg->begin.view.view);
@@ -27,6 +30,25 @@ void draw_fps(rpg_t *rpg)
     sfText_setScale(rpg->begin.fps_disp.legende, scale);
     write_text(rpg->begin.window, rpg->begin.fps_disp.fps_text);
     write_text(rpg->begin.window, rpg->begin.fps_disp.legende);
+}
+
+void draw_text_fps_settings(rpg_t *rpg)
+{
+    unsigned int char_size = 0;
+    sfVector2f origin = {0, 0};
+
+    if (rpg->params.index_fps >= array_len(fps_settings))
+        rpg->params.index_fps = 0;
+    else if (rpg->params.index_fps < 0)
+        rpg->params.index_fps = array_len(fps_settings) - 1;
+    sfText_setString(rpg->params.fps_text, fps_settings[rpg->params.index_fps]);
+    char_size = sfText_getCharacterSize(rpg->params.fps_text);
+    origin.x = (my_strlen(fps_settings[rpg->params.index_fps]) * char_size) / 4;
+    origin.y = char_size / 2;
+    sfText_setOrigin(rpg->params.fps_text, origin);
+    write_text(rpg->begin.window, rpg->params.fps_text);
+    rpg->params.fps = my_atoi(fps_settings[rpg->params.index_fps]);
+    sfRenderWindow_setFramerateLimit(rpg->begin.window, rpg->params.fps);
 }
 
 int get_fps(rpg_t *rpg)

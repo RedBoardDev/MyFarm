@@ -50,6 +50,9 @@ static void init_params(rpg_t *rpg)
     rpg->params.show_fps = true;
     rpg->params.dark_mode = true;
     rpg->params.fps = 0;
+    rpg->params.index_fps = 0;
+    rpg->params.fps_text = create_text((init_text_t){230, "Uncapped",
+    sfBlack, {WIDTH / 2 + 403, HEIGHT / 2 - 190}, "assets/fonts/Sriracha-Regular.ttf"});
 }
 
 void init_all(rpg_t *rpg)

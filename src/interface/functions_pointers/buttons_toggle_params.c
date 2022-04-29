@@ -44,3 +44,13 @@ void button_toggle_show_fps(rpg_t *rpg)
         rpg->spritesheet[SP_BUTTON_ON_OFF_FPS].rect.left = 0;
     }
 }
+
+void button_left_fps(rpg_t *rpg)
+{
+    --rpg->params.index_fps;
+}
+
+void button_right_fps(rpg_t *rpg)
+{
+    ++rpg->params.index_fps;
+}
