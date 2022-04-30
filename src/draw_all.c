@@ -68,6 +68,11 @@ void draw_all(rpg_t *rpg)
     rpg->begin.sprite, NULL);
     if (rpg->screen[SC_INVENTORY].active)
         draw_inventory(rpg->player_stats.inventory, rpg->spritesheet, rpg);
+    if (rpg->screen[SC_MAIN_MAP].active
+    && check_if_in_inventory(rpg, SP_ITEM_PRISONER_PEE) == -1)
+        rpg->spritesheet[SP_ITEM_PRISONER_PEE].active = true;
+    else if (!rpg->screen[SC_INVENTORY].active)
+        rpg->spritesheet[SP_ITEM_PRISONER_PEE].active = false;
     draw_spritesheets(&rpg->begin, rpg->spritesheet);
     draw_all_text(rpg);
     if (rpg->spritesheet[SP_CURSOR].active)

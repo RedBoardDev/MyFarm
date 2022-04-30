@@ -1,4 +1,7 @@
-N: Greetings !|What do you want ?
+N:Hello RedBoard!|What do you want ?
 P:I will need|a sword to fight.
-N:There is one in|the prison, you should|go and see.
+N:I'll give you some|in exchange for|a jar of|prison pee.
+P:Where can I|find it?
+N:Look in the cell|from outside...
+W:SP_ITEM_BEETS
 F

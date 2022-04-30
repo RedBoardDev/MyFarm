@@ -20,6 +20,9 @@ void init_spritesheets_food(spritesheet_t *spritesheet)
     (init_sprite_t){{100, 100}, {1, 1}, {0, 0, 27, 33}, true, false, false});
     set_one_sprite("assets/img/item/beets.png", &spritesheet[SP_ITEM_BEETS],
     (init_sprite_t){{100, 100}, {1, 1}, {0, 0, 33, 48}, true, false, false});
+    set_one_sprite("assets/img/item/prisoners_pee.png",
+    &spritesheet[SP_ITEM_PRISONER_PEE],
+    (init_sprite_t){{1130, 1670}, {1, 1}, {0, 0, 22, 18}, true, false, false});
 }
 
 void init_spritesheets_flask(spritesheet_t *spritesheet)
