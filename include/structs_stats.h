@@ -27,7 +27,6 @@ typedef struct {
     float speed;
     float life;
     int damage;
-    int knowledge;
     bool attack;
     sfClock *last_damage;
     inventory_t inventory;

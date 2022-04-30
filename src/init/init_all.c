@@ -17,7 +17,6 @@ boss_stats_t *boss_stats)
     player_stats->speed = 1.0;
     player_stats->life = 20.0;
     player_stats->damage = 1;
-    player_stats->knowledge = 1;
     player_stats->last_damage = sfClock_create();
     boss_stats->damage_executioner = 2;
     boss_stats->damage_golem = 10;

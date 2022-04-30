@@ -64,7 +64,25 @@ void init_spritesheet_inventory(spritesheet_t *spritesheet)
 
 void init_spritesheet_gui_shop(spritesheet_t *spritesheet)
 {
-    set_one_sprite("assets/img/menu/gui_shop.png", &spritesheet[SP_GUI_SHOP],
+    set_one_sprite("assets/img/menu/shop/gui_shop.png",
+    &spritesheet[SP_GUI_SHOP],
     (init_sprite_t){{700, 160}, {0.8, 0.8}, {0, 0, 400, 490},
     .clickable = false, .active = false, .change_sprite_on_mouse = false});
+
+    set_one_sprite("assets/img/menu/shop/button_flask_life.png",
+    &spritesheet[SP_SHOP_BUTTON1],
+    (init_sprite_t){{700, 90}, {0.8, 0.8}, {0, 0, 344, 216 / 3},
+    .clickable = true, .active = false, .change_sprite_on_mouse = true});
+    set_one_sprite("assets/img/menu/shop/button_flask_speed.png",
+    &spritesheet[SP_SHOP_BUTTON2],
+    (init_sprite_t){{700, 162}, {0.8, 0.8}, {0, 0, 344, 216 / 3},
+    .clickable = true, .active = false, .change_sprite_on_mouse = true});
+    set_one_sprite("assets/img/menu/shop/button_flask_attack.png",
+    &spritesheet[SP_SHOP_BUTTON3],
+    (init_sprite_t){{700, 235}, {0.8, 0.8}, {0, 0, 344, 216 / 3},
+    .clickable = true, .active = false, .change_sprite_on_mouse = true});
+    set_one_sprite("assets/img/menu/shop/button_flask_drunk.png",
+    &spritesheet[SP_SHOP_BUTTON4],
+    (init_sprite_t){{700, 304}, {0.8, 0.8}, {0, 0, 344, 216 / 3},
+    .clickable = true, .active = false, .change_sprite_on_mouse = true});
 }
