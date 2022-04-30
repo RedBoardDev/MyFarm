@@ -83,6 +83,7 @@ void init_spritesheets_npc(spritesheet_t *spritesheet);
 void init_spritesheets_armed(spritesheet_t *spritesheet);
 void init_buttons_pause_menu(spritesheet_t *spritesheet);
 void init_buttons_option_menu(spritesheet_t *spritesheet);
+void button_option_main_menu(rpg_t *rpg);
 void init_bosses(spritesheet_t *spritesheet);
 void init_spritesheets_food(spritesheet_t *spritesheet);
 void init_all_players(spritesheet_t *spritesheet);

@@ -22,4 +22,8 @@ void init_sounds(rpg_t *rpg)
     false, &rpg->sound.sound_list[SOUND_DIE_PLAYER]);
     create_sound("assets/sounds/main_sound.ogg",
     true, &rpg->sound.sound_list[SOUND_MAIN]);
+    create_sound("assets/sounds/launch_weapon_player.ogg",
+    false, &rpg->sound.sound_list[SOUND_LAUNCH_WEAPON_PLAYER]);
+    create_sound("assets/sounds/golem_death.ogg",
+    false, &rpg->sound.sound_list[SOUND_DEATH_GOLEM]);
 }

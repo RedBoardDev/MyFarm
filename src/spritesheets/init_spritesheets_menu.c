@@ -13,11 +13,17 @@ void init_buttons_menu(spritesheet_t *spritesheet)
     (init_sprite_t){{WIDTH / 2, HEIGHT / 2.28}, {1, 1}, {0, 0, 156, 94},
     .clickable = true, .active = true, .change_sprite_on_mouse = true});
     set_one_sprite("assets/img/menu/button_custom.png", &spritesheet[SP_CUSTOM],
-    (init_sprite_t){{WIDTH / 2, HEIGHT / 1.84}, {1, 1}, {0, 0, 494, 94},
+    (init_sprite_t){{WIDTH / 2, HEIGHT / 2.28 + 115 * 2}, {1, 1}, {0, 0, 494, 94},
     .clickable = true, .active = true, .change_sprite_on_mouse = true});
     set_one_sprite("assets/img/menu/button_quit.png", &spritesheet[SP_QUIT],
-    (init_sprite_t){{WIDTH / 2, HEIGHT / 1.54}, {1, 1}, {0, 0, 404, 94},
+    (init_sprite_t){{WIDTH / 2, HEIGHT / 2.28 + 115 * 3}, {1, 1}, {0, 0, 404, 94},
     .clickable = true, .active = true, .change_sprite_on_mouse = true});
+    set_one_sprite("assets/img/menu/options_main_menu.png",
+    &spritesheet[SP_OPTIONS_MAIN_MENU],
+    (init_sprite_t){{WIDTH / 2, HEIGHT / 2.28 + 115}, {1, 1},
+    {0, 0, 255, 94}, .clickable = true, .active = true,
+    .change_sprite_on_mouse = true});
+
     set_one_sprite("assets/img/menu/button_back.png", &spritesheet[SP_BACK],
     (init_sprite_t){{100, 70}, {1, 1}, {0, 0, 156, 94},
     .clickable = true, .active = false, .change_sprite_on_mouse = true});

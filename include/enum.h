@@ -48,6 +48,7 @@ enum sprites {
     SP_PLAY,
     SP_QUIT,
     SP_CUSTOM,
+    SP_OPTIONS_MAIN_MENU,
     SP_BACK,
     SP_NEXT_GROTTE,
     SP_BUBBLE_CHAT,
@@ -147,6 +148,8 @@ enum cases_inv {
 };
 
 enum sounds {
+    SOUND_LAUNCH_WEAPON_PLAYER,
+    SOUND_DEATH_GOLEM,
     SOUND_WALK,
     SOUND_DIE_PLAYER,
     SOUND_MENU,

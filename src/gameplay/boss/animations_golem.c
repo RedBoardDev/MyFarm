@@ -27,6 +27,10 @@ void animate_die_golem(rpg_t *rpg)
     if (rpg->spritesheet[SP_BOSS_GOLEM].rect.top != 700 &&
     rpg->spritesheet[SP_BOSS_GOLEM].rect.top != 800)
         rpg->spritesheet[SP_BOSS_GOLEM].rect.top = 700;
+    if (rpg->spritesheet[SP_BOSS_GOLEM].rect.top == 700 &&
+    rpg->spritesheet[SP_BOSS_GOLEM].rect.left == 0)
+        play_sound(rpg->sound.sound_list[SOUND_DEATH_GOLEM].sound,
+        rpg->sound.volume_effect);
     if (time >= SECOND_TO_MICRO(0.16)) {
         rpg->spritesheet[SP_BOSS_GOLEM].rect.left += 100;
         sfClock_restart(rpg->spritesheet[SP_BOSS_GOLEM].c_anim);

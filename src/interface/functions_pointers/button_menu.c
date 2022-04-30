@@ -47,3 +47,10 @@ void launch_game(rpg_t *rpg)
     }
     toggle_spritesheet_scene(rpg, true, SC_MAIN_MAP);
 }
+
+void button_option_main_menu(rpg_t *rpg)
+{
+    toggle_spritesheet_scene(rpg, false, SC_MENU);
+    toggle_spritesheet_scene(rpg, true, SC_OPTION);
+    set_view(rpg, rpg->screen[SC_OPTION].view_pos);
+}
