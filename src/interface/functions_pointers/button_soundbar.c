@@ -35,7 +35,7 @@ static void modify_sound_volume(rpg_t *rpg, int type, int volume)
             sfSound_setVolume(rpg->sound.sound_list[i].sound,
             rpg->sound.volume_music);
     } else {
-        rpg->sound.volume_music = volume;
+        rpg->sound.volume_effect = volume;
         for (int i = 0; i <= SOUND_DIE_PLAYER; ++i)
             sfSound_setVolume(rpg->sound.sound_list[i].sound,
             rpg->sound.volume_effect);

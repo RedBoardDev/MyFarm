@@ -34,6 +34,8 @@ void attack_of_player(rpg_t *rpg)
     if (rpg->player_stats.attack)
         player_rush_to_golem(rpg);
     else if (rpg->all_events.enter && !rpg->player_stats.attack) {
+        play_sound(rpg->sound.sound_list[SOUND_LAUNCH_WEAPON_PLAYER].sound,
+        rpg->sound.volume_effect);
         rpg->player_stats.attack = true;
         rpg->spritesheet[SP_ITEM_HOE].pos =
         rpg->spritesheet[rpg->player_stats.skin].pos;

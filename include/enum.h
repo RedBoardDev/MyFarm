@@ -147,6 +147,8 @@ enum cases_inv {
 };
 
 enum sounds {
+    SOUND_LAUNCH_WEAPON_PLAYER,
+    SOUND_DEATH_GOLEM,
     SOUND_WALK,
     SOUND_DIE_PLAYER,
     SOUND_MENU,
