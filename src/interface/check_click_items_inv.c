@@ -7,15 +7,6 @@
 
 #include "../../include/rpg.h"
 
-static int check_if_in_inventory(rpg_t *rpg, int i)
-{
-    for (int a = 0; a < 11; ++a) {
-        if (rpg->player_stats.inventory.inventory_case[a].item_spritesheet == i)
-            return (a);
-    }
-    return (-1);
-}
-
 static int get_nearest_index_inventory(rpg_t *rpg)
 {
     float nearest_distance = INFIN;
@@ -24,11 +15,11 @@ static int get_nearest_index_inventory(rpg_t *rpg)
     sfVector2f pos_mouse = {0, 0};
     sfVector2f pos_case = {0, 0};
 
-    for (int i = 0; i < 12; ++i) {
+    for (int i = 0; i < 11; ++i) {
         pos_mouse = rpg->all_events.mouse.pos_view;
         pos_case = rpg->player_stats.inventory.inventory_case[i].pos;
         calc = sqrt((SQUARE(pos_case.x - pos_mouse.x)) + (SQUARE(pos_case.y - pos_mouse.y)));
-        if (calc < nearest_distance) {
+        if (calc < nearest_distance && rpg->player_stats.inventory.inventory_case[i].item_spritesheet == -1) {
             nearest_distance = calc;
             index = i;
         }

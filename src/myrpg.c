@@ -45,9 +45,8 @@ void myrpg(int sound)
     rpg_t *rpg = malloc(sizeof(rpg_t));
     sfColor oui = {255, 0, 0, 255};
     sfImage *img = sfImage_createFromFile("assets/img/logo.png");
-    const sfUint8 *pixels = sfImage_getPixelsPtr(img);
 
-    rpg->begin.pixels = pixels;
+    rpg->begin.pixels = sfImage_getPixelsPtr(img);
     init_all(rpg);
     if (sound == 0) {
         rpg->sound.volume_music = 0;
@@ -66,5 +65,6 @@ void myrpg(int sound)
         clean_window(&rpg->begin, sfBlack);
         big_loop(rpg, &oui);
     }
+    sfImage_destroy(img);
     destroy_all(rpg);
 }
