@@ -27,7 +27,8 @@ static void ia_executioner_rush(rpg_t *rpg)
         if (time_last_damage >= SECOND_TO_MICRO(0.5))
             remove_life_player(rpg, 1);
         if (rpg->all_events.enter && rpg->boss_stats.life >= 0) {
-            --rpg->boss_stats.life;
+            rpg->boss_stats.life -= (rpg->player_stats.inventory.inventory_case
+            [I_ATTACK].item_spritesheet == SP_ITEM_SWORD ? 1 : 0);
             rpg->boss_stats.life <= 0 ? (add_money(rpg, 24),
             add_item_inventory(rpg, SP_ITEM_HAMMER)) : 0;
             rpg->all_events.enter = false;

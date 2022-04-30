@@ -43,7 +43,7 @@ static bool check_click_one_button(rpg_t *rpg, int i)
 void check_click_buttons(rpg_t *rpg)
 {
     put_back_in_inventory(rpg);
-    if (rpg->player_stats.inventory.inventory_case[11].item_spritesheet != -1) {
+    if (rpg->player_stats.inventory.inventory_case[I_CASE_MOVE].item_spritesheet != -1) {
         check_click_items_inventory(rpg, rpg->player_stats.inventory.
         inventory_case[11].item_spritesheet);
         return;

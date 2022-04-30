@@ -130,6 +130,21 @@ enum bleu_maisons {
     NBR_B
 };
 
+enum cases_inv {
+    I_ATTACK,
+    I_ARMOR,
+    I_CASE_1,
+    I_CASE_2,
+    I_CASE_3,
+    I_CASE_4,
+    I_CASE_5,
+    I_CASE_6,
+    I_CASE_7,
+    I_CASE_8,
+    I_CASE_9,
+    I_CASE_MOVE
+};
+
 enum sounds {
     SOUND_WALK,
     SOUND_DIE_PLAYER,
