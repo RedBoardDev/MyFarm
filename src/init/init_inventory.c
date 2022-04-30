@@ -16,11 +16,11 @@ void init_inventory(inventory_t *inventory, rpg_t *rpg)
     {825, 760}, "assets/fonts/Sriracha-Regular.ttf"});
     inventory->inventory_case[0].pos = rpg->spritesheet[SP_INVENTORY].pos;
     // inventory->inventory_case[I_ATTACK].item_spritesheet = SP_ITEM_SWORD;
-    inventory->inventory_case[2].item_spritesheet = SP_ITEM_PATATO;
-    // inventory->inventory_case[3].item_spritesheet = SP_ITEM_SHOVEL;
-    // inventory->inventory_case[4].item_spritesheet = SP_ITEM_HOE;
-    // inventory->inventory_case[5].item_spritesheet = SP_ITEM_HAMMER;
-    // inventory->inventory_case[6].item_spritesheet = SP_ITEM_FISHING_ROD;
-    // inventory->inventory_case[8].item_spritesheet = SP_ITEM_CARROT;
-    // inventory->inventory_case[9].item_spritesheet = SP_ITEM_TOMATE;
+    inventory->inventory_case[I_CASE_1].item_spritesheet = SP_ITEM_PATATO;
+    inventory->inventory_case[I_CASE_2].item_spritesheet = SP_ITEM_SHOVEL;
+    // inventory->inventory_case[I_CASE_3].item_spritesheet = SP_ITEM_HOE;
+    // inventory->inventory_case[I_CASE_4].item_spritesheet = SP_ITEM_HAMMER;
+    // inventory->inventory_case[I_CASE_5].item_spritesheet = SP_ITEM_FISHING_ROD;
+    // inventory->inventory_case[I_CASE_6].item_spritesheet = SP_ITEM_CARROT;
+    // inventory->inventory_case[I_CASE_7].item_spritesheet = SP_ITEM_TOMATE;
 }
