@@ -24,7 +24,7 @@ static void player_rush_to_golem(rpg_t *rpg)
             rpg->boss_stats.life -= 2;
             rpg->boss_stats.life <= 0 ?
             (rpg->spritesheet[SP_BOSS_GOLEM].rect.left = 0,
-            rpg->player_stats.money += 24) : 0;
+            add_money(rpg, 24), add_item_inventory(rpg, SP_ITEM_PATATO)) : 0;
         }
     }
 }
