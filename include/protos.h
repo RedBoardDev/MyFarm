@@ -161,6 +161,7 @@ void init_inventory(inventory_t *inventory, rpg_t *rpg);
 void put_back_in_inventory(rpg_t *rpg);
 bool check_click_items_inventory(rpg_t *rpg, int i);
 void add_item_inventory(rpg_t *rpg, int item);
+int remove_item_inventory(rpg_t *rpg, int item);
 int check_if_in_inventory(rpg_t *rpg, int i);
 
 //quests
@@ -231,5 +232,13 @@ void shop_button1(rpg_t *rpg);
 void shop_button2(rpg_t *rpg);
 void shop_button3(rpg_t *rpg);
 void shop_button4(rpg_t *rpg);
+
+//utils skills
+int add_money(rpg_t *rpg, int nbr);
+int remove_money(rpg_t *rpg, int nbr);
+void add_speed(rpg_t *rpg, int nbr);
+void add_attack(rpg_t *rpg, int nbr);
+void flask_drunk(rpg_t *rpg, int nbr);
+void add_life(rpg_t *rpg, int nbr);
 
 #endif

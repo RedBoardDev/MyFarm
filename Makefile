@@ -72,6 +72,8 @@ SRC_FILES	=	events/events	\
 				utils/utils_quests	\
 				utils/utils_zoom	\
 				utils/utils_csfml	\
+				utils/utils_skills	\
+				utils/utils_skills2	\
 				utils/utils	\
 				clean_window	\
 				destroy_all	\

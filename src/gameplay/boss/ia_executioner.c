@@ -28,7 +28,7 @@ static void ia_executioner_rush(rpg_t *rpg)
             remove_life_player(rpg, 1);
         if (rpg->all_events.enter && rpg->boss_stats.life >= 0) {
             --rpg->boss_stats.life;
-            rpg->boss_stats.life <= 0 ? (rpg->player_stats.money += 24,
+            rpg->boss_stats.life <= 0 ? (add_money(rpg, 24),
             add_item_inventory(rpg, SP_ITEM_HAMMER)) : 0;
             rpg->all_events.enter = false;
         }
