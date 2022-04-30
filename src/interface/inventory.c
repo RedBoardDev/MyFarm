@@ -29,7 +29,8 @@ void manage_inventory(rpg_t *rpg)
 {
     bool status = rpg->screen[SC_INVENTORY].active;
 
-    if (!rpg->screen[SC_MAIN_MAP].active)
+    if (!rpg->screen[SC_MAIN_MAP].active && !rpg->screen[SC_CEMETERY].active &&
+    !rpg->screen[SC_GROTTE].active)
         return;
     box_inventory(rpg, &rpg->player_stats.inventory);
     if (rpg->all_events.e) {
