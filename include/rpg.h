@@ -18,7 +18,7 @@
     shop_button2, shop_button3, shop_button4, how_play, quest_seller, quest_soldiers, nothing,  \
     skin_blue, skin_brown, skin_cyan, skin_green, skin_grey, skin_pink, \
     skin_red, skin_yellow, nothing, nothing, nothing, launch_game, quit_game, \
-    display_custom_skins, back_button, button_next_grotte, nothing, \
+    display_custom_skins, button_option_main_menu, back_button, button_next_grotte, nothing, \
     nothing, button_resume_game, button_option_game, button_leave_game, \
     nothing, button_toggle_sound_effect, nothing, nothing, \
     nothing, button_toggle_sound_music, nothing, nothing, button_left_fps,  \

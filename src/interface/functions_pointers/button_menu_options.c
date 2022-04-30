@@ -16,7 +16,7 @@ void button_option_game(rpg_t *rpg)
 {
     disable_all_screens_gameplay(rpg);
     toggle_spritesheet_scene(rpg, true, SC_OPTION);
-    sfView_setCenter(rpg->begin.view.view, rpg->screen[SC_OPTION].view_pos);
+    set_view(rpg, rpg->screen[SC_OPTION].view_pos);
 }
 
 void button_leave_game(rpg_t *rpg)

@@ -48,6 +48,7 @@ enum sprites {
     SP_PLAY,
     SP_QUIT,
     SP_CUSTOM,
+    SP_OPTIONS_MAIN_MENU,
     SP_BACK,
     SP_NEXT_GROTTE,
     SP_BUBBLE_CHAT,
