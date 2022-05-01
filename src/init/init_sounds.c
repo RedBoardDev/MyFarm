@@ -9,6 +9,9 @@
 
 void init_sounds(rpg_t *rpg)
 {
+    rpg->sound.volume_music = 50;
+    rpg->sound.volume_effect = 50;
+    rpg->sound.volume_active = false;
     rpg->sound.sound_list = malloc(sizeof(sound_list_t) * NBR_SOUND);
     create_sound("assets/sounds/main.ogg",
     true, &rpg->sound.sound_list[SOUND_MENU]);

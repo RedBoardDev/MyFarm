@@ -13,10 +13,12 @@ void init_buttons_menu(spritesheet_t *spritesheet)
     (init_sprite_t){{WIDTH / 2, HEIGHT / 2.28}, {1, 1}, {0, 0, 156, 94},
     .clickable = true, .active = true, .change_sprite_on_mouse = true});
     set_one_sprite("assets/img/menu/button_custom.png", &spritesheet[SP_CUSTOM],
-    (init_sprite_t){{WIDTH / 2, HEIGHT / 2.28 + 115 * 2}, {1, 1}, {0, 0, 494, 94},
+    (init_sprite_t){{WIDTH / 2, HEIGHT / 2.28 + 115 * 2},
+    {1, 1}, {0, 0, 494, 94},
     .clickable = true, .active = true, .change_sprite_on_mouse = true});
     set_one_sprite("assets/img/menu/button_quit.png", &spritesheet[SP_QUIT],
-    (init_sprite_t){{WIDTH / 2, HEIGHT / 2.28 + 115 * 3}, {1, 1}, {0, 0, 404, 94},
+    (init_sprite_t){{WIDTH / 2, HEIGHT / 2.28 + 115 * 3}, {1, 1},
+    {0, 0, 404, 94},
     .clickable = true, .active = true, .change_sprite_on_mouse = true});
     set_one_sprite("assets/img/menu/options_main_menu.png",
     &spritesheet[SP_OPTIONS_MAIN_MENU],
@@ -74,7 +76,6 @@ void init_spritesheet_gui_shop(spritesheet_t *spritesheet)
     &spritesheet[SP_GUI_SHOP],
     (init_sprite_t){{700, 160}, {0.8, 0.8}, {0, 0, 400, 490},
     .clickable = false, .active = false, .change_sprite_on_mouse = false});
-
     set_one_sprite("assets/img/menu/shop/button_flask_life.png",
     &spritesheet[SP_SHOP_BUTTON1],
     (init_sprite_t){{700, 90}, {0.8, 0.8}, {0, 0, 344, 216 / 3},

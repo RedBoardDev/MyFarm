@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2021
-** project
+** my_rpg
 ** File description:
 ** main.c
 */

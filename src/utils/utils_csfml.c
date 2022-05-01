@@ -51,4 +51,3 @@ sfColor get_color_from_player(sfImage *image, sfVector2f pos)
 {
     return (sfImage_getPixel(image, pos.x, pos.y + 15));
 }
-
