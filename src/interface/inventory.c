@@ -91,3 +91,10 @@ int remove_item_inventory(rpg_t *rpg, int item)
         }
     return (0);
 }
+
+int get_item_inv(rpg_t *rpg, int case_i)
+{
+    if (case_i < 0 || case_i > 11)
+        return (-1);
+    return (rpg->player_stats.inventory.inventory_case[case_i].item_spritesheet);
+}

@@ -165,6 +165,7 @@ bool check_click_items_inventory(rpg_t *rpg, int i);
 void add_item_inventory(rpg_t *rpg, int item);
 int remove_item_inventory(rpg_t *rpg, int item);
 int check_if_in_inventory(rpg_t *rpg, int i);
+int get_item_inv(rpg_t *rpg, int case_i);
 
 //quests
 void quest_soldiers(rpg_t *rpg);

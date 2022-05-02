@@ -41,11 +41,10 @@ sfBool check_collision_hoe_to_golem(rpg_t *rpg)
     sfSprite_getGlobalBounds(rpg->spritesheet[SP_BOSS_GOLEM].sprite);
     sfFloatRect hoe;
 
-    if (rpg->player_stats.inventory.inventory_case[I_ATTACK].
-    item_spritesheet == -1)
+    if (get_item_inv(rpg, I_ATTACK) == -1)
         return (sfFalse);
-    hoe = sfSprite_getGlobalBounds(rpg->spritesheet[rpg->player_stats.
-    inventory.inventory_case[I_ATTACK].item_spritesheet].sprite);
+    hoe = sfSprite_getGlobalBounds(
+    rpg->spritesheet[get_item_inv(rpg, I_ATTACK)].sprite);
     golem.left += 40;
     golem.top += 30;
     golem.height -= 90;

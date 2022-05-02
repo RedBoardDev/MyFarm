@@ -22,11 +22,9 @@ void move_proj_golem(rpg_t *rpg)
 
 void move_proj_player(rpg_t *rpg)
 {
-    int hoe = rpg->player_stats.inventory.inventory_case[I_ATTACK].
-    item_spritesheet;
+    int hoe = get_item_inv(rpg, I_ATTACK);
 
-    if (rpg->player_stats.attack && rpg->player_stats.inventory.inventory_case
-    [I_ATTACK].item_spritesheet != -1) {
+    if (rpg->player_stats.attack && hoe != -1) {
         rpg->spritesheet[hoe].active = true;
         rpg->spritesheet[hoe].pos.x += 3;
         sfSprite_rotate(rpg->spritesheet[hoe].sprite, 10);

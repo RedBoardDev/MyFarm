@@ -10,8 +10,7 @@
 static void player_rush_to_golem(rpg_t *rpg)
 {
     bool check = check_collision_hoe_to_golem(rpg);
-    int hoe = rpg->player_stats.inventory.inventory_case[I_ATTACK].
-    item_spritesheet;
+    int hoe = get_item_inv(rpg, I_ATTACK);
 
     if (check || rpg->spritesheet[hoe].pos.x >=
     rpg->spritesheet[SP_BACKGROUND_GROTTE].pos.x +
@@ -22,7 +21,7 @@ static void player_rush_to_golem(rpg_t *rpg)
         sfSprite_setPosition(rpg->spritesheet[hoe].sprite,
         rpg->spritesheet[hoe].pos);
         rpg->spritesheet[hoe].active = false;
-        if (check) {
+        if (check && hoe != -1) {
             rpg->boss_stats.life -= 2;
             rpg->boss_stats.life <= 0 ?
             (rpg->spritesheet[SP_BOSS_GOLEM].rect.left = 0,
@@ -33,13 +32,11 @@ static void player_rush_to_golem(rpg_t *rpg)
 
 void attack_of_player(rpg_t *rpg)
 {
-    int hoe = rpg->player_stats.inventory.inventory_case[I_ATTACK].
-    item_spritesheet;
+    int hoe = get_item_inv(rpg, I_ATTACK);
 
     if (rpg->player_stats.attack)
         player_rush_to_golem(rpg);
-    else if (rpg->all_events.enter && !rpg->player_stats.attack && rpg->
-    player_stats.inventory.inventory_case[I_ATTACK].item_spritesheet != -1) {
+    else if (rpg->all_events.enter && !rpg->player_stats.attack && hoe != -1) {
         play_sound(rpg->sound.sound_list[SOUND_LAUNCH_WEAPON_PLAYER].sound,
         rpg->sound.volume_effect);
         rpg->player_stats.attack = true;
