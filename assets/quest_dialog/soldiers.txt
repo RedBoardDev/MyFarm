@@ -1,18 +1,10 @@
-N:1
-P:2
-N:3
-W:67
-P:4
-N:5
-F
-
 N:Hello RedBoard!|What do you want ?
 P:I will need|a sword to fight.
 N:I'll give you some|in exchange for|a jar of|prison pee.
 P:Where can I|find it?
 N:Look in the cell|from outside...
-W:67
-P:Tiens connard
-N: Merci fdp, kdo ta sword
-G:
+W:62
+P:Hold, here is|what you were|looking for
+N: Thank you, you|deserve this sword!
+G:66
 F

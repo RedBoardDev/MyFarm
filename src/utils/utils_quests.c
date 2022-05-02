@@ -42,6 +42,11 @@ static int get_argument_dialog(rpg_t *rpg, char *str)
         rpg->quest[QUEST_SOLDIER].active = my_atoi(str);
         return (2);
     }
+    if (str[0] == 'G') {
+        str = &str[2];
+        add_item_inventory(rpg, my_atoi(str));
+        return (2);
+    }
     return (0);
 }
 
@@ -56,7 +61,6 @@ int get_chat_into_file(char *filepath, int quest, rpg_t *rpg)
         sfSprite_scale(rpg->spritesheet[SP_BUBBLE_CHAT].sprite,
         (sfVector2f){-1.f, 1.f});
     lineptr = get_line_into_file(filepath, quest, rpg);
-    printf("%s | ", lineptr);
     ret = get_argument_dialog(rpg, lineptr);
     if (ret == 1)
         return (0);
