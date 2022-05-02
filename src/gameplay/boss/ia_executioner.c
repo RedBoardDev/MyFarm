@@ -32,7 +32,7 @@ static void ia_executioner_rush(rpg_t *rpg)
             rpg->boss_stats.life -= (get_item_inv(rpg, I_ATTACK) ==
             SP_ITEM_SWORD ? 1 : 0);
             rpg->boss_stats.life <= 0 ? (add_money(rpg, 24),
-            add_item_inventory(rpg, SP_ITEM_HAMMER),
+            add_item_inventory(rpg, SP_ITEM_PICKAXE),
             add_item_inventory(rpg, SP_ITEM_TOMATE)) : 0;
             rpg->all_events.enter = false;
         }
