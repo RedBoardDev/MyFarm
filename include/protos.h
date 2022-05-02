@@ -169,11 +169,10 @@ int get_item_inv(rpg_t *rpg, int case_i);
 
 //quests
 void quest_soldiers(rpg_t *rpg);
-void disable_quests(rpg_t *rpg, int quests_enum, bool scale);
-sfBool check_collision_npc(rpg_t *rpg);
-void send_chat_bubble_soldiers(rpg_t *rpg);
 void quest_seller(rpg_t *rpg);
-void send_chat_bubble_seller(rpg_t *rpg);
+sfBool check_collision_npc(rpg_t *rpg);
+void disable_quests(rpg_t *rpg, int quests_enum, bool scale);
+void send_chat_bubble(rpg_t *rpg, char *filepath, int quest_id);
 
 int array_len(const char **arr);
 void draw_text_fps_settings(rpg_t *rpg);
