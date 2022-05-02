@@ -51,8 +51,8 @@ spritesheet_t *spritesheet, rpg_t *rpg)
 
 void draw_all_text(rpg_t *rpg)
 {
-    send_chat_bubble_soldiers(rpg);
-    send_chat_bubble_seller(rpg);
+    send_chat_bubble(rpg, "assets/quest_dialog/soldiers.txt", QUEST_SOLDIER);
+    send_chat_bubble(rpg, "assets/quest_dialog/seller.txt", QUEST_SELLER);
     if (rpg->screen[SC_OPTION].active)
         draw_text_fps_settings(rpg);
     if (rpg->params.show_fps)

@@ -1,2 +1,3 @@
 N: Greetings !|What do you|want bebou ?
+B: I want your|****
 F

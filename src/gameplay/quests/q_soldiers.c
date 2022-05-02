@@ -7,17 +7,16 @@
 
 #include "../../../include/rpg.h"
 
-void send_chat_bubble_soldiers(rpg_t *rpg)
+void send_chat_bubble(rpg_t *rpg, char *filepath, int quest_id)
 {
-    if (rpg->quest[QUEST_SOLDIER].active != 1)
+    if (rpg->quest[quest_id].active != 1)
         return;
-    write_text(rpg->begin.window, rpg->quest[QUEST_SOLDIER].dialog);
-    if (get_clock_time(rpg->quest[QUEST_SOLDIER].clock_chat) >=
+    write_text(rpg->begin.window, rpg->quest[quest_id].dialog);
+    if (get_clock_time(rpg->quest[quest_id].clock_chat) >=
     SECOND_TO_MICRO(2)) {
-        if (get_chat_into_file("assets/quest_dialog/soldiers.txt",
-        QUEST_SOLDIER, rpg) == 0)
-            rpg->quest[QUEST_SOLDIER].active = -1;
-        sfClock_restart(rpg->quest[QUEST_SOLDIER].clock_chat);
+        if (get_chat_into_file(filepath, quest_id, rpg) == 0)
+            rpg->quest[quest_id].active = -1;
+        sfClock_restart(rpg->quest[quest_id].clock_chat);
     }
 }
 
