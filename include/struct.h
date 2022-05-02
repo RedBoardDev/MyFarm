@@ -42,6 +42,7 @@ typedef struct {
 
 typedef struct {
     int step;
+    int active;
     sfText *dialog;
     sfClock *clock_chat;
     bool speaker;
