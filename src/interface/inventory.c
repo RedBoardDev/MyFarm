@@ -81,9 +81,9 @@ void add_item_inventory(rpg_t *rpg, int item)
 
 int remove_item_inventory(rpg_t *rpg, int item)
 {
-    if (check_if_in_inventory(rpg, item) != -1)
+    if (check_if_in_inventory(rpg, item) == -1)
         return (84);
-    for (int i = 2; i < 11; ++i)
+    for (int i = 0; i < 11; ++i)
         if (rpg->player_stats.inventory.inventory_case[i].item_spritesheet ==
         item) {
             rpg->player_stats.inventory.inventory_case[i].item_spritesheet = -1;
@@ -96,5 +96,6 @@ int get_item_inv(rpg_t *rpg, int case_i)
 {
     if (case_i < 0 || case_i > 11)
         return (-1);
-    return (rpg->player_stats.inventory.inventory_case[case_i].item_spritesheet);
+    return (rpg->player_stats.inventory.
+    inventory_case[case_i].item_spritesheet);
 }
