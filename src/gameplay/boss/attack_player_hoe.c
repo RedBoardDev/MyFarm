@@ -21,7 +21,7 @@ static void player_rush_to_golem(rpg_t *rpg)
         sfSprite_setPosition(rpg->spritesheet[hoe].sprite,
         rpg->spritesheet[hoe].pos);
         rpg->spritesheet[hoe].active = false;
-        if (check && hoe != -1) {
+        if (check && hoe == SP_ITEM_HAMMER) {
             rpg->boss_stats.life -= 2;
             rpg->boss_stats.life <= 0 ?
             (rpg->spritesheet[SP_BOSS_GOLEM].rect.left = 0,
