@@ -33,6 +33,10 @@ void init_spritesheets_rooms(spritesheet_t *spritesheet)
     &spritesheet[SP_BACKGROUND_SC_BASE],
     (init_sprite_t){{577 + 700 / 2, 671 + 394 / 2}, {1, 1}, {0, 0, 700, 394},
     .clickable = false, .active = false, .change_sprite_on_mouse = false});
+    set_one_sprite("assets/img/bed_sleep.png",
+    &spritesheet[SP_BED_SLEEP],
+    (init_sprite_t){{1164, 800}, {1, 1}, {0, 0, 96 / 2, 72},
+    .clickable = true, .active = false, .change_sprite_on_mouse = false});
     set_one_sprite("assets/img/house/background_jail.png",
     &spritesheet[SP_BACKGROUND_JAIL],
     (init_sprite_t){{1716 - 250, 1742 - 200}, {1, 1}, {0, 0, 768, 432},

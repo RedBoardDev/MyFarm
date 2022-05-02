@@ -66,6 +66,7 @@ void button_toggle_show_fps(rpg_t *rpg);
 void button_left_fps(rpg_t *rpg);
 void button_right_fps(rpg_t *rpg);
 void click_item_prisoner_pee(rpg_t *rpg);
+void button_bed_saving(rpg_t *rpg);
 
 // init
 void init_all(rpg_t *rpg);

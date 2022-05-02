@@ -15,7 +15,7 @@ SP_PLAYER_PINK, SP_PLAYER_RED, SP_PLAYER_YELLOW, SP_PLAY, SP_CURSOR, -1};
 const int screen_main_map[] = {SP_BACKGROUND_SC_MAIN_MAP, SELECTED_PLAYER,
 SP_MINIMAP, SP_MINIMAP_LAYER, -1};
 const int screen_base[] = {SP_BACKGROUND_SC_BASE, SELECTED_PLAYER,  \
-SP_CURSOR, -1};
+SP_BED_SLEEP, SP_CURSOR, -1};
 const int screen_inventory[] = {SP_INVENTORY, SP_CURSOR, -1};
 const int screen_how_play[] = {SP_BACKGROUND_HOW_PLAY, SP_BACK, SP_CURSOR, -1};
 const int screen_pause_menu[] = {SP_RESUME, SP_OPTION, SP_LEAVE_GAME, \
