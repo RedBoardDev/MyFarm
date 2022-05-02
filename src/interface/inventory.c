@@ -28,7 +28,6 @@ static void box_inventory(rpg_t *rpg, inventory_t *inventory)
 void manage_inventory(rpg_t *rpg)
 {
     bool status = rpg->screen[SC_INVENTORY].active;
-
     if (!rpg->screen[SC_MAIN_MAP].active && !rpg->screen[SC_CEMETERY].active &&
     !rpg->screen[SC_GROTTE].active)
         return;
@@ -62,7 +61,8 @@ int check_if_in_inventory(rpg_t *rpg, int i)
 // static void print_inv(rpg_t *rpg)
 // {
 //     for (int a = 0; a < 11; ++a)
-//         printf("%d ", rpg->player_stats.inventory.inventory_case[a].item_spritesheet);
+//         printf("%d ",
+// rpg->player_stats.inventory.inventory_case[a].item_spritesheet);
 //     printf("\n");
 // }
 
@@ -71,8 +71,10 @@ void add_item_inventory(rpg_t *rpg, int item)
     if (check_if_in_inventory(rpg, item) != -1)
         return;
     for (int i = 2; i < 11; ++i)
-        if (rpg->player_stats.inventory.inventory_case[i].item_spritesheet == -1) {
-            rpg->player_stats.inventory.inventory_case[i].item_spritesheet = item;
+        if (rpg->player_stats.inventory.inventory_case[i].item_spritesheet ==
+        -1) {
+            rpg->player_stats.inventory.inventory_case[i].item_spritesheet =
+            item;
             return;
         }
 }
@@ -82,7 +84,8 @@ int remove_item_inventory(rpg_t *rpg, int item)
     if (check_if_in_inventory(rpg, item) != -1)
         return (84);
     for (int i = 2; i < 11; ++i)
-        if (rpg->player_stats.inventory.inventory_case[i].item_spritesheet == item) {
+        if (rpg->player_stats.inventory.inventory_case[i].item_spritesheet ==
+        item) {
             rpg->player_stats.inventory.inventory_case[i].item_spritesheet = -1;
             return (0);
         }

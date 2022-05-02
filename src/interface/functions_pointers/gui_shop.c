@@ -24,7 +24,7 @@ void put_shop_gui(rpg_t *rpg)
     }
 }
 
-void shop_button1(rpg_t *rpg) //life
+void shop_button1(rpg_t *rpg)
 {
     printf("button1 %d\n", rpg->player_stats.money);
     if (check_if_in_inventory(rpg, SP_ITEM_BEETS) != -1
@@ -34,21 +34,21 @@ void shop_button1(rpg_t *rpg) //life
     }
 }
 
-void shop_button2(rpg_t *rpg) //speed
+void shop_button2(rpg_t *rpg)
 {
     printf("button2 %d\n", rpg->player_stats.money);
     if (remove_money(rpg, 30) != 84)
         add_item_inventory(rpg, SP_FLASK_SPEED);
 }
 
-void shop_button3(rpg_t *rpg) //attack
+void shop_button3(rpg_t *rpg)
 {
     printf("button3 %d\n", rpg->player_stats.money);
     if (remove_money(rpg, 30) != 84)
         add_item_inventory(rpg, SP_FLASK_ATTACK);
 }
 
-void shop_button4(rpg_t *rpg) //drunk
+void shop_button4(rpg_t *rpg)
 {
     printf("button4 %d\n", rpg->player_stats.money);
     if (remove_money(rpg, 30) != 84)

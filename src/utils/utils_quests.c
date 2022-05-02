@@ -58,7 +58,7 @@ int get_chat_into_file(char *filepath, int quest, rpg_t *rpg)
         (sfVector2f){-1.f, 1.f});
     lineptr = get_line_into_file(filepath, quest, rpg);
     rpg->quest[quest].speaker = lineptr[0] == 'N' ? 1 : 0;
-    ret = get_argument_dialog(rpg,lineptr);
+    ret = get_argument_dialog(rpg, lineptr);
     if (ret == 1)
         return (0);
     rpg->quest[quest].step += 1;

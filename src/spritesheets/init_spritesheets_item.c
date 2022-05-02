@@ -10,7 +10,8 @@
 void init_spritesheets_food(spritesheet_t *spritesheet)
 {
     set_one_sprite("assets/img/item/carrot.png", &spritesheet[SP_ITEM_CARROT],
-    (init_sprite_t){{400, 400}, {0.9, 0.9}, {0, 0, 45, 42}, true, false, false});
+    (init_sprite_t){{400, 400}, {0.9, 0.9}, {0, 0, 45, 42},
+    true, false, false});
     set_one_sprite("assets/img/item/patato.png", &spritesheet[SP_ITEM_PATATO],
     (init_sprite_t){{100, 100}, {1, 1}, {0, 0, 39, 30}, true, false, false});
     set_one_sprite("assets/img/item/tomate.png", &spritesheet[SP_ITEM_TOMATE],

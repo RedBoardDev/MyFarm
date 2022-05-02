@@ -26,4 +26,3 @@ void skin_green(rpg_t *rpg)
 {
     rpg->player_stats.skin = SP_PLAYER_GREEN;
 }
-
