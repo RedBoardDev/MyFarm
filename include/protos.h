@@ -21,7 +21,7 @@
     #include <math.h>
     #include "struct.h"
 
-void myrpg(int sound);
+void myrpg(bool no_sound, char *file_backup);
 void die(rpg_t *rpg);
 void return_home(rpg_t *rpg);
 void manage_menu(rpg_t *rpg);
@@ -243,5 +243,9 @@ void add_speed(rpg_t *rpg, int nbr);
 void add_attack(rpg_t *rpg, int nbr);
 void flask_drunk(rpg_t *rpg, int nbr);
 void add_life(rpg_t *rpg, int nbr);
+
+// open save
+void save_file(char *filepath, rpg_t *rpg);
+void open_file(char *filepath, rpg_t *rpg);
 
 #endif

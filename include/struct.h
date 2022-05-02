@@ -11,6 +11,13 @@
     #include "structs_stats.h"
 
 typedef struct {
+    bool no_sound;
+    bool help;
+    char *filepath;
+    bool ok;
+} entry_program_t;
+
+typedef struct {
     sfView *view;
     sfVector2f center;
 } view_t;

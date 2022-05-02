@@ -39,8 +39,9 @@ void init_spritesheets_armed(spritesheet_t *spritesheet)
     (init_sprite_t){{100, 100}, {3, 3}, {0, 0, 13, 13}, true, false, false});
     set_one_sprite("assets/img/item/hoe.png", &spritesheet[SP_ITEM_HOE],
     (init_sprite_t){{100, 100}, {2, 2}, {0, 0, 14, 12}, true, false, false});
-    set_one_sprite("assets/img/item/martin.png", &spritesheet[SP_ITEM_HAMMER],
-    (init_sprite_t){{100, 100}, {3, 3}, {0, 0, 15, 15}, true, false, false});
+    set_one_sprite("assets/img/item/pickaxe.png", &spritesheet[SP_ITEM_PICKAXE],
+    (init_sprite_t){{100, 100}, {0.6, 0.6}, {0, 0, 48, 48},
+    true, false, false});
     set_one_sprite("assets/img/item/fishing_rod.png",
     &spritesheet[SP_ITEM_FISHING_ROD],
     (init_sprite_t){{150, 150}, {2, 2}, {0, 0, 16, 15}, true, false, false});

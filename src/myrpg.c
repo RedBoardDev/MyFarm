@@ -32,6 +32,10 @@ static void big_loop(rpg_t *rpg, sfColor *oui)
         set_zoom(rpg->begin.view.view, get_zoom(rpg->begin.view.view) - 0.1);
         rpg->all_events.page_up = false;
     }
+    if (rpg->all_events.ctrl && rpg->all_events.s) {
+        save_file("save", rpg);
+        rpg->all_events.s = false;
+    }
     move_sound_box(rpg);
     move_all_fps_independant(rpg);
     execute_all(rpg);
@@ -40,7 +44,7 @@ static void big_loop(rpg_t *rpg, sfColor *oui)
     draw_all(rpg);
 }
 
-void myrpg(int sound)
+void myrpg(bool no_sound, char *file_backup)
 {
     rpg_t *rpg = malloc(sizeof(rpg_t));
     sfColor oui = {255, 0, 0, 255};
@@ -48,7 +52,7 @@ void myrpg(int sound)
 
     rpg->begin.pixels = sfImage_getPixelsPtr(img);
     init_all(rpg);
-    if (sound == 0) {
+    if (no_sound) {
         rpg->sound.volume_music = 0;
         rpg->sound.volume_effect = 0;
     }
@@ -61,7 +65,13 @@ void myrpg(int sound)
     play_sound(rpg->sound.sound_list[SOUND_MENU].sound,
     rpg->sound.volume_music);
     toggle_cursor(rpg->begin.window, false);
-    toggle_spritesheet_scene(rpg, true, SC_MENU);
+    if (file_backup == NULL)
+        toggle_spritesheet_scene(rpg, true, SC_MENU);
+    else {
+        open_file("save", rpg);
+        re_create_window(rpg, rpg->params.fullscreen);
+        set_view(rpg, rpg->spritesheet[rpg->player_stats.skin].pos);
+    }
     while (sfRenderWindow_isOpen(rpg->begin.window)) {
         clean_window(&rpg->begin, sfBlack);
         big_loop(rpg, &oui);
