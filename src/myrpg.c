@@ -32,6 +32,10 @@ static void big_loop(rpg_t *rpg, sfColor *oui)
         set_zoom(rpg->begin.view.view, get_zoom(rpg->begin.view.view) - 0.1);
         rpg->all_events.page_up = false;
     }
+    if (rpg->all_events.ctrl && rpg->all_events.s) {
+        save_file("save", rpg);
+        rpg->all_events.s = false;
+    }
     move_sound_box(rpg);
     move_all_fps_independant(rpg);
     execute_all(rpg);
@@ -48,6 +52,7 @@ void myrpg(int sound)
 
     rpg->begin.pixels = sfImage_getPixelsPtr(img);
     init_all(rpg);
+    open_file("save", rpg);
     if (sound == 0) {
         rpg->sound.volume_music = 0;
         rpg->sound.volume_effect = 0;

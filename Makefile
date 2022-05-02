@@ -86,6 +86,8 @@ SRC_FILES	=	events/events	\
 				lib_text	\
 				main	\
 				myrpg	\
+				open_file	\
+				save_progress	\
 				set_cursor	\
 				view	\
 
