@@ -61,6 +61,7 @@ void myrpg(int sound)
     play_sound(rpg->sound.sound_list[SOUND_MENU].sound,
     rpg->sound.volume_music);
     toggle_cursor(rpg->begin.window, false);
+    toggle_spritesheet_scene(rpg, true, SC_MENU);
     while (sfRenderWindow_isOpen(rpg->begin.window)) {
         clean_window(&rpg->begin, sfBlack);
         big_loop(rpg, &oui);
