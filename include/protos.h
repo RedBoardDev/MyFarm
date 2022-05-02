@@ -21,7 +21,7 @@
     #include <math.h>
     #include "struct.h"
 
-void myrpg(int sound);
+void myrpg(bool no_sound, char *file_backup);
 void die(rpg_t *rpg);
 void return_home(rpg_t *rpg);
 void manage_menu(rpg_t *rpg);

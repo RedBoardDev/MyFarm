@@ -44,7 +44,7 @@ static void big_loop(rpg_t *rpg, sfColor *oui)
     draw_all(rpg);
 }
 
-void myrpg(int sound)
+void myrpg(bool no_sound, char *file_backup)
 {
     rpg_t *rpg = malloc(sizeof(rpg_t));
     sfColor oui = {255, 0, 0, 255};
@@ -52,8 +52,7 @@ void myrpg(int sound)
 
     rpg->begin.pixels = sfImage_getPixelsPtr(img);
     init_all(rpg);
-    open_file("save", rpg);
-    if (sound == 0) {
+    if (no_sound) {
         rpg->sound.volume_music = 0;
         rpg->sound.volume_effect = 0;
     }
@@ -67,6 +66,7 @@ void myrpg(int sound)
     rpg->sound.volume_music);
     toggle_cursor(rpg->begin.window, false);
     toggle_spritesheet_scene(rpg, true, SC_MENU);
+    // open_file("save", rpg);
     while (sfRenderWindow_isOpen(rpg->begin.window)) {
         clean_window(&rpg->begin, sfBlack);
         big_loop(rpg, &oui);

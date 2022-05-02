@@ -8,6 +8,34 @@
 #include "../include/rpg.h"
 #include <time.h>
 
+char *arg_backup(int ac, char **av, int i)
+{
+    if (i < ac - 1 && av[i + 1][0] != '-')
+        return (av[i + 1]);
+    else
+        return (NULL);
+}
+
+entry_program_t parse_args(int ac, char **av)
+{
+    entry_program_t args = {false, false, NULL, true};
+    bool b = false;
+
+    for (int i = 1; i < ac; ++i) {
+        if (!my_strcmp("-h", av[i]) || !my_strcmp("--help", av[i]))
+            args.help = true;
+        if (!my_strcmp("-s", av[i]) || !my_strcmp("--no-sound", av[i]))
+            args.no_sound = true;
+        if (!my_strcmp("-b", av[i]) || !my_strcmp("--backup", av[i])) {
+            args.filepath = arg_backup(ac, av, i);
+            b = true;
+        }
+    }
+    if (b && args.filepath == NULL)
+        args.ok = false;
+    return (args);
+}
+
 void help(void)
 {
     int size_file = 992;
@@ -27,16 +55,14 @@ void help(void)
 
 int main(int ac, char **av)
 {
-    if (ac == 2 && !my_strcmp("-h", av[1])) {
+    entry_program_t args = parse_args(ac, av);
+
+    if (args.help) {
         help();
         return (0);
     }
-    if (ac == 2 && !my_strcmp("-s", av[1])) {
-        myrpg(0);
-        return (0);
-    }
-    if (ac != 1)
+    if (!args.ok)
         return (84);
-    myrpg(1);
+    myrpg(args.no_sound, args.filepath);
     return (0);
 }
