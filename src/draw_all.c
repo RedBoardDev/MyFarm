@@ -42,6 +42,7 @@ spritesheet_t *spritesheet, rpg_t *rpg)
         if (enum_sprite_place >= SP_ITEM_SHOVEL
         && enum_sprite_place <= SP_ITEM_BEETS) {
             spritesheet[enum_sprite_place].active = true;
+            sfSprite_setRotation(spritesheet[enum_sprite_place].sprite, 0);
             spritesheet[enum_sprite_place].pos = (i == 11 ?
             rpg->all_events.mouse.pos_view : inventory.inventory_case[i].pos);
         }
