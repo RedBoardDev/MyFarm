@@ -65,8 +65,13 @@ void myrpg(bool no_sound, char *file_backup)
     play_sound(rpg->sound.sound_list[SOUND_MENU].sound,
     rpg->sound.volume_music);
     toggle_cursor(rpg->begin.window, false);
-    toggle_spritesheet_scene(rpg, true, SC_MENU);
-    // open_file("save", rpg);
+    if (file_backup == NULL)
+        toggle_spritesheet_scene(rpg, true, SC_MENU);
+    else {
+        open_file("save", rpg);
+        re_create_window(rpg, rpg->params.fullscreen);
+        set_view(rpg, rpg->spritesheet[rpg->player_stats.skin].pos);
+    }
     while (sfRenderWindow_isOpen(rpg->begin.window)) {
         clean_window(&rpg->begin, sfBlack);
         big_loop(rpg, &oui);

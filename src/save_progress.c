@@ -9,12 +9,11 @@
 
 static void save_params(int fd, rpg_t *rpg)
 {
-    write(fd, &rpg->params, sizeof(rpg->params));
-    // write(fd, &rpg->params.fullscreen, sizeof(bool));
-    // write(fd, &rpg->params.show_fps, sizeof(bool));
-    // write(fd, &rpg->params.dark_mode, sizeof(bool));
-    // write(fd, &rpg->params.fps, sizeof(int));
-    // write(fd, &rpg->params.index_fps, sizeof(int));
+    write(fd, &rpg->params.fullscreen, sizeof(bool));
+    write(fd, &rpg->params.show_fps, sizeof(bool));
+    write(fd, &rpg->params.dark_mode, sizeof(bool));
+    write(fd, &rpg->params.fps, sizeof(int));
+    write(fd, &rpg->params.index_fps, sizeof(int));
 }
 
 static void save_screens(int fd, rpg_t *rpg)
@@ -34,7 +33,13 @@ static void save_sounds(int fd, rpg_t *rpg)
 
 static void save_player_stats(int fd, rpg_t *rpg)
 {
-    write(fd, &rpg->player_stats, sizeof(rpg->player_stats));
+    write(fd, &rpg->player_stats.incr_pos, sizeof(sfVector2f));
+    write(fd, &rpg->player_stats.skin, sizeof(int));
+    write(fd, &rpg->player_stats.money, sizeof(int));
+    write(fd, &rpg->player_stats.speed, sizeof(float));
+    write(fd, &rpg->player_stats.life, sizeof(float));
+    write(fd, &rpg->player_stats.damage, sizeof(int));
+    write(fd, &rpg->player_stats.attack, sizeof(bool));
     write(fd, &rpg->spritesheet[rpg->player_stats.skin].pos,
     sizeof(sfVector2f));
     for (int i = 0; i < 12; ++i)
@@ -42,9 +47,25 @@ static void save_player_stats(int fd, rpg_t *rpg)
         item_spritesheet, sizeof(int));
 }
 
+// static void save_boss_stats(int fd, rpg_t *rpg)
+// {
+//     write(fd, &rpg->player_stats.incr_pos, sizeof(sfVector2f));
+//     write(fd, &rpg->player_stats.skin, sizeof(int));
+//     write(fd, &rpg->player_stats.money, sizeof(int));
+//     write(fd, &rpg->player_stats.speed, sizeof(float));
+//     write(fd, &rpg->player_stats.life, sizeof(float));
+//     write(fd, &rpg->player_stats.damage, sizeof(int));
+//     write(fd, &rpg->player_stats.attack, sizeof(bool));
+//     write(fd, &rpg->spritesheet[rpg->player_stats.skin].pos,
+//     sizeof(sfVector2f));
+//     for (int i = 0; i < 12; ++i)
+//         write(fd, &rpg->player_stats.inventory.inventory_case[i].
+//         item_spritesheet, sizeof(int));
+// }
+
 void save_file(char *filepath, rpg_t *rpg)
 {
-    int fd = open(filepath, O_WRONLY | O_CREAT);
+    int fd = open(filepath, O_WRONLY | O_CREAT, 0664);
 
     save_params(fd, rpg);
     save_screens(fd, rpg);
