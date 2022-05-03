@@ -9,8 +9,6 @@
 
 void teleport_base(rpg_t *rpg)
 {
-    // sfVector2f pos = rpg->screen[SC_MAIN_MAP].view_pos;
-
     if (rpg->screen[SC_MAIN_MAP].active) {
         set_view(rpg, rpg->screen[SC_BASE].view_pos);
         toggle_spritesheet_scene(rpg, false, SC_MAIN_MAP);
