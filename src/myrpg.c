@@ -63,7 +63,6 @@ void myrpg(bool no_sound, char *file_backup)
     else {
         open_file("save", rpg);
         re_create_window(rpg, rpg->params.fullscreen);
-        set_view(rpg, rpg->spritesheet[rpg->player_stats.skin].pos);
     }
     while (sfRenderWindow_isOpen(rpg->begin.window)) {
         clean_window(&rpg->begin, sfBlack);
