@@ -44,59 +44,55 @@ const int screen_taverne[] = {SP_BACKGROUND_TAVERNE, SELECTED_PLAYER,   \
 SP_NPC_SELLER, SP_MAPS_TAVERNE, SP_CURSOR, -1};
 const int screen_jail[] = {SP_BACKGROUND_JAIL, SELECTED_PLAYER, -1};
 
+static screen_t init_one_scene(bool active, const int *const_screen,
+sfVector2f view_pos, float view_zoom)
+{
+    screen_t screen;
+
+    screen.active = active;
+    screen.const_screen = const_screen;
+    screen.view_pos = view_pos;
+    screen.view_zoom = view_zoom;
+    return screen;
+}
+
 static void init_screen_norme(rpg_t *rpg)
 {
-    rpg->screen[SC_VICTORY_GROTTE] = (screen_t){.active = false,
-    .view_pos = {444, 1196 + 20}, .view_zoom = 0.4, screen_victory_grotte};
-    rpg->screen[SC_GROTTE] = (screen_t){false,
-    (sfVector2f){444, 1196 + 20}, 0.4, screen_grotte, sfClock_create()
-    };
-    rpg->screen[SC_VICTORY_CEMETERY] = (screen_t){.active = false,
-    .view_pos = {384, 1581}, .view_zoom = 0.4, screen_victory_cemetery
-    };
-    rpg->screen[SC_HOW_PLAY] = (screen_t){.active = false,
-    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 1, screen_how_play
-    };
-    rpg->screen[SC_PAUSE] = (screen_t){.active = false,
-    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0.4, screen_pause_menu
-    };
-    rpg->screen[SC_OPTION] = (screen_t){.active = false,
-    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 1, screen_option_menu
-    };
-    rpg->screen[SC_CEMETERY] = (screen_t){.active = false,
-    .view_pos = {384, 1581}, .view_zoom = 0.4, screen_cemetery
-    };
-    rpg->screen[SC_TENTE] = (screen_t){.active = false,
-    .view_pos = {SPAWN_X - 760, SPAWN_Y - 770},
-    .view_zoom = 0.32, screen_tente
-    };
-    rpg->screen[SC_TAVERNE] = (screen_t){.active = false,
-    .view_pos = {850, 356 - ((432 - 50) / 2)},
-    .view_zoom = 0.4, screen_taverne
-    };
+    rpg->screen[SC_VICTORY_GROTTE] = init_one_scene(false,
+    screen_victory_grotte, (sfVector2f){444, 1196 + 20}, 0.4);
+    rpg->screen[SC_GROTTE] = init_one_scene(false,
+    screen_grotte, (sfVector2f){444, 1196 + 20}, 0.4);
+    rpg->screen[SC_VICTORY_CEMETERY] = init_one_scene(false,
+    screen_victory_cemetery, (sfVector2f){384, 1581}, 0.4);
+    rpg->screen[SC_HOW_PLAY] = init_one_scene(false,
+    screen_how_play, (sfVector2f){WIDTH / 2, HEIGHT / 2}, 1);
+    rpg->screen[SC_PAUSE] = init_one_scene(false,
+    screen_pause_menu, (sfVector2f){WIDTH / 2, HEIGHT / 2}, 0.4);
+    rpg->screen[SC_OPTION] = init_one_scene(false,
+    screen_option_menu, (sfVector2f){WIDTH / 2, HEIGHT / 2}, 1);
+    rpg->screen[SC_CEMETERY] = init_one_scene(false,
+    screen_cemetery, (sfVector2f){384, 1581}, 0.4);
+    rpg->screen[SC_TENTE] = init_one_scene(false,
+    screen_tente, (sfVector2f){SPAWN_X - 760, SPAWN_Y - 770}, 0.32);
+    rpg->screen[SC_TAVERNE] = init_one_scene(false,
+    screen_taverne, (sfVector2f){850, 356 - ((432 - 50) / 2)}, 0.4);
 }
 
 void init_screens(rpg_t *rpg)
 {
     rpg->screen = malloc(sizeof(screen_t) * NBR_SC);
-    rpg->screen[SC_MENU] = (screen_t){.active = true,
-    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 1, screen_menu
-    };
-    rpg->screen[SC_CUSTOM_SKINS] = (screen_t){.active = false,
-    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 1, screen_custom
-    };
-    rpg->screen[SC_MAIN_MAP] = (screen_t){.active = false,
-    .view_pos = {SPAWN_X, SPAWN_Y}, .view_zoom = 0.4, screen_main_map
-    };
-    rpg->screen[SC_BASE] = (screen_t){.active = false,
-    .view_pos = {SPAWN_X - 30, SPAWN_Y - 170}, .view_zoom = 0.4, screen_base
-    };
-    rpg->screen[SC_INVENTORY] = (screen_t){.active = false,
-    .view_pos = {WIDTH / 2, HEIGHT / 2}, .view_zoom = 0.4, screen_inventory
-    };
-    rpg->screen[SC_JAIL] = (screen_t){.active = false,
-    .view_pos = {1716 - 250, 1742 - 200}, .view_zoom = 0.4, screen_jail
-    };
+    rpg->screen[SC_MENU] = init_one_scene(true,
+    screen_menu, (sfVector2f){WIDTH / 2, HEIGHT / 2}, 1);
+    rpg->screen[SC_CUSTOM_SKINS] = init_one_scene(false,
+    screen_custom, (sfVector2f){WIDTH / 2, HEIGHT / 2}, 1);
+    rpg->screen[SC_MAIN_MAP] = init_one_scene(false,
+    screen_main_map, (sfVector2f){SPAWN_X, SPAWN_Y}, 0.4);
+    rpg->screen[SC_BASE] = init_one_scene(false,
+    screen_base, (sfVector2f){SPAWN_X - 30, SPAWN_Y - 170}, 0.4);
+    rpg->screen[SC_INVENTORY] = init_one_scene(false,
+    screen_inventory, (sfVector2f){WIDTH / 2, HEIGHT / 2}, 0.4);
+    rpg->screen[SC_JAIL] = init_one_scene(false,
+    screen_jail, (sfVector2f){1716 - 250, 1742 - 200}, 0.4);
     init_screen_norme(rpg);
     for (int i = 0; i < NBR_SC; ++i)
         rpg->screen[i].clock = sfClock_create();
