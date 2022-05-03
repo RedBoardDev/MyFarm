@@ -96,4 +96,5 @@ void draw_all(rpg_t *rpg)
     if (rpg->spritesheet[SP_CURSOR].active)
         draw_one_sprite(&rpg->begin, rpg->spritesheet[SP_CURSOR].sprite,
         rpg->spritesheet[SP_CURSOR].rect, rpg->spritesheet[SP_CURSOR].pos);
+    sfRenderWindow_display(rpg->begin.window);
 }
