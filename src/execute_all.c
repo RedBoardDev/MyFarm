@@ -63,6 +63,11 @@ static void execute_all_menus(rpg_t *rpg)
     set_view(rpg, rpg->screen[SC_MENU].view_pos);
 }
 
+void execute_main_map(rpg_t *rpg)
+{
+    collition_pee(rpg);
+}
+
 void execute_all(rpg_t *rpg)
 {
     if (is_in_gameplay(rpg))
@@ -75,4 +80,6 @@ void execute_all(rpg_t *rpg)
         execute_grotte(rpg);
     if (rpg->screen[SC_CEMETERY].active)
         execute_cemetery(rpg);
+    if (rpg->screen[SC_MAIN_MAP].active)
+        execute_main_map(rpg);
 }

@@ -7,6 +7,8 @@
 
 #include "../../include/rpg.h"
 
+
+
 static int get_nearest_index_inventory(rpg_t *rpg)
 {
     float nearest_distance = INFIN;

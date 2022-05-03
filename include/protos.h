@@ -171,7 +171,6 @@ int get_item_inv(rpg_t *rpg, int case_i);
 //quests
 void quest_soldiers(rpg_t *rpg);
 void quest_seller(rpg_t *rpg);
-sfBool check_collision_npc(rpg_t *rpg);
 void disable_quests(rpg_t *rpg, int quests_enum, bool scale);
 void send_chat_bubble(rpg_t *rpg, char *filepath, int quest_id);
 
@@ -201,12 +200,14 @@ bool is_in_gameplay(rpg_t *rpg);
 void animate_idle_golem(rpg_t *rpg);
 void animate_die_golem(rpg_t *rpg);
 void animate_attack_proj_golem(rpg_t *rpg);
+void check_rush_to_player_golem(rpg_t *rpg);
 
 // animations executioner
 void animate_attack_1_executioner(rpg_t *rpg);
 void animate_attack_2_executioner(rpg_t *rpg);
 void animate_idle_executioner(rpg_t *rpg);
 void animate_die_executioner(rpg_t *rpg);
+void check_rush_to_player_executiner(rpg_t *rpg);
 
 // move bosses
 void move_proj_golem(rpg_t *rpg);
@@ -221,6 +222,7 @@ void teleport_taverne(rpg_t *rpg);
 int get_current_screen(rpg_t *rpg);
 
 void stop_all_sounds(rpg_t *rpg);
+void collition_pee(rpg_t *rpg);
 
 // fps
 void draw_fps(rpg_t *rpg);
@@ -229,6 +231,8 @@ int get_fps(rpg_t *rpg);
 void move_minimap(rpg_t *rpg);
 void attack_of_player(rpg_t *rpg);
 void open_big_maps(rpg_t *rpg);
+sfBool check_collision_npc(rpg_t *rpg, int enum_npc,
+sfFloatRect offset_collision);
 
 //shop gui
 void put_shop_gui(rpg_t *rpg);

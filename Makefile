@@ -18,11 +18,13 @@ SRC_FILES	=	events/events	\
 				gameplay/boss/animations_executioner	\
 				gameplay/boss/animations_golem	\
 				gameplay/boss/attack_player_hoe	\
+				gameplay/boss/check_rush_to_player	\
 				gameplay/boss/ia_executioner	\
 				gameplay/boss/ia_golem	\
 				gameplay/boss/move_bosses	\
 				gameplay/animate_player	\
 				gameplay/animate_selected_skin	\
+				gameplay/collisions_npc	\
 				gameplay/collisions	\
 				gameplay/minimap	\
 				gameplay/move_all	\
