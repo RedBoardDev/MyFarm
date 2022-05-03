@@ -7,18 +7,6 @@
 
 #include "../include/rpg.h"
 
-void draw_sfimage(sfRenderWindow *window, sfImage *image, sfVector2f pos,
-sfIntRect rect)
-{
-    sfTexture *texture = sfTexture_createFromImage(image, NULL);
-    sfSprite *sprite = sfSprite_create();
-    sfImage_createMaskFromColor(image, (sfColor){0, 0, 0, 100}, 100);
-    sfSprite_setPosition(sprite, pos);
-    sfSprite_setTexture(sprite, texture, sfFalse);
-    sfSprite_setTextureRect(sprite, rect);
-    sfRenderWindow_drawSprite(window, sprite, NULL);
-}
-
 static void draw_spritesheets(beginning_t *begin, spritesheet_t *spritesheet)
 {
     sfVector2i po = sfMouse_getPositionRenderWindow(begin->window);
@@ -63,7 +51,8 @@ void draw_all_text(rpg_t *rpg)
 
 void draw_main_item(rpg_t *rpg)
 {
-    int item_nb = rpg->player_stats.inventory.inventory_case[I_ATTACK].item_spritesheet;
+    int item_nb = rpg->player_stats.inventory.inventory_case[I_ATTACK].
+    item_spritesheet;
     sfVector2f pos_main_item = rpg->spritesheet[rpg->player_stats.skin].pos;
     sfVector2f scale_item;
     sfVector2f scale_item2;
@@ -76,23 +65,10 @@ void draw_main_item(rpg_t *rpg)
         pos_main_item.x -= 20;
         pos_main_item.y += 5;
         sfSprite_setScale(rpg->spritesheet[item_nb].sprite, scale_item);
-        // sfSprite_rotate(rpg->spritesheet[item_nb].sprite, 90);
         draw_one_sprite(&rpg->begin, rpg->spritesheet[item_nb].sprite,
         rpg->spritesheet[item_nb].rect, pos_main_item);
         sfSprite_setScale(rpg->spritesheet[item_nb].sprite, scale_item2);
-        // sfSprite_rotate(rpg->spritesheet[item_nb].sprite, -90);
     }
-}
-
-void display_rect_sprite(rpg_t *rpg, sfFloatRect rect)
-{
-    sfRectangleShape *sh = sfRectangleShape_create();
-    sfColor c = {255, 0, 0, 100};
-    sfRectangleShape_setPosition(sh, (sfVector2f){rect.left, rect.top});
-    sfRectangleShape_setSize(sh, (sfVector2f){rect.width, rect.height});
-    sfRectangleShape_setFillColor(sh, c);
-    sfRenderWindow_drawRectangleShape(rpg->begin.window, sh, NULL);
-    sfRectangleShape_destroy(sh);
 }
 
 void draw_all(rpg_t *rpg)
@@ -120,5 +96,4 @@ void draw_all(rpg_t *rpg)
     if (rpg->spritesheet[SP_CURSOR].active)
         draw_one_sprite(&rpg->begin, rpg->spritesheet[SP_CURSOR].sprite,
         rpg->spritesheet[SP_CURSOR].rect, rpg->spritesheet[SP_CURSOR].pos);
-    // printf("%f %f\n", rpg->spritesheet[SP_CURSOR].pos.x, rpg->spritesheet[SP_CURSOR].pos.y);
 }
