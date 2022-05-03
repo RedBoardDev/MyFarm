@@ -69,11 +69,11 @@ void click_item_prisoner_pee(rpg_t *rpg);
 void button_bed_saving(rpg_t *rpg);
 
 // init
-void init_all(rpg_t *rpg);
+void init_all(rpg_t *rpg, bool no_sound);
 void init_imgs(rpg_t *rpg);
 void init_main_map(spritesheet_t *spritesheet);
 void init_screens(rpg_t *rpg);
-void init_sounds(rpg_t *rpg);
+void init_sounds(rpg_t *rpg, bool no_sound);
 void init_menu(spritesheet_t *spritesheet);
 void init_spritesheets_rooms(spritesheet_t *spritesheet);
 void init_spritesheets(spritesheet_t *spritesheet);
