@@ -16,15 +16,11 @@ static void save_params(int fd, rpg_t *rpg)
     write(fd, &rpg->params.index_fps, sizeof(int));
 }
 
-static void save_screens(int fd, rpg_t *rpg)
+static void save_screens_and_sounds(int fd, rpg_t *rpg)
 {
     for (int i = 0; i < NBR_SC; ++i)
         write(fd, &rpg->screen[i].active, sizeof(bool));
     write(fd, &rpg->index_old_s, sizeof(int));
-}
-
-static void save_sounds(int fd, rpg_t *rpg)
-{
     write(fd, &rpg->sound.volume_effect, sizeof(float));
     write(fd, &rpg->sound.volume_effect_backup, sizeof(float));
     write(fd, &rpg->sound.volume_music, sizeof(float));
@@ -68,8 +64,7 @@ void save_file(char *filepath, rpg_t *rpg)
     int fd = open(filepath, O_WRONLY | O_CREAT, 0664);
 
     save_params(fd, rpg);
-    save_screens(fd, rpg);
-    save_sounds(fd, rpg);
+    save_screens_and_sounds(fd, rpg);
     save_player_stats(fd, rpg);
     close(fd);
 }
