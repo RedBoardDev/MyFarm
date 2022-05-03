@@ -13,6 +13,8 @@ char *my_itoa(int nb)
     char *str;
     int tmp = nb;
 
+    if (nb == 0)
+        return ("0");
     while (tmp > 0) {
         tmp /= 10;
         ++i;
