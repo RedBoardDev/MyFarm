@@ -10,7 +10,8 @@
 void init_quests(rpg_t *rpg)
 {
     rpg->quest = malloc(sizeof(quest_t) * NBR_QUEST);
-    rpg->quest[QUEST_SOLDIER] = (quest_t) {.step = 0};
+    rpg->quest[QUEST_SOLDIER] = (quest_t) {.step = 0
+    };
     rpg->quest[QUEST_SOLDIER].active = 0;
     rpg->quest[QUEST_SOLDIER].pos_dialog = (sfVector2f){120, 230};
     rpg->quest[QUEST_SOLDIER].scale = (sfVector2f){0.08, 0.08};

@@ -85,8 +85,10 @@ void animate_boss_cemetery(rpg_t *rpg)
             rpg->spritesheet[SP_BACKGROUND_VICTORY_GROTTE].pos =
             rpg->screen[SC_VICTORY_CEMETERY].view_pos;
             rpg->spritesheet[SP_NEXT_GROTTE].pos = (sfVector2f)
-            {rpg->screen[SC_VICTORY_CEMETERY].view_pos.x + 148,
-            rpg->screen[SC_VICTORY_CEMETERY].view_pos.y + 110};
+            {
+                rpg->screen[SC_VICTORY_CEMETERY].view_pos.x + 148,
+                rpg->screen[SC_VICTORY_CEMETERY].view_pos.y + 110
+            };
             toggle_spritesheet_scene(rpg, false, SC_CEMETERY);
             toggle_spritesheet_scene(rpg, true, SC_VICTORY_CEMETERY);
         }
