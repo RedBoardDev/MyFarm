@@ -78,7 +78,8 @@ void animate_boss_grotte(rpg_t *rpg)
             rpg->screen[SC_VICTORY_GROTTE].view_pos;
             rpg->spritesheet[SP_NEXT_GROTTE].pos = (sfVector2f)
             {rpg->screen[SC_VICTORY_GROTTE].view_pos.x + 148,
-            rpg->screen[SC_VICTORY_GROTTE].view_pos.y + 110};
+            rpg->screen[SC_VICTORY_GROTTE].view_pos.y + 110
+            };
             toggle_spritesheet_scene(rpg, false, SC_GROTTE);
             toggle_spritesheet_scene(rpg, true, SC_VICTORY_GROTTE);
         }

@@ -61,6 +61,29 @@ void draw_all_text(rpg_t *rpg)
         write_text(rpg->begin.window, rpg->player_stats.inventory.money);
 }
 
+void draw_main_item(rpg_t *rpg)
+{
+    int item_nb = rpg->player_stats.inventory.inventory_case[I_ATTACK].item_spritesheet;
+    sfVector2f pos_main_item = rpg->spritesheet[rpg->player_stats.skin].pos;
+    sfVector2f scale_item;
+    sfVector2f scale_item2;
+
+    if (item_nb != -1) {
+        scale_item = sfSprite_getScale(rpg->spritesheet[item_nb].sprite);
+        scale_item2 = sfSprite_getScale(rpg->spritesheet[item_nb].sprite);
+        scale_item.x /= 2;
+        scale_item.y /= 2;
+        pos_main_item.x -= 20;
+        pos_main_item.y += 5;
+        sfSprite_setScale(rpg->spritesheet[item_nb].sprite, scale_item);
+        // sfSprite_rotate(rpg->spritesheet[item_nb].sprite, 90);
+        draw_one_sprite(&rpg->begin, rpg->spritesheet[item_nb].sprite,
+        rpg->spritesheet[item_nb].rect, pos_main_item);
+        sfSprite_setScale(rpg->spritesheet[item_nb].sprite, scale_item2);
+        // sfSprite_rotate(rpg->spritesheet[item_nb].sprite, -90);
+    }
+}
+
 void draw_all(rpg_t *rpg)
 {
     sfSprite_setTexture(rpg->begin.sprite, rpg->begin.texture, sfFalse);
@@ -76,6 +99,8 @@ void draw_all(rpg_t *rpg)
     else if (!rpg->screen[SC_INVENTORY].active)
         rpg->spritesheet[SP_ITEM_PRISONER_PEE].active = false;
     draw_spritesheets(&rpg->begin, rpg->spritesheet);
+    if (!rpg->screen[SC_INVENTORY].active)
+        draw_main_item(rpg);
     draw_all_text(rpg);
     if (rpg->spritesheet[SP_CURSOR].active)
         draw_one_sprite(&rpg->begin, rpg->spritesheet[SP_CURSOR].sprite,
