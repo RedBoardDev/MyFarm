@@ -7,7 +7,7 @@
 
 #include "../../include/rpg.h"
 
-sfBool check_collision_npc_other(rpg_t *rpg, int enum_npc,
+sfBool check_collision_npc(rpg_t *rpg, int enum_npc,
 sfFloatRect offset_collision)
 {
     sfFloatRect player =

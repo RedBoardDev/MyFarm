@@ -54,9 +54,6 @@ enum sprites {
     SP_NEXT_GROTTE,
     SP_BUBBLE_CHAT,
     SP_INVENTORY,
-    SP_RESUME,
-    SP_OPTION,
-    SP_LEAVE_GAME,
     SP_BOX_BUTTON_EFFECT,
     SP_SOUND_EFFECT,
     SP_SOUNDBAR_EFFECT,
@@ -92,6 +89,9 @@ enum sprites {
     SP_FLASK_DRUNK,
     SP_MINIMAP,
     SP_MINIMAP_LAYER,
+    SP_RESUME,
+    SP_OPTION,
+    SP_LEAVE_GAME,
     SP_CURSOR,
     NBR_SP
 };
