@@ -151,7 +151,7 @@ void animate_player(rpg_t *rpg);
 void animate_selected_skin(rpg_t *rpg);
 void animate_boss_cemetery(rpg_t *rpg);
 void animate_boss_grotte(rpg_t *rpg);
-void draw_sfImage(sfRenderWindow *window, sfImage *image, sfVector2f pos,
+void draw_sfimage(sfRenderWindow *window, sfImage *image, sfVector2f pos,
 sfIntRect rect);
 
 //cursor

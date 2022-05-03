@@ -7,7 +7,7 @@
 
 #include "../include/rpg.h"
 
-void draw_sfImage(sfRenderWindow *window, sfImage *image, sfVector2f pos,
+void draw_sfimage(sfRenderWindow *window, sfImage *image, sfVector2f pos,
 sfIntRect rect)
 {
     sfTexture *texture = sfTexture_createFromImage(image, NULL);
