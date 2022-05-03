@@ -29,23 +29,29 @@ static int get_nearest_index_inventory(rpg_t *rpg)
     return (index);
 }
 
+static void move_item_inventory(rpg_t *rpg, int i)
+{
+    int case_inv = -1;
+
+    case_inv = check_if_in_inventory(rpg, i);
+    if (case_inv != -1) {
+        rpg->player_stats.inventory.inventory_case[I_CASE_MOVE].
+        item_spritesheet = i;
+        rpg->player_stats.inventory.inventory_case[case_inv].
+        item_spritesheet = -1;
+    }
+    rpg->spritesheet[i].pos = rpg->all_events.mouse.pos_view;
+}
+
 bool check_click_items_inventory(rpg_t *rpg, int i)
 {
     sfFloatRect collision;
-    int case_inv = -1;
 
     if (rpg->spritesheet[i].clickable && rpg->spritesheet[i].active) {
         collision = sfSprite_getGlobalBounds(rpg->spritesheet[i].sprite);
         if (check_mouse_on_one_button_float(rpg->all_events.mouse.pos_view,
         collision)) {
-            case_inv = check_if_in_inventory(rpg, i);
-            if (case_inv != -1) {
-                rpg->player_stats.inventory.inventory_case[I_CASE_MOVE].
-                item_spritesheet = i;
-                rpg->player_stats.inventory.inventory_case[case_inv].
-                item_spritesheet = -1;
-            }
-            rpg->spritesheet[i].pos = rpg->all_events.mouse.pos_view;
+            move_item_inventory(rpg, i);
             return (true);
         }
     }
