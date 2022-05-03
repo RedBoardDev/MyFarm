@@ -54,7 +54,17 @@ static void init_params(rpg_t *rpg)
     "assets/fonts/Sriracha-Regular.ttf"});
 }
 
-void init_all(rpg_t *rpg)
+static void init_icon_window(rpg_t *rpg)
+{
+    sfImage *img = sfImage_createFromFile("assets/img/logo.png");
+
+    rpg->begin.pixels = sfImage_getPixelsPtr(img);
+    sfWindow_setIcon((sfWindow *)rpg->begin.window, 512, 512,
+    rpg->begin.pixels);
+    sfImage_destroy(img);
+}
+
+void init_all(rpg_t *rpg, bool no_sound)
 {
     rpg->index_old_s = 0;
     rpg->player_stats.skin = SP_PLAYER;
@@ -64,11 +74,15 @@ void init_all(rpg_t *rpg)
     init_screens(rpg);
     rpg->spritesheet = malloc(sizeof(spritesheet_t) * NBR_SP);
     init_spritesheets(rpg->spritesheet);
-    init_sounds(rpg);
+    init_sounds(rpg, no_sound);
     init_params(rpg);
     init_csfml(&rpg->begin);
     init_view(rpg);
     init_player_boss_stats(&rpg->player_stats, &rpg->boss_stats);
     init_quests(rpg);
     init_inventory(&rpg->player_stats.inventory, rpg);
+    init_icon_window(rpg);
+    rpg->begin.fps.clock = sfClock_create();
+    toggle_cursor(rpg->begin.window, false);
+    sfWindow_setFramerateLimit((sfWindow *)rpg->begin.window, rpg->params.fps);
 }

@@ -7,10 +7,10 @@
 
 #include "../../include/rpg.h"
 
-void init_sounds(rpg_t *rpg)
+void init_sounds(rpg_t *rpg, bool no_sound)
 {
-    rpg->sound.volume_music = 50;
-    rpg->sound.volume_effect = 50;
+    rpg->sound.volume_music = (no_sound ? 0 : 50);
+    rpg->sound.volume_effect = (no_sound ? 0 : 50);
     rpg->sound.volume_active = false;
     rpg->sound.sound_list = malloc(sizeof(sound_list_t) * NBR_SOUND);
     create_sound("assets/sounds/main.ogg",

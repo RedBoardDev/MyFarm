@@ -48,23 +48,11 @@ void myrpg(bool no_sound, char *file_backup)
 {
     rpg_t *rpg = malloc(sizeof(rpg_t));
     sfColor oui = {255, 0, 0, 255};
-    sfImage *img = sfImage_createFromFile("assets/img/logo.png");
-
-    rpg->begin.pixels = sfImage_getPixelsPtr(img);
-    init_all(rpg);
-    if (no_sound) {
-        rpg->sound.volume_music = 0;
-        rpg->sound.volume_effect = 0;
-    }
+    init_all(rpg, no_sound);
     if (!rpg->begin.window || !rpg->begin.framebuffer)
         return;
-    sfWindow_setFramerateLimit((sfWindow *)rpg->begin.window, rpg->params.fps);
-    sfWindow_setIcon((sfWindow *)rpg->begin.window, 512, 512,
-    rpg->begin.pixels);
-    rpg->begin.fps.clock = sfClock_create();
     play_sound(rpg->sound.sound_list[SOUND_MENU].sound,
     rpg->sound.volume_music);
-    toggle_cursor(rpg->begin.window, false);
     if (file_backup == NULL)
         toggle_spritesheet_scene(rpg, true, SC_MENU);
     else {
@@ -76,6 +64,5 @@ void myrpg(bool no_sound, char *file_backup)
         clean_window(&rpg->begin, sfBlack);
         big_loop(rpg, &oui);
     }
-    sfImage_destroy(img);
     destroy_all(rpg);
 }
