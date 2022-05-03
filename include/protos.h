@@ -217,6 +217,7 @@ void move_executioner(rpg_t *rpg);
 void teleport_jail(rpg_t *rpg);
 void teleport_base(rpg_t *rpg);
 void teleport_tente(rpg_t *rpg);
+void teleport_taverne(rpg_t *rpg);
 int get_current_screen(rpg_t *rpg);
 
 void stop_all_sounds(rpg_t *rpg);
