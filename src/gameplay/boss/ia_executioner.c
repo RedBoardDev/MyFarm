@@ -7,36 +7,32 @@
 
 #include "../../../include/rpg.h"
 
-static void check_rush_to_player(rpg_t *rpg)
+static void attack_if_collision_executioner(rpg_t *rpg)
 {
-    if (check_collision_executioner(rpg)) {
-        rpg->boss_stats.rush_to_player = false;
-        sfClock_restart(rpg->spritesheet[SP_BOSS_EXECUTIONER].c_attack);
-        remove_life_player(rpg, rpg->boss_stats.damage_executioner);
+    float time_last_damage = get_clock_time(rpg->player_stats.last_damage);
+
+    rpg->boss_stats.status = ST_ATTACK_1;
+    if (time_last_damage >= SECOND_TO_MICRO(0.5))
+        remove_life_player(rpg, 1);
+    if (rpg->all_events.enter && rpg->boss_stats.life >= 0) {
+        play_sound(rpg->sound.sound_list[SOUND_LAUNCH_WEAPON_PLAYER].sound,
+        rpg->sound.volume_effect);
+        rpg->boss_stats.life -= (get_item_inv(rpg, I_ATTACK) ==
+        SP_ITEM_SWORD ? 1 : 0);
+        rpg->boss_stats.life <= 0 ? (add_money(rpg, 24),
+        add_item_inventory(rpg, SP_ITEM_PICKAXE),
+        add_item_inventory(rpg, SP_ITEM_TOMATE)) : 0;
+        rpg->all_events.enter = false;
     }
 }
 
 static void ia_executioner_rush(rpg_t *rpg)
 {
-    float time_last_damage = get_clock_time(rpg->player_stats.last_damage);
-
     if (rpg->boss_stats.rush_to_player)
-        check_rush_to_player(rpg);
-    else if (check_collision_executioner(rpg)) {
-        rpg->boss_stats.status = ST_ATTACK_1;
-        if (time_last_damage >= SECOND_TO_MICRO(0.5))
-            remove_life_player(rpg, 1);
-        if (rpg->all_events.enter && rpg->boss_stats.life >= 0) {
-            play_sound(rpg->sound.sound_list[SOUND_LAUNCH_WEAPON_PLAYER].sound,
-            rpg->sound.volume_effect);
-            rpg->boss_stats.life -= (get_item_inv(rpg, I_ATTACK) ==
-            SP_ITEM_SWORD ? 1 : 0);
-            rpg->boss_stats.life <= 0 ? (add_money(rpg, 24),
-            add_item_inventory(rpg, SP_ITEM_PICKAXE),
-            add_item_inventory(rpg, SP_ITEM_TOMATE)) : 0;
-            rpg->all_events.enter = false;
-        }
-    } else
+        check_rush_to_player_executiner(rpg);
+    else if (check_collision_executioner(rpg))
+        attack_if_collision_executioner(rpg);
+    else
         rpg->boss_stats.status = ST_IDLE;
 }
 

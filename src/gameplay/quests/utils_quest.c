@@ -7,20 +7,6 @@
 
 #include "../../../include/rpg.h"
 
-sfBool check_collision_npc(rpg_t *rpg)
-{
-    sfFloatRect player =
-    sfSprite_getGlobalBounds(rpg->spritesheet[rpg->player_stats.skin].sprite);
-    sfFloatRect npc =
-    sfSprite_getGlobalBounds(rpg->spritesheet[SP_NPC_SOLDIER].sprite);
-
-    npc.left += 15;
-    npc.width += 15;
-    npc.height += 15;
-    npc.top += 15;
-    return (sfFloatRect_intersects(&player, &npc, NULL));
-}
-
 void disable_quests(rpg_t *rpg, int quests_enum, bool scale)
 {
     rpg->quest[quests_enum].step = -1;

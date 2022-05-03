@@ -7,25 +7,6 @@
 
 #include "../../../include/rpg.h"
 
-static void check_rush_to_player(rpg_t *rpg)
-{
-    bool check = check_collision_golem_proj(rpg);
-
-    if (check || rpg->spritesheet[SP_BOSS_GOLEM_PROJ].pos.x <=
-    rpg->spritesheet[SP_BACKGROUND_GROTTE].pos.x -
-    (rpg->spritesheet[SP_BACKGROUND_GROTTE].rect.width / 2)) {
-        rpg->boss_stats.status = ST_IDLE;
-        rpg->boss_stats.rush_to_player = false;
-        rpg->spritesheet[SP_BOSS_GOLEM_PROJ].pos =
-        rpg->spritesheet[SP_BOSS_GOLEM].pos;
-        rpg->spritesheet[SP_BOSS_GOLEM_PROJ].active = false;
-        rpg->spritesheet[SP_BOSS_GOLEM].rect.left = 0;
-        sfSprite_setRotation(rpg->spritesheet[SP_BOSS_GOLEM_PROJ].sprite, 0);
-        if (check)
-            remove_life_player(rpg, rpg->boss_stats.damage_golem);
-    }
-}
-
 static void switch_status(rpg_t *rpg)
 {
     switch (rpg->boss_stats.status) {
@@ -49,7 +30,7 @@ static void ia_golem(rpg_t *rpg)
     get_clock_time(rpg->spritesheet[SP_BOSS_GOLEM].c_attack);
 
     if (rpg->boss_stats.rush_to_player) {
-        check_rush_to_player(rpg);
+        check_rush_to_player_golem(rpg);
     } else if (time_attack >= SECOND_TO_MICRO(0.1)) {
         rpg->boss_stats.status = ST_ATTACK_1;
         rpg->boss_stats.rush_to_player = true;
@@ -84,6 +65,5 @@ void animate_boss_grotte(rpg_t *rpg)
             toggle_spritesheet_scene(rpg, true, SC_VICTORY_GROTTE);
         }
     }
-    attack_of_player(rpg);
-    ia_golem(rpg);
+    attack_of_player(rpg);ia_golem(rpg);
 }
