@@ -156,6 +156,7 @@ enum sounds {
     SOUND_MENU,
     SOUND_DOOR,
     SOUND_MAIN,
+    SOUND_GRAVEYARD,
     SOUND_AMBIANT_CAVE,
     NBR_SOUND,
 };

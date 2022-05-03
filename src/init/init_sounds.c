@@ -29,4 +29,6 @@ void init_sounds(rpg_t *rpg)
     false, &rpg->sound.sound_list[SOUND_LAUNCH_WEAPON_PLAYER]);
     create_sound("assets/sounds/golem_death.ogg",
     false, &rpg->sound.sound_list[SOUND_DEATH_GOLEM]);
+    create_sound("assets/sounds/ambiant_graveyard.ogg",
+    true, &rpg->sound.sound_list[SOUND_GRAVEYARD]);
 }

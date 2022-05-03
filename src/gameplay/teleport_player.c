@@ -28,6 +28,9 @@ static void teleport_cemetery(rpg_t *rpg)
         rpg->boss_stats.life = 20;
         toggle_spritesheet_scene(rpg, false, SC_MAIN_MAP);
         toggle_spritesheet_scene(rpg, true, SC_CEMETERY);
+        stop_sound(rpg->sound.sound_list[SOUND_MAIN].sound);
+        play_sound(rpg->sound.sound_list[SOUND_GRAVEYARD].sound,
+        rpg->sound.volume_music);
     }
 }
 

@@ -19,7 +19,7 @@ void init_quests(rpg_t *rpg)
     {92, 210}, "assets/fonts/NotoSerif-Regular.ttf"});
     rpg->quest[QUEST_SELLER] = (quest_t) {.step = 0};
     rpg->quest[QUEST_SELLER].active = 0;
-    rpg->quest[QUEST_SELLER].pos_dialog = (sfVector2f){1020, 40};
+    rpg->quest[QUEST_SELLER].pos_dialog = (sfVector2f){1015, 35};
     rpg->quest[QUEST_SELLER].scale = (sfVector2f){0.08, 0.08};
     rpg->quest[QUEST_SELLER].dialog =
     create_text((init_text_t){30, "\0", sfBlack,
