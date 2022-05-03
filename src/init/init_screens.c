@@ -42,7 +42,6 @@ const int screen_tente[] = {SP_BACKGROUND_TENTE, SELECTED_PLAYER,   \
 SP_NPC_SOLDIER, SP_CURSOR, -1};
 const int screen_taverne[] = {SP_BACKGROUND_TAVERNE, SELECTED_PLAYER,   \
 SP_NPC_SELLER, SP_MAPS_TAVERNE, SP_CURSOR, -1};
-
 const int screen_jail[] = {SP_BACKGROUND_JAIL, SELECTED_PLAYER, -1};
 
 static void init_screen_norme(rpg_t *rpg)

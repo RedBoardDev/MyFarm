@@ -22,7 +22,7 @@
     #include "struct.h"
 
 void myrpg(bool no_sound, char *file_backup);
-void die(rpg_t *rpg);
+void die_player(rpg_t *rpg);
 void return_home(rpg_t *rpg);
 void manage_menu(rpg_t *rpg);
 void teleport_player_scene(rpg_t *rpg, sfImage *image, sfVector2f pos_player);

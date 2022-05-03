@@ -25,7 +25,7 @@ static void execute_cemetery(rpg_t *rpg)
     move_life_bar_boss(rpg, rpg->boss_stats.life * 5);
     animate_boss_cemetery(rpg);
     if (rpg->player_stats.life <= 0)
-        die(rpg);
+        die_player(rpg);
 }
 
 static void execute_grotte(rpg_t *rpg)
@@ -46,7 +46,7 @@ static void execute_grotte(rpg_t *rpg)
     move_life_bar_boss(rpg, rpg->boss_stats.life * 5);
     animate_boss_grotte(rpg);
     if (rpg->player_stats.life <= 0)
-        die(rpg);
+        die_player(rpg);
 }
 
 static void execute_all_gameplay(rpg_t *rpg)

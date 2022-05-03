@@ -32,7 +32,7 @@ void stop_all_sounds(rpg_t *rpg)
         stop_sound(rpg->sound.sound_list[i].sound);
 }
 
-void die(rpg_t *rpg)
+void die_player(rpg_t *rpg)
 {
     stop_all_sounds(rpg);
     play_sound(rpg->sound.sound_list[SOUND_DIE_PLAYER].sound,
