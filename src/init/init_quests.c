@@ -26,4 +26,12 @@ void init_quests(rpg_t *rpg)
     rpg->quest[QUEST_SELLER].dialog =
     create_text((init_text_t){30, "\0", sfBlack,
     {1015, 35}, "assets/fonts/NotoSerif-Regular.ttf"});
+    rpg->quest[QUEST_GUIDE] = (quest_t) {.step = 0
+    };
+    rpg->quest[QUEST_GUIDE].active = 0;
+    rpg->quest[QUEST_GUIDE].pos_dialog = (sfVector2f){1015, 35};
+    rpg->quest[QUEST_GUIDE].scale = (sfVector2f){0.08, 0.08};
+    rpg->quest[QUEST_GUIDE].dialog =
+    create_text((init_text_t){30, "\0", sfBlack,
+    {1015, 35}, "assets/fonts/NotoSerif-Regular.ttf"});
 }

@@ -34,6 +34,7 @@ enum sprites {
     SP_MONKEY,
     SP_NPC_SELLER,
     SP_NPC_SOLDIER,
+    SP_NPC_GUIDE,
     SP_PLAYER,
     SP_PLAYER_BLUE,
     SP_PLAYER_BROWN,
@@ -170,6 +171,7 @@ enum utilitaire {
 enum quests {
     QUEST_SOLDIER,
     QUEST_SELLER,
+    QUEST_GUIDE,
     NBR_QUEST
 };
 

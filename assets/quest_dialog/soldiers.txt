@@ -3,8 +3,8 @@ P:I will need|a sword to fight.
 N:I'll give you some|in exchange for|a jar of|prison pee.
 P:Where can I|find it?
 N:Look in the cell|from outside...
-W:62
+W:63|Ramène cette épée mdr
 P:Hold, here is|what you were|looking for
 N: Thank you, you|deserve this sword!
-G:66
+G:67
 F
