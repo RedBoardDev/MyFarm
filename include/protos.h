@@ -171,6 +171,7 @@ int get_item_inv(rpg_t *rpg, int case_i);
 //quests
 void quest_soldiers(rpg_t *rpg);
 void quest_seller(rpg_t *rpg);
+void quest_guide(rpg_t *rpg);
 void disable_quests(rpg_t *rpg, int quests_enum, bool scale);
 void send_chat_bubble(rpg_t *rpg, char *filepath, int quest_id);
 

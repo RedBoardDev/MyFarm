@@ -80,10 +80,10 @@ static void execute_quests(rpg_t *rpg)
     && check_collision_npc(rpg, SP_NPC_SELLER,
     (sfFloatRect){-15, -15, 60, 30}))
         quest_seller(rpg);
-    // if (rpg->screen[SC_MAIN_MAP].active
-    // && rpg->quest[QUEST_GUIDE].active == 0
-    // && check_collision_npc(rpg, SP_NPC_GUIDE, (sfFloatRect){-15, -15, 60, 30}))
-    //     quest_guide(rpg);
+    if (rpg->screen[SC_MAIN_MAP].active
+    && rpg->quest[QUEST_GUIDE].active == 0
+    && check_collision_npc(rpg, SP_NPC_GUIDE, (sfFloatRect){-15, -15, 60, 30}))
+        quest_guide(rpg);
 }
 
 void execute_all(rpg_t *rpg)
