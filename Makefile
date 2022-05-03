@@ -65,6 +65,7 @@ SRC_FILES	=	events/events	\
 				interface/check_click_buttons	\
 				interface/check_click_items_inv	\
 				interface/check_mouse_on_buttons	\
+				interface/inventory_utils	\
 				interface/inventory	\
 				interface/menu_pause	\
 				spritesheets/utils_sprites	\

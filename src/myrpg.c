@@ -16,14 +16,8 @@ int get_current_screen(rpg_t *rpg)
     return (-1);
 }
 
-static void big_loop(rpg_t *rpg, sfColor *oui)
+static void modify_zoom(rpg_t *rpg)
 {
-    set_view(rpg, rpg->begin.view.center);
-    *oui = my_rgb(*oui);
-    get_fps(rpg);
-    my_events(rpg);
-    if ((rpg->all_events.q || rpg->all_events.c) && rpg->all_events.ctrl)
-        sfRenderWindow_close(rpg->begin.window);
     if (rpg->all_events.page_down) {
         set_zoom(rpg->begin.view.view, get_zoom(rpg->begin.view.view) + 0.1);
         rpg->all_events.page_down = false;
@@ -32,6 +26,17 @@ static void big_loop(rpg_t *rpg, sfColor *oui)
         set_zoom(rpg->begin.view.view, get_zoom(rpg->begin.view.view) - 0.1);
         rpg->all_events.page_up = false;
     }
+}
+
+static void big_loop(rpg_t *rpg, sfColor *oui)
+{
+    set_view(rpg, rpg->begin.view.center);
+    *oui = my_rgb(*oui);
+    get_fps(rpg);
+    my_events(rpg);
+    modify_zoom(rpg);
+    if ((rpg->all_events.q || rpg->all_events.c) && rpg->all_events.ctrl)
+        sfRenderWindow_close(rpg->begin.window);
     if (rpg->all_events.ctrl && rpg->all_events.s) {
         save_file("save", rpg);
         rpg->all_events.s = false;

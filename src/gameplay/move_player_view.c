@@ -39,7 +39,6 @@ sfVector2f pos_player, bool move_view)
     if (rpg->all_events.up || rpg->all_events.z) {
         color = get_color_from_player(image,
         (sfVector2f){pos_player.x, pos_player.y - 2});
-        printf("color.r: %d\n", color.r);
         if (rpg->spritesheet[rpg->player_stats.skin].pos.y < 1920 - 217 &&
         rpg->begin.view.center.y > 216 && color.r != 255 && move_view)
             rpg->begin.view.center.y -= SPEED_PLAYER;

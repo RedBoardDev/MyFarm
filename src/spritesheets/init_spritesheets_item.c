@@ -33,13 +33,16 @@ void init_spritesheets_flask(spritesheet_t *spritesheet)
     (init_sprite_t){{100, 100}, {1, 1}, {0, 0, 36, 42}, true, false, false});
     set_one_sprite("assets/img/item/flask_life.png",
     &spritesheet[SP_FLASK_LIFE],
-    (init_sprite_t){{100, 100}, {0.15, 0.15}, {0, 0, 229, 268}, true, false, false});
+    (init_sprite_t){{100, 100}, {0.15, 0.15}, {0, 0, 229, 268}, true, false,
+    false});
     set_one_sprite("assets/img/item/flask_speed.png",
     &spritesheet[SP_FLASK_SPEED],
-    (init_sprite_t){{100, 100}, {0.15, 0.15}, {0, 0, 228, 267}, true, false, false});
+    (init_sprite_t){{100, 100}, {0.15, 0.15}, {0, 0, 228, 267}, true, false,
+    false});
     set_one_sprite("assets/img/item/flask_drunk.png",
     &spritesheet[SP_FLASK_DRUNK],
-    (init_sprite_t){{100, 100}, {0.14, 0.14}, {0, 0, 197, 312}, true, false, false});
+    (init_sprite_t){{100, 100}, {0.14, 0.14}, {0, 0, 197, 312}, true, false,
+    false});
 }
 
 void init_spritesheets_armed(spritesheet_t *spritesheet)
