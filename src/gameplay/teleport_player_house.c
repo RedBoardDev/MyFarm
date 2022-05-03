@@ -60,8 +60,6 @@ void teleport_taverne(rpg_t *rpg)
         toggle_spritesheet_scene(rpg, false, SC_MAIN_MAP);
         toggle_spritesheet_scene(rpg, true, SC_TAVERNE);
     } else {
-        // rpg->spritesheet[rpg->player_stats.skin].pos =
-        // rpg->screen[SC_MAIN_MAP].view_pos;
         rpg->spritesheet[rpg->player_stats.skin].pos.y += 20;
         toggle_spritesheet_scene(rpg, false, SC_TAVERNE);
         toggle_spritesheet_scene(rpg, true, SC_MAIN_MAP);

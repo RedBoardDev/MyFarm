@@ -66,7 +66,7 @@ int get_chat_into_file(char *filepath, int quest, rpg_t *rpg)
         return (0);
     rpg->quest[quest].step += 1;
     if (ret == 2)
-       return(1);
+        return (1);
     for (int i = 0; lineptr[i]; ++i)
         lineptr[i] = lineptr[i] == '|' ? '\n' : lineptr[i];
     sfText_setString(rpg->quest[quest].dialog, lineptr + 2);
