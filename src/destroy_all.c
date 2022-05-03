@@ -26,7 +26,8 @@ void destroy_images(rpg_t *rpg)
 
 void destroy_screens(rpg_t *rpg)
 {
-    for (int i = 0; i < NBR_SC; ++i) {}
+    for (int i = 0; i < NBR_SC; ++i)
+        sfClock_destroy(rpg->screen[i].clock);
     free(rpg->screen);
 }
 
@@ -36,6 +37,7 @@ void destroy_sounds(rpg_t *rpg)
         sfSound_destroy(rpg->sound.sound_list[i].sound);
         sfSoundBuffer_destroy(rpg->sound.sound_list[i].sound_buffer);
     }
+    free(rpg->sound.sound_list);
 }
 
 void destroy_all(rpg_t *rpg)
