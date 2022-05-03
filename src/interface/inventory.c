@@ -58,14 +58,6 @@ int check_if_in_inventory(rpg_t *rpg, int i)
     return (-1);
 }
 
-// static void print_inv(rpg_t *rpg)
-// {
-//     for (int a = 0; a < 11; ++a)
-//         printf("%d ",
-// rpg->player_stats.inventory.inventory_case[a].item_spritesheet);
-//     printf("\n");
-// }
-
 void add_item_inventory(rpg_t *rpg, int item)
 {
     if (check_if_in_inventory(rpg, item) != -1)
