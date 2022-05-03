@@ -109,6 +109,10 @@ void draw_all(rpg_t *rpg)
         rpg->spritesheet[SP_ITEM_PRISONER_PEE].active = true;
     else if (!rpg->screen[SC_INVENTORY].active)
         rpg->spritesheet[SP_ITEM_PRISONER_PEE].active = false;
+    rpg->spritesheet[SP_MINIMAP].active = ((rpg->screen[SC_MAIN_MAP].active &&
+    rpg->params.dark_mode) ? true : false);
+    rpg->spritesheet[SP_MINIMAP_LAYER].active =
+    rpg->spritesheet[SP_MINIMAP].active;
     draw_spritesheets(&rpg->begin, rpg->spritesheet);
     if (!rpg->screen[SC_INVENTORY].active)
         draw_main_item(rpg);

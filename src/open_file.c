@@ -55,6 +55,7 @@ static void read_sounds(int fd, rpg_t *rpg)
 void open_file(char *filepath, rpg_t *rpg)
 {
     int fd = open(filepath, O_RDONLY);
+    int current_screen = -1;
 
     if (fd == -1)
         return;
@@ -62,6 +63,11 @@ void open_file(char *filepath, rpg_t *rpg)
     read_screens(fd, rpg);
     read_sounds(fd, rpg);
     read_player_stats(fd, rpg);
-    toggle_spritesheet_scene(rpg, true, get_current_screen(rpg));
+    read_boss_stats(fd, rpg);
+    current_screen = get_current_screen(rpg);
+    if (current_screen != -1) {
+        toggle_spritesheet_scene(rpg, true, current_screen);
+        set_view(rpg, rpg->screen[current_screen].view_pos);
+    }
     close(fd);
 }

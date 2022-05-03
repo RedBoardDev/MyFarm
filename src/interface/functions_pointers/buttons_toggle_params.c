@@ -25,11 +25,11 @@ void button_toggle_dark_mode(rpg_t *rpg)
 {
     if (rpg->params.dark_mode) {
         rpg->params.dark_mode = false;
-        rpg->spritesheet[SP_BUTTON_ON_OFF_LUM].rect.left = 0;
-    } else {
-        rpg->params.dark_mode = true;
         rpg->spritesheet[SP_BUTTON_ON_OFF_LUM].rect.left =
         rpg->spritesheet[SP_BUTTON_ON_OFF_LUM].rect.width;
+    } else {
+        rpg->params.dark_mode = true;
+        rpg->spritesheet[SP_BUTTON_ON_OFF_LUM].rect.left = 0;
     }
 }
 

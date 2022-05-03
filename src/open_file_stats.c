@@ -48,7 +48,24 @@ void read_player_stats(int fd, rpg_t *rpg)
     read_player_stats_inventory(fd, rpg);
 }
 
-// void read_boss_stats(int fd, rpg_t *rpg)
-// {
+void read_boss_stats(int fd, rpg_t *rpg)
+{
+    float buff_float = 0;
+    int buff_int = 0;
+    bool buff_bool = false;
 
-// }
+    read(fd, &buff_float, sizeof(float));
+    rpg->boss_stats.life = buff_float;
+    read(fd, &buff_int, sizeof(int));
+    rpg->boss_stats.damage_executioner = buff_int;
+    read(fd, &buff_int, sizeof(int));
+    rpg->boss_stats.damage_golem = buff_int;
+    read(fd, &buff_float, sizeof(float));
+    rpg->boss_stats.inc_pos = buff_float;
+    read(fd, &buff_int, sizeof(int));
+    rpg->boss_stats.status = buff_int;
+    read(fd, &buff_float, sizeof(float));
+    rpg->boss_stats.time_next_it = buff_float;
+    read(fd, &buff_bool, sizeof(bool));
+    rpg->boss_stats.rush_to_player = buff_bool;
+}
