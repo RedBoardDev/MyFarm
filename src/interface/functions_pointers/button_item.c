@@ -15,7 +15,7 @@ void click_item_prisoner_pee(rpg_t *rpg)
     }
 }
 
-void collition_pee(rpg_t *rpg)
+void collision_pee(rpg_t *rpg)
 {
     sfFloatRect pee_rect = {0, 0, 0, 0};
 

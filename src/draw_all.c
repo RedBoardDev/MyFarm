@@ -84,6 +84,17 @@ void draw_main_item(rpg_t *rpg)
     }
 }
 
+void display_rect_sprite(rpg_t *rpg, sfFloatRect rect)
+{
+    sfRectangleShape *sh = sfRectangleShape_create();
+    sfColor c = {255, 0, 0, 100};
+    sfRectangleShape_setPosition(sh, (sfVector2f){rect.left, rect.top});
+    sfRectangleShape_setSize(sh, (sfVector2f){rect.width, rect.height});
+    sfRectangleShape_setFillColor(sh, c);
+    sfRenderWindow_drawRectangleShape(rpg->begin.window, sh, NULL);
+    sfRectangleShape_destroy(sh);
+}
+
 void draw_all(rpg_t *rpg)
 {
     sfSprite_setTexture(rpg->begin.sprite, rpg->begin.texture, sfFalse);
@@ -105,6 +116,5 @@ void draw_all(rpg_t *rpg)
     if (rpg->spritesheet[SP_CURSOR].active)
         draw_one_sprite(&rpg->begin, rpg->spritesheet[SP_CURSOR].sprite,
         rpg->spritesheet[SP_CURSOR].rect, rpg->spritesheet[SP_CURSOR].pos);
-    sfRenderWindow_display(rpg->begin.window);
     // printf("%f %f\n", rpg->spritesheet[SP_CURSOR].pos.x, rpg->spritesheet[SP_CURSOR].pos.y);
 }

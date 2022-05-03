@@ -222,7 +222,7 @@ void teleport_taverne(rpg_t *rpg);
 int get_current_screen(rpg_t *rpg);
 
 void stop_all_sounds(rpg_t *rpg);
-void collition_pee(rpg_t *rpg);
+void collision_pee(rpg_t *rpg);
 
 // fps
 void draw_fps(rpg_t *rpg);

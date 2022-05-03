@@ -63,9 +63,27 @@ static void execute_all_menus(rpg_t *rpg)
     set_view(rpg, rpg->screen[SC_MENU].view_pos);
 }
 
-void execute_main_map(rpg_t *rpg)
+static void execute_main_map(rpg_t *rpg)
 {
-    collition_pee(rpg);
+    collision_pee(rpg);
+}
+
+static void execute_quests(rpg_t *rpg)
+{
+    if (rpg->screen[SC_TENTE].active
+    && rpg->quest[QUEST_SOLDIER].active == 0
+    && check_collision_npc(rpg, SP_NPC_SOLDIER,
+    (sfFloatRect){-15, -15, 30, 30}))
+        quest_soldiers(rpg);
+    if (rpg->screen[SC_TAVERNE].active
+    && rpg->quest[QUEST_SELLER].active == 0
+    && check_collision_npc(rpg, SP_NPC_SELLER,
+    (sfFloatRect){-15, -15, 60, 30}))
+        quest_seller(rpg);
+    // if (rpg->screen[SC_MAIN_MAP].active
+    // && rpg->quest[QUEST_GUIDE].active == 0
+    // && check_collision_npc(rpg, SP_NPC_GUIDE, (sfFloatRect){-15, -15, 60, 30}))
+    //     quest_guide(rpg);
 }
 
 void execute_all(rpg_t *rpg)
@@ -82,4 +100,5 @@ void execute_all(rpg_t *rpg)
         execute_cemetery(rpg);
     if (rpg->screen[SC_MAIN_MAP].active)
         execute_main_map(rpg);
+    execute_quests(rpg);
 }
