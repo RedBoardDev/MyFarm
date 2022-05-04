@@ -41,6 +41,7 @@ void draw_all_text(rpg_t *rpg)
 {
     send_chat_bubble(rpg, "assets/quest_dialog/soldiers.txt", QUEST_SOLDIER);
     send_chat_bubble(rpg, "assets/quest_dialog/seller.txt", QUEST_SELLER);
+    send_chat_bubble(rpg, "assets/quest_dialog/guide.txt", QUEST_GUIDE);
     if (rpg->screen[SC_OPTION].active)
         draw_text_fps_settings(rpg);
     if (rpg->params.show_fps)
