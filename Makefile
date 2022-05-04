@@ -41,6 +41,7 @@ SRC_FILES	=	events/events	\
 				init/init_events	\
 				init/init_imgs	\
 				init/init_main_map	\
+				init/init_other	\
 				init/init_quests	\
 				init/init_screens	\
 				init/init_sounds	\
@@ -90,6 +91,7 @@ SRC_FILES	=	events/events	\
 				lib_text	\
 				main	\
 				myrpg	\
+				notif	\
 				open_file_stats	\
 				open_file	\
 				save_progress	\

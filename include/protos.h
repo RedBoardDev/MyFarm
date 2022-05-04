@@ -254,4 +254,18 @@ void open_file(char *filepath, rpg_t *rpg);
 void read_boss_stats(int fd, rpg_t *rpg);
 void read_player_stats(int fd, rpg_t *rpg);
 
+// notif
+void draw_notif(rpg_t *rpg);
+void send_notif(rpg_t *rpg, char *text);
+void move_notif(rpg_t *rpg);
+void draw_text_notif(rpg_t *rpg);
+
+// init other
+void init_player_boss_stats(player_stats_t *player_stats,
+boss_stats_t *boss_stats);
+void init_fps(rpg_t *rpg);
+void init_params(rpg_t *rpg);
+void init_icon_window(rpg_t *rpg);
+void init_notif(rpg_t *rpg);
+
 #endif

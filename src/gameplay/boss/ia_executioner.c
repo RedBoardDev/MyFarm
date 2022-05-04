@@ -13,7 +13,7 @@ static void attack_if_collision_executioner(rpg_t *rpg)
 
     rpg->boss_stats.status = ST_ATTACK_1;
     if (time_last_damage >= SECOND_TO_MICRO(0.5))
-        remove_life_player(rpg, 1);
+        remove_life_player(rpg, rpg->boss_stats.damage_executioner / 2);
     if (rpg->all_events.enter && rpg->boss_stats.life >= 0) {
         play_sound(rpg->sound.sound_list[SOUND_LAUNCH_WEAPON_PLAYER].sound,
         rpg->sound.volume_effect);

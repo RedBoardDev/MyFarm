@@ -20,6 +20,7 @@ void move_all_fps_independant(rpg_t *rpg)
         }
         if (rpg->screen[SC_CEMETERY].active)
             move_executioner(rpg);
+        move_notif(rpg);
         rpg->begin.fps.timer -= 8;
     }
     sfClock_restart(rpg->begin.fps.clock);
