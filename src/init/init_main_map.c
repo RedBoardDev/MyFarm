@@ -17,6 +17,10 @@ void init_main_map(spritesheet_t *spritesheet)
     &spritesheet[SP_MINIMAP],
     (init_sprite_t){{WIDTH / 2, WIDTH / 2}, {0.58, 0.58}, {0, 0, 200, 200},
     false, false, false});
+    set_one_sprite("assets/img/map_taverne.png",
+    &spritesheet[SP_MINIMAP_TAVERNE],
+    (init_sprite_t){{850, 356 - ((432 - 50) / 2)}, {0.5, 0.5}, {0, 0, 800, 600},
+    false, false, false});
     set_one_sprite("assets/img/minimap_layer.png",
     &spritesheet[SP_MINIMAP_LAYER],
     (init_sprite_t){{WIDTH / 2, WIDTH / 2}, {0.58, 0.58}, {0, 0, 200, 112},
