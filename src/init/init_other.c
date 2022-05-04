@@ -70,5 +70,5 @@ void init_notif(rpg_t *rpg)
     rpg->notif.inc_pos = 0;
     rpg->notif.offset_hide = (sfVector2f){0, 0};
     rpg->notif.text = create_text((init_text_t){100, "",
-    sfBlack, {WIDTH / 2, HEIGHT / 2}, "assets/fonts/Sriracha-Regular.ttf"});
+    sfBlack, {-1000, -1000}, "assets/fonts/Sriracha-Regular.ttf"});
 }

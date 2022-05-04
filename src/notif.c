@@ -21,6 +21,8 @@ void draw_text_notif(rpg_t *rpg)
     origin.y = char_size / 1.5;
     sfText_setOrigin(rpg->notif.text, origin);
     sfText_setPosition(rpg->notif.text, pos);
+    sfRenderWindow_drawSprite(rpg->begin.window,
+    rpg->spritesheet[SP_NOTIF].sprite, NULL);
     write_text(rpg->begin.window, rpg->notif.text);
 }
 

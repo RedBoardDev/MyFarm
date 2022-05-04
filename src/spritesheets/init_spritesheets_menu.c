@@ -69,7 +69,7 @@ void init_spritesheet_inventory(spritesheet_t *spritesheet)
     .clickable = false, .active = false, .change_sprite_on_mouse = false});
 
     set_one_sprite("assets/img/menu/box_button.png", &spritesheet[SP_NOTIF],
-    (init_sprite_t){{WIDTH / 2, HEIGHT / 2}, {0.5, 0.5}, {0, 0, 1000, 200},
+    (init_sprite_t){{-1000, -1000}, {0.5, 0.5}, {0, 0, 1000, 200},
     .clickable = false, .active = false, .change_sprite_on_mouse = false});
 }
 
