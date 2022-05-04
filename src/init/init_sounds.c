@@ -33,6 +33,8 @@ static void init_sound_effect(rpg_t *rpg)
     false, &rpg->sound.sound_list[SOUND_LAUNCH_WEAPON_PLAYER]);
     create_sound("assets/sounds/golem_death.ogg",
     false, &rpg->sound.sound_list[SOUND_DEATH_GOLEM]);
+    create_sound("assets/sounds/splash_water.ogg",
+    true, &rpg->sound.sound_list[SOUND_WATER]);
 }
 
 void init_sounds(rpg_t *rpg, bool no_sound)
