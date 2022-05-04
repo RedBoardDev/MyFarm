@@ -46,8 +46,10 @@ void draw_all_text(rpg_t *rpg)
         draw_text_fps_settings(rpg);
     if (rpg->params.show_fps)
         draw_fps(rpg);
-    if (rpg->screen[SC_INVENTORY].active)
+    if (rpg->screen[SC_INVENTORY].active) {
         write_text(rpg->begin.window, rpg->player_stats.inventory.money);
+        write_text(rpg->begin.window, rpg->player_stats.inventory.money);
+    }
 }
 
 void draw_main_item(rpg_t *rpg)

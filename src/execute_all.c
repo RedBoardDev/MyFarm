@@ -92,12 +92,15 @@ static void drink_flask(rpg_t *rpg)
     rpg->all_events.mouse.right = false;
     if (get_item_inv(rpg, I_ATTACK) == SP_FLASK_ATTACK) {
         remove_item_inventory(rpg, SP_FLASK_ATTACK);
+        rpg->player_stats.damage += 1;
     }
     if (get_item_inv(rpg, I_ATTACK) == SP_FLASK_SPEED) {
         remove_item_inventory(rpg, SP_FLASK_SPEED);
+        rpg->player_stats.speed += 1;
     }
     if (get_item_inv(rpg, I_ATTACK) == SP_FLASK_DRUNK) {
         remove_item_inventory(rpg, SP_FLASK_DRUNK);
+        rpg->player_stats.drunk = true;
     }
 }
 

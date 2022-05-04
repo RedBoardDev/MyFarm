@@ -18,6 +18,10 @@ typedef struct {
 typedef struct {
     inventory_case_t *inventory_case;
     sfText *money;
+    sfText *attack;
+    sfText *speed;
+    sfText *life;
+    sfText *quests;
 } inventory_t;
 
 typedef struct {
@@ -25,8 +29,10 @@ typedef struct {
     int skin;
     int money;
     float speed;
+    float damage;
+    float resistance;
+    bool drunk;
     float life;
-    int damage;
     bool attack;
     sfClock *last_damage;
     inventory_t inventory;

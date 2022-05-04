@@ -22,7 +22,7 @@ static void player_rush_to_golem(rpg_t *rpg)
         rpg->spritesheet[hoe].pos);
         rpg->spritesheet[hoe].active = false;
         if (check && hoe == SP_ITEM_PICKAXE) {
-            rpg->boss_stats.life -= 2;
+            rpg->boss_stats.life -= 2 * (rpg->player_stats.damage) / 10 + 1;
             rpg->boss_stats.life <= 0 ?
             (rpg->spritesheet[SP_BOSS_GOLEM].rect.left = 0,
             add_money(rpg, 24), add_item_inventory(rpg, SP_ITEM_PATATO)) : 0;

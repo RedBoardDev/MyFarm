@@ -29,7 +29,7 @@ static float getsp(rpg_t *rpg, sfColor color)
             play_sound(rpg->sound.sound_list[SOUND_WALK].sound,
             rpg->sound.volume_effect / 1.9);
         stop_sound(rpg->sound.sound_list[SOUND_WATER].sound);
-        return (SPEED_PLAYER);
+        return (SPEED_PLAYER * (rpg->player_stats.speed / 10 + 1));
     }
 }
 
