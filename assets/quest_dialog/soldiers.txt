@@ -1,6 +1,10 @@
-N:0
-P:1
-N:2
-P:3
-N:4
+N:Hello RedBoard!|What do you want ?
+P:I will need|a sword to fight.
+N:I'll give you some|in exchange for|a jar of|prison pee.
+P:Where can I|find it?
+N:Look in the cell|from outside...
+W:60
+P:Hold, here is|what you were|looking for
+N: Thank you, you|deserve this sword!
+G:64
 F
