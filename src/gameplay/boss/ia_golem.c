@@ -44,7 +44,7 @@ static void ia_golem(rpg_t *rpg)
     switch_status(rpg);
 }
 
-void animate_boss_grotte(rpg_t *rpg)
+static void animate_if_no_life(rpg_t *rpg)
 {
     if (rpg->boss_stats.life <= 0) {
         rpg->boss_stats.status = ST_DIE;
@@ -65,5 +65,11 @@ void animate_boss_grotte(rpg_t *rpg)
             toggle_spritesheet_scene(rpg, true, SC_VICTORY_GROTTE);
         }
     }
-    attack_of_player(rpg);ia_golem(rpg);
+}
+
+void animate_boss_grotte(rpg_t *rpg)
+{
+    animate_if_no_life(rpg);
+    attack_of_player(rpg);
+    ia_golem(rpg);
 }

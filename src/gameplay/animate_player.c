@@ -23,8 +23,6 @@ static void move_animate_player(rpg_t *rpg)
     if (rpg->spritesheet[rpg->player_stats.skin].rect.left >= 192)
         rpg->spritesheet[rpg->player_stats.skin].rect.left = 0;
     sfClock_restart(rpg->spritesheet[rpg->player_stats.skin].c_anim);
-    play_sound(rpg->sound.sound_list[SOUND_WALK].sound,
-    rpg->sound.volume_effect / 2);
 }
 
 void animate_player(rpg_t *rpg)
@@ -34,11 +32,12 @@ void animate_player(rpg_t *rpg)
     rpg->spritesheet[rpg->player_stats.skin].pos);
     float time_player =
     get_clock_time(rpg->spritesheet[rpg->player_stats.skin].c_anim);
-
     if (!rpg->all_events.down && !rpg->all_events.up && !rpg->all_events.left
     && !rpg->all_events.right && !rpg->all_events.s && !rpg->all_events.z
-    && !rpg->all_events.q && !rpg->all_events.d)
+    && !rpg->all_events.q && !rpg->all_events.d) {
         rpg->spritesheet[rpg->player_stats.skin].rect.left = 0;
+        stop_sound(rpg->sound.sound_list[SOUND_WALK].sound);
+    }
     else if (time_player >= SECOND_TO_MICRO(0.2))
         move_animate_player(rpg);
     if (color.g == 255
