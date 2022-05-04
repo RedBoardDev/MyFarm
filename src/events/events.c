@@ -58,7 +58,8 @@ static void scream_lost(rpg_t *rpg)
     sfSound_getStatus(rpg->sound.sound_list[SOUND_LOST_FOCUS].sound);
 
     if (st != sfPlaying)
-        play_sound(rpg->sound.sound_list[SOUND_LOST_FOCUS].sound, 100);
+        play_sound(rpg->sound.sound_list[SOUND_LOST_FOCUS].sound,
+        rpg->sound.volume_effect);
 }
 
 void my_events(rpg_t *rpg)
