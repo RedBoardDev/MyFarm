@@ -9,7 +9,6 @@
 
 void quest_seller(rpg_t *rpg)
 {
-    rpg->quest[QUEST_SELLER].clock_chat = sfClock_create();
     if (rpg->quest[QUEST_SELLER].active != 0) {
         if (rpg->quest[QUEST_SELLER].active <= 1
         || check_if_in_inventory(rpg, rpg->quest[QUEST_SELLER].active == -1))

@@ -51,7 +51,6 @@ typedef struct {
     int step;
     int active;
     sfText *dialog;
-    sfClock *clock_chat;
     int speaker;
     sfVector2f scale;
     sfVector2f pos_dialog;
