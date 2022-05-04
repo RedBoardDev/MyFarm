@@ -27,7 +27,7 @@ void put_shop_gui(rpg_t *rpg)
 void shop_button1(rpg_t *rpg)
 {
     if (remove_money(rpg, 30) != 84)
-        add_item_inventory(rpg, SP_FLASK_LIFE);
+        add_item_inventory(rpg, SP_ITEM_ARMOR);
 }
 
 void shop_button2(rpg_t *rpg)
