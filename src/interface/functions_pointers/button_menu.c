@@ -17,6 +17,7 @@ void how_play(rpg_t *rpg)
 
 void display_custom_skins(rpg_t *rpg)
 {
+    reset_all_players(rpg);
     sfSprite_setColor(rpg->spritesheet[SP_BACKGROUND_SC_MENU].sprite,
     (sfColor){255, 255, 255, 180});
     toggle_spritesheet_scene(rpg, false, SC_MENU);

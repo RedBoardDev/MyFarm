@@ -7,6 +7,25 @@
 
 #include "../../include/rpg.h"
 
+void reset_all_players(rpg_t *rpg)
+{
+    sfVector2f scale = {3, 3};
+    int posx = 670;
+    int posy = HEIGHT / 2 + 100;
+
+    for (int index = SP_PLAYER_BLUE; index <= SP_PLAYER_YELLOW; ++index) {
+        if (index == SP_PLAYER_GREY) {
+            posx = 670;
+            posy = HEIGHT / 2 + 350;
+        }
+        rpg->spritesheet[index].rect.top = 0;
+        rpg->spritesheet[index].pos.x = posx;
+        rpg->spritesheet[index].pos.y = posy;
+        sfSprite_setScale(rpg->spritesheet[index].sprite, scale);
+        posx += 200;
+    }
+}
+
 void init_all_players_2(spritesheet_t *spritesheet, int i)
 {
     set_one_sprite("assets/img/skins/grey.png", &spritesheet[SP_PLAYER_GREY],
