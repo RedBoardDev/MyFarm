@@ -1,20 +1,20 @@
 N:Hello Farmer!
-N:I'm the leader of this indian village.
-N:Here, every indian will be kind with you.
-N:You can find all the happiness you want.
-N:Me, I have some weapons to propose you.
+N:I'm the leader of|this indian village.
+N:Here, every indian|will be kind|with you.
+N:You can find all|the happiness|you want.
+N:Me, I have some|weapons to|propose you.
 N:What do you want?
-P:I think I will need a sword to fight.
-N:I'll give you one in exchange for a jar of prisoner pee.
-P:Right, where should I find it?
-N:Look at the jail at the bottom right of the map.
+P:I think I will|need a sword|to fight.
+N:I'll give you one|in exchange for a jar|of prisoner pee.
+P:Right, where|should I find it?
+N:Look at the jail|at the bottom|right of the map.
 W:60
 P:Here it is!
-P:I have what you were looking for.
-N:Nice! You merit this sword!
-N:Be careful with it.
-N:It's a very powerful sword!
-N:One wrong attack and it may kill you.
+P:I have what you|were looking for.
+N:Nice! You merit|this sword!
+N:Be careful|with it.
+N:It's a very|powerful sword!
+N:One wrong attack|and it may|kill you.
 N:Good luck!
 P:Thank you!
 G:64
