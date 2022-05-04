@@ -18,4 +18,5 @@ N:One wrong attack|and it may|kill you.
 N:Good luck!
 P:Thank you!
 G:64
+G:69
 F

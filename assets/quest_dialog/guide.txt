@@ -1,22 +1,22 @@
-N:Hi!|Welcome to MyFarm!
-N:I know why|you are here.
+N:Hi! Welcome to MyFarm!
+N:I know why you are here.
 N:Right?
-P:Yeah my mom|is dead,|I'm so sad|right now...
-N:I understand|completly...
+P:Yeah my mom is dead, I'm so sad right now...
+N:I understand completly...
 N:BUT
-N:I'm here|to help you!
-N:To reanimate|your mom, there|is a solution.
-N:You have to|make a potion full|of good things|for your mom.
-N:You have to|discover where|to find it.
-N:I know there is|a lot of monsters|here in the|darkest places.
-N:I think they can|help you, they have|a lot of power
-N:so they may have|all the ingredients|needed for|your potion.
+N:I'm here to help you!
+N:To reanimate your mom, there is a solution.
+N:You have to make a potion full of good things for your mom.
+N:You have to discover where to find it.
+N:I know there is a lot of monsters here in the darkest places.
+N:I think they can help you, they have a lot of power
+N:so they may have all the ingredients needed for your potion.
 P:Ok right!
-P:Where can I|find them???
-N:I don't|really know...
-N:Try to discorver|a little bit|the village and|the Indian camp.
-N:I have a good|friend in a little|tent, he may|help you.
+P:Where can I find them???
+N:I don't really know...
+N:Try to discorver a little bit the village and the Indian camp.
+N:I have a good friend in a little tent, he may help you.
 N:Try to find him!
-P:Thank you|very much!
-N:And come back|to me if you need|some help.
+P:Thank you very much!
+N:And come back to me if you need some help.
 F
