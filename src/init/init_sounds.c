@@ -35,6 +35,8 @@ static void init_sound_effect(rpg_t *rpg)
     false, &rpg->sound.sound_list[SOUND_DEATH_GOLEM]);
     create_sound("assets/sounds/splash_water.ogg",
     true, &rpg->sound.sound_list[SOUND_WATER]);
+    create_sound("assets/sounds/scream.ogg",
+    false, &rpg->sound.sound_list[SOUND_LOST_FOCUS]);
 }
 
 void init_sounds(rpg_t *rpg, bool no_sound)

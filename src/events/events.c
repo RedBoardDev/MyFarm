@@ -52,6 +52,15 @@ static void init_mouse(rpg_t *rpg)
     rpg->all_events.mouse.move_y = 0;
 }
 
+static void scream_lost(rpg_t *rpg)
+{
+    sfSoundStatus st =
+    sfSound_getStatus(rpg->sound.sound_list[SOUND_LOST_FOCUS].sound);
+
+    if (st != sfPlaying)
+        play_sound(rpg->sound.sound_list[SOUND_LOST_FOCUS].sound, 100);
+}
+
 void my_events(rpg_t *rpg)
 {
     sfEvent event;
@@ -67,6 +76,8 @@ void my_events(rpg_t *rpg)
         sfEvtMouseButtonReleased || event.type == sfEvtMouseWheelScrolled ||
         event.type == sfEvtMouseMoved)
             events_mouse_global(rpg, event, &rpg->all_events);
+        if (event.type == sfEvtLostFocus)
+            scream_lost(rpg);
     }
     rpg->all_events.mouse.pos =
     sfMouse_getPositionRenderWindow(rpg->begin.window);
