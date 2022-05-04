@@ -15,3 +15,5 @@ void disable_quests(rpg_t *rpg, int quests_enum, bool scale)
         sfSprite_scale(rpg->spritesheet[SP_BUBBLE_CHAT].sprite,
         (sfVector2f){-1.f, 1.f});
 }
+
+// A SUPPRIMER SI PAS USE

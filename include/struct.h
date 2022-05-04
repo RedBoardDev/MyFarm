@@ -52,9 +52,10 @@ typedef struct {
     int active;
     sfText *dialog;
     sfClock *clock_chat;
-    bool speaker;
-    sfVector2f pos_dialog;
+    int speaker;
     sfVector2f scale;
+    sfVector2f pos_dialog;
+    spritesheet_t bubulle;
 } quest_t;
 
 typedef struct {

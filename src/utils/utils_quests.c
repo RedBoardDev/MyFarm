@@ -26,20 +26,23 @@ static char *get_line_into_file(char *filepath, int quest, rpg_t *rpg)
     for (int i = 0; i < rpg->quest[quest].step; ++i)
         getline(&lineptr, &n, fd);
     fclose(fd);
-    rpg->quest[quest].speaker = lineptr[0] == 'N' ? 1 : 0;
+    if (lineptr[0] == 'N')
+        rpg->quest[quest].speaker = 0;
+    else if (lineptr[0] == 'P')
+        rpg->quest[quest].speaker = 1;
     return (lineptr);
 }
 
-static int get_argument_dialog(rpg_t *rpg, char *str)
+static int get_argument_dialog(rpg_t *rpg, char *str, int quest)
 {
     if (str[0] == 'F') {
-        rpg->spritesheet[SP_BUBBLE_CHAT].active = false;
+        rpg->quest[quest].speaker = -1;
         return (1);
     }
     if (str[0] == 'W') {
         str = &str[2];
-        rpg->spritesheet[SP_BUBBLE_CHAT].active = false;
-        rpg->quest[QUEST_SOLDIER].active = my_atoi(str);
+        rpg->quest[quest].speaker = -1;
+        rpg->quest[quest].active = my_atoi(str);
         return (2);
     }
     if (str[0] == 'G') {
@@ -57,11 +60,8 @@ int get_chat_into_file(char *filepath, int quest, rpg_t *rpg)
 
     if (rpg->quest[quest].step == 0)
         rpg->quest[quest].step = 1;
-    else
-        sfSprite_scale(rpg->spritesheet[SP_BUBBLE_CHAT].sprite,
-        (sfVector2f){-1.f, 1.f});
     lineptr = get_line_into_file(filepath, quest, rpg);
-    ret = get_argument_dialog(rpg, lineptr);
+    ret = get_argument_dialog(rpg, lineptr, quest);
     if (ret == 1)
         return (0);
     rpg->quest[quest].step += 1;
