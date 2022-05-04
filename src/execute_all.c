@@ -93,14 +93,20 @@ static void drink_flask(rpg_t *rpg)
     if (get_item_inv(rpg, I_ATTACK) == SP_FLASK_ATTACK) {
         remove_item_inventory(rpg, SP_FLASK_ATTACK);
         rpg->player_stats.damage += 1;
+        play_sound(rpg->sound.sound_list[SOUND_POTION_DRINK].sound,
+        rpg->sound.volume_effect);
     }
     if (get_item_inv(rpg, I_ATTACK) == SP_FLASK_SPEED) {
         remove_item_inventory(rpg, SP_FLASK_SPEED);
         rpg->player_stats.speed += 1;
+        play_sound(rpg->sound.sound_list[SOUND_POTION_DRINK].sound,
+        rpg->sound.volume_effect);
     }
     if (get_item_inv(rpg, I_ATTACK) == SP_FLASK_DRUNK) {
         remove_item_inventory(rpg, SP_FLASK_DRUNK);
         rpg->player_stats.drunk = true;
+        play_sound(rpg->sound.sound_list[SOUND_POTION_DRINK].sound,
+        rpg->sound.volume_effect);
     }
 }
 
