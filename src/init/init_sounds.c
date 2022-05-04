@@ -22,7 +22,7 @@ static void init_sound_music(rpg_t *rpg)
 static void init_sound_effect(rpg_t *rpg)
 {
     create_sound("assets/sounds/walk.ogg",
-    false, &rpg->sound.sound_list[SOUND_WALK]);
+    true, &rpg->sound.sound_list[SOUND_WALK]);
     create_sound("assets/sounds/door.ogg",
     false, &rpg->sound.sound_list[SOUND_DOOR]);
     create_sound("assets/sounds/ambiant_cave.ogg",
