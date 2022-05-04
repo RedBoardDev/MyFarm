@@ -17,6 +17,8 @@ static void init_sound_music(rpg_t *rpg)
     true, &rpg->sound.sound_list[SOUND_AMBIANT_CAVE]);
     create_sound("assets/sounds/main.ogg",
     true, &rpg->sound.sound_list[SOUND_MENU]);
+    create_sound("assets/sounds/bonnenuit.ogg",
+    false, &rpg->sound.sound_list[SOUND_NIGHT]);
 }
 
 static void init_sound_effect(rpg_t *rpg)

@@ -163,6 +163,7 @@ enum sounds {
     SOUND_MAIN,
     SOUND_GRAVEYARD,
     SOUND_AMBIANT_CAVE,
+    SOUND_NIGHT,
     NBR_SOUND,
 };
 
