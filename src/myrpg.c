@@ -28,10 +28,10 @@ static void modify_zoom(rpg_t *rpg)
     }
 }
 
-static void big_loop(rpg_t *rpg, sfColor *oui)
+static void big_loop(rpg_t *rpg, sfColor *drunk)
 {
     set_view(rpg, rpg->begin.view.center);
-    *oui = my_rgb(*oui);
+    *drunk = my_rgb(*drunk);
     get_fps(rpg);
     my_events(rpg);
     modify_zoom(rpg);
@@ -71,7 +71,7 @@ int open_or_not_file(rpg_t *rpg, char *file_backup)
 void myrpg(bool no_sound, char *file_backup)
 {
     rpg_t *rpg = malloc(sizeof(rpg_t));
-    sfColor oui = {255, 0, 0, 255};
+    sfColor drunk = {255, 0, 0, 255};
     init_all(rpg, no_sound);
     if (!rpg->begin.window || !rpg->begin.framebuffer)
         return;
@@ -81,7 +81,7 @@ void myrpg(bool no_sound, char *file_backup)
         return;
     while (sfRenderWindow_isOpen(rpg->begin.window)) {
         clean_window(&rpg->begin, sfBlack);
-        big_loop(rpg, &oui);
+        big_loop(rpg, &drunk);
     }
     destroy_all(rpg);
 }
