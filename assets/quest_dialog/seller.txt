@@ -1,3 +1,22 @@
-N:Greetings !|What do you|want bebou ?
-P:I want your|****
+N:Hi! Welcome to the shop!
+N:Here, you can buy all you need to be strong
+N:and to beat every bosses of the town.
+N:What can I propose you?
+N:Humm
+N:Hummmmmm
+N:...
+N:..............................
+N:YES!
+N:I found it!
+N:I lost my list, sorry...
+N:SO
+N:I have: a potion of strength, to make you strong,
+N:a potion of speed, to make you fast,
+N:an helmet to protect you,
+N:and a.......
+N:I have also a potion of alcohol.
+N:If you want to forget all your problems.
+N:Drink it with moderation.
+N:So here is my shop, what would you buy bebou?
+P:I want your ****
 F
