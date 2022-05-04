@@ -104,6 +104,15 @@ static void drink_flask(rpg_t *rpg)
     }
 }
 
+static void execute_base(rpg_t *rpg)
+{
+    sfFloatRect co = {-20, -20, 40, 40};
+    if (check_collision_npc(rpg, SP_BED_SLEEP, co) && rpg->all_events.enter) {
+        rpg->all_events.enter = false;
+        button_bed_saving(rpg);
+    }
+}
+
 void execute_all(rpg_t *rpg)
 {
     if (is_in_gameplay(rpg))
@@ -118,6 +127,8 @@ void execute_all(rpg_t *rpg)
         execute_cemetery(rpg);
     if (rpg->screen[SC_MAIN_MAP].active)
         execute_main_map(rpg);
+    if (rpg->screen[SC_BASE].active)
+        execute_base(rpg);
     if (rpg->all_events.mouse.right)
         drink_flask(rpg);
     execute_quests(rpg);
