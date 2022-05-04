@@ -54,7 +54,25 @@ static void execute_all_gameplay(rpg_t *rpg)
     animate_player(rpg);
     set_size_cursor(rpg, 0.06);
     manage_inventory(rpg);
-    menu_pause(rpg);
+    if (rpg->all_events.escape) {
+        rpg->all_events.escape = false;
+        if (rpg->screen[SC_GUI_SHOP].active) {
+            toggle_spritesheet_scene(rpg, false, SC_GUI_SHOP);
+            rpg->spritesheet[SP_CURSOR].active = true;
+            return;
+        }
+        if (rpg->spritesheet[SP_MINIMAP_TAVERNE].active) {
+            rpg->spritesheet[SP_MINIMAP_TAVERNE].active = false;
+            return;
+        }
+        if (rpg->screen[SC_INVENTORY].active) {
+            for (int i = SP_ITEM_SHOVEL; i <= SP_FLASK_DRUNK; ++i)
+                rpg->spritesheet[i].active = false;
+            toggle_spritesheet_scene(rpg, false, SC_INVENTORY);
+            return;
+        } else
+            menu_pause(rpg);
+    }
 }
 
 static void execute_all_menus(rpg_t *rpg)

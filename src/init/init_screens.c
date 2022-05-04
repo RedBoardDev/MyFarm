@@ -18,6 +18,7 @@ const int screen_base[] = {SP_BACKGROUND_SC_BASE, SELECTED_PLAYER,  \
 SP_BED_SLEEP, SP_CURSOR, -1};
 const int screen_inventory[] = {SP_INVENTORY, SP_CURSOR, -1};
 const int screen_how_play[] = {SP_BACKGROUND_HOW_PLAY, SP_BACK, SP_CURSOR, -1};
+const int screen_gui_shop[] = {SP_GUI_SHOP, SP_SHOP_BUTTON1, SP_SHOP_BUTTON2, SP_SHOP_BUTTON3, SP_SHOP_BUTTON4, SP_CURSOR -1};
 const int screen_pause_menu[] = {SP_RESUME, SP_OPTION, SP_LEAVE_GAME, \
 SP_CURSOR, -1};
 const int screen_option_menu[] = {SP_BACKGROUND_HOW_PLAY, SP_SOUND_EFFECT,  \
@@ -93,6 +94,8 @@ void init_screens(rpg_t *rpg)
     screen_inventory, (sfVector2f){WIDTH / 2, HEIGHT / 2}, 0.4);
     rpg->screen[SC_JAIL] = init_one_scene(false,
     screen_jail, (sfVector2f){1716 - 250, 1742 - 200}, 0.4);
+    rpg->screen[SC_GUI_SHOP] = init_one_scene(false,
+    screen_gui_shop, (sfVector2f){850, 356 - ((432 - 50) / 2)}, 0.4);
     init_screen_norme(rpg);
     for (int i = 0; i < NBR_SC; ++i)
         rpg->screen[i].clock = sfClock_create();
