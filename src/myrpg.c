@@ -35,7 +35,7 @@ static void big_loop(rpg_t *rpg, sfColor *oui)
     get_fps(rpg);
     my_events(rpg);
     modify_zoom(rpg);
-    if ((rpg->all_events.q || rpg->all_events.c) && rpg->all_events.ctrl)
+    if ((rpg->all_events.c) && rpg->all_events.ctrl)
         sfRenderWindow_close(rpg->begin.window);
     if (rpg->all_events.ctrl && rpg->all_events.s) {
         save_file("save", rpg);
