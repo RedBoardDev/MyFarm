@@ -41,6 +41,10 @@ static void big_loop(rpg_t *rpg, sfColor *oui)
         save_file("save", rpg);
         rpg->all_events.s = false;
     }
+    if (rpg->all_events.tab)
+        send_notif(rpg, "Oui monsieur le thomas");
+
+    draw_notif(rpg);
     move_sound_box(rpg);
     move_all_fps_independant(rpg);
     execute_all(rpg);

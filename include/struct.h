@@ -69,6 +69,13 @@ typedef struct {
 } beginning_t;
 
 typedef struct {
+    bool toggle_notif;
+    int inc_pos;
+    sfVector2f offset_hide;
+    sfText *text;
+} notif_t;
+
+typedef struct {
     beginning_t begin;
     events_t all_events;
     spritesheet_t *spritesheet;
@@ -80,6 +87,7 @@ typedef struct {
     boss_stats_t boss_stats;
     quest_t *quest;
     params_t params;
+    notif_t notif;
 } rpg_t;
 
 #endif

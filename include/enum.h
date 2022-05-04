@@ -90,6 +90,7 @@ enum sprites {
     SP_FLASK_DRUNK,
     SP_MINIMAP,
     SP_MINIMAP_LAYER,
+    SP_NOTIF,
     SP_RESUME,
     SP_OPTION,
     SP_LEAVE_GAME,

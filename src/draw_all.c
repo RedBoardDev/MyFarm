@@ -48,6 +48,7 @@ void draw_all_text(rpg_t *rpg)
         draw_fps(rpg);
     if (rpg->screen[SC_INVENTORY].active)
         write_text(rpg->begin.window, rpg->player_stats.inventory.money);
+    draw_text_notif(rpg);
 }
 
 void draw_main_item(rpg_t *rpg)
