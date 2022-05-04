@@ -87,6 +87,20 @@ static void execute_quests(rpg_t *rpg)
         quest_guide(rpg);
 }
 
+static void drink_flask(rpg_t *rpg)
+{
+    rpg->all_events.mouse.right = false;
+    if (get_item_inv(rpg, I_ATTACK) == SP_FLASK_ATTACK) {
+        remove_item_inventory(rpg, SP_FLASK_ATTACK);
+    }
+    if (get_item_inv(rpg, I_ATTACK) == SP_FLASK_SPEED) {
+        remove_item_inventory(rpg, SP_FLASK_SPEED);
+    }
+    if (get_item_inv(rpg, I_ATTACK) == SP_FLASK_DRUNK) {
+        remove_item_inventory(rpg, SP_FLASK_DRUNK);
+    }
+}
+
 void execute_all(rpg_t *rpg)
 {
     if (is_in_gameplay(rpg))
@@ -101,5 +115,7 @@ void execute_all(rpg_t *rpg)
         execute_cemetery(rpg);
     if (rpg->screen[SC_MAIN_MAP].active)
         execute_main_map(rpg);
+    if (rpg->all_events.mouse.right)
+        drink_flask(rpg);
     execute_quests(rpg);
 }
