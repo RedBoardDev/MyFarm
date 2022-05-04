@@ -9,7 +9,6 @@
 
 void quest_guide(rpg_t *rpg)
 {
-    rpg->quest[QUEST_GUIDE].clock_chat = sfClock_create();
     if (rpg->quest[QUEST_GUIDE].active != 0) {
         if (rpg->quest[QUEST_GUIDE].active <= 1
         || check_if_in_inventory(rpg, rpg->quest[QUEST_GUIDE].active) == -1)
