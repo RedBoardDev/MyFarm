@@ -103,6 +103,7 @@ enum screens {
     SC_MAIN_MAP,
     SC_MENU,
     SC_CUSTOM_SKINS,
+    SC_GUI_SHOP,
     SC_HOW_PLAY,
     SC_BASE,
     SC_VICTORY_CEMETERY,

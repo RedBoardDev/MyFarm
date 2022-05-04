@@ -46,9 +46,9 @@ void toggle_spritesheet_scene(rpg_t *rpg, bool status, int scene_enum)
     for (int i = 0; rpg->screen[scene_enum].const_screen[i] != -1; ++i)
         if (rpg->screen[scene_enum].const_screen[i] == SELECTED_PLAYER)
             rpg->spritesheet[rpg->player_stats.skin].active = status;
-        else if (rpg->screen[scene_enum].const_screen[i] == CURSOR)
+        else if (rpg->screen[scene_enum].const_screen[i] == CURSOR) {
             toggle_cursor(rpg->begin.window, status);
-        else
+        } else
             rpg->spritesheet[rpg->screen[scene_enum].const_screen[i]].active =
             status;
 }
