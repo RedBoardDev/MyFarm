@@ -19,7 +19,7 @@
 ./assets/img/item/flask_attack.png
 ./assets/img/item/pickaxe.png
 ./assets/img/item/patato.png
-./assets/img/item/strawberry.png
+./assets/img/item/bucket_milk.png
 ./assets/img/item/flask_life.png
 ./assets/img/item/flask_speed.png
 ./assets/img/item/beets.png

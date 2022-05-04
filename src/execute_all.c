@@ -101,8 +101,9 @@ static void execute_quests(rpg_t *rpg)
     if (rpg->screen[SC_MAIN_MAP].active
     && rpg->quest[QUEST_GUIDE].active != 1
     && check_collision_npc(rpg, SP_NPC_GUIDE,
-    (sfFloatRect){-15, -15, 60, 30}))
+    (sfFloatRect){-15, -15, 60, 30})) {
         quest_guide(rpg);
+    }
 }
 
 static void drink_flask(rpg_t *rpg)

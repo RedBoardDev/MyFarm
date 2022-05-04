@@ -45,6 +45,6 @@ void init_quests(rpg_t *rpg)
     &rpg->quest[QUEST_SELLER].bubulle, (init_sprite_t){{1015, 35},
     {0.08, 0.08}, {0, 0, 798, 652}, false, false, false});
     rpg->quest[QUEST_SOLDIER].speaker = -1;
-    rpg->quest[QUEST_GUIDE].speaker = -1;
     rpg->quest[QUEST_SELLER].speaker = -1;
+    rpg->quest[QUEST_GUIDE].speaker = -1;
 }
