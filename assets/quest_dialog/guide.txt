@@ -14,9 +14,51 @@ N:so they may have|all the ingredients|needed for|your potion.
 P:Ok right!
 P:Where can I|find them???
 N:I don't|really know...
+N:But the first|ingredients that you|have to find are|some beetroots.
+N:Once you found|it, come to me!
 N:Try to discorver|a little bit|the village and|the Indian camp.
 N:I have a good|friend in a little|tent, he may|help you.
 N:Try to find him!
 P:Thank you|very much!
 N:And come back|to me if you need|some help.
+W:69
+P:Here it is!
+P:I've found|the beetroots.
+N:Thank you!|You were|really fast!
+N:The next ingredient|that will be good|for your mom|is a tomato.
+N:I see that you|found a sword in|the Indian village.
+N:It will be very|useful for the|next fight.
+N:The next fight|is in a dead zone.
+N:Try to find it|and to kill him.
+N:Next, give me|the tomato.
+W:67
+P:Here it is!
+P:I've found|the tomato.
+N:Thank you!|You were|really good!
+N:The next ingredient|that will be good|for your mom|is a potato.
+N:I see that you|earned a pickaxe in|the previous fight.
+N:It will be very|useful for the|next fight.
+N:The next fight|is in a rocky zone.
+N:Try to find it|and to kill him.
+N:Next, give me|the potato.
+W:66
+P:Here it is!
+P:I've found|the potato.
+N:Thank you!|You were|really great!
+N:The next ingredient|that will be good|for your mom is|a bucket of milk.
+P:Where can|I find that?
+N:I saw a little|enclose with some|cows in here.
+N:You should go|there and pick|some milk.
+N:Don't worry,|no one will|scold you.
+N:After that,|give me the|bucket of milk.
+P:Thank you|for your help!
+W:68
+P:Here it is!
+P:I've found|the bucket of milk.
+N:Nice! You gave me all the items needed for the potion!
+N:I will prepare it.
+N:(preparing)
+N:...
+N:....................|....................|....................|....................
+N:à finir
 F
