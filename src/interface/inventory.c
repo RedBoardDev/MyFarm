@@ -36,7 +36,6 @@ void manage_inventory(rpg_t *rpg)
         rpg->all_events.e = false;
         for (int i = SP_ITEM_SHOVEL; i <= SP_FLASK_DRUNK; ++i)
             rpg->spritesheet[i].active = false;
-        rpg->screen[SC_INVENTORY].active = !status;
         toggle_spritesheet_scene(rpg, !status, SC_INVENTORY);
     }
     if (rpg->screen[SC_INVENTORY].active) {

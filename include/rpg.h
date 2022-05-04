@@ -28,7 +28,7 @@
     button_toggle_dark_mode, button_toggle_show_fps, nothing, nothing, \
     nothing, nothing, nothing, click_item_prisoner_pee, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing, \
-    nothing, nothing, nothing, nothing, nothing, nothing, button_resume_game, \
+    nothing, nothing, nothing, nothing, nothing, nothing, nothing, button_resume_game, \
     button_option_game, button_leave_game, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, nothing, nothing, nothing  \
     }

@@ -7,6 +7,16 @@
 
 #include "../../include/rpg.h"
 
+static bool draw_cursor_back_pause(rpg_t *rpg)
+{
+    int current_screen = get_current_screen(rpg);
+
+    for (int i = 0; rpg->screen[current_screen].const_screen[i] != -1; ++i)
+        if (rpg->screen[current_screen].const_screen[i] == SP_CURSOR)
+            return (true);
+    return (false);
+}
+
 void menu_pause(rpg_t *rpg)
 {
     bool status = rpg->screen[SC_PAUSE].active;
@@ -21,7 +31,19 @@ void menu_pause(rpg_t *rpg)
     rpg->spritesheet[SP_LEAVE_GAME].pos.y = rpg->begin.view.center.y + 70;
     if (rpg->all_events.escape) {
         rpg->all_events.escape = false;
+        if (rpg->spritesheet[SP_MINIMAP_TAVERNE].active) {
+            rpg->spritesheet[SP_MINIMAP_TAVERNE].active = false;
+            return;
+        }
+        if (rpg->screen[SC_INVENTORY].active) {
+            for (int i = SP_ITEM_SHOVEL; i <= SP_FLASK_DRUNK; ++i)
+                rpg->spritesheet[i].active = false;
+            toggle_spritesheet_scene(rpg, false, SC_INVENTORY);
+            return;
+        }
         rpg->screen[SC_PAUSE].active = !status;
         toggle_spritesheet_scene(rpg, !status, SC_PAUSE);
+        if (status == true && draw_cursor_back_pause(rpg))
+            rpg->spritesheet[SP_CURSOR].active = true;
     }
 }
