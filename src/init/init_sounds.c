@@ -17,6 +17,8 @@ static void init_sound_music(rpg_t *rpg)
     true, &rpg->sound.sound_list[SOUND_AMBIANT_CAVE]);
     create_sound("assets/sounds/main.ogg",
     true, &rpg->sound.sound_list[SOUND_MENU]);
+    create_sound("assets/sounds/bonnenuit.ogg",
+    false, &rpg->sound.sound_list[SOUND_NIGHT]);
 }
 
 static void init_sound_effect(rpg_t *rpg)
@@ -35,6 +37,10 @@ static void init_sound_effect(rpg_t *rpg)
     false, &rpg->sound.sound_list[SOUND_DEATH_GOLEM]);
     create_sound("assets/sounds/splash_water.ogg",
     true, &rpg->sound.sound_list[SOUND_WATER]);
+    create_sound("assets/sounds/scream.ogg",
+    false, &rpg->sound.sound_list[SOUND_LOST_FOCUS]);
+    create_sound("assets/sounds/shield_potion.ogg",
+    false, &rpg->sound.sound_list[SOUND_POTION_DRINK]);
 }
 
 void init_sounds(rpg_t *rpg, bool no_sound)

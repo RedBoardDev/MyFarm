@@ -27,4 +27,5 @@ void init_inventory(inventory_t *inventory, rpg_t *rpg)
     inventory->inventory_case[I_CASE_2].item_spritesheet = SP_ITEM_SHOVEL;
     inventory->inventory_case[I_CASE_3].item_spritesheet = SP_ITEM_BEETS;
     inventory->inventory_case[I_CASE_3].item_spritesheet = SP_FLASK_ATTACK;
+    // inventory->inventory_case[I_CASE_4].item_spritesheet = SP_ITEM_ARMOR;
 }

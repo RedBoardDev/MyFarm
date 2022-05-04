@@ -27,7 +27,7 @@ static int get_nearest_index_inventory(rpg_t *rpg)
     for (int i = 0; i < 11; ++i) {
         if (i == I_ATTACK && !check_weapon(rpg))
             ++i;
-        if (i == I_ARMOR)
+        if (i == I_ARMOR && get_item_inv(rpg, I_CASE_MOVE) != SP_ITEM_ARMOR)
             ++i;
         pos_mouse = rpg->all_events.mouse.pos_view;
         pos_case = rpg->player_stats.inventory.inventory_case[i].pos;

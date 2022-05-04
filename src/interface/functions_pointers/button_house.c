@@ -37,6 +37,9 @@ void make_night(rpg_t *rpg)
 void button_bed_saving(rpg_t *rpg)
 {
     if (!rpg->spritesheet[SP_BED_SLEEP].rect.left) {
+        play_sound(rpg->sound.sound_list[SOUND_NIGHT].sound,
+        rpg->sound.volume_music);
+        stop_sound(rpg->sound.sound_list[SOUND_MAIN].sound);
         rpg->spritesheet[SP_BED_SLEEP].rect.left +=
         rpg->spritesheet[SP_BED_SLEEP].rect.width;
         rpg->spritesheet[rpg->player_stats.skin].active = false;
@@ -46,6 +49,7 @@ void button_bed_saving(rpg_t *rpg)
         save_file("save", rpg);
         send_notif(rpg, "Game saved!");
     } else {
+        play_main_sound(rpg);
         rpg->spritesheet[SP_BED_SLEEP].rect.left -=
         rpg->spritesheet[SP_BED_SLEEP].rect.width;
         rpg->spritesheet[rpg->player_stats.skin].active = true;

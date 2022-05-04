@@ -28,10 +28,10 @@ static void modify_zoom(rpg_t *rpg)
     }
 }
 
-static void big_loop(rpg_t *rpg, sfColor *oui)
+static void big_loop(rpg_t *rpg, sfColor *drunk)
 {
     set_view(rpg, rpg->begin.view.center);
-    *oui = my_rgb(*oui);
+    *drunk = my_rgb(*drunk);
     get_fps(rpg);
     my_events(rpg);
     modify_zoom(rpg);
@@ -53,24 +53,35 @@ static void big_loop(rpg_t *rpg, sfColor *oui)
     draw_all(rpg);
 }
 
+int open_or_not_file(rpg_t *rpg, char *file_backup)
+{
+    if (file_backup == NULL)
+        toggle_spritesheet_scene(rpg, true, SC_MENU);
+    else {
+        if (open_file("savee", rpg) == 1) {
+            write(2, "ERROR: Can't open backup file\n", 30);
+            destroy_all(rpg);
+            return (1);
+        }
+        re_create_window(rpg, rpg->params.fullscreen);
+    }
+    return (0);
+}
+
 void myrpg(bool no_sound, char *file_backup)
 {
     rpg_t *rpg = malloc(sizeof(rpg_t));
-    sfColor oui = {255, 0, 0, 255};
+    sfColor drunk = {255, 0, 0, 255};
     init_all(rpg, no_sound);
     if (!rpg->begin.window || !rpg->begin.framebuffer)
         return;
     play_sound(rpg->sound.sound_list[SOUND_MENU].sound,
     rpg->sound.volume_music);
-    if (file_backup == NULL)
-        toggle_spritesheet_scene(rpg, true, SC_MENU);
-    else {
-        open_file("save", rpg);
-        re_create_window(rpg, rpg->params.fullscreen);
-    }
+    if (open_or_not_file(rpg, file_backup) == 1)
+        return;
     while (sfRenderWindow_isOpen(rpg->begin.window)) {
         clean_window(&rpg->begin, sfBlack);
-        big_loop(rpg, &oui);
+        big_loop(rpg, &drunk);
     }
     destroy_all(rpg);
 }

@@ -93,14 +93,29 @@ static void drink_flask(rpg_t *rpg)
     if (get_item_inv(rpg, I_ATTACK) == SP_FLASK_ATTACK) {
         remove_item_inventory(rpg, SP_FLASK_ATTACK);
         rpg->player_stats.damage += 1;
+        play_sound(rpg->sound.sound_list[SOUND_POTION_DRINK].sound,
+        rpg->sound.volume_effect);
     }
     if (get_item_inv(rpg, I_ATTACK) == SP_FLASK_SPEED) {
         remove_item_inventory(rpg, SP_FLASK_SPEED);
         rpg->player_stats.speed += 1;
+        play_sound(rpg->sound.sound_list[SOUND_POTION_DRINK].sound,
+        rpg->sound.volume_effect);
     }
     if (get_item_inv(rpg, I_ATTACK) == SP_FLASK_DRUNK) {
         remove_item_inventory(rpg, SP_FLASK_DRUNK);
         rpg->player_stats.drunk = true;
+        play_sound(rpg->sound.sound_list[SOUND_POTION_DRINK].sound,
+        rpg->sound.volume_effect);
+    }
+}
+
+static void execute_base(rpg_t *rpg)
+{
+    sfFloatRect co = {-20, -20, 40, 40};
+    if (check_collision_npc(rpg, SP_BED_SLEEP, co) && rpg->all_events.enter) {
+        rpg->all_events.enter = false;
+        button_bed_saving(rpg);
     }
 }
 
@@ -118,6 +133,8 @@ void execute_all(rpg_t *rpg)
         execute_cemetery(rpg);
     if (rpg->screen[SC_MAIN_MAP].active)
         execute_main_map(rpg);
+    if (rpg->screen[SC_BASE].active)
+        execute_base(rpg);
     if (rpg->all_events.mouse.right)
         drink_flask(rpg);
     execute_quests(rpg);

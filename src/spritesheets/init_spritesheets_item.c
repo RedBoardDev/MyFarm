@@ -31,9 +31,9 @@ void init_spritesheets_flask(spritesheet_t *spritesheet)
     set_one_sprite("assets/img/item/flask_attack.png",
     &spritesheet[SP_FLASK_ATTACK],
     (init_sprite_t){{100, 100}, {1, 1}, {0, 0, 36, 42}, true, false, false});
-    set_one_sprite("assets/img/item/flask_life.png",
-    &spritesheet[SP_FLASK_LIFE],
-    (init_sprite_t){{100, 100}, {0.15, 0.15}, {0, 0, 229, 268}, true, false,
+    set_one_sprite("assets/img/item/armor.png",
+    &spritesheet[SP_ITEM_ARMOR],
+    (init_sprite_t){{100, 100}, {1.5, 1.5}, {0, 0, 26, 26}, true, false,
     false});
     set_one_sprite("assets/img/item/flask_speed.png",
     &spritesheet[SP_FLASK_SPEED],
