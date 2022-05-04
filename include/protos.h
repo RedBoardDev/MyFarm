@@ -267,5 +267,6 @@ void init_fps(rpg_t *rpg);
 void init_params(rpg_t *rpg);
 void init_icon_window(rpg_t *rpg);
 void init_notif(rpg_t *rpg);
+void reset_all_players(rpg_t *rpg);
 
 #endif
