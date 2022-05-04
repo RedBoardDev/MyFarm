@@ -52,13 +52,15 @@ static void read_sounds(int fd, rpg_t *rpg)
     rpg->sound.volume_music_backup = buff;
 }
 
-void open_file(char *filepath, rpg_t *rpg)
+int open_file(char *filepath, rpg_t *rpg)
 {
     int fd = open(filepath, O_RDONLY);
     int current_screen = -1;
 
-    if (fd == -1)
-        return;
+    if (fd == -1) {
+        close(fd);
+        return (1);
+    }
     read_params(fd, rpg);
     read_screens(fd, rpg);
     read_sounds(fd, rpg);
@@ -70,4 +72,5 @@ void open_file(char *filepath, rpg_t *rpg)
         set_view(rpg, rpg->screen[current_screen].view_pos);
     }
     close(fd);
+    return (0);
 }
