@@ -101,6 +101,7 @@ enum sprites {
 
 enum cutscene {
     CS_BEGIN_BACKGROUND,
+    CS_BEGIN_BUBULLE,
     NBR_CS
 };
 

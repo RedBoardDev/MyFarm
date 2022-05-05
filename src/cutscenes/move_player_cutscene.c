@@ -10,7 +10,6 @@
 static void move_animate_player(rpg_t *rpg, int touch)
 {
     rpg->spritesheet[rpg->player_stats.skin].rect.left += 48;
-    printf("%d\n", rpg->spritesheet[rpg->player_stats.skin].rect.left);
     if (touch == 1)
         rpg->spritesheet[rpg->player_stats.skin].rect.top = 64 * 2;
     if (rpg->spritesheet[rpg->player_stats.skin].rect.left >= 192)
@@ -22,6 +21,6 @@ void animate_player_cutscene(rpg_t *rpg, int touch)
 {
     float time_player =
     get_clock_time(rpg->spritesheet[rpg->player_stats.skin].c_anim);
-    if (time_player >= SECOND_TO_MICRO(0.2))
+    if (time_player >= SECOND_TO_MICRO(0.3))
         move_animate_player(rpg, touch);
 }

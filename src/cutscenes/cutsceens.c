@@ -29,9 +29,12 @@ static void draw_cutsceens_begin(rpg_t *rpg)
 
 void cutsceens_begin(rpg_t *rpg)
 {
-    rpg->cutsceens.pos_player.x++;
-    animate_player_cutscene(rpg, 1);
+    if (rpg->cutsceens.pos_player.x <= 1200) {
+        rpg->cutsceens.pos_player.x += 0.8;
+        animate_player_cutscene(rpg, 1);
+    } else
+        rpg->cutsceens.spritesheet[CS_BEGIN_BUBULLE].active = true;
     sfSprite_setScale(rpg->spritesheet[rpg->player_stats.skin].sprite,
-    (sfVector2f){3, 3});
+    (sfVector2f){5, 5});
     draw_cutsceens_begin(rpg);
 }
