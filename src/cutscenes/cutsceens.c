@@ -30,5 +30,8 @@ static void draw_cutsceens_begin(rpg_t *rpg)
 void cutsceens_begin(rpg_t *rpg)
 {
     rpg->cutsceens.pos_player.x++;
+    animate_player_cutscene(rpg, 1);
+    sfSprite_setScale(rpg->spritesheet[rpg->player_stats.skin].sprite,
+    (sfVector2f){3, 3});
     draw_cutsceens_begin(rpg);
 }
