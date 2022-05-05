@@ -87,7 +87,7 @@ typedef struct {
 } notif_t;
 
 typedef struct {
-    sfClock *mouvement;
+    sfClock *clock;
     sfVector2f pos_player;
     spritesheet_t *spritesheet;
 } cutsceens_t;

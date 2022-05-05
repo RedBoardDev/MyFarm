@@ -29,12 +29,14 @@ static void draw_cutsceens_begin(rpg_t *rpg)
 
 void cutsceens_begin(rpg_t *rpg)
 {
+    if (get_clock_time(rpg->cutsceens.clock) >= SECOND_TO_MICRO(20)) {
+        rpg->screen[SC_CUTSCENE_BEGIN].active = false;
+        launch_game(rpg);
+    }
     if (rpg->cutsceens.pos_player.x <= 1200) {
         rpg->cutsceens.pos_player.x += 0.8;
         animate_player_cutscene(rpg, 1);
     } else
         rpg->cutsceens.spritesheet[CS_BEGIN_BUBULLE].active = true;
-    sfSprite_setScale(rpg->spritesheet[rpg->player_stats.skin].sprite,
-    (sfVector2f){5, 5});
     draw_cutsceens_begin(rpg);
 }
