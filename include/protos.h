@@ -277,6 +277,7 @@ void quest_launch(rpg_t *rpg, int i_quest, char *filepath);
 void draw_quests_inventory(rpg_t *rpg);
 void add_quest_inv(rpg_t *rpg, int enum_q);
 void mark_quest_done(rpg_t *rpg, int enum_q);
+void make_drunk(rpg_t *rpg, sfColor c);
 
 //cutsceens
 void cutsceens_begin(rpg_t *rpg);

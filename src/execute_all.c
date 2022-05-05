@@ -129,6 +129,7 @@ static void drink_flask(rpg_t *rpg)
         rpg->sound.volume_effect);
     }
     if (get_item_inv(rpg, I_ATTACK) == SP_FLASK_DRUNK) {
+        sfClock_restart(rpg->player_stats.drunk_time);
         remove_item_inventory(rpg, SP_FLASK_DRUNK);
         rpg->player_stats.drunk = true;
         play_sound(rpg->sound.sound_list[SOUND_POTION_DRINK].sound,

@@ -87,6 +87,7 @@ SRC_FILES	=	cutscenes/cutsceens	\
 				destroy_all	\
 				die	\
 				draw_all	\
+				drunk	\
 				execute_all	\
 				fps	\
 				lib_sound	\

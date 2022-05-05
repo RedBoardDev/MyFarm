@@ -18,6 +18,7 @@ boss_stats_t *boss_stats)
     player_stats->life = 20.0;
     player_stats->damage = 1;
     player_stats->last_damage = sfClock_create();
+    player_stats->drunk_time = sfClock_create();
     boss_stats->damage_executioner = 2;
     boss_stats->damage_golem = 10;
     boss_stats->inc_pos = 0.25;
