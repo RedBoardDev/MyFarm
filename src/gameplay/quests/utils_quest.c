@@ -7,8 +7,18 @@
 
 #include "../../../include/rpg.h"
 
+static int draw_bubulle_npc(rpg_t *rpg, sfSprite *sprite,
+sfIntRect rect, sfVector2f pos)
+{
+    if (rpg->screen[SC_INVENTORY].active)
+        return (0);
+    draw_one_sprite(&rpg->begin, sprite, rect, pos);
+    return (1);
+}
+
 void send_chat_bubble(rpg_t *rpg, char *filepath, int quest_id)
 {
+    int put_txt = 0;
     sfVector2f pos_player = rpg->spritesheet[rpg->player_stats.skin].pos;
     sfVector2f pos_dialog = sfText_getPosition(rpg->quest[quest_id].dialog);
 
@@ -17,17 +27,18 @@ void send_chat_bubble(rpg_t *rpg, char *filepath, int quest_id)
     pos_player.y -= 50;
     pos_player.x -= 20;
     if (rpg->quest[quest_id].speaker == 0) {
-        draw_one_sprite(&rpg->begin, rpg->quest[quest_id].bubulle.sprite,
-        rpg->quest[quest_id].bubulle.rect,
-        rpg->quest[quest_id].bubulle.pos);
-        write_text(rpg->begin.window, rpg->quest[quest_id].dialog);
+        put_txt = draw_bubulle_npc(rpg, rpg->quest[quest_id].bubulle.sprite,
+        rpg->quest[quest_id].bubulle.rect, rpg->quest[quest_id].bubulle.pos);
+        if (put_txt)
+            write_text(rpg->begin.window, rpg->quest[quest_id].dialog);
     } else if (rpg->quest[quest_id].speaker == 1) {
-        draw_one_sprite(&rpg->begin, rpg->spritesheet[SP_BUBBLE_CHAT].sprite,
+        put_txt = draw_bubulle_npc(rpg, rpg->spritesheet[SP_BUBBLE_CHAT].sprite,
         rpg->spritesheet[SP_BUBBLE_CHAT].rect, pos_player);
         pos_player.y -= 20;
         pos_player.x -= 25;
         sfText_setPosition(rpg->quest[quest_id].dialog, pos_player);
-        write_text(rpg->begin.window, rpg->quest[quest_id].dialog);
+        if (put_txt)
+            write_text(rpg->begin.window, rpg->quest[quest_id].dialog);
         sfText_setPosition(rpg->quest[quest_id].dialog, pos_dialog);
     }
     if (rpg->all_events.enter) {
