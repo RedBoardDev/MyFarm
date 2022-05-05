@@ -15,11 +15,11 @@ static void draw_cutsceens_begin(rpg_t *rpg)
     sfRenderWindow_drawSprite(rpg->begin.window,
     rpg->begin.sprite, NULL);
     for (int i = 0; i < NBR_CS; ++i) {
-        if (rpg->cutsceens.spritesheet[CS_BEGIN_BACKGROUND].active)
+        if (rpg->cutsceens.spritesheet[i].active)
             draw_one_sprite(&rpg->begin,
-            rpg->cutsceens.spritesheet[CS_BEGIN_BACKGROUND].sprite,
-            rpg->cutsceens.spritesheet[CS_BEGIN_BACKGROUND].rect,
-            rpg->cutsceens.spritesheet[CS_BEGIN_BACKGROUND].pos);
+            rpg->cutsceens.spritesheet[i].sprite,
+            rpg->cutsceens.spritesheet[i].rect,
+            rpg->cutsceens.spritesheet[i].pos);
     }
     draw_one_sprite(&rpg->begin,
     rpg->spritesheet[rpg->player_stats.skin].sprite,
@@ -29,5 +29,6 @@ static void draw_cutsceens_begin(rpg_t *rpg)
 
 void cutsceens_begin(rpg_t *rpg)
 {
+    rpg->cutsceens.pos_player.x++;
     draw_cutsceens_begin(rpg);
 }
