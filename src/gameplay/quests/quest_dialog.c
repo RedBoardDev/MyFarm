@@ -23,8 +23,6 @@ static char *get_line_into_file(char *filepath, int quest, rpg_t *rpg)
         rpg->quest[quest].speaker = 0;
     else if (lineptr[0] == 'P')
         rpg->quest[quest].speaker = 1;
-    write(1, lineptr, strlen(lineptr));
-    write(1, "\n", 0);
     return (lineptr);
 }
 

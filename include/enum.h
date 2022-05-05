@@ -99,7 +99,14 @@ enum sprites {
     NBR_SP
 };
 
+enum cutscene {
+    CS_BEGIN_BACKGROUND,
+    CS_PLAYER_FRONT,
+    NBR_CS
+};
+
 enum screens {
+    SC_CUTSCENE_BEGIN,
     SC_MAIN_MAP,
     SC_MENU,
     SC_CUSTOM_SKINS,
