@@ -21,6 +21,7 @@ N:I have a good|friend in a little|tent, he may|help you.
 N:Try to find him!
 P:Thank you|very much!
 N:And come back|to me if you need|some help.
+A:Search the pee prisoner!
 W:69
 P:Here it is!
 P:I've found|the beetroots.
@@ -31,6 +32,7 @@ N:It will be very|useful for the|next fight.
 N:The next fight|is in a dead zone.
 N:Try to find it|and to kill him.
 N:Next, give me|the tomato.
+A:Fight the cimetery boss!
 W:67
 P:Here it is!
 P:I've found|the tomato.
@@ -41,6 +43,7 @@ N:It will be very|useful for the|next fight.
 N:The next fight|is in a rocky zone.
 N:Try to find it|and to kill him.
 N:Next, give me|the potato.
+A:Fight the mountain boss!
 W:66
 P:Here it is!
 P:I've found|the potato.
@@ -52,6 +55,7 @@ N:You should go|there and pick|some milk.
 N:Don't worry,|no one will|scold you.
 N:After that,|give me the|bucket of milk.
 P:Thank you|for your help!
+A:Approach of the animals!
 W:68
 P:Here it is!
 P:I've found|the bucket of milk.

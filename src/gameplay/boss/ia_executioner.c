@@ -86,6 +86,8 @@ void animate_boss_cemetery(rpg_t *rpg)
             };
             toggle_spritesheet_scene(rpg, false, SC_CEMETERY);
             toggle_spritesheet_scene(rpg, true, SC_VICTORY_CEMETERY);
+            stop_sound(rpg->sound.sound_list[SOUND_GRAVEYARD].sound);
+            play_main_sound(rpg);
         }
     } else
         ia_executioner(rpg);
