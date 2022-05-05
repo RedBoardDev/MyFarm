@@ -92,10 +92,7 @@ SRC_FILES	=	events/events	\
 				main	\
 				myrpg	\
 				notif	\
-				open_file_stats	\
-				open_file	\
 				quetes_inv	\
-				save_progress	\
 				set_cursor	\
 				view	\
 

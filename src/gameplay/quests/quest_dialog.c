@@ -28,25 +28,31 @@ static char *get_line_into_file(char *filepath, int quest, rpg_t *rpg)
 
 static int get_argument_dialog(rpg_t *rpg, char *str, int quest)
 {
-    if (str[0] == 'F') {
+    char first_character = str[0];
+
+    str = &str[2];
+    switch (first_character) {
+    case ('F'):
         rpg->quest[quest].speaker = -1;
         return (1);
-    }
-    if (str[0] == 'W') {
-        str = &str[2];
+    case 'W':
         rpg->quest[quest].speaker = -1;
         rpg->quest[quest].active = my_atoi(str);
         return (2);
-    }
-    if (str[0] == 'G') {
-        str = &str[2];
+    case 'G':
         add_item_inventory(rpg, my_atoi(str));
         return (2);
-    }
-    if (str[0] == 'A') {
-        str = &str[2];
+    case 'A':
         send_notif(rpg, str);
         return (2);
+    case 'Q':
+        add_quest_inv(rpg, my_atoi(str));
+        return (2);
+    case 'R':
+        mark_quest_done(rpg, my_atoi(str));
+        return (2);
+    default:
+        break;
     }
     return (0);
 }
