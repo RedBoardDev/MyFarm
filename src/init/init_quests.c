@@ -25,7 +25,7 @@ static void init_quests_inv(rpg_t *rpg)
     for (int i = 0; i < NBR_Q; ++i) {
         rpg->quests_inv[i].active = false;
         rpg->quests_inv[i].done = false;
-        rpg->quests_inv[i].text = create_text((init_text_t){50,
+        rpg->quests_inv[i].text = create_text((init_text_t){60,
         rpg->quests_inv[i].text_string, sfBlack, {-100, -100},
         "assets/fonts/Sriracha-Regular.ttf"});
     }

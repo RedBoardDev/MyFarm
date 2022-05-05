@@ -14,7 +14,8 @@ N:so they may have|all the ingredients|needed for|your potion.
 P:Ok right!
 P:Where can I|find them???
 N:I don't|really know...
-N:But the first|ingredients that you|have to find are|some beetroots.
+N:But the|first ingredients|that you
+N:have to find are|some beetroots.
 Q:2
 N:Once you found|it, come to me!
 N:Try to discorver|a little bit|the village and|the Indian camp.
@@ -28,7 +29,8 @@ P:Here it is!
 P:I've found|the beetroots.
 N:Thank you!|You were|really fast!
 R:2
-N:The next ingredient|that will be good|for your mom|is a tomato.
+N:The next|ingredient that|will be good
+N:for your mom|is a tomato.
 Q:4
 N:I see that you|found a sword in|the Indian village.
 N:It will be very|useful for the|next fight.
@@ -41,9 +43,10 @@ P:Here it is!
 P:I've found|the tomato.
 N:Thank you!|You were|really good!
 R:4
-N:The next ingredient|that will be good|for your mom|is a potato.
+N:The next|ingredient that|will be good
+N:for your mom|is a potato.
 Q:6
-N:I see that you|earned a pickaxe in|the previous fight.
+N:I see that you|earned a pickaxe|in the|previous fight.
 N:It will be very|useful for the|next fight.
 N:The next fight|is in a rocky zone.
 Q:5
