@@ -31,6 +31,14 @@ void set_player(rpg_t *rpg)
     (sfVector2f){0.7, 0.7});
 }
 
+void launch_begin_cutscene(rpg_t *rpg)
+{
+    rpg->screen[SC_CUTSCENE_BEGIN].active = true;
+    sfSprite_setScale(rpg->spritesheet[rpg->player_stats.skin].sprite,
+    (sfVector2f){5, 5});
+    sfClock_restart(rpg->cutsceens.clock);
+}
+
 void launch_game(rpg_t *rpg)
 {
     rpg->spritesheet[rpg->player_stats.skin].pos =

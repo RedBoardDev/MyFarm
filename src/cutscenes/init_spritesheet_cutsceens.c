@@ -9,6 +9,7 @@
 
 void init_spritehseet_cutsceens(rpg_t *rpg)
 {
+    rpg->cutsceens.clock = sfClock_create();
     rpg->cutsceens.spritesheet = malloc(sizeof(spritesheet_t) * NBR_CS);
     rpg->cutsceens.pos_player = (sfVector2f){-20, 880};
     set_one_sprite("assets/img/cutsceens/cut_scene_background.png",

@@ -71,7 +71,7 @@ void myrpg(bool no_sound, char *file_backup)
     rpg->sound.volume_music);
     if (open_or_not_file(rpg, file_backup) == 1)
         return;
-    // rpg->screen[SC_CUTSCENE_BEGIN].active = true;
+    rpg->screen[SC_CUTSCENE_BEGIN].active = false;
     while (sfRenderWindow_isOpen(rpg->begin.window)) {
         clean_window(&rpg->begin, sfBlack);
         get_fps(rpg);
