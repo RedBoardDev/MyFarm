@@ -50,6 +50,10 @@ void draw_all_text(rpg_t *rpg)
         write_text(rpg->begin.window, rpg->player_stats.inventory.money);
         draw_quests_inventory(rpg);
     }
+    if (rpg->screen[SC_GUI_SHOP].active) {
+        sfText_setString(rpg->player_stats.inventory.money_shop, my_itoa(rpg->player_stats.money));
+        write_text(rpg->begin.window, rpg->player_stats.inventory.money_shop);
+    }
     draw_text_notif(rpg);
 }
 

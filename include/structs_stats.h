@@ -22,6 +22,7 @@ typedef struct {
     sfText *speed;
     sfText *life;
     sfText *quests;
+    sfText *money_shop;
 } inventory_t;
 
 typedef struct {
