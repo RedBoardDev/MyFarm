@@ -7,6 +7,23 @@
 
 #include "../include/rpg.h"
 
+static void draw_skills_inventory(rpg_t *rpg)
+{
+    sfVector2f pos = {rpg->spritesheet[SP_INVENTORY].pos.x + 280, rpg->spritesheet[SP_INVENTORY].pos.y - 26};
+
+    sfText_setPosition(rpg->skills_inv.skill_resistance, pos);
+    sfText_setString(rpg->skills_inv.skill_resistance, my_itoa(rpg->player_stats.resistance));
+    pos.y += 46;
+    sfText_setPosition(rpg->skills_inv.skill_speed, pos);
+    sfText_setString(rpg->skills_inv.skill_speed, my_itoa(rpg->player_stats.speed));
+    pos.y += 46;
+    sfText_setPosition(rpg->skills_inv.skill_strength, pos);
+    sfText_setString(rpg->skills_inv.skill_strength, my_itoa(rpg->player_stats.damage));
+    write_text(rpg->begin.window, rpg->skills_inv.skill_resistance);
+    write_text(rpg->begin.window, rpg->skills_inv.skill_speed);
+    write_text(rpg->begin.window, rpg->skills_inv.skill_strength);
+}
+
 void draw_quests_inventory(rpg_t *rpg)
 {
     sfVector2f pos = {rpg->spritesheet[SP_INVENTORY].pos.x - 350, rpg->spritesheet[SP_INVENTORY].pos.y - 25};
@@ -19,6 +36,7 @@ void draw_quests_inventory(rpg_t *rpg)
             pos.y += 14;
         }
     }
+    draw_skills_inventory(rpg);
 }
 
 void add_quest_inv(rpg_t *rpg, int enum_q)
