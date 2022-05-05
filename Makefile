@@ -11,7 +11,9 @@ NAME	=	my_rpg
 SRC_DIR	=	src/
 EXTENSION	=	.c
 
-SRC_FILES	=	events/events	\
+SRC_FILES	=	cutscenes/cutsceens	\
+				cutscenes/init_spritesheet_cutsceens	\
+				events/events	\
 				events/key_pressed	\
 				events/key_released	\
 				events/mouse	\

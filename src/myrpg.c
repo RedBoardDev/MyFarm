@@ -32,15 +32,7 @@ static void big_loop(rpg_t *rpg, sfColor *drunk)
 {
     set_view(rpg, rpg->begin.view.center);
     *drunk = my_rgb(*drunk);
-    get_fps(rpg);
-    my_events(rpg);
     modify_zoom(rpg);
-    if ((rpg->all_events.c) && rpg->all_events.ctrl)
-        sfRenderWindow_close(rpg->begin.window);
-    if (rpg->all_events.ctrl && rpg->all_events.s) {
-        save_file("save", rpg);
-        rpg->all_events.s = false;
-    }
     if (rpg->all_events.tab)
         add_quest_inv(rpg, Q_BUCKET_OF_MILK);
 
@@ -79,9 +71,21 @@ void myrpg(bool no_sound, char *file_backup)
     rpg->sound.volume_music);
     if (open_or_not_file(rpg, file_backup) == 1)
         return;
+    // rpg->screen[SC_CUTSCENE_BEGIN].active = true;
     while (sfRenderWindow_isOpen(rpg->begin.window)) {
         clean_window(&rpg->begin, sfBlack);
-        big_loop(rpg, &drunk);
+        get_fps(rpg);
+        my_events(rpg);
+        if ((rpg->all_events.c) && rpg->all_events.ctrl)
+        sfRenderWindow_close(rpg->begin.window);
+        if (rpg->all_events.ctrl && rpg->all_events.s) {
+            save_file("save", rpg);
+            rpg->all_events.s = false;
+        }
+        if (rpg->screen[SC_CUTSCENE_BEGIN].active)
+            cutsceens_begin(rpg);
+        else
+            big_loop(rpg, &drunk);
     }
     destroy_all(rpg);
 }

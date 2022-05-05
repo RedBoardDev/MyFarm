@@ -81,6 +81,12 @@ typedef struct {
 } notif_t;
 
 typedef struct {
+    sfClock *mouvement;
+    sfVector2f pos_player;
+    spritesheet_t *spritesheet;
+} cutsceens_t;
+
+typedef struct {
     beginning_t begin;
     events_t all_events;
     spritesheet_t *spritesheet;
@@ -94,6 +100,7 @@ typedef struct {
     quests_inv_t *quests_inv;
     params_t params;
     notif_t notif;
+    cutsceens_t cutsceens;
 } rpg_t;
 
 #endif

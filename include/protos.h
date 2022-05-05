@@ -92,6 +92,7 @@ void init_spritesheets_quests(spritesheet_t *spritesheet);
 void init_quests(rpg_t *rpg);
 void init_spritesheet_gui_shop(spritesheet_t *spritesheet);
 void init_spritesheets_flask(spritesheet_t *spritesheet);
+void init_spritehseet_cutsceens(rpg_t *rpg);
 
 // utils draw
 void my_draw_circle(sfUint8 *framebuffer, sfVector2i center, int radius,
@@ -275,5 +276,8 @@ void quest_launch(rpg_t *rpg, int i_quest, char *filepath);
 void draw_quests_inventory(rpg_t *rpg);
 void add_quest_inv(rpg_t *rpg, int enum_q);
 void mark_quest_done(rpg_t *rpg, int enum_q);
+
+//cutsceens
+void cutsceens_begin(rpg_t *rpg);
 
 #endif

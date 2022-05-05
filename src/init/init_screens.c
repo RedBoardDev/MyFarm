@@ -96,6 +96,7 @@ void init_screens(rpg_t *rpg)
     screen_jail, (sfVector2f){1716 - 250, 1742 - 200}, 0.4);
     rpg->screen[SC_GUI_SHOP] = init_one_scene(false,
     screen_gui_shop, (sfVector2f){850, 356 - ((432 - 50) / 2)}, 0.4);
+    rpg->screen[SC_CUTSCENE_BEGIN].active = false;
     init_screen_norme(rpg);
     for (int i = 0; i < NBR_SC; ++i)
         rpg->screen[i].clock = sfClock_create();
