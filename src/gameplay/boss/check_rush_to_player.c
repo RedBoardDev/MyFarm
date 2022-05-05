@@ -12,7 +12,7 @@ void check_rush_to_player_executiner(rpg_t *rpg)
     if (check_collision_executioner(rpg)) {
         rpg->boss_stats.rush_to_player = false;
         sfClock_restart(rpg->spritesheet[SP_BOSS_EXECUTIONER].c_attack);
-        remove_life_player(rpg, rpg->boss_stats.damage_executioner);
+        remove_life_player(rpg, rpg->boss_stats.damage_executioner * 2);
     }
 }
 

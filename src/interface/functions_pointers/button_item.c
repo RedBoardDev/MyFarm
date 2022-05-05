@@ -21,6 +21,7 @@ void collision_pee(rpg_t *rpg)
 
     if (check_collision_npc(rpg, SP_ITEM_PRISONER_PEE, pee_rect))
         if (check_if_in_inventory(rpg, SP_ITEM_PRISONER_PEE) == -1) {
+            send_notif(rpg, "Bring it back to the Indian");
             add_item_inventory(rpg, SP_ITEM_PRISONER_PEE);
             rpg->spritesheet[SP_ITEM_PRISONER_PEE].active = false;
         }

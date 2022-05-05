@@ -55,13 +55,12 @@ void draw_all_text(rpg_t *rpg)
 
 void draw_main_item(rpg_t *rpg)
 {
-    int item_nb = rpg->player_stats.inventory.inventory_case[I_ATTACK].
-    item_spritesheet;
+    int item_nb = get_item_inv(rpg, I_ATTACK);
     sfVector2f pos_main_item = rpg->spritesheet[rpg->player_stats.skin].pos;
     sfVector2f scale_item;
     sfVector2f scale_item2;
 
-    if (item_nb != -1) {
+    if (item_nb != -1 && !rpg->player_stats.attack) {
         scale_item = sfSprite_getScale(rpg->spritesheet[item_nb].sprite);
         scale_item2 = sfSprite_getScale(rpg->spritesheet[item_nb].sprite);
         scale_item.x /= 2;

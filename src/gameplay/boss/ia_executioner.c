@@ -10,15 +10,19 @@
 static void attack_if_collision_executioner(rpg_t *rpg)
 {
     float time_last_damage = get_clock_time(rpg->player_stats.last_damage);
+    int item = 0;
 
     rpg->boss_stats.status = ST_ATTACK_1;
     if (time_last_damage >= SECOND_TO_MICRO(0.5))
-        remove_life_player(rpg, rpg->boss_stats.damage_executioner / 2);
+        remove_life_player(rpg, rpg->boss_stats.damage_executioner);
     if (rpg->all_events.enter && rpg->boss_stats.life >= 0) {
         play_sound(rpg->sound.sound_list[SOUND_LAUNCH_WEAPON_PLAYER].sound,
         rpg->sound.volume_effect);
-        rpg->boss_stats.life -= (get_item_inv(rpg, I_ATTACK) ==
-        SP_ITEM_SWORD ? 1 : 0);
+        item = get_item_inv(rpg, I_ATTACK);
+        if (item == SP_ITEM_SWORD)
+            rpg->boss_stats.life -= 1;
+        else if (item == SP_ITEM_SHOVEL)
+            rpg->boss_stats.life -= 0.1;
         rpg->boss_stats.life <= 0 ? (add_money(rpg, 24),
         add_item_inventory(rpg, SP_ITEM_PICKAXE),
         add_item_inventory(rpg, SP_ITEM_TOMATE)) : 0;
@@ -48,7 +52,7 @@ static void ia_executioner(rpg_t *rpg)
         random ? rpg->boss_stats.inc_pos *= -1 : 0;
         sfClock_restart(rpg->boss_stats.movement);
     }
-    if (time_attack >= SECOND_TO_MICRO(10))
+    if (time_attack >= SECOND_TO_MICRO(5))
         rpg->boss_stats.rush_to_player = true;
     ia_executioner_rush(rpg);
 }
@@ -86,6 +90,7 @@ void animate_boss_cemetery(rpg_t *rpg)
             };
             toggle_spritesheet_scene(rpg, false, SC_CEMETERY);
             toggle_spritesheet_scene(rpg, true, SC_VICTORY_CEMETERY);
+            mark_quest_done(rpg, Q_FIGHT_EXECUTIONER);
             stop_sound(rpg->sound.sound_list[SOUND_GRAVEYARD].sound);
             play_main_sound(rpg);
         }
