@@ -50,3 +50,11 @@ void quest_launch(rpg_t *rpg, int i_quest)
     get_chat_into_file("assets/quest_dialog/guide.txt",
     i_quest, rpg);
 }
+
+int check_status_dialog(quest_t *quest)
+{
+    for (int i = 0; i < NBR_QUEST; ++i)
+        if (quest[i].active == 1)
+            return (1);
+    return (0);
+}

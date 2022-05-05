@@ -7,13 +7,6 @@
 
 #include "../../../include/rpg.h"
 
-int check_status_dialog(quest_t *quest)
-{
-    if (quest[QUEST_SOLDIER].active == 1)
-        return (1);
-    return (0);
-}
-
 static char *get_line_into_file(char *filepath, int quest, rpg_t *rpg)
 {
     char *lineptr;
@@ -48,6 +41,11 @@ static int get_argument_dialog(rpg_t *rpg, char *str, int quest)
     if (str[0] == 'G') {
         str = &str[2];
         add_item_inventory(rpg, my_atoi(str));
+        return (2);
+    }
+    if (str[0] == 'A') {
+        str = &str[2];
+        send_notif(rpg, str);
         return (2);
     }
     return (0);

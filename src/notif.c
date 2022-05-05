@@ -72,6 +72,7 @@ void move_notif(rpg_t *rpg)
         rpg->notif.offset_hide.x = 500;
     }
     rpg->notif.offset_hide.x = rpg->notif.offset_hide.x - rpg->notif.inc_pos;
-    real_pos = rpg->begin.view.center.x + ((WIDTH / 2) * zoom) + ((250 - rpg->notif.offset_hide.x) * zoom);
+    real_pos = rpg->begin.view.center.x + ((WIDTH / 2) * zoom) +
+    ((250 - rpg->notif.offset_hide.x) * zoom);
     rpg->spritesheet[SP_NOTIF].pos = (sfVector2f){real_pos, pos_y};
 }
