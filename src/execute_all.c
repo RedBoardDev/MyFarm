@@ -70,7 +70,7 @@ static void execute_all_gameplay(rpg_t *rpg)
                 rpg->spritesheet[i].active = false;
             toggle_spritesheet_scene(rpg, false, SC_INVENTORY);
             return;
-        } else
+        } else if (!rpg->screen[SC_TAVERNE].active)
             menu_pause(rpg);
     }
 }
