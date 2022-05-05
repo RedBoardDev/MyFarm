@@ -53,6 +53,7 @@ SRC_FILES	=	events/events	\
 				spritesheets/init_spritesheets	\
 				spritesheets/init_spritesheets_item	\
 				spritesheets/init_sprites_menu_options	\
+				spritesheets/utils_sprites	\
 				init/init_view	\
 				interface/functions_pointers/button_menu	\
 				interface/functions_pointers/button_menu_options	\
@@ -70,7 +71,9 @@ SRC_FILES	=	events/events	\
 				interface/inventory_utils	\
 				interface/inventory	\
 				interface/menu_pause	\
-				spritesheets/utils_sprites	\
+				save_function/open_file_stats	\
+				save_function/open_file	\
+				save_function/save_progress	\
 				utils/check_screens	\
 				utils/utils_draw	\
 				utils/utils_zoom	\
@@ -89,9 +92,6 @@ SRC_FILES	=	events/events	\
 				main	\
 				myrpg	\
 				notif	\
-				open_file_stats	\
-				open_file	\
-				save_progress	\
 				set_cursor	\
 				view	\
 
