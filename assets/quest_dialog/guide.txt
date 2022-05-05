@@ -15,54 +15,63 @@ P:Ok right!
 P:Where can I|find them???
 N:I don't|really know...
 N:But the first|ingredients that you|have to find are|some beetroots.
+Q:2
 N:Once you found|it, come to me!
 N:Try to discorver|a little bit|the village and|the Indian camp.
 N:I have a good|friend in a little|tent, he may|help you.
+Q:0
 N:Try to find him!
 P:Thank you|very much!
 N:And come back|to me if you need|some help.
-A:Search the pee prisoner!
 W:69
 P:Here it is!
 P:I've found|the beetroots.
 N:Thank you!|You were|really fast!
+R:2
 N:The next ingredient|that will be good|for your mom|is a tomato.
+Q:4
 N:I see that you|found a sword in|the Indian village.
 N:It will be very|useful for the|next fight.
 N:The next fight|is in a dead zone.
+Q:3
 N:Try to find it|and to kill him.
 N:Next, give me|the tomato.
-A:Fight the cimetery boss!
 W:67
 P:Here it is!
 P:I've found|the tomato.
 N:Thank you!|You were|really good!
+R:4
 N:The next ingredient|that will be good|for your mom|is a potato.
+Q:6
 N:I see that you|earned a pickaxe in|the previous fight.
 N:It will be very|useful for the|next fight.
 N:The next fight|is in a rocky zone.
+Q:5
 N:Try to find it|and to kill him.
 N:Next, give me|the potato.
-A:Fight the mountain boss!
 W:66
 P:Here it is!
 P:I've found|the potato.
 N:Thank you!|You were|really great!
+R:6
 N:The next ingredient|that will be good|for your mom is|a bucket of milk.
+Q:8
 P:Where can|I find that?
 N:I saw a little|enclose with some|cows in here.
 N:You should go|there and pick|some milk.
 N:Don't worry,|no one will|scold you.
 N:After that,|give me the|bucket of milk.
+Q:7
 P:Thank you|for your help!
-A:Approach of the animals!
 W:68
 P:Here it is!
 P:I've found|the bucket of milk.
+R:8
 N:Nice! You gave me all the items needed for the potion!
 N:I will prepare it.
 N:(preparing)
 N:...
 N:....................|....................|....................|....................
 N:à finir
+Q:9
 F

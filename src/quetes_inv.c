@@ -24,7 +24,7 @@ void draw_quests_inventory(rpg_t *rpg)
 void add_quest_inv(rpg_t *rpg, int enum_q)
 {
     rpg->quests_inv[enum_q].active = true;
-    send_notif(rpg, "New quest!");
+    send_notif(rpg, rpg->quests_inv[enum_q].text_string);
 }
 
 void mark_quest_done(rpg_t *rpg, int enum_q)
