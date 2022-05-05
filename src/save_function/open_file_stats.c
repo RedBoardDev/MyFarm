@@ -5,7 +5,7 @@
 ** open_file_stats.c
 */
 
-#include "../include/rpg.h"
+#include "../../include/rpg.h"
 
 static void read_player_stats_inventory(int fd, rpg_t *rpg)
 {

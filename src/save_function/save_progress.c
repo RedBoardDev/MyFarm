@@ -5,7 +5,7 @@
 ** save_progress.c
 */
 
-#include "../include/rpg.h"
+#include "../../include/rpg.h"
 
 static void save_params(int fd, rpg_t *rpg)
 {
