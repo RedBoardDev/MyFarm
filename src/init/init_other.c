@@ -17,6 +17,8 @@ boss_stats_t *boss_stats)
     player_stats->speed = 1.0;
     player_stats->life = 20.0;
     player_stats->damage = 1;
+    player_stats->resistance = 1;
+    player_stats->drunk = false;
     player_stats->last_damage = sfClock_create();
     player_stats->drunk_time = sfClock_create();
     boss_stats->damage_executioner = 2;

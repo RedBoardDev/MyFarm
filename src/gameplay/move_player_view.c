@@ -36,24 +36,25 @@ static float getsp(rpg_t *rpg, sfColor color)
 void move_player_and_view_horizontal(rpg_t *rpg, sfImage *image,
 sfVector2f pos_player, bool move_view)
 {
-    sfColor color;
+    sfColor color = get_color_from_player(image, pos_player);
+    float speed = getsp(rpg, color);
     if (rpg->all_events.right || rpg->all_events.d) {
         color = get_color_from_player(image,
-        (sfVector2f){pos_player.x + 2, pos_player.y});
+        (sfVector2f){pos_player.x + speed + 2, pos_player.y});
         if (rpg->spritesheet[rpg->player_stats.skin].pos.x > 385 &&
         rpg->begin.view.center.x < 1535 && color.r != 255 && move_view)
-            rpg->begin.view.center.x += getsp(rpg, color);
+            rpg->begin.view.center.x += speed;
         if (color.r != 255)
-            rpg->spritesheet[rpg->player_stats.skin].pos.x += getsp(rpg, color);
+            rpg->spritesheet[rpg->player_stats.skin].pos.x += speed;
     }
     if (rpg->all_events.left || rpg->all_events.q) {
         color = get_color_from_player(image,
-        (sfVector2f){pos_player.x - 2, pos_player.y});
+        (sfVector2f){pos_player.x - speed - 2, pos_player.y});
         if (rpg->spritesheet[rpg->player_stats.skin].pos.x < 1535 &&
         rpg->begin.view.center.x > 385 && color.r != 255 && move_view)
-            rpg->begin.view.center.x -= getsp(rpg, color);
+            rpg->begin.view.center.x -= speed;
         if (color.r != 255)
-            rpg->spritesheet[rpg->player_stats.skin].pos.x -= getsp(rpg, color);
+            rpg->spritesheet[rpg->player_stats.skin].pos.x -= speed;
     }
     set_view(rpg, rpg->begin.view.center);
 }
@@ -61,24 +62,25 @@ sfVector2f pos_player, bool move_view)
 void move_player_and_view_vertical(rpg_t *rpg, sfImage *image,
 sfVector2f pos_player, bool move_view)
 {
-    sfColor color;
+    sfColor color = get_color_from_player(image, pos_player);
+    float speed = getsp(rpg, color);
     if (rpg->all_events.up || rpg->all_events.z) {
         color = get_color_from_player(image,
-        (sfVector2f){pos_player.x, pos_player.y - 2});
+        (sfVector2f){pos_player.x, pos_player.y - speed - 2});
         if (rpg->spritesheet[rpg->player_stats.skin].pos.y < 1920 - 217 &&
         rpg->begin.view.center.y > 216 && color.r != 255 && move_view)
-            rpg->begin.view.center.y -= getsp(rpg, color);
+            rpg->begin.view.center.y -= speed;
         if (color.r != 255)
-            rpg->spritesheet[rpg->player_stats.skin].pos.y -= getsp(rpg, color);
+            rpg->spritesheet[rpg->player_stats.skin].pos.y -= speed;
     }
     if (rpg->all_events.down || rpg->all_events.s) {
         color = get_color_from_player(image,
-        (sfVector2f){pos_player.x, pos_player.y + 2});
+        (sfVector2f){pos_player.x, pos_player.y + speed + 2});
         if (rpg->spritesheet[rpg->player_stats.skin].pos.y > 216 &&
         rpg->begin.view.center.y < 1920 - 217 && color.r != 255 && move_view)
-            rpg->begin.view.center.y += getsp(rpg, color);
+            rpg->begin.view.center.y += speed;
         if (color.r != 255)
-            rpg->spritesheet[rpg->player_stats.skin].pos.y += getsp(rpg, color);
+            rpg->spritesheet[rpg->player_stats.skin].pos.y += speed;
     }
     set_view(rpg, rpg->begin.view.center);
 }
