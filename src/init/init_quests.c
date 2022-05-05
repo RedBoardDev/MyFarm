@@ -29,6 +29,12 @@ static void init_quests_inv(rpg_t *rpg)
         rpg->quests_inv[i].text_string, sfBlack, {-100, -100},
         "assets/fonts/Sriracha-Regular.ttf"});
     }
+    rpg->skills_inv.skill_resistance = create_text((init_text_t){200, "0",
+    sfBlack, {-100, -100}, "assets/fonts/Sriracha-Regular.ttf"});
+    rpg->skills_inv.skill_speed = create_text((init_text_t){200, "0",
+    sfBlack, {-100, -100}, "assets/fonts/Sriracha-Regular.ttf"});
+    rpg->skills_inv.skill_strength = create_text((init_text_t){200, "0",
+    sfBlack, {-100, -100}, "assets/fonts/Sriracha-Regular.ttf"});
 }
 
 void init_quests(rpg_t *rpg)

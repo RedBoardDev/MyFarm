@@ -63,6 +63,12 @@ typedef struct {
 } quests_inv_t;
 
 typedef struct {
+    sfText *skill_speed;
+    sfText *skill_resistance;
+    sfText *skill_strength;
+} skills_inv_t;
+
+typedef struct {
     sfRenderWindow *window;
     sfUint8 *framebuffer;
     sfTexture *texture;
@@ -98,6 +104,7 @@ typedef struct {
     boss_stats_t boss_stats;
     quest_t *quest;
     quests_inv_t *quests_inv;
+    skills_inv_t skills_inv;
     params_t params;
     notif_t notif;
     cutsceens_t cutsceens;

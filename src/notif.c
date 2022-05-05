@@ -29,10 +29,10 @@ void draw_text_notif(rpg_t *rpg)
 void draw_notif(rpg_t *rpg)
 {
     float zoom = get_zoom(rpg->begin.view.view);
-    sfVector2f scale = {0.5 * zoom, 0.5 * zoom};
     sfVector2f pos_hide = {rpg->begin.view.center.x + ((WIDTH / 2) * zoom) +
     (250 * zoom),
     rpg->begin.view.center.y - ((HEIGHT / 2) * zoom) + (50 * zoom)};
+    sfVector2f scale = {0.5 * zoom, 0.5 * zoom};
 
     sfSprite_setScale(rpg->spritesheet[SP_NOTIF].sprite, scale);
     if (rpg->notif.toggle_notif) {
