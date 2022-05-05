@@ -63,6 +63,8 @@ static void animate_if_no_life(rpg_t *rpg)
             };
             toggle_spritesheet_scene(rpg, false, SC_GROTTE);
             toggle_spritesheet_scene(rpg, true, SC_VICTORY_GROTTE);
+            stop_sound(rpg->sound.sound_list[SOUND_AMBIANT_CAVE].sound);
+            play_main_sound(rpg);
         }
     }
 }

@@ -15,6 +15,12 @@ void destroy_spritesheets(rpg_t *rpg)
         sfClock_destroy(rpg->spritesheet[i].c_anim);
         sfClock_destroy(rpg->spritesheet[i].c_attack);
     }
+    for (int i = 0; i < NBR_QUEST; ++i) {
+        sfSprite_destroy(rpg->quest[i].bubulle.sprite);
+        sfTexture_destroy(rpg->quest[i].bubulle.texture);
+        sfClock_destroy(rpg->quest[i].bubulle.c_anim);
+        sfClock_destroy(rpg->quest[i].bubulle.c_attack);
+    }
     free(rpg->spritesheet);
 }
 

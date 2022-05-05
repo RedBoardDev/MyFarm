@@ -5,7 +5,7 @@
 ** open_file.c
 */
 
-#include "../include/rpg.h"
+#include "../../include/rpg.h"
 
 static void read_params(int fd, rpg_t *rpg)
 {

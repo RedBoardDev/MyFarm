@@ -9,7 +9,7 @@
 
 static char *get_line_into_file(char *filepath, int quest, rpg_t *rpg)
 {
-    char *lineptr;
+    char *lineptr = NULL;
     FILE *fd;
     size_t n = 0;
 
