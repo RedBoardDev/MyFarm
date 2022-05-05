@@ -70,7 +70,7 @@ static void execute_all_gameplay(rpg_t *rpg)
                 rpg->spritesheet[i].active = false;
             toggle_spritesheet_scene(rpg, false, SC_INVENTORY);
             return;
-        } else
+        } else if (!rpg->screen[SC_TAVERNE].active)
             menu_pause(rpg);
     }
 }
@@ -147,6 +147,16 @@ static void execute_base(rpg_t *rpg)
     }
 }
 
+static void execute_taverne(rpg_t *rpg)
+{
+    if (check_collision_npc(rpg, SP_NPC_SELLER,
+    (sfFloatRect){-15, -15, 60, 30}) && rpg->all_events.enter &&
+    rpg->quest[QUEST_SELLER].active == -1) {
+        put_shop_gui(rpg);
+        rpg->all_events.enter = false;
+    }
+}
+
 void execute_all(rpg_t *rpg)
 {
     if (is_in_gameplay(rpg))
@@ -165,5 +175,7 @@ void execute_all(rpg_t *rpg)
         execute_base(rpg);
     if (rpg->all_events.mouse.right)
         drink_flask(rpg);
+    if (rpg->screen[SC_TAVERNE].active)
+        execute_taverne(rpg);
     execute_quests(rpg);
 }
