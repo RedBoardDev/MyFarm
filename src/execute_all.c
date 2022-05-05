@@ -89,6 +89,8 @@ static void execute_all_menus(rpg_t *rpg)
 static void execute_main_map(rpg_t *rpg)
 {
     collision_pee(rpg);
+    if (rpg->quest[QUEST_GUIDE].step >= 65)
+        collision_milk(rpg);
 }
 
 static void execute_quests(rpg_t *rpg)

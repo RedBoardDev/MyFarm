@@ -74,6 +74,20 @@ void draw_main_item(rpg_t *rpg)
     }
 }
 
+static void draw_on_floor_items(rpg_t *rpg)
+{
+    if (rpg->screen[SC_MAIN_MAP].active && !rpg->screen[SC_INVENTORY].active
+    && check_if_in_inventory(rpg, SP_ITEM_PRISONER_PEE) == -1)
+        rpg->spritesheet[SP_ITEM_PRISONER_PEE].active = true;
+    else if (!rpg->screen[SC_INVENTORY].active)
+        rpg->spritesheet[SP_ITEM_PRISONER_PEE].active = false;
+    if (rpg->screen[SC_MAIN_MAP].active && !rpg->screen[SC_INVENTORY].active
+    && check_if_in_inventory(rpg, SP_ITEM_MILK) == -1)
+        rpg->spritesheet[SP_ITEM_MILK].active = true;
+    else if (!rpg->screen[SC_INVENTORY].active)
+        rpg->spritesheet[SP_ITEM_MILK].active = false;
+}
+
 void draw_all(rpg_t *rpg)
 {
     sfSprite_setTexture(rpg->begin.sprite, rpg->begin.texture, sfFalse);
@@ -83,11 +97,7 @@ void draw_all(rpg_t *rpg)
     rpg->begin.sprite, NULL);
     if (rpg->screen[SC_INVENTORY].active)
         draw_inventory(rpg->player_stats.inventory, rpg->spritesheet, rpg);
-    if (rpg->screen[SC_MAIN_MAP].active && !rpg->screen[SC_INVENTORY].active
-    && check_if_in_inventory(rpg, SP_ITEM_PRISONER_PEE) == -1)
-        rpg->spritesheet[SP_ITEM_PRISONER_PEE].active = true;
-    else if (!rpg->screen[SC_INVENTORY].active)
-        rpg->spritesheet[SP_ITEM_PRISONER_PEE].active = false;
+    draw_on_floor_items(rpg);
     rpg->spritesheet[SP_MINIMAP].active = ((rpg->screen[SC_MAIN_MAP].active &&
     rpg->params.dark_mode) ? true : false);
     rpg->spritesheet[SP_MINIMAP_LAYER].active =
