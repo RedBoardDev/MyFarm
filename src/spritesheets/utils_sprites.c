@@ -43,7 +43,7 @@ void toggle_spritesheet_scene(rpg_t *rpg, bool status, int scene_enum)
         set_zoom(rpg->begin.view.view, rpg->screen[scene_enum].view_zoom);
     if (scene_enum != -1)
         rpg->screen[scene_enum].active = status;
-    for (int i = 0; rpg->screen[scene_enum].const_screen[i] != -1; ++i)
+    for (int i = 0; rpg->screen[scene_enum].const_screen[i] != -1; ++i) {
         if (rpg->screen[scene_enum].const_screen[i] == SELECTED_PLAYER)
             rpg->spritesheet[rpg->player_stats.skin].active = status;
         else if (rpg->screen[scene_enum].const_screen[i] == CURSOR) {
@@ -51,6 +51,7 @@ void toggle_spritesheet_scene(rpg_t *rpg, bool status, int scene_enum)
         } else
             rpg->spritesheet[rpg->screen[scene_enum].const_screen[i]].active =
             status;
+    }
 }
 
 void disable_all_screens_gameplay(rpg_t *rpg)

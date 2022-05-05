@@ -13,6 +13,7 @@ EXTENSION	=	.c
 
 SRC_FILES	=	cutscenes/cutsceens	\
 				cutscenes/init_spritesheet_cutsceens	\
+				cutscenes/move_player_cutscene	\
 				events/events	\
 				events/key_pressed	\
 				events/key_released	\

@@ -281,5 +281,6 @@ void make_drunk(rpg_t *rpg, sfColor c);
 
 //cutsceens
 void cutsceens_begin(rpg_t *rpg);
+void animate_player_cutscene(rpg_t *rpg, int touch);
 
 #endif
