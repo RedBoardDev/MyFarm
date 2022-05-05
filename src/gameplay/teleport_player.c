@@ -9,6 +9,8 @@
 
 static void teleport_grotte(rpg_t *rpg)
 {
+    if (check_if_in_inventory(rpg, SP_ITEM_PICKAXE) == -1)
+        return;
     if (rpg->screen[SC_MAIN_MAP].active) {
         rpg->boss_stats.life = 20;
         rpg->spritesheet[rpg->player_stats.skin].pos.x = 444 - 200;
