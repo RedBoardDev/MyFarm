@@ -26,3 +26,15 @@ void collision_pee(rpg_t *rpg)
             rpg->spritesheet[SP_ITEM_PRISONER_PEE].active = false;
         }
 }
+
+void collision_milk(rpg_t *rpg)
+{
+    sfFloatRect milk_rect = {0, 0, 0, 0};
+
+    if (check_collision_npc(rpg, SP_ITEM_MILK, milk_rect))
+        if (check_if_in_inventory(rpg, SP_ITEM_MILK) == -1) {
+            send_notif(rpg, "Bring it back to the guide");
+            add_item_inventory(rpg, SP_ITEM_MILK);
+            rpg->spritesheet[SP_ITEM_MILK].active = false;
+        }
+}

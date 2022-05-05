@@ -248,6 +248,7 @@ void add_speed(rpg_t *rpg, int nbr);
 void add_attack(rpg_t *rpg, int nbr);
 void flask_drunk(rpg_t *rpg, int nbr);
 void add_life(rpg_t *rpg, int nbr);
+void collision_milk(rpg_t *rpg);
 
 // open save
 void save_file(char *filepath, rpg_t *rpg);

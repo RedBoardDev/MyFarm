@@ -18,7 +18,7 @@ void init_spritesheets_food(spritesheet_t *spritesheet)
     (init_sprite_t){{100, 100}, {1, 1}, {0, 0, 36, 36}, true, false, false});
     set_one_sprite("assets/img/item/bucket_milk.png",
     &spritesheet[SP_ITEM_MILK],
-    (init_sprite_t){{100, 100}, {0.16, 0.16}, {0, 0, 227, 244}, true, false, false});
+    (init_sprite_t){{SPAWN_X + 480, SPAWN_Y + 50}, {0.10, 0.10}, {0, 0, 227, 244}, true, false, false});
     set_one_sprite("assets/img/item/beets.png", &spritesheet[SP_ITEM_BEETS],
     (init_sprite_t){{100, 100}, {1, 1}, {0, 0, 33, 48}, true, false, false});
     set_one_sprite("assets/img/item/prisoners_pee.png",

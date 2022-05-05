@@ -13,6 +13,7 @@ void how_play(rpg_t *rpg)
     (sfColor){255, 255, 255, 140});
     toggle_spritesheet_scene(rpg, false, SC_MENU);
     toggle_spritesheet_scene(rpg, true, SC_HOW_PLAY);
+    sfClock_restart(rpg->spritesheet[SP_NPC_GUIDE].c_anim);
 }
 
 void display_custom_skins(rpg_t *rpg)

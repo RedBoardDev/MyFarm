@@ -17,7 +17,7 @@ void draw_text_notif(rpg_t *rpg)
 
     sfText_setCharacterSize(rpg->notif.text, 200 * zoom);
     char_size = sfText_getCharacterSize(rpg->notif.text);
-    origin.x = (my_strlen(text) * char_size) / 4;
+    origin.x = (my_strlen(text) * char_size) / 4.5;
     origin.y = char_size / 1.5;
     sfText_setOrigin(rpg->notif.text, origin);
     sfText_setPosition(rpg->notif.text, pos);
