@@ -91,6 +91,7 @@ SRC_FILES	=	events/events	\
 				notif	\
 				open_file_stats	\
 				open_file	\
+				quetes_inv	\
 				save_progress	\
 				set_cursor	\
 				view	\

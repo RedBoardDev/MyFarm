@@ -7,6 +7,30 @@
 
 #include "../../include/rpg.h"
 
+static void init_quests_inv(rpg_t *rpg)
+{
+    rpg->quests_inv = malloc(sizeof(quests_inv_t) * NBR_Q);
+    for (int i = 0; i < NBR_Q; ++i)
+        rpg->quests_inv[i].text_string = NULL;
+    rpg->quests_inv[Q_FIND_INDIAN].text_string = "Find the Indian";
+    rpg->quests_inv[Q_TAKE_PEE].text_string = "Take a jar of pee";
+    rpg->quests_inv[Q_BEETROOTS].text_string = "Find some beetroots";
+    rpg->quests_inv[Q_FIGHT_EXECUTIONER].text_string = "Fight executioner";
+    rpg->quests_inv[Q_TOMATO].text_string = "Find some tomatos";
+    rpg->quests_inv[Q_FIGHT_GOLEM].text_string = "Fight the golem";
+    rpg->quests_inv[Q_POTATO].text_string = "Find some potatos";
+    rpg->quests_inv[Q_FIND_COWS].text_string = "Find the enclose";
+    rpg->quests_inv[Q_BUCKET_OF_MILK].text_string = "Find a bucket of milk";
+    rpg->quests_inv[Q_REANIMATE_MOM].text_string = "Reanimate your mom!";
+    for (int i = 0; i < NBR_Q; ++i) {
+        rpg->quests_inv[i].active = false;
+        rpg->quests_inv[i].done = false;
+        rpg->quests_inv[i].text = create_text((init_text_t){50,
+        rpg->quests_inv[i].text_string, sfBlack, {-100, -100},
+        "assets/fonts/Sriracha-Regular.ttf"});
+    }
+}
+
 void init_quests(rpg_t *rpg)
 {
     rpg->quest = malloc(sizeof(quest_t) * NBR_QUEST);
@@ -37,4 +61,5 @@ void init_quests(rpg_t *rpg)
     rpg->quest[QUEST_SOLDIER].speaker = -1;
     rpg->quest[QUEST_SELLER].speaker = -1;
     rpg->quest[QUEST_GUIDE].speaker = -1;
+    init_quests_inv(rpg);
 }

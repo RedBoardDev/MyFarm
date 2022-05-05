@@ -271,4 +271,9 @@ bool draw_cursor_back_pause(rpg_t *rpg);
 void reset_all_players(rpg_t *rpg);
 void quest_launch(rpg_t *rpg, int i_quest);
 
+// quests inv
+void draw_quests_inventory(rpg_t *rpg);
+void add_quest_inv(rpg_t *rpg, int enum_q);
+void mark_quest_done(rpg_t *rpg, int enum_q);
+
 #endif

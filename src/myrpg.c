@@ -42,7 +42,7 @@ static void big_loop(rpg_t *rpg, sfColor *drunk)
         rpg->all_events.s = false;
     }
     if (rpg->all_events.tab)
-        send_notif(rpg, "Oui monsieur le thomas");
+        add_quest_inv(rpg, Q_BUCKET_OF_MILK);
 
     draw_notif(rpg);
     move_sound_box(rpg);

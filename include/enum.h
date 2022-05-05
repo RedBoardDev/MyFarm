@@ -182,4 +182,18 @@ enum quests {
     NBR_QUEST
 };
 
+enum quests_inv {
+    Q_FIND_INDIAN,
+    Q_TAKE_PEE,
+    Q_BEETROOTS,
+    Q_FIGHT_EXECUTIONER,
+    Q_TOMATO,
+    Q_FIGHT_GOLEM,
+    Q_POTATO,
+    Q_FIND_COWS,
+    Q_BUCKET_OF_MILK,
+    Q_REANIMATE_MOM,
+    NBR_Q
+};
+
 #endif

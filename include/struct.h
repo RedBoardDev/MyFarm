@@ -56,6 +56,13 @@ typedef struct {
 } quest_t;
 
 typedef struct {
+    bool active;
+    bool done;
+    char *text_string;
+    sfText *text;
+} quests_inv_t;
+
+typedef struct {
     sfRenderWindow *window;
     sfUint8 *framebuffer;
     sfTexture *texture;
@@ -84,6 +91,7 @@ typedef struct {
     player_stats_t player_stats;
     boss_stats_t boss_stats;
     quest_t *quest;
+    quests_inv_t *quests_inv;
     params_t params;
     notif_t notif;
 } rpg_t;
