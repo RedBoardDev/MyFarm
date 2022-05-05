@@ -178,7 +178,8 @@ enum sounds {
 enum utilitaire {
     SELECTED_PLAYER = -10,
     CURSOR,
-    INFIN = 2147483647
+    INFIN = 2147483647,
+    SPEED_DRUNK = 30
 };
 
 enum quests {
