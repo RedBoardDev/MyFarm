@@ -92,17 +92,17 @@ static void execute_quests(rpg_t *rpg)
     && rpg->quest[QUEST_SOLDIER].active != 1
     && check_collision_npc(rpg, SP_NPC_SOLDIER,
     (sfFloatRect){0, 0, 0, 0}))
-        quest_launch(rpg, QUEST_SOLDIER);
+        quest_launch(rpg, QUEST_SOLDIER, "assets/quest_dialog/soldiers.txt");
     if (rpg->screen[SC_TAVERNE].active
     && rpg->quest[QUEST_SELLER].active != 1
     && check_collision_npc(rpg, SP_NPC_SELLER,
     (sfFloatRect){-15, -15, 60, 30}))
-        quest_launch(rpg, QUEST_SELLER);
+        quest_launch(rpg, QUEST_SELLER, "assets/quest_dialog/seller.txt");
     if (rpg->screen[SC_MAIN_MAP].active
     && rpg->quest[QUEST_GUIDE].active != 1
     && check_collision_npc(rpg, SP_NPC_GUIDE,
     (sfFloatRect){0, 0, 0, 0})) {
-        quest_launch(rpg, QUEST_GUIDE);
+        quest_launch(rpg, QUEST_GUIDE, "assets/quest_dialog/guide.txt");
     }
 }
 

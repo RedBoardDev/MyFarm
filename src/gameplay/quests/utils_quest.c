@@ -37,7 +37,7 @@ void send_chat_bubble(rpg_t *rpg, char *filepath, int quest_id)
     }
 }
 
-void quest_launch(rpg_t *rpg, int i_quest)
+void quest_launch(rpg_t *rpg, int i_quest, char *filepath)
 {
     if (rpg->quest[i_quest].active != 0) {
         if (rpg->quest[i_quest].active <= 1
@@ -47,8 +47,7 @@ void quest_launch(rpg_t *rpg, int i_quest)
             remove_item_inventory(rpg, rpg->quest[i_quest].active);
     }
     rpg->quest[i_quest].active = 1;
-    get_chat_into_file("assets/quest_dialog/guide.txt",
-    i_quest, rpg);
+    get_chat_into_file(filepath, i_quest, rpg);
 }
 
 int check_status_dialog(quest_t *quest)

@@ -1,5 +1,5 @@
-R:0
 N:Hello Farmer!
+R:0
 N:I'm the leader of|this indian village.
 N:Here, every indian|will be kind|with you.
 N:You can find all|the happiness|you want.

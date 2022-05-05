@@ -269,7 +269,7 @@ void init_icon_window(rpg_t *rpg);
 void init_notif(rpg_t *rpg);
 bool draw_cursor_back_pause(rpg_t *rpg);
 void reset_all_players(rpg_t *rpg);
-void quest_launch(rpg_t *rpg, int i_quest);
+void quest_launch(rpg_t *rpg, int i_quest, char *filepath);
 
 // quests inv
 void draw_quests_inventory(rpg_t *rpg);
