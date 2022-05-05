@@ -2,10 +2,10 @@
 ** EPITECH PROJECT, 2021
 ** my_rpg
 ** File description:
-** utils_quests.c
+** quest_dialog.c
 */
 
-#include "../../include/rpg.h"
+#include "../../../include/rpg.h"
 
 int check_status_dialog(quest_t *quest)
 {

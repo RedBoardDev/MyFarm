@@ -52,8 +52,6 @@ typedef struct {
     int active;
     sfText *dialog;
     int speaker;
-    sfVector2f scale;
-    sfVector2f pos_dialog;
     spritesheet_t bubulle;
 } quest_t;
 

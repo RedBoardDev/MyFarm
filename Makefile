@@ -32,10 +32,8 @@ SRC_FILES	=	events/events	\
 				gameplay/move_player_view	\
 				gameplay/teleport_player_house	\
 				gameplay/teleport_player	\
-				gameplay/quests/q_soldiers	\
-				gameplay/quests/q_seller	\
-				gameplay/quests/q_guide	\
 				gameplay/quests/utils_quest	\
+				gameplay/quests/quest_dialog	\
 				gameplay/utils	\
 				init/init_all	\
 				init/init_events	\
@@ -75,7 +73,6 @@ SRC_FILES	=	events/events	\
 				spritesheets/utils_sprites	\
 				utils/check_screens	\
 				utils/utils_draw	\
-				utils/utils_quests	\
 				utils/utils_zoom	\
 				utils/utils_csfml	\
 				utils/utils_skills	\
