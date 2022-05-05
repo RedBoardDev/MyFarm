@@ -1,6 +1,6 @@
-N:Hi!|Welcome to the shop!
+N:Hi!|Welcome to|the shop!
 N:Here, you can buy|all you need|to be strong
-N:and to beat|every bosses|of the town.
+N:and to beat every|bosses of the town.
 N:What can I|propose you?
 N:Humm
 N:Hummmmmm

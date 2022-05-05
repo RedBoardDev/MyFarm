@@ -43,12 +43,12 @@ void init_quests(rpg_t *rpg)
     rpg->quest[QUEST_SELLER].active = 0;
     rpg->quest[QUEST_SELLER].dialog =
     create_text((init_text_t){30, "\0", sfBlack,
-    {990, 20}, "assets/fonts/NotoSerif-Regular.ttf"});
+    {986, 16}, "assets/fonts/NotoSerif-Regular.ttf"});
     rpg->quest[QUEST_GUIDE].step = 0;
     rpg->quest[QUEST_GUIDE].active = 0;
     rpg->quest[QUEST_GUIDE].dialog =
     create_text((init_text_t){30, "\0", sfBlack,
-    {860, 945}, "assets/fonts/NotoSerif-Regular.ttf"});
+    {856, 945}, "assets/fonts/NotoSerif-Regular.ttf"});
     set_one_sprite("assets/img/bubble_chat.png",
     &rpg->quest[QUEST_SOLDIER].bubulle, (init_sprite_t){{120, 230},
     {0.08, 0.08}, {0, 0, 798, 652}, false, false, false});
