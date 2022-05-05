@@ -28,20 +28,20 @@ void init_spritesheets_food(spritesheet_t *spritesheet)
 
 void init_spritesheets_flask(spritesheet_t *spritesheet)
 {
-    set_one_sprite("assets/img/item/flask_attack.png",
-    &spritesheet[SP_FLASK_ATTACK],
-    (init_sprite_t){{100, 100}, {1, 1}, {0, 0, 36, 42}, true, false, false});
     set_one_sprite("assets/img/item/armor.png",
     &spritesheet[SP_ITEM_ARMOR],
     (init_sprite_t){{100, 100}, {1.5, 1.5}, {0, 0, 26, 26}, true, false,
     false});
+    set_one_sprite("assets/img/item/flask_attack.png",
+    &spritesheet[SP_FLASK_ATTACK],
+    (init_sprite_t){{100, 100}, {0.7, 0.7}, {0, 0, 64, 64}, true, false, false});
     set_one_sprite("assets/img/item/flask_speed.png",
     &spritesheet[SP_FLASK_SPEED],
-    (init_sprite_t){{100, 100}, {0.15, 0.15}, {0, 0, 228, 267}, true, false,
+    (init_sprite_t){{100, 100}, {0.7, 0.7}, {0, 0, 64, 64}, true, false,
     false});
     set_one_sprite("assets/img/item/flask_drunk.png",
     &spritesheet[SP_FLASK_DRUNK],
-    (init_sprite_t){{100, 100}, {0.14, 0.14}, {0, 0, 197, 312}, true, false,
+    (init_sprite_t){{100, 100}, {0.7, 0.7}, {0, 0, 64, 64}, true, false,
     false});
 }
 

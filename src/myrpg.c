@@ -35,7 +35,7 @@ static void big_loop(rpg_t *rpg, sfColor *drunk)
     modify_zoom(rpg);
     if (rpg->all_events.tab)
         send_notif(rpg, "ouiiiiiiiiiiii");
-
+    make_drunk(rpg, *drunk);
     draw_notif(rpg);
     move_sound_box(rpg);
     move_all_fps_independant(rpg);

@@ -34,6 +34,7 @@ typedef struct {
     bool drunk;
     float life;
     bool attack;
+    sfClock *drunk_time;
     sfClock *last_damage;
     inventory_t inventory;
 } player_stats_t;

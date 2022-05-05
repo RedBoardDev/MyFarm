@@ -24,4 +24,8 @@ void init_inventory(inventory_t *inventory, rpg_t *rpg)
     {825, 760}, "assets/fonts/Sriracha-Regular.ttf"});
     inventory->inventory_case[0].pos = rpg->spritesheet[SP_INVENTORY].pos;
     inventory->inventory_case[I_CASE_1].item_spritesheet = SP_ITEM_SHOVEL;
+
+    // inventory->inventory_case[I_CASE_4].item_spritesheet = SP_FLASK_DRUNK;
+    // inventory->inventory_case[I_CASE_5].item_spritesheet = SP_FLASK_ATTACK;
+    // inventory->inventory_case[I_CASE_6].item_spritesheet = SP_FLASK_SPEED;
 }
