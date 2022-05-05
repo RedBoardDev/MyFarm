@@ -12,14 +12,14 @@ static void move_animate_player(rpg_t *rpg)
     if (check_status_dialog(rpg->quest))
         return;
     rpg->spritesheet[rpg->player_stats.skin].rect.left += 48;
-    if (rpg->all_events.down || rpg->all_events.s)
-        rpg->spritesheet[rpg->player_stats.skin].rect.top = 0;
-    if (rpg->all_events.up || rpg->all_events.z)
-        rpg->spritesheet[rpg->player_stats.skin].rect.top = 64 * 3;
     if (rpg->all_events.left || rpg->all_events.q)
         rpg->spritesheet[rpg->player_stats.skin].rect.top = 64 * 1;
     if (rpg->all_events.right || rpg->all_events.d)
         rpg->spritesheet[rpg->player_stats.skin].rect.top = 64 * 2;
+    if (rpg->all_events.down || rpg->all_events.s)
+        rpg->spritesheet[rpg->player_stats.skin].rect.top = 0;
+    if (rpg->all_events.up || rpg->all_events.z)
+        rpg->spritesheet[rpg->player_stats.skin].rect.top = 64 * 3;
     if (rpg->spritesheet[rpg->player_stats.skin].rect.left >= 192)
         rpg->spritesheet[rpg->player_stats.skin].rect.left = 0;
     sfClock_restart(rpg->spritesheet[rpg->player_stats.skin].c_anim);
