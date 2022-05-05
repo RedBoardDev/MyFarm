@@ -42,7 +42,7 @@ static void big_loop(rpg_t *rpg, sfColor *drunk)
         rpg->all_events.s = false;
     }
     if (rpg->all_events.tab)
-        add_quest_inv(rpg, Q_BUCKET_OF_MILK);
+        send_notif(rpg, "ouiiiiiiiiiiii");
 
     draw_notif(rpg);
     move_sound_box(rpg);
@@ -58,7 +58,7 @@ int open_or_not_file(rpg_t *rpg, char *file_backup)
     if (file_backup == NULL)
         toggle_spritesheet_scene(rpg, true, SC_MENU);
     else {
-        if (open_file("savee", rpg) == 1) {
+        if (open_file(file_backup, rpg) == 1) {
             write(2, "ERROR: Can't open backup file\n", 30);
             destroy_all(rpg);
             return (1);

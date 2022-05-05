@@ -10,4 +10,5 @@
 void button_next_grotte(rpg_t *rpg)
 {
     return_home(rpg);
+    send_notif(rpg, "Bring the potato back");
 }

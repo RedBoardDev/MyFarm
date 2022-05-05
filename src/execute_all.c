@@ -73,11 +73,6 @@ static void execute_all_gameplay(rpg_t *rpg)
         } else
             menu_pause(rpg);
     }
-    if (get_clock_time(rpg->spritesheet[SP_NPC_GUIDE].c_anim) >=
-    SECOND_TO_MICRO(10) && rpg->quest[QUEST_GUIDE].step == 0) {
-        send_notif(rpg, "Talk to the guide");
-        sfClock_restart(rpg->spritesheet[SP_NPC_GUIDE].c_anim);
-    }
 }
 
 static void execute_all_menus(rpg_t *rpg)
@@ -91,6 +86,11 @@ static void execute_main_map(rpg_t *rpg)
     collision_pee(rpg);
     if (rpg->quest[QUEST_GUIDE].step >= 65)
         collision_milk(rpg);
+    if (get_clock_time(rpg->spritesheet[SP_NPC_GUIDE].c_anim) >=
+    SECOND_TO_MICRO(10) && rpg->quest[QUEST_GUIDE].step == 0) {
+        send_notif(rpg, "Talk to the guide");
+        sfClock_restart(rpg->spritesheet[SP_NPC_GUIDE].c_anim);
+    }
 }
 
 static void execute_quests(rpg_t *rpg)
