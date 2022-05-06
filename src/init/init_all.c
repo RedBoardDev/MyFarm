@@ -7,7 +7,7 @@
 
 #include "../../include/rpg.h"
 
-void init_all(rpg_t *rpg, bool no_sound)
+static void init_all2(rpg_t *rpg)
 {
     rpg->index_old_s = 0;
     rpg->player_stats.skin = SP_PLAYER;
@@ -18,6 +18,11 @@ void init_all(rpg_t *rpg, bool no_sound)
     init_screens(rpg);
     rpg->spritesheet = malloc(sizeof(spritesheet_t) * NBR_SP);
     init_spritesheets(rpg->spritesheet);
+}
+
+void init_all(rpg_t *rpg, bool no_sound)
+{
+    init_all2(rpg);
     init_sounds(rpg, no_sound);
     init_params(rpg);
     init_csfml(&rpg->begin);

@@ -67,3 +67,14 @@ void disable_all_screens_gameplay(rpg_t *rpg)
     if (current != -1)
         toggle_spritesheet_scene(rpg, false, current);
 }
+
+void draw_spritesheets(beginning_t *begin, spritesheet_t *spritesheet)
+{
+    sfVector2i po = sfMouse_getPositionRenderWindow(begin->window);
+    spritesheet[SP_CURSOR].pos =
+    sfRenderWindow_mapPixelToCoords(begin->window, po, begin->view.view);
+    for (int i = 0; i < NBR_SP - 1; ++i)
+        if (spritesheet[i].active)
+            draw_one_sprite(begin, spritesheet[i].sprite, spritesheet[i].rect,
+            spritesheet[i].pos);
+}

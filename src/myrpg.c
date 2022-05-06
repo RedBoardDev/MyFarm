@@ -7,15 +7,6 @@
 
 #include "../include/rpg.h"
 
-int get_current_screen(rpg_t *rpg)
-{
-    for (int i = 0; i < NBR_SC; ++i) {
-        if (rpg->screen[i].active)
-            return (i);
-    }
-    return (-1);
-}
-
 static void modify_zoom(rpg_t *rpg)
 {
     if (rpg->all_events.page_down) {
@@ -28,7 +19,7 @@ static void modify_zoom(rpg_t *rpg)
     }
 }
 
-static void big_loop(rpg_t *rpg, sfColor *drunk)
+static void main_game(rpg_t *rpg, sfColor *drunk)
 {
     set_view(rpg, rpg->begin.view.center);
     *drunk = my_rgb(*drunk);
@@ -43,6 +34,23 @@ static void big_loop(rpg_t *rpg, sfColor *drunk)
     check_click_buttons(rpg);
     check_mouse_on_all_buttons(rpg);
     draw_all(rpg);
+}
+
+static void big_loop(rpg_t *rpg, sfColor *drunk)
+{
+    clean_window(&rpg->begin, sfBlack);
+    get_fps(rpg);
+    my_events(rpg);
+    if ((rpg->all_events.c) && rpg->all_events.ctrl)
+        sfRenderWindow_close(rpg->begin.window);
+    if (rpg->all_events.ctrl && rpg->all_events.s) {
+        save_file("save", rpg);
+        rpg->all_events.s = false;
+    }
+    if (rpg->screen[SC_CUTSCENE_BEGIN].active)
+        cutsceens_begin(rpg);
+    else
+        main_game(rpg, drunk);
 }
 
 int open_or_not_file(rpg_t *rpg, char *file_backup)
@@ -71,21 +79,7 @@ void myrpg(bool no_sound, char *file_backup)
     rpg->sound.volume_music);
     if (open_or_not_file(rpg, file_backup) == 1)
         return;
-    // rpg->screen[SC_CUTSCENE_BEGIN].active = false;
-    while (sfRenderWindow_isOpen(rpg->begin.window)) {
-        clean_window(&rpg->begin, sfBlack);
-        get_fps(rpg);
-        my_events(rpg);
-        if ((rpg->all_events.c) && rpg->all_events.ctrl)
-        sfRenderWindow_close(rpg->begin.window);
-        if (rpg->all_events.ctrl && rpg->all_events.s) {
-            save_file("save", rpg);
-            rpg->all_events.s = false;
-        }
-        if (rpg->screen[SC_CUTSCENE_BEGIN].active)
-            cutsceens_begin(rpg);
-        else
-            big_loop(rpg, &drunk);
-    }
+    while (sfRenderWindow_isOpen(rpg->begin.window))
+        big_loop(rpg, &drunk);
     destroy_all(rpg);
 }

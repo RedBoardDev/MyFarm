@@ -21,3 +21,12 @@ bool is_in_gameplay(rpg_t *rpg)
     rpg->screen[SC_VICTORY_CEMETERY].active || rpg->screen[SC_TENTE].active
     || rpg->screen[SC_TAVERNE].active || rpg->screen[SC_JAIL].active);
 }
+
+int get_current_screen(rpg_t *rpg)
+{
+    for (int i = 0; i < NBR_SC; ++i) {
+        if (rpg->screen[i].active)
+            return (i);
+    }
+    return (-1);
+}

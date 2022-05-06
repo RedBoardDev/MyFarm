@@ -285,6 +285,18 @@ void make_drunk(rpg_t *rpg, sfColor c);
 void cutsceens_begin(rpg_t *rpg);
 void animate_player_cutscene(rpg_t *rpg, int touch);
 void launch_begin_cutscene(rpg_t *rpg);
+void draw_spritesheets(beginning_t *begin, spritesheet_t *spritesheet);
+
+// execute
+void execute_cemetery(rpg_t *rpg);
+void execute_grotte(rpg_t *rpg);
+void drink_flask(rpg_t *rpg);
+void execute_all_gameplay(rpg_t *rpg);
+void execute_main_map(rpg_t *rpg);
+void execute_quests(rpg_t *rpg);
+void execute_base(rpg_t *rpg);
+void execute_taverne(rpg_t *rpg);
+void execute_all_menus(rpg_t *rpg);
 void toggle_cutscene(rpg_t *rpg, int screen_id, bool status);
 
 #endif
