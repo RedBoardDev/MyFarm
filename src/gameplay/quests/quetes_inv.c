@@ -5,7 +5,7 @@
 ** quetes_inv.c
 */
 
-#include "../include/rpg.h"
+#include "../../../include/rpg.h"
 
 static void draw_skills_inventory(rpg_t *rpg)
 {
