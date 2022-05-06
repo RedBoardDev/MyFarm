@@ -50,7 +50,7 @@ static void big_loop(rpg_t *rpg, sfColor *drunk)
     if (rpg->screen[SC_CUTSCENE_BEGIN].active)
         cutsceens_begin(rpg);
     else
-        main_game(rpg, &drunk);
+        main_game(rpg, drunk);
 }
 
 int open_or_not_file(rpg_t *rpg, char *file_backup)
