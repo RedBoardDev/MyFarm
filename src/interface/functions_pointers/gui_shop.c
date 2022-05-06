@@ -27,11 +27,8 @@ void shop_button1(rpg_t *rpg)
 
 void shop_button2(rpg_t *rpg)
 {
-    if (check_if_in_inventory(rpg, SP_ITEM_BEETS) != -1
-    && remove_money(rpg, 20) != 84) {
-        remove_item_inventory(rpg, SP_ITEM_BEETS);
+    if (remove_money(rpg, 20) != 84)
         add_item_inventory(rpg, SP_FLASK_SPEED);
-    }
 }
 
 void shop_button3(rpg_t *rpg)

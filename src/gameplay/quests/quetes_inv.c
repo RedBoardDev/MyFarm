@@ -56,3 +56,11 @@ void mark_quest_done(rpg_t *rpg, int enum_q)
     rpg->quests_inv[enum_q].done = true;
     send_notif(rpg, "Quest done! GG");
 }
+
+int check_status_dialog(quest_t *quest)
+{
+    for (int i = 0; i < NBR_QUEST; ++i)
+        if (quest[i].active == 1)
+            return (1);
+    return (0);
+}
