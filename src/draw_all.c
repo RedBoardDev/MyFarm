@@ -12,12 +12,12 @@ spritesheet_t *spritesheet, rpg_t *rpg)
 {
     int enum_sprite_place = 0;
 
-    for (int i = SP_ITEM_SHOVEL; i <= SP_FLASK_DRUNK; ++i)
+    for (int i = SP_ITEM_SHOVEL; i <= SP_FLASK_REVIVE; ++i)
         rpg->spritesheet[i].active = false;
     for (int i = 0; i < 12; ++i) {
         enum_sprite_place = inventory.inventory_case[i].item_spritesheet;
         if (enum_sprite_place >= SP_ITEM_SHOVEL
-        && enum_sprite_place <= SP_FLASK_DRUNK) {
+        && enum_sprite_place <= SP_FLASK_REVIVE) {
             spritesheet[enum_sprite_place].active = true;
             sfSprite_setRotation(spritesheet[enum_sprite_place].sprite, 0);
             spritesheet[enum_sprite_place].pos = (i == 11 ?

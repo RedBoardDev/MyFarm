@@ -24,7 +24,7 @@ void execute_all_gameplay(rpg_t *rpg)
             return;
         }
         if (rpg->screen[SC_INVENTORY].active) {
-            for (int i = SP_ITEM_SHOVEL; i <= SP_FLASK_DRUNK; ++i)
+            for (int i = SP_ITEM_SHOVEL; i <= SP_FLASK_REVIVE; ++i)
                 rpg->spritesheet[i].active = false;
             toggle_spritesheet_scene(rpg, false, SC_INVENTORY);
             return;

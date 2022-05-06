@@ -53,7 +53,7 @@ void check_click_buttons(rpg_t *rpg)
         return;
     }
     for (int i = SP_ITEM_SHOVEL; rpg->all_events.mouse.left &&
-    i <= SP_FLASK_DRUNK; ++i)
+    i <= SP_FLASK_REVIVE; ++i)
         if (check_click_items_inventory(rpg, i))
             return;
     if (!rpg->all_events.mouse.left_released)
