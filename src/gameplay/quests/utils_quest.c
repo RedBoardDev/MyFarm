@@ -48,14 +48,32 @@ void send_chat_bubble(rpg_t *rpg, char *filepath, int quest_id)
     }
 }
 
+static int check_quest_status_step(rpg_t *rpg, int i_quest)
+{
+    // if (!(rpg->quest[i_quest].active >= NBR_SC
+    // && rpg->quest[rpg->quest[i_quest].active].active == -1)) {
+    //     printf("%d %d", rpg->quest[i_quest].active);
+
+
+    if (rpg->quest[i_quest].active <= 1)
+        return (1);
+    if (rpg->quest[i_quest].speaker == -2
+    && check_if_in_inventory(rpg, rpg->quest[i_quest].active) != -1) {
+        remove_item_inventory(rpg, rpg->quest[i_quest].active);
+        return(0);
+    }
+    if (rpg->quest[i_quest].speaker == -3
+    && rpg->quest[i_quest].active >= NBR_SP
+    && rpg->quest[rpg->quest[i_quest].active - NBR_SP].active == -1)
+        return (0);
+    return (1);
+}
+
 void quest_launch(rpg_t *rpg, int i_quest, char *filepath)
 {
     if (rpg->quest[i_quest].active != 0) {
-        if (rpg->quest[i_quest].active <= 1
-        || check_if_in_inventory(rpg, rpg->quest[i_quest].active) == -1)
+        if (check_quest_status_step(rpg, i_quest))
             return;
-        else
-            remove_item_inventory(rpg, rpg->quest[i_quest].active);
     }
     rpg->quest[i_quest].active = 1;
     get_chat_into_file(filepath, i_quest, rpg);

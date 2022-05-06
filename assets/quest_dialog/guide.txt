@@ -24,11 +24,17 @@ Q:0
 N:Try to find him!
 P:Thank you|very much!
 N:And come back|to me if you need|some help.
-W:69
+W:70
 P:Here it is!
 P:I've found|the beetroots.
 N:Thank you!|You were|really fast!
 R:2
+N:Tu es déjà aller voir la tavernière ?
+N:Tu devrais lui parler, elle cache quelques items intéressants...
+P:Je vais aller lui demander, merci !
+S:1
+P:En effet, je vais pouvoir m'équiper comme il faut, merci !
+N:Ne t'inquiète pas, mais garde cela pour toi ;)
 N:The next|ingredient that|will be good
 N:for your mom|is a tomato.
 Q:4
@@ -38,7 +44,7 @@ N:The next fight|is in a dead zone.
 Q:3
 N:Try to find it|and to kill him.
 N:Next, give me|the tomato.
-W:67
+W:68
 P:Here it is!
 P:I've found|the tomato.
 N:Thank you!|You were|really good!
@@ -52,7 +58,7 @@ N:The next fight|is in a rocky zone.
 Q:5
 N:Try to find it|and to kill him.
 N:Next, give me|the potato.
-W:66
+W:67
 P:Here it is!
 P:I've found|the potato.
 N:Thank you!|You were|really great!
@@ -66,7 +72,7 @@ N:Don't worry,|no one will|scold you.
 N:After that,|give me the|bucket of milk.
 Q:7
 P:Thank you|for your help!
-W:68
+W:69
 P:Here it is!
 P:I've found|the bucket of milk.
 R:8

@@ -36,7 +36,7 @@ static int get_argument_dialog(rpg_t *rpg, char *str, int quest)
         rpg->quest[quest].speaker = -1;
         return (1);
     case 'W':
-        rpg->quest[quest].speaker = -1;
+        rpg->quest[quest].speaker = -2;
         rpg->quest[quest].active = my_atoi(str);
         return (2);
     case 'G':
@@ -50,6 +50,10 @@ static int get_argument_dialog(rpg_t *rpg, char *str, int quest)
         return (2);
     case 'R':
         mark_quest_done(rpg, my_atoi(str));
+        return (2);
+    case 'S':
+        rpg->quest[quest].speaker = -3;
+        rpg->quest[quest].active = my_atoi(str) + NBR_SP;
         return (2);
     default:
         break;
