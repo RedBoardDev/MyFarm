@@ -297,5 +297,6 @@ void execute_quests(rpg_t *rpg);
 void execute_base(rpg_t *rpg);
 void execute_taverne(rpg_t *rpg);
 void execute_all_menus(rpg_t *rpg);
+void toggle_cutscene(rpg_t *rpg, int screen_id, bool status);
 
 #endif

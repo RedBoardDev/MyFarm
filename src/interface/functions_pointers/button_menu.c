@@ -24,11 +24,10 @@ void display_custom_skins(rpg_t *rpg)
 
 void launch_begin_cutscene(rpg_t *rpg)
 {
-    rpg->screen[SC_CUTSCENE_BEGIN].active = true;
     sfSprite_setScale(rpg->spritesheet[rpg->player_stats.skin].sprite,
     (sfVector2f){5, 5});
-    sfClock_restart(rpg->cutsceens.clock);
     stop_sound(rpg->sound.sound_list[SOUND_MENU].sound);
+    toggle_cutscene(rpg, SC_CUTSCENE_BEGIN, true);
 }
 
 void launch_game(rpg_t *rpg)
