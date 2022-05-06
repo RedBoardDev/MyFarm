@@ -31,7 +31,7 @@ void init_all(rpg_t *rpg, bool no_sound)
     init_quests(rpg);
     init_inventory(&rpg->player_stats.inventory, rpg);
     init_icon_window(rpg);
-    init_spritehseet_cutsceens(rpg);
+    init_spritehseet_cutscenes(rpg);
     rpg->begin.fps.clock = sfClock_create();
     toggle_cursor(rpg->begin.window, false);
     sfWindow_setFramerateLimit((sfWindow *)rpg->begin.window, rpg->params.fps);

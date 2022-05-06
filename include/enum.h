@@ -33,6 +33,7 @@ enum sprites {
     SP_SHOP_BUTTON3,
     SP_SHOP_BUTTON4,
     SP_MONKEY,
+    SP_TOMBE,
     SP_NPC_SELLER,
     SP_NPC_SOLDIER,
     SP_NPC_GUIDE,
@@ -104,11 +105,14 @@ enum sprites {
 enum cutscene {
     CS_BEGIN_BACKGROUND,
     CS_BEGIN_BUBULLE,
+    CS_FINAL_MONIK,
+    CS_FINAL_FLASK,
     NBR_CS
 };
 
 enum screens {
     SC_CUTSCENE_BEGIN,
+    SC_CUTSCENE_FINAL,
     SC_MAIN_MAP,
     SC_MENU,
     SC_CUSTOM_SKINS,
@@ -175,6 +179,7 @@ enum sounds {
     SOUND_GRAVEYARD,
     SOUND_AMBIANT_CAVE,
     SOUND_NIGHT,
+    SOUND_FINAL_1,
     NBR_SOUND,
 };
 

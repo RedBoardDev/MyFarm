@@ -87,10 +87,11 @@ typedef struct {
 } notif_t;
 
 typedef struct {
+    int cutscene_nbr;
     sfClock *clock;
     sfVector2f pos_player;
     spritesheet_t *spritesheet;
-} cutsceens_t;
+} cutscenes_t;
 
 typedef struct {
     beginning_t begin;
@@ -107,7 +108,7 @@ typedef struct {
     skills_inv_t skills_inv;
     params_t params;
     notif_t notif;
-    cutsceens_t cutsceens;
+    cutscenes_t cutscenes;
 } rpg_t;
 
 #endif

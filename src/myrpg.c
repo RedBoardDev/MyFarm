@@ -47,8 +47,8 @@ static void big_loop(rpg_t *rpg, sfColor *drunk)
         save_file("save", rpg);
         rpg->all_events.s = false;
     }
-    if (rpg->screen[SC_CUTSCENE_BEGIN].active)
-        cutsceens_begin(rpg);
+    if (rpg->cutscenes.cutscene_nbr != -1)
+        cutscenes_choose(rpg);
     else
         main_game(rpg, drunk);
 }

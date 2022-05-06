@@ -19,6 +19,8 @@ static void init_sound_music(rpg_t *rpg)
     true, &rpg->sound.sound_list[SOUND_MENU]);
     create_sound("assets/sounds/bonnenuit.ogg",
     false, &rpg->sound.sound_list[SOUND_NIGHT]);
+    create_sound("assets/sounds/final_music1.ogg",
+    false, &rpg->sound.sound_list[SOUND_FINAL_1]);
 }
 
 static void init_sound_effect(rpg_t *rpg)

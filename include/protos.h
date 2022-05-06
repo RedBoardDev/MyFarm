@@ -92,7 +92,7 @@ void init_spritesheets_quests(spritesheet_t *spritesheet);
 void init_quests(rpg_t *rpg);
 void init_spritesheet_gui_shop(spritesheet_t *spritesheet);
 void init_spritesheets_flask(spritesheet_t *spritesheet);
-void init_spritehseet_cutsceens(rpg_t *rpg);
+void init_spritehseet_cutscenes(rpg_t *rpg);
 
 // utils draw
 void my_draw_circle(sfUint8 *framebuffer, sfVector2i center, int radius,
@@ -282,10 +282,13 @@ void add_quest_inv(rpg_t *rpg, int enum_q);
 void mark_quest_done(rpg_t *rpg, int enum_q);
 void make_drunk(rpg_t *rpg, sfColor c);
 
-//cutsceens
-void cutsceens_begin(rpg_t *rpg);
-void animate_player_cutscene(rpg_t *rpg, int touch);
+//cutscenes
+void cutscenes_choose(rpg_t *rpg);
+void cutscenes_begin(rpg_t *rpg);
+void cutscenes_final(rpg_t *rpg);
 void launch_begin_cutscene(rpg_t *rpg);
+void draw_cutscenes(rpg_t *rpg);
+void animate_player_cutscene(rpg_t *rpg, int touch);
 void draw_spritesheets(beginning_t *begin, spritesheet_t *spritesheet);
 
 // execute
@@ -298,6 +301,7 @@ void execute_quests(rpg_t *rpg);
 void execute_base(rpg_t *rpg);
 void execute_taverne(rpg_t *rpg);
 void execute_all_menus(rpg_t *rpg);
+void launch_final_cutscene(rpg_t *rpg);
 void toggle_cutscene(rpg_t *rpg, int screen_id, bool status);
 
 #endif

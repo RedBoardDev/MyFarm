@@ -11,9 +11,11 @@ NAME	=	my_rpg
 SRC_DIR	=	src/
 EXTENSION	=	.c
 
-SRC_FILES	=	cutscenes/cutsceens	\
-				cutscenes/init_spritesheet_cutsceens	\
+SRC_FILES	=	cutscenes/init_spritesheet_cutscenes	\
 				cutscenes/move_player_cutscene	\
+				cutscenes/cutscenes_begin	\
+				cutscenes/cutscenes_final	\
+				cutscenes/utils_cutscenes	\
 				events/events	\
 				events/key_pressed	\
 				events/key_released	\
@@ -73,6 +75,7 @@ SRC_FILES	=	cutscenes/cutsceens	\
 				interface/functions_pointers/button_soundbar	\
 				interface/functions_pointers/button_house	\
 				interface/functions_pointers/gui_shop	\
+				interface/functions_pointers/launch_function	\
 				interface/functions_pointers/button_item	\
 				interface/check_click_buttons	\
 				interface/check_click_items_inv	\

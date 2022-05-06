@@ -40,6 +40,12 @@ void execute_all_gameplay(rpg_t *rpg)
 
 void execute_main_map(rpg_t *rpg)
 {
+    sfFloatRect co = {-20, -20, 40, 40};
+
+    if (check_collision_npc(rpg, SP_TOMBE, co) && rpg->all_events.enter) {
+        rpg->all_events.enter = false;
+        launch_final_cutscene(rpg);
+    }
     collision_pee(rpg);
     if (rpg->quest[QUEST_GUIDE].step >= 65)
         collision_milk(rpg);
@@ -73,6 +79,7 @@ void execute_quests(rpg_t *rpg)
 void execute_base(rpg_t *rpg)
 {
     sfFloatRect co = {-20, -20, 40, 40};
+
     if (check_collision_npc(rpg, SP_BED_SLEEP, co) && rpg->all_events.enter) {
         rpg->all_events.enter = false;
         button_bed_saving(rpg);
