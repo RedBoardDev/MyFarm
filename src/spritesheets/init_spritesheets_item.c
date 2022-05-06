@@ -45,6 +45,10 @@ void init_spritesheets_flask(spritesheet_t *spritesheet)
     &spritesheet[SP_FLASK_DRUNK],
     (init_sprite_t){{100, 100}, {0.7, 0.7}, {0, 0, 64, 64}, true, false,
     false});
+    set_one_sprite("assets/img/item/flask_revive.png",
+    &spritesheet[SP_FLASK_REVIVE],
+    (init_sprite_t){{100, 100}, {0.7, 0.7}, {0, 0, 64, 64}, true, false,
+    false});
 }
 
 void init_spritesheets_armed(spritesheet_t *spritesheet)
