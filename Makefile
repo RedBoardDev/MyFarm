@@ -18,6 +18,10 @@ SRC_FILES	=	cutscenes/cutsceens	\
 				events/key_pressed	\
 				events/key_released	\
 				events/mouse	\
+				execute/execute_all	\
+				execute/execute_bosses	\
+				execute/execute_gameplay	\
+				execute/execute_menus	\
 				gameplay/boss/animations_executioner	\
 				gameplay/boss/animations_golem	\
 				gameplay/boss/attack_player_hoe	\
@@ -90,7 +94,6 @@ SRC_FILES	=	cutscenes/cutsceens	\
 				die	\
 				draw_all	\
 				drunk	\
-				execute_all	\
 				fps	\
 				lib_sound	\
 				lib_text	\

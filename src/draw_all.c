@@ -7,17 +7,6 @@
 
 #include "../include/rpg.h"
 
-static void draw_spritesheets(beginning_t *begin, spritesheet_t *spritesheet)
-{
-    sfVector2i po = sfMouse_getPositionRenderWindow(begin->window);
-    spritesheet[SP_CURSOR].pos =
-    sfRenderWindow_mapPixelToCoords(begin->window, po, begin->view.view);
-    for (int i = 0; i < NBR_SP - 1; ++i)
-        if (spritesheet[i].active)
-            draw_one_sprite(begin, spritesheet[i].sprite, spritesheet[i].rect,
-            spritesheet[i].pos);
-}
-
 void draw_inventory(inventory_t inventory,
 spritesheet_t *spritesheet, rpg_t *rpg)
 {
@@ -51,7 +40,8 @@ void draw_all_text(rpg_t *rpg)
         draw_quests_inventory(rpg);
     }
     if (rpg->screen[SC_GUI_SHOP].active) {
-        sfText_setString(rpg->player_stats.inventory.money_shop, my_itoa(rpg->player_stats.money));
+        sfText_setString(rpg->player_stats.inventory.money_shop,
+        my_itoa(rpg->player_stats.money));
         write_text(rpg->begin.window, rpg->player_stats.inventory.money_shop);
     }
     draw_text_notif(rpg);

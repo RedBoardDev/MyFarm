@@ -21,7 +21,8 @@ void make_night(rpg_t *rpg)
 
     while (get_clock_time(rpg->spritesheet[SP_BED_SLEEP].c_anim)
     <= SECOND_TO_MICRO(5)) {
-        if (get_clock_time(rpg->spritesheet[SP_BED_SLEEP].c_attack) >= SECOND_TO_MICRO(0.02)) {
+        if (get_clock_time(rpg->spritesheet[SP_BED_SLEEP].c_attack) >=
+        SECOND_TO_MICRO(0.02)) {
             --c.a;
             for (int i = 0; i < NBR_SP; ++i)
                 sfSprite_setColor(rpg->spritesheet[i].sprite, c);
@@ -31,7 +32,8 @@ void make_night(rpg_t *rpg)
         draw_all(rpg);
     }
     for (int i = 0; i < NBR_SP; ++i)
-        sfSprite_setColor(rpg->spritesheet[i].sprite, (sfColor){255, 255, 255, 255});
+        sfSprite_setColor(rpg->spritesheet[i].sprite,
+        (sfColor){255, 255, 255, 255});
 }
 
 void button_bed_saving(rpg_t *rpg)

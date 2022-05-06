@@ -18,7 +18,8 @@ const int screen_base[] = {SP_BACKGROUND_SC_BASE, SELECTED_PLAYER,  \
 SP_BED_SLEEP, SP_CURSOR, -1};
 const int screen_inventory[] = {SP_INVENTORY, SP_CURSOR, -1};
 const int screen_how_play[] = {SP_BACKGROUND_HOW_PLAY, SP_BACK, SP_CURSOR, -1};
-const int screen_gui_shop[] = {SP_GUI_SHOP, SP_SHOP_BUTTON1, SP_SHOP_BUTTON2, SP_SHOP_BUTTON3, SP_SHOP_BUTTON4, SP_CURSOR -1};
+const int screen_gui_shop[] = {SP_GUI_SHOP, SP_SHOP_BUTTON1, SP_SHOP_BUTTON2,
+SP_SHOP_BUTTON3, SP_SHOP_BUTTON4, SP_CURSOR -1};
 const int screen_pause_menu[] = {SP_RESUME, SP_OPTION, SP_LEAVE_GAME, \
 SP_CURSOR, -1};
 const int screen_option_menu[] = {SP_BACKGROUND_OPTIONS, SP_SOUND_EFFECT,  \
