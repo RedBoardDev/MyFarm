@@ -26,19 +26,9 @@ static char *get_line_into_file(char *filepath, int quest, rpg_t *rpg)
     return (lineptr);
 }
 
-static int get_argument_dialog(rpg_t *rpg, char *str, int quest)
+static int get_argument_step_action(rpg_t *rpg, char *str, char first_character)
 {
-    char first_character = str[0];
-
-    str = &str[2];
     switch (first_character) {
-    case ('F'):
-        rpg->quest[quest].speaker = -1;
-        return (1);
-    case 'W':
-        rpg->quest[quest].speaker = -2;
-        rpg->quest[quest].active = my_atoi(str);
-        return (2);
     case 'G':
         add_item_inventory(rpg, my_atoi(str));
         return (2);
@@ -51,6 +41,25 @@ static int get_argument_dialog(rpg_t *rpg, char *str, int quest)
     case 'R':
         mark_quest_done(rpg, my_atoi(str));
         return (2);
+    default:
+        break;
+    }
+    return (0);
+}
+
+static int get_argument_step(rpg_t *rpg, char *str, int quest)
+{
+    char first_character = str[0];
+
+    str = &str[2];
+    switch (first_character) {
+    case ('F'):
+        rpg->quest[quest].speaker = -1;
+        return (1);
+    case 'W':
+        rpg->quest[quest].speaker = -2;
+        rpg->quest[quest].active = my_atoi(str);
+        return (2);
     case 'S':
         rpg->quest[quest].speaker = -3;
         rpg->quest[quest].active = my_atoi(str) + NBR_SP;
@@ -58,7 +67,7 @@ static int get_argument_dialog(rpg_t *rpg, char *str, int quest)
     default:
         break;
     }
-    return (0);
+    return (get_argument_step_action(rpg, str, first_character));
 }
 
 int get_chat_into_file(char *filepath, int quest_id, rpg_t *rpg)
@@ -69,15 +78,12 @@ int get_chat_into_file(char *filepath, int quest_id, rpg_t *rpg)
     if (rpg->quest[quest_id].step == 0)
         rpg->quest[quest_id].step = 1;
     lineptr = get_line_into_file(filepath, quest_id, rpg);
-    ret = get_argument_dialog(rpg, lineptr, quest_id);
+    ret = get_argument_step(rpg, lineptr, quest_id);
     if (ret == 1)
         return (0);
     rpg->quest[quest_id].step += 1;
     if (ret == 2)
         return (1);
-    // if (ret == 3) {
-    //     get_chat_into_file(filepath, quest_id, rpg);
-    // }
     for (int i = 0; lineptr[i]; ++i)
         lineptr[i] = lineptr[i] == '|' ? '\n' : lineptr[i];
     sfText_setString(rpg->quest[quest_id].dialog, lineptr + 2);

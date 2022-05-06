@@ -7,7 +7,7 @@
 
 #include "../../include/rpg.h"
 
-static const int cutscene_begin[] = {CS_BEGIN_BACKGROUND, CS_BEGIN_BUBULLE,-1};
+static const int cutscene_begin[] = {CS_BEGIN_BACKGROUND, CS_BEGIN_BUBULLE, -1};
 
 void toggle_cutscene(rpg_t *rpg, int screen_id, bool status)
 {

@@ -50,17 +50,12 @@ void send_chat_bubble(rpg_t *rpg, char *filepath, int quest_id)
 
 static int check_quest_status_step(rpg_t *rpg, int i_quest)
 {
-    // if (!(rpg->quest[i_quest].active >= NBR_SC
-    // && rpg->quest[rpg->quest[i_quest].active].active == -1)) {
-    //     printf("%d %d", rpg->quest[i_quest].active);
-
-
     if (rpg->quest[i_quest].active <= 1)
         return (1);
     if (rpg->quest[i_quest].speaker == -2
     && check_if_in_inventory(rpg, rpg->quest[i_quest].active) != -1) {
         remove_item_inventory(rpg, rpg->quest[i_quest].active);
-        return(0);
+        return (0);
     }
     if (rpg->quest[i_quest].speaker == -3
     && rpg->quest[i_quest].active >= NBR_SP

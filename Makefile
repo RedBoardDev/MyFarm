@@ -41,6 +41,7 @@ SRC_FILES	=	cutscenes/cutsceens	\
 				gameplay/teleport_player	\
 				gameplay/quests/utils_quest	\
 				gameplay/quests/quest_dialog	\
+				gameplay/quests/quetes_inv	\
 				gameplay/utils	\
 				init/init_all	\
 				init/init_events	\
@@ -100,7 +101,6 @@ SRC_FILES	=	cutscenes/cutsceens	\
 				main	\
 				myrpg	\
 				notif	\
-				quetes_inv	\
 				set_cursor	\
 				view	\
 
