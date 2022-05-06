@@ -37,6 +37,7 @@ void launch_begin_cutscene(rpg_t *rpg)
     sfSprite_setScale(rpg->spritesheet[rpg->player_stats.skin].sprite,
     (sfVector2f){5, 5});
     sfClock_restart(rpg->cutsceens.clock);
+    stop_sound(rpg->sound.sound_list[SOUND_MENU].sound);
 }
 
 void launch_game(rpg_t *rpg)

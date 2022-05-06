@@ -29,14 +29,23 @@ static void draw_cutsceens_begin(rpg_t *rpg)
 
 void cutsceens_begin(rpg_t *rpg)
 {
+    sfSoundStatus st =
+    sfSound_getStatus(rpg->sound.sound_list[SOUND_WALK].sound);
+
     if (get_clock_time(rpg->cutsceens.clock) >= SECOND_TO_MICRO(20)) {
         rpg->screen[SC_CUTSCENE_BEGIN].active = false;
         launch_game(rpg);
     }
     if (rpg->cutsceens.pos_player.x <= 1200) {
+        if (st != sfPlaying)
+            play_sound(rpg->sound.sound_list[SOUND_WALK].sound,
+            rpg->sound.volume_effect);
         rpg->cutsceens.pos_player.x += 0.8;
         animate_player_cutscene(rpg, 1);
-    } else
+    } else {
+        if (st == sfPlaying)
+            stop_sound(rpg->sound.sound_list[SOUND_WALK].sound);
         rpg->cutsceens.spritesheet[CS_BEGIN_BUBULLE].active = true;
+    }
     draw_cutsceens_begin(rpg);
 }
