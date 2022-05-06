@@ -252,6 +252,8 @@ void collision_milk(rpg_t *rpg);
 
 // open save
 void save_file(char *filepath, rpg_t *rpg);
+void save_player_stats(int fd, rpg_t *rpg);
+void save_boss_stats(int fd, rpg_t *rpg);
 int open_file(char *filepath, rpg_t *rpg);
 void read_boss_stats(int fd, rpg_t *rpg);
 void read_player_stats(int fd, rpg_t *rpg);

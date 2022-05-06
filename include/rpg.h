@@ -14,7 +14,7 @@
     #include "enum.h"
     #define RADIAN(x) x * 3.14159265359 / 180
     #define FUNCTIONS_BUTTONS { \
-    nothing, nothing, nothing, nothing, nothing, \
+    nothing, nothing, nothing, nothing, nothing, nothing, \
     nothing, nothing, nothing, nothing, nothing, button_bed_saving, \
     open_big_maps, nothing, shop_button1, shop_button2, shop_button3, \
     shop_button4, how_play, put_shop_gui, nothing, nothing, nothing,  \

@@ -52,6 +52,20 @@ static void read_sounds(int fd, rpg_t *rpg)
     rpg->sound.volume_music_backup = buff;
 }
 
+static void read_quests_pnj_dialogs(int fd, rpg_t *rpg)
+{
+    int buff_int = 0;
+
+    for (int i = 0; i < NBR_QUEST; ++i) {
+        read(fd, &buff_int, sizeof(int));
+        rpg->quest[i].active = buff_int;
+        read(fd, &buff_int, sizeof(int));
+        rpg->quest[i].step = buff_int;
+        read(fd, &buff_int, sizeof(int));
+        rpg->quest[i].speaker = buff_int;
+    }
+}
+
 int open_file(char *filepath, rpg_t *rpg)
 {
     int fd = open(filepath, O_RDONLY);
@@ -66,6 +80,7 @@ int open_file(char *filepath, rpg_t *rpg)
     read_sounds(fd, rpg);
     read_player_stats(fd, rpg);
     read_boss_stats(fd, rpg);
+    read_quests_pnj_dialogs(fd, rpg);
     current_screen = get_current_screen(rpg);
     if (current_screen != -1) {
         toggle_spritesheet_scene(rpg, true, current_screen);

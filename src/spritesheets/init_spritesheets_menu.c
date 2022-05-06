@@ -56,6 +56,10 @@ void init_menu(spritesheet_t *spritesheet)
     &spritesheet[SP_BACKGROUND_HOW_PLAY],
     (init_sprite_t){{WIDTH / 2, HEIGHT / 2}, {1, 1}, {0, 0, 1920, 1080},
     .clickable = false, .active = false, .change_sprite_on_mouse = false});
+    set_one_sprite("assets/img/menu/background_options.png",
+    &spritesheet[SP_BACKGROUND_OPTIONS],
+    (init_sprite_t){{WIDTH / 2, HEIGHT / 2}, {1, 1}, {0, 0, 1920, 1080},
+    .clickable = false, .active = false, .change_sprite_on_mouse = false});
     set_one_sprite("assets/img/menu/monkey.png", &spritesheet[SP_MONKEY],
     (init_sprite_t){{WIDTH / 1.36, HEIGHT / 1.32}, {1, 1}, {0, 0, 128, 147},
     .clickable = true, .active = false, .change_sprite_on_mouse = true});

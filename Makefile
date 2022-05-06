@@ -76,6 +76,7 @@ SRC_FILES	=	cutscenes/cutsceens	\
 				interface/menu_pause	\
 				save_function/open_file_stats	\
 				save_function/open_file	\
+				save_function/save_progress_stats	\
 				save_function/save_progress	\
 				utils/check_screens	\
 				utils/utils_draw	\
