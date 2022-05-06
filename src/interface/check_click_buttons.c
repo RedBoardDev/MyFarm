@@ -15,10 +15,13 @@ static void nothing(rpg_t *rpg)
 
 void back_button(rpg_t *rpg)
 {
+    sfColor c = {255, 255, 255, 255};
+
     for (int i = 0; i < NBR_SP; ++i)
         rpg->spritesheet[i].active = false;
     for (int i = 0; i < NBR_SC; ++i)
         rpg->screen[i].active = false;
+    sfSprite_setColor(rpg->spritesheet[SP_BACKGROUND_SC_MENU].sprite, c);
     toggle_spritesheet_scene(rpg, true, rpg->index_old_s);
     set_view(rpg, rpg->screen[rpg->index_old_s].view_pos);
 }

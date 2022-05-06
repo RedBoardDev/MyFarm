@@ -9,8 +9,8 @@
 
 void how_play(rpg_t *rpg)
 {
-    sfSprite_setColor(rpg->spritesheet[SP_BACKGROUND_HOW_PLAY].sprite,
-    (sfColor){255, 255, 255, 140});
+    // sfSprite_setColor(rpg->spritesheet[SP_BACKGROUND_HOW_PLAY].sprite,
+    // (sfColor){255, 255, 255, 140});
     toggle_spritesheet_scene(rpg, false, SC_MENU);
     toggle_spritesheet_scene(rpg, true, SC_HOW_PLAY);
 }
