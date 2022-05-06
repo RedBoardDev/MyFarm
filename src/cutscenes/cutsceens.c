@@ -27,20 +27,32 @@ static void draw_cutsceens(rpg_t *rpg)
     sfRenderWindow_display(rpg->begin.window);
 }
 
+static void move_cut_fps_ind(rpg_t *rpg)
+{
+    float delta = get_clock_time(rpg->begin.fps.clock) / 1000;
+
+    rpg->begin.fps.timer += delta;
+    while (rpg->begin.fps.timer >= 8) {
+        rpg->cutsceens.pos_player.x += 0.8;
+        rpg->begin.fps.timer -= 8;
+    }
+    sfClock_restart(rpg->begin.fps.clock);
+}
+
 void cutsceens_begin(rpg_t *rpg)
 {
     sfSoundStatus st =
     sfSound_getStatus(rpg->sound.sound_list[SOUND_WALK].sound);
 
     if (rpg->all_events.enter) {
-            toggle_cutscene(rpg, SC_CUTSCENE_BEGIN, false);
-            launch_game(rpg);
+        toggle_cutscene(rpg, SC_CUTSCENE_BEGIN, false);
+        launch_game(rpg);
     }
     if (rpg->cutsceens.pos_player.x <= 1200) {
         if (st != sfPlaying)
             play_sound(rpg->sound.sound_list[SOUND_WALK].sound,
             rpg->sound.volume_effect);
-        rpg->cutsceens.pos_player.x += 0.8;
+        move_cut_fps_ind(rpg);
         animate_player_cutscene(rpg, 1);
     } else {
         if (st == sfPlaying) {
