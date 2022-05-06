@@ -38,7 +38,22 @@ void move_player_jump(rpg_t *rpg)
         rpg->player_stats.incr_pos.y = 0;
 }
 
-void move_player_and_view2(rpg_t *rpg)
+static void move_player_and_view3(rpg_t *rpg)
+{
+    if ((rpg->screen[SC_BASE].active || rpg->screen[SC_TENTE].active ||
+    rpg->screen[SC_TAVERNE].active || rpg->screen[SC_JAIL].active)
+    && !rpg->screen[SC_GUI_SHOP].active &&
+    !rpg->spritesheet[SP_MINIMAP_TAVERNE].active) {
+        move_player_and_view_horizontal(rpg, rpg->imgs_colors.backgrounds,
+        rpg->spritesheet[rpg->player_stats.skin].pos, false);
+        move_player_and_view_vertical(rpg, rpg->imgs_colors.backgrounds,
+        rpg->spritesheet[rpg->player_stats.skin].pos, false);
+        teleport_player_scene(rpg, rpg->imgs_colors.backgrounds,
+        rpg->spritesheet[rpg->player_stats.skin].pos);
+    }
+}
+
+static void move_player_and_view2(rpg_t *rpg)
 {
     if (rpg->screen[SC_MAIN_MAP].active && !rpg->screen[SC_INVENTORY].active
     && !rpg->screen[SC_PAUSE].active && !rpg->screen[SC_GUI_SHOP].active) {
@@ -50,16 +65,7 @@ void move_player_and_view2(rpg_t *rpg)
         teleport_player_scene(rpg, rpg->imgs_colors.main_map,
         rpg->spritesheet[rpg->player_stats.skin].pos);
     }
-    if ((rpg->screen[SC_BASE].active || rpg->screen[SC_TENTE].active ||
-    rpg->screen[SC_TAVERNE].active || rpg->screen[SC_JAIL].active)
-    && !rpg->screen[SC_GUI_SHOP].active) {
-        move_player_and_view_horizontal(rpg, rpg->imgs_colors.backgrounds,
-        rpg->spritesheet[rpg->player_stats.skin].pos, false);
-        move_player_and_view_vertical(rpg, rpg->imgs_colors.backgrounds,
-        rpg->spritesheet[rpg->player_stats.skin].pos, false);
-        teleport_player_scene(rpg, rpg->imgs_colors.backgrounds,
-        rpg->spritesheet[rpg->player_stats.skin].pos);
-    }
+    move_player_and_view3(rpg);
 }
 
 void move_player_and_view(rpg_t *rpg)
