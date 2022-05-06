@@ -27,31 +27,13 @@ static void save_screens_and_sounds(int fd, rpg_t *rpg)
     write(fd, &rpg->sound.volume_music_backup, sizeof(float));
 }
 
-static void save_player_stats(int fd, rpg_t *rpg)
+static void save_quests_pnj_dialogs(int fd, rpg_t *rpg)
 {
-    write(fd, &rpg->player_stats.incr_pos, sizeof(sfVector2f));
-    write(fd, &rpg->player_stats.skin, sizeof(int));
-    write(fd, &rpg->player_stats.money, sizeof(int));
-    write(fd, &rpg->player_stats.speed, sizeof(float));
-    write(fd, &rpg->player_stats.life, sizeof(float));
-    write(fd, &rpg->player_stats.damage, sizeof(int));
-    write(fd, &rpg->player_stats.attack, sizeof(bool));
-    write(fd, &rpg->spritesheet[rpg->player_stats.skin].pos,
-    sizeof(sfVector2f));
-    for (int i = 0; i < 12; ++i)
-        write(fd, &rpg->player_stats.inventory.inventory_case[i].
-        item_spritesheet, sizeof(int));
-}
-
-static void save_boss_stats(int fd, rpg_t *rpg)
-{
-    write(fd, &rpg->boss_stats.life, sizeof(float));
-    write(fd, &rpg->boss_stats.damage_executioner, sizeof(int));
-    write(fd, &rpg->boss_stats.damage_golem, sizeof(int));
-    write(fd, &rpg->boss_stats.inc_pos, sizeof(float));
-    write(fd, &rpg->boss_stats.status, sizeof(int));
-    write(fd, &rpg->boss_stats.time_next_it, sizeof(float));
-    write(fd, &rpg->boss_stats.rush_to_player, sizeof(bool));
+    for (int i = 0; i < NBR_QUEST; ++i) {
+        write(fd, &rpg->quest[i].active, sizeof(int));
+        write(fd, &rpg->quest[i].step, sizeof(int));
+        write(fd, &rpg->quest[i].speaker, sizeof(int));
+    }
 }
 
 void save_file(char *filepath, rpg_t *rpg)
@@ -62,5 +44,6 @@ void save_file(char *filepath, rpg_t *rpg)
     save_screens_and_sounds(fd, rpg);
     save_player_stats(fd, rpg);
     save_boss_stats(fd, rpg);
+    save_quests_pnj_dialogs(fd, rpg);
     close(fd);
 }
