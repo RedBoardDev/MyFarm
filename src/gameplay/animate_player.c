@@ -37,8 +37,7 @@ void animate_player(rpg_t *rpg)
     && !rpg->all_events.q && !rpg->all_events.d) {
         rpg->spritesheet[rpg->player_stats.skin].rect.left = 0;
         stop_sound(rpg->sound.sound_list[SOUND_WALK].sound);
-    }
-    else if (time_player >= SECOND_TO_MICRO(0.2))
+    } else if (time_player >= SECOND_TO_MICRO(0.2))
         move_animate_player(rpg);
     if (color.g == 255
     && rpg->spritesheet[rpg->player_stats.skin].rect.top < 256)

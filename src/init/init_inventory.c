@@ -27,4 +27,3 @@ void init_inventory(inventory_t *inventory, rpg_t *rpg)
     inventory->inventory_case[0].pos = rpg->spritesheet[SP_INVENTORY].pos;
     inventory->inventory_case[I_CASE_1].item_spritesheet = SP_ITEM_SHOVEL;
 }
-
