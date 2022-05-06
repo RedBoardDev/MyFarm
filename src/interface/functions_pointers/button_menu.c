@@ -13,7 +13,6 @@ void how_play(rpg_t *rpg)
     (sfColor){255, 255, 255, 140});
     toggle_spritesheet_scene(rpg, false, SC_MENU);
     toggle_spritesheet_scene(rpg, true, SC_HOW_PLAY);
-    sfClock_restart(rpg->spritesheet[SP_NPC_GUIDE].c_anim);
 }
 
 void display_custom_skins(rpg_t *rpg)
@@ -42,6 +41,7 @@ void launch_begin_cutscene(rpg_t *rpg)
 
 void launch_game(rpg_t *rpg)
 {
+    sfClock_restart(rpg->spritesheet[SP_NPC_GUIDE].c_anim);
     rpg->spritesheet[rpg->player_stats.skin].pos =
     (sfVector2f){SPAWN_X, SPAWN_Y};
     set_view(rpg, (sfVector2f){SPAWN_X, SPAWN_Y});

@@ -32,7 +32,8 @@ void cutsceens_begin(rpg_t *rpg)
     sfSoundStatus st =
     sfSound_getStatus(rpg->sound.sound_list[SOUND_WALK].sound);
 
-    if (get_clock_time(rpg->cutsceens.clock) >= SECOND_TO_MICRO(20)) {
+    if (get_clock_time(rpg->cutsceens.clock) >= SECOND_TO_MICRO(20)
+    || rpg->all_events.enter) {
         rpg->screen[SC_CUTSCENE_BEGIN].active = false;
         launch_game(rpg);
     }
