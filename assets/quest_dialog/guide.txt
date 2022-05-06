@@ -29,12 +29,13 @@ P:Here it is!
 P:I've found|the beetroots.
 N:Thank you!|You were|really fast!
 R:2
-N:Tu es déjà aller voir la tavernière ?
-N:Tu devrais lui parler, elle cache quelques items intéressants...
-P:Je vais aller lui demander, merci !
+N:Did you see the tavern keeper?
+N:You should come and talk to her,
+N:she is hiding some interesting items.
+P:I should ask her, thanks!
 S:1
-P:En effet, je vais pouvoir m'équiper comme il faut, merci !
-N:Ne t'inquiète pas, mais garde cela pour toi ;)
+P:Actually, I will be able to equip myself, thank you!
+N:You're welcome ;)
 N:The next|ingredient that|will be good
 N:for your mom|is a tomato.
 Q:4
@@ -81,6 +82,14 @@ N:I will prepare it.
 N:(preparing)
 N:...
 N:....................|....................|....................|....................
-N:à finir
+N:Take it! I've finally finished the potion for your mom.
+G:75
+P:Oh nice! Thank you very much!!!!!!!
+N:You should go where you beat the executioner.
+N:There is a grave where your mom rest.
+N:Make her drink the potion, and she will revive.
+P:I don't know how to thank you!
+N:Just make her revive ;)
+P:I run to her!
 Q:9
 F
