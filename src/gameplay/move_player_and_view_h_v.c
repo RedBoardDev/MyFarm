@@ -1,39 +1,13 @@
 /*
 ** EPITECH PROJECT, 2021
-** my_rpg
+** myrpg
 ** File description:
-** move_player_view.c
+** move_player_and_view_h_v.c
 */
 
 #include "../../include/rpg.h"
 
-static bool color_is_white(sfColor color)
-{
-    return (color.r == 254 && color.g == 254 && color.b == 254);
-}
-
-static float getsp(rpg_t *rpg, sfColor color)
-{
-    sfSoundStatus st;
-
-    if (color_is_white(color)) {
-        st = sfSound_getStatus(rpg->sound.sound_list[SOUND_WATER].sound);
-        if (st != sfPlaying)
-            play_sound(rpg->sound.sound_list[SOUND_WATER].sound,
-            rpg->sound.volume_effect);
-        stop_sound(rpg->sound.sound_list[SOUND_WALK].sound);
-        return (SPEED_PLAYER / 4);
-    } else {
-        st = sfSound_getStatus(rpg->sound.sound_list[SOUND_WALK].sound);
-        if (st != sfPlaying)
-            play_sound(rpg->sound.sound_list[SOUND_WALK].sound,
-            rpg->sound.volume_effect / 1.9);
-        stop_sound(rpg->sound.sound_list[SOUND_WATER].sound);
-        return (SPEED_PLAYER * (rpg->player_stats.speed / 10 + 1));
-    }
-}
-
-void move_player_and_view_horizontal(rpg_t *rpg, sfImage *image,
+static void move_player_and_view_horizontal_oui(rpg_t *rpg, sfImage *image,
 sfVector2f pos_player, bool move_view)
 {
     sfColor color = get_color_from_player(image, pos_player);
@@ -56,10 +30,16 @@ sfVector2f pos_player, bool move_view)
         if (color.r != 255)
             rpg->spritesheet[rpg->player_stats.skin].pos.x -= speed;
     }
+}
+
+void move_player_and_view_horizontal(rpg_t *rpg, sfImage *image,
+sfVector2f pos_player, bool move_view)
+{
+    move_player_and_view_horizontal_oui(rpg, image, pos_player, move_view);
     set_view(rpg, rpg->begin.view.center);
 }
 
-void move_player_and_view_vertical(rpg_t *rpg, sfImage *image,
+static void move_player_and_view_vertical_oui(rpg_t *rpg, sfImage *image,
 sfVector2f pos_player, bool move_view)
 {
     sfColor color = get_color_from_player(image, pos_player);
@@ -82,5 +62,11 @@ sfVector2f pos_player, bool move_view)
         if (color.r != 255)
             rpg->spritesheet[rpg->player_stats.skin].pos.y += speed;
     }
+}
+
+void move_player_and_view_vertical(rpg_t *rpg, sfImage *image,
+sfVector2f pos_player, bool move_view)
+{
+    move_player_and_view_vertical_oui(rpg, image, pos_player, move_view);
     set_view(rpg, rpg->begin.view.center);
 }

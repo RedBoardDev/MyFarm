@@ -44,6 +44,20 @@ static void ia_golem(rpg_t *rpg)
     switch_status(rpg);
 }
 
+static void animate_if_no_life_toggle(rpg_t *rpg)
+{
+    rpg->spritesheet[SP_BACKGROUND_VICTORY_GROTTE].pos =
+    rpg->screen[SC_VICTORY_GROTTE].view_pos;
+    rpg->spritesheet[SP_NEXT_GROTTE].pos = (sfVector2f)
+    {rpg->screen[SC_VICTORY_GROTTE].view_pos.x + 148,
+    rpg->screen[SC_VICTORY_GROTTE].view_pos.y + 110
+    };
+    toggle_spritesheet_scene(rpg, false, SC_GROTTE);
+    toggle_spritesheet_scene(rpg, true, SC_VICTORY_GROTTE);
+    stop_sound(rpg->sound.sound_list[SOUND_AMBIANT_CAVE].sound);
+    play_main_sound(rpg);
+}
+
 static void animate_if_no_life(rpg_t *rpg)
 {
     if (rpg->boss_stats.life <= 0) {
@@ -55,16 +69,7 @@ static void animate_if_no_life(rpg_t *rpg)
         rpg->spritesheet[SP_BOSS_GOLEM].pos);
         if (rpg->spritesheet[SP_BOSS_GOLEM].rect.left >= 300 &&
         rpg->spritesheet[SP_BOSS_GOLEM].rect.top == 800) {
-            rpg->spritesheet[SP_BACKGROUND_VICTORY_GROTTE].pos =
-            rpg->screen[SC_VICTORY_GROTTE].view_pos;
-            rpg->spritesheet[SP_NEXT_GROTTE].pos = (sfVector2f)
-            {rpg->screen[SC_VICTORY_GROTTE].view_pos.x + 148,
-            rpg->screen[SC_VICTORY_GROTTE].view_pos.y + 110
-            };
-            toggle_spritesheet_scene(rpg, false, SC_GROTTE);
-            toggle_spritesheet_scene(rpg, true, SC_VICTORY_GROTTE);
-            stop_sound(rpg->sound.sound_list[SOUND_AMBIANT_CAVE].sound);
-            play_main_sound(rpg);
+            animate_if_no_life_toggle(rpg);
         }
     }
 }

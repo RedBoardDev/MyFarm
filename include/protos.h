@@ -103,6 +103,7 @@ sfColor color);
 void my_draw_square(sfUint8 *framebuffer, unsigned int size, sfColor color);
 void my_putpixel(int x, int y, sfUint8 *framebuffer, sfColor color);
 void draw_all(rpg_t *rpg);
+float getsp(rpg_t *rpg, sfColor color);
 
 // utils
 void clean_window(beginning_t *begin, sfColor color);

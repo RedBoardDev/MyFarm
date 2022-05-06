@@ -7,30 +7,35 @@
 
 #include "../../include/rpg.h"
 
+static void execute_escape(rpg_t *rpg)
+{
+    if (!rpg->all_events.escape)
+        return;
+    rpg->all_events.escape = false;
+    if (rpg->screen[SC_GUI_SHOP].active) {
+        toggle_spritesheet_scene(rpg, false, SC_GUI_SHOP);
+        rpg->spritesheet[SP_CURSOR].active = true;
+        return;
+    }
+    if (rpg->spritesheet[SP_MINIMAP_TAVERNE].active) {
+        rpg->spritesheet[SP_MINIMAP_TAVERNE].active = false;
+        return;
+    }
+    if (rpg->screen[SC_INVENTORY].active) {
+        for (int i = SP_ITEM_SHOVEL; i <= SP_FLASK_REVIVE; ++i)
+            rpg->spritesheet[i].active = false;
+        toggle_spritesheet_scene(rpg, false, SC_INVENTORY);
+        return;
+    } else if (!rpg->screen[SC_TAVERNE].active)
+        menu_pause(rpg);
+}
+
 void execute_all_gameplay(rpg_t *rpg)
 {
     animate_player(rpg);
     set_size_cursor(rpg, 0.06);
     manage_inventory(rpg);
-    if (rpg->all_events.escape) {
-        rpg->all_events.escape = false;
-        if (rpg->screen[SC_GUI_SHOP].active) {
-            toggle_spritesheet_scene(rpg, false, SC_GUI_SHOP);
-            rpg->spritesheet[SP_CURSOR].active = true;
-            return;
-        }
-        if (rpg->spritesheet[SP_MINIMAP_TAVERNE].active) {
-            rpg->spritesheet[SP_MINIMAP_TAVERNE].active = false;
-            return;
-        }
-        if (rpg->screen[SC_INVENTORY].active) {
-            for (int i = SP_ITEM_SHOVEL; i <= SP_FLASK_REVIVE; ++i)
-                rpg->spritesheet[i].active = false;
-            toggle_spritesheet_scene(rpg, false, SC_INVENTORY);
-            return;
-        } else if (!rpg->screen[SC_TAVERNE].active)
-            menu_pause(rpg);
-    }
+    execute_escape(rpg);
 }
 
 void execute_main_map(rpg_t *rpg)
@@ -71,15 +76,5 @@ void execute_base(rpg_t *rpg)
     if (check_collision_npc(rpg, SP_BED_SLEEP, co) && rpg->all_events.enter) {
         rpg->all_events.enter = false;
         button_bed_saving(rpg);
-    }
-}
-
-void execute_taverne(rpg_t *rpg)
-{
-    if (check_collision_npc(rpg, SP_NPC_SELLER,
-    (sfFloatRect){-15, -15, 60, 30}) && rpg->all_events.enter &&
-    rpg->quest[QUEST_SELLER].active == -1) {
-        put_shop_gui(rpg);
-        rpg->all_events.enter = false;
     }
 }

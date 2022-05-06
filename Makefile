@@ -35,8 +35,9 @@ SRC_FILES	=	cutscenes/cutsceens	\
 				gameplay/collisions	\
 				gameplay/minimap	\
 				gameplay/move_all	\
+				gameplay/move_player_and_view_h_v	\
 				gameplay/move_player_and_view	\
-				gameplay/move_player_view	\
+				gameplay/move_player_get_speed	\
 				gameplay/teleport_player_house	\
 				gameplay/teleport_player	\
 				gameplay/quests/utils_quest	\
