@@ -39,6 +39,20 @@ static void move_cut_fps_ind(rpg_t *rpg)
     sfClock_restart(rpg->begin.fps.clock);
 }
 
+static void play_sound_and_launch_game(rpg_t *rpg, sfSoundStatus st)
+{
+    if (st == sfPlaying) {
+        rpg->cutsceens.clock = sfClock_create();
+        stop_sound(rpg->sound.sound_list[SOUND_WALK].sound);
+        rpg->spritesheet[rpg->player_stats.skin].rect.left = 0;
+        rpg->cutsceens.spritesheet[CS_BEGIN_BUBULLE].active = true;
+    }
+    if (get_clock_time(rpg->cutsceens.clock) >= SECOND_TO_MICRO(4)) {
+        rpg->screen[SC_CUTSCENE_BEGIN].active = false;
+        launch_game(rpg);
+    }
+}
+
 void cutsceens_begin(rpg_t *rpg)
 {
     sfSoundStatus st =
@@ -54,17 +68,7 @@ void cutsceens_begin(rpg_t *rpg)
             rpg->sound.volume_effect);
         move_cut_fps_ind(rpg);
         animate_player_cutscene(rpg, 1);
-    } else {
-        if (st == sfPlaying) {
-            rpg->cutsceens.clock = sfClock_create();
-            stop_sound(rpg->sound.sound_list[SOUND_WALK].sound);
-            rpg->spritesheet[rpg->player_stats.skin].rect.left = 0;
-            rpg->cutsceens.spritesheet[CS_BEGIN_BUBULLE].active = true;
-        }
-        if (get_clock_time(rpg->cutsceens.clock) >= SECOND_TO_MICRO(4)) {
-            rpg->screen[SC_CUTSCENE_BEGIN].active = false;
-            launch_game(rpg);
-        }
-    }
+    } else
+        play_sound_and_launch_game(rpg, st);
     draw_cutsceens(rpg);
 }
