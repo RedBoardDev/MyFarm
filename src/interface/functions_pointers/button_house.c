@@ -15,6 +15,12 @@ void open_big_maps(rpg_t *rpg)
         rpg->spritesheet[SP_MINIMAP_TAVERNE].active = false;
 }
 
+void change_color_all_sprites(rpg_t *rpg, sfColor c)
+{
+    for (int i = 0; i < NBR_SP; ++i)
+        sfSprite_setColor(rpg->spritesheet[i].sprite, c);
+}
+
 void make_night(rpg_t *rpg)
 {
     sfColor c = {255, 255, 255, 255};
@@ -24,8 +30,7 @@ void make_night(rpg_t *rpg)
         if (get_clock_time(rpg->spritesheet[SP_BED_SLEEP].c_attack) >=
         SECOND_TO_MICRO(0.02)) {
             --c.a;
-            for (int i = 0; i < NBR_SP; ++i)
-                sfSprite_setColor(rpg->spritesheet[i].sprite, c);
+            change_color_all_sprites(rpg, c);
             sfClock_restart(rpg->spritesheet[SP_BED_SLEEP].c_attack);
         }
         clean_window(&rpg->begin, sfBlack);
