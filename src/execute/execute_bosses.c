@@ -66,13 +66,13 @@ void drink_flask(rpg_t *rpg)
     rpg->all_events.mouse.right = false;
     if (get_item_inv(rpg, I_ATTACK) == SP_FLASK_ATTACK) {
         remove_item_inventory(rpg, SP_FLASK_ATTACK);
-        rpg->player_stats.damage += 1;
+        rpg->player_stats.damage <= 2 ? rpg->player_stats.damage += 1 : 0;
         play_sound(rpg->sound.sound_list[SOUND_POTION_DRINK].sound,
         rpg->sound.volume_effect);
     }
     if (get_item_inv(rpg, I_ATTACK) == SP_FLASK_SPEED) {
         remove_item_inventory(rpg, SP_FLASK_SPEED);
-        rpg->player_stats.speed += 1;
+        rpg->player_stats.speed <= 2 ? rpg->player_stats.speed += 1 : 0;
         play_sound(rpg->sound.sound_list[SOUND_POTION_DRINK].sound,
         rpg->sound.volume_effect);
     }
