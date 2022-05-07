@@ -32,6 +32,8 @@ static void execute_escape(rpg_t *rpg)
 
 void execute_all_gameplay(rpg_t *rpg)
 {
+    rpg->player_stats.resistance =
+    (get_item_inv(rpg, I_ARMOR) == SP_ITEM_ARMOR ? 2 : 1);
     animate_player(rpg);
     set_size_cursor(rpg, 0.06);
     manage_inventory(rpg);
