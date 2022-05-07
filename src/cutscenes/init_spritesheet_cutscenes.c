@@ -7,9 +7,9 @@
 
 #include "../../include/rpg.h"
 
-static const int cutscene_begin[] = {CS_BEGIN_BACKGROUND, CS_BEGIN_BUBULLE, -1};
-static const int cutscene_final[] = {CS_BEGIN_BACKGROUND, CS_FINAL_FLASK,   \
-CS_FINAL_MONIK, -1};
+static const int cutscene_begin[] = {CS_BEGIN_BACKGROUND, CS_PLAYER, CS_BEGIN_BUBULLE, -1};
+static const int cutscene_final[] = {CS_BEGIN_BACKGROUND, CS_PLAYER, CS_FINAL_MONIK,   \
+CS_FINAL_FLASK, -1};
 
 void toggle_cutscene(rpg_t *rpg, int screen_id, bool status)
 {
@@ -47,6 +47,6 @@ void init_spritehseet_cutscenes(rpg_t *rpg)
     .clickable = false, .active = false, .change_sprite_on_mouse = false});
     set_one_sprite("assets/img/item/flask_revive.png",
     &rpg->cutscenes.spritesheet[CS_FINAL_FLASK],
-    (init_sprite_t){{WIDTH / 2, HEIGHT / 2}, {1, 1}, {0, 0, 64, 64},
+    (init_sprite_t){{1200, 920}, {0.9, 0.9}, {0, 0, 64, 64},
     .clickable = false, .active = false, .change_sprite_on_mouse = false});
 }

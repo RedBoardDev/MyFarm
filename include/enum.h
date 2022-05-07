@@ -107,6 +107,7 @@ enum cutscene {
     CS_BEGIN_BUBULLE,
     CS_FINAL_MONIK,
     CS_FINAL_FLASK,
+    CS_PLAYER,
     NBR_CS
 };
 

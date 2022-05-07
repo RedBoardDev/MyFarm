@@ -9,16 +9,16 @@
 
 void launch_begin_cutscene(rpg_t *rpg)
 {
-    // sfSprite_setScale(rpg->spritesheet[rpg->player_stats.skin].sprite,
-    // (sfVector2f){5, 5});
-    // stop_sound(rpg->sound.sound_list[SOUND_MENU].sound);
-    // toggle_cutscene(rpg, SC_CUTSCENE_BEGIN, true);
-
     sfSprite_setScale(rpg->spritesheet[rpg->player_stats.skin].sprite,
     (sfVector2f){5, 5});
     stop_sound(rpg->sound.sound_list[SOUND_MENU].sound);
-    button_option_game(rpg);
-    toggle_cutscene(rpg, SC_CUTSCENE_FINAL, true);
+    toggle_cutscene(rpg, SC_CUTSCENE_BEGIN, true);
+
+    // sfSprite_setScale(rpg->spritesheet[rpg->player_stats.skin].sprite,
+    // (sfVector2f){5, 5});
+    // stop_sound(rpg->sound.sound_list[SOUND_MENU].sound);
+    // button_option_game(rpg);
+    // toggle_cutscene(rpg, SC_CUTSCENE_FINAL, true);
 }
 
 void launch_final_cutscene(rpg_t *rpg)

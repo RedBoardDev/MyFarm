@@ -15,15 +15,19 @@ void draw_cutscenes(rpg_t *rpg)
     sfRenderWindow_drawSprite(rpg->begin.window,
     rpg->begin.sprite, NULL);
     for (int i = 0; i < NBR_CS; ++i) {
-        if (rpg->cutscenes.spritesheet[i].active)
+        if (!rpg->cutscenes.spritesheet[i].active)
+            continue;
+        if (i == CS_PLAYER)
+            draw_one_sprite(&rpg->begin,
+            rpg->spritesheet[rpg->player_stats.skin].sprite,
+            rpg->spritesheet[rpg->player_stats.skin].rect,
+            rpg->cutscenes.pos_player);
+        else
             draw_one_sprite(&rpg->begin,
             rpg->cutscenes.spritesheet[i].sprite,
             rpg->cutscenes.spritesheet[i].rect,
             rpg->cutscenes.spritesheet[i].pos);
     }
-    draw_one_sprite(&rpg->begin,
-    rpg->spritesheet[rpg->player_stats.skin].sprite,
-    rpg->spritesheet[rpg->player_stats.skin].rect, rpg->cutscenes.pos_player);
     sfRenderWindow_display(rpg->begin.window);
 }
 
