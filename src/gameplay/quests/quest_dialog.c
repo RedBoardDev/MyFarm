@@ -54,6 +54,7 @@ static int get_argument_step(rpg_t *rpg, char *str, int quest)
     str = &str[2];
     switch (first_character) {
     case ('F'):
+        rpg->player_stats.money += my_atoi(str);
         rpg->quest[quest].speaker = -1;
         return (1);
     case 'W':

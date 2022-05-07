@@ -22,4 +22,4 @@ N:Good luck!
 P:Thank you!
 G:66
 G:71
-F
+F:30

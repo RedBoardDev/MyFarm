@@ -92,4 +92,4 @@ P:I don't know|how to thank you!
 N:Just make|her revive ;)
 P:I run to her!
 Q:9
-F
+F:10
