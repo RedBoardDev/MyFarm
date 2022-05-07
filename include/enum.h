@@ -104,10 +104,11 @@ enum sprites {
 
 enum cutscene {
     CS_BEGIN_BACKGROUND,
+    CS_PLAYER,
     CS_BEGIN_BUBULLE,
     CS_FINAL_MONIK,
     CS_FINAL_FLASK,
-    CS_PLAYER,
+    CS_FINAL_BUBULLE_HEART,
     NBR_CS
 };
 

@@ -10,7 +10,7 @@ N:I'll give you one|in exchange for a|jar of prisoner pee.
 Q:1
 P:Right, where|should I find it?
 N:Look at the jail|at the bottom|right of the map.
-W:61
+W:62
 P:Here it is!
 P:I have what you|were looking for.
 R:1
@@ -20,6 +20,6 @@ N:It's a very|powerful sword!
 N:One wrong attack|and it may|kill you.
 N:Good luck!
 P:Thank you!
-G:65
-G:70
+G:66
+G:71
 F

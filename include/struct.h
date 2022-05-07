@@ -88,6 +88,7 @@ typedef struct {
 
 typedef struct {
     int cutscene_nbr;
+    int status_move;
     sfClock *clock;
     sfVector2f pos_player;
     spritesheet_t *spritesheet;
