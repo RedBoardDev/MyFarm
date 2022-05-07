@@ -44,7 +44,9 @@ void execute_main_map(rpg_t *rpg)
 {
     sfFloatRect co = {-20, -20, 40, 40};
 
-    if (check_collision_npc(rpg, SP_TOMBE, co) && rpg->all_events.enter) {
+    if (rpg->all_events.enter
+    && check_if_in_inventory(rpg, SP_FLASK_REVIVE) != -1
+    && check_collision_npc(rpg, SP_TOMBE, co)) {
         rpg->all_events.enter = false;
         launch_final_cutscene(rpg);
     }

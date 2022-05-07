@@ -41,8 +41,10 @@ static void move_flask(rpg_t *rpg, sfSoundStatus st)
 static void cutscene_final_step(rpg_t *rpg)
 {
     if (rpg->cutscenes.spritesheet[CS_FINAL_FLASK].pos.x >= 1506) {
+        if (rpg->cutscenes.status_move == 1)
+            play_sound(rpg->sound.sound_list[SOUND_GLASS_BREAK].sound,
+            rpg->sound.volume_effect);
         rpg->cutscenes.status_move = 2;
-        //jouer un son de qq chose qui se casse ?
         rpg->cutscenes.spritesheet[CS_FINAL_FLASK].active = false;
         rpg->cutscenes.spritesheet[CS_FINAL_MONIK].active = true;
     }

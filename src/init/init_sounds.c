@@ -19,8 +19,10 @@ static void init_sound_music(rpg_t *rpg)
     true, &rpg->sound.sound_list[SOUND_MENU]);
     create_sound("assets/sounds/bonnenuit.ogg",
     false, &rpg->sound.sound_list[SOUND_NIGHT]);
-    create_sound("assets/sounds/final_music1.ogg",
-    false, &rpg->sound.sound_list[SOUND_FINAL_1]);
+    create_sound("assets/sounds/cutscenes_ambiant.ogg",
+    false, &rpg->sound.sound_list[SOUND_AMBIANT_CUTSCENE]);
+    create_sound("assets/sounds/glass_break.ogg",
+    false, &rpg->sound.sound_list[SOUND_GLASS_BREAK]);
 }
 
 static void init_sound_effect(rpg_t *rpg)
