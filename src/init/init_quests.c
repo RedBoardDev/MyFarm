@@ -30,7 +30,7 @@ static void init_quests_inv(rpg_t *rpg)
     for (int i = 0; i < NBR_Q; ++i)
         rpg->quests_inv[i].text_string = NULL;
     rpg->quests_inv[Q_FIND_INDIAN].text_string = "Find the Indian";
-    rpg->quests_inv[Q_TAKE_PEE].text_string = "Take a jar of pee";
+    rpg->quests_inv[Q_TAKE_PEE].text_string = "Bring a jar of pee";
     rpg->quests_inv[Q_BEETROOTS].text_string = "Find some beetroots";
     rpg->quests_inv[Q_FIGHT_EXECUTIONER].text_string = "Fight executioner";
     rpg->quests_inv[Q_TOMATO].text_string = "Find some tomatos";
