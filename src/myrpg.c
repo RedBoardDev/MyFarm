@@ -24,8 +24,6 @@ static void main_game(rpg_t *rpg, sfColor *drunk)
     set_view(rpg, rpg->begin.view.center);
     *drunk = my_rgb(*drunk);
     modify_zoom(rpg);
-    if (rpg->all_events.tab)
-        send_notif(rpg, "ouiiiiiiiiiiii");
     make_drunk(rpg, *drunk);
     draw_notif(rpg);
     move_sound_box(rpg);
