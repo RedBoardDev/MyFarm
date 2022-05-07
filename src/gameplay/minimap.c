@@ -16,7 +16,6 @@ static void move_layer_minimap(rpg_t *rpg, float zoom)
     0.58 * zoom * (zoom + 0.6) * (zoom + 0.6)};
     sfVector2f pos = {map_rect.left + (rpg->begin.view.center.x / 6.6 * zoom),
     map_rect.top + (rpg->begin.view.center.y / 6.6 * zoom)};
-
     sfSprite_setColor(rpg->spritesheet[SP_MINIMAP_LAYER].sprite, c);
     sfSprite_setScale(rpg->spritesheet[SP_MINIMAP_LAYER].sprite, scale);
     rpg->spritesheet[SP_MINIMAP_LAYER].pos = pos;
