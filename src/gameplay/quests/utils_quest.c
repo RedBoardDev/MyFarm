@@ -32,8 +32,8 @@ sfVector2f pos_player, sfVector2f pos_dialog)
         pos_player.y -= 20;
         pos_player.x -= 25;
         sfText_setPosition(rpg->quest[quest_id].dialog, pos_player);
-        if (put_txt)
-            write_text(rpg->begin.window, rpg->quest[quest_id].dialog);
+        put_txt ? write_text(rpg->begin.window, rpg->quest[quest_id].dialog)
+        : 0;
         sfText_setPosition(rpg->quest[quest_id].dialog, pos_dialog);
     }
 }

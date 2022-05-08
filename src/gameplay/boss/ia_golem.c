@@ -48,8 +48,8 @@ static void animate_if_no_life_toggle(rpg_t *rpg)
 {
     rpg->spritesheet[SP_BACKGROUND_VICTORY_GROTTE].pos =
     rpg->screen[SC_VICTORY_GROTTE].view_pos;
-    rpg->spritesheet[SP_NEXT_GROTTE].pos = (sfVector2f)
-    {rpg->screen[SC_VICTORY_GROTTE].view_pos.x + 148,
+    rpg->spritesheet[SP_NEXT_GROTTE].pos = (sfVector2f) {
+    rpg->screen[SC_VICTORY_GROTTE].view_pos.x + 148,
     rpg->screen[SC_VICTORY_GROTTE].view_pos.y + 110
     };
     toggle_spritesheet_scene(rpg, false, SC_GROTTE);
