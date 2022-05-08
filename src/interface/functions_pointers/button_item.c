@@ -36,5 +36,6 @@ void collision_milk(rpg_t *rpg)
             send_notif(rpg, "Bring it back to the guide");
             add_item_inventory(rpg, SP_ITEM_MILK);
             rpg->spritesheet[SP_ITEM_MILK].active = false;
+            mark_quest_done(rpg, Q_FIND_COWS);
         }
 }

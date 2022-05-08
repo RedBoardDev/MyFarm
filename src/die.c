@@ -24,6 +24,7 @@ void return_home(rpg_t *rpg)
     set_view(rpg, (sfVector2f){SPAWN_X, SPAWN_Y});
     rpg->spritesheet[rpg->player_stats.skin].pos =
     (sfVector2f){SPAWN_X, SPAWN_Y};
+    send_notif(rpg, "Back home");
 }
 
 void stop_all_sounds(rpg_t *rpg)
